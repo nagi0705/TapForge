@@ -1,39 +1,13 @@
 ---
-import { Image } from "astro:assets";
-import config from "@/config/config.json";
+// TapForge Logo Component
 const { src } = Astro.props;
-const {
-  logo,
-  logo_width,
-  logo_height,
-  logo_text,
-  title,
-}: {
-  logo: string;
-  logo_width: any;
-  logo_height: any;
-  logo_text: string;
-  title: string;
-} = config.site;
 ---
 
 <a href="/" class="navbar-brand block">
-  {
-    src || logo ? (
-      <Image
-        width={logo_width.replace("px", "") * 2}
-        height={logo_height.replace("px", "") * 2}
-        src={src ? src : logo}
-        alt={title}
-        style={{
-          height: logo_height.replace("px", "") + "px",
-          width: logo_width.replace("px", "") + "px",
-        }}
-      />
-    ) : logo_text ? (
-      logo_text
-    ) : (
-      title
-    )
-  }
+  <div class="flex items-center space-x-2">
+    <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+      <span class="text-white font-bold text-xl">T</span>
+    </div>
+    <span class="text-2xl font-bold text-gray-900">TapForge</span>
+  </div>
 </a>

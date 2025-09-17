@@ -1,31 +1,98 @@
 ---
-import Social from "@/components/Social.astro";
-import config from "@/config/config.json";
-import menu from "@/config/menu.json";
-import social from "@/config/social.json";
-import { markdownify } from "@/lib/utils/textConverter";
+// TapForge Footer Component
 ---
 
-<footer class="section bg-dark">
-  <div class="container text-center">
-    {/* footer menu */}
-    <ul class="mb-8 space-x-4">
-      {
-        menu.footer.map((menu) => (
-          <li class="inline-block">
-            <a
-              href={menu.url}
-              class="p-4 text-white/75 hover:text-white transition-all"
+<footer class="bg-gray-900 text-white py-16">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-8">
+      <!-- Company Info -->
+      <div class="md:col-span-2">
+        <div class="flex items-center space-x-2 mb-4">
+          <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold">T</span>
+          </div>
+          <span class="text-xl font-bold">TapForge</span>
+        </div>
+        <p class="text-gray-300 mb-4">
+          NFCデジタル名刺で世界と繋がる。AI駆動の次世代名刺であなたのビジネスを加速。
+        </p>
+        <p class="text-sm text-gray-400">
+          未来を先取る、スマートな出会いをすべての人へ
+        </p>
+      </div>
+      
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-white">クイックリンク</h3>
+        <ul class="space-y-2">
+          <li><a href="#features" class="text-gray-300 hover:text-white transition-colors smooth-scroll">特徴</a></li>
+          <li><a href="#pricing" class="text-gray-300 hover:text-white transition-colors smooth-scroll">料金</a></li>
+          <li><a href="#testimonials" class="text-gray-300 hover:text-white transition-colors smooth-scroll">お客様の声</a></li>
+          <li><a href="#faq" class="text-gray-300 hover:text-white transition-colors smooth-scroll">FAQ</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-white">お問い合わせ</h3>
+        <ul class="space-y-2">
+          <li>
+            <a 
+              href="https://cor-jp.com/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-300 hover:text-white transition-colors"
             >
-              {menu.name}
+              Cor.株式会社
             </a>
           </li>
-        ))
-      }
-    </ul>
-    {/* social icons */}
-    <Social source={social} className="social-icons mb-8" />
-    {/* copyright */}
-    <p set:html={markdownify(config.params.copyright)} class="text-white/75" />
+          <li>
+            <a 
+              href="#trial" 
+              class="text-gray-300 hover:text-white transition-colors smooth-scroll"
+            >
+              無料トライアル
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Bottom Section -->
+    <div class="border-t border-gray-700 mt-12 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm">
+          © 2025 TapForge by Cor.株式会社. All rights reserved.
+        </p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">プライバシーポリシー</a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">利用規約</a>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
+
+<script>
+  // Smooth scroll functionality for anchor links
+  document.addEventListener('DOMContentLoaded', function() {
+    const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
+    
+    smoothScrollLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId.startsWith('#')) {
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+      });
+    });
+  });
+</script>

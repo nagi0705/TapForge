@@ -1,17 +1,10 @@
 ---
-import { markdownify } from "@/lib/utils/textConverter";
-import { render } from "astro:content";
+import Base from "./Base.astro";
 
-const { data } = Astro.props;
-const { title } = data.data;
-const { Content } = await render(data);
+// TapForge Default Layout
+const { title = "TapForge" } = Astro.props;
 ---
 
-<section class="section">
-  <div class="container">
-    <h1 set:html={markdownify(title)} class="h2 page-heading" />
-    <div class="content">
-      <Content />
-    </div>
-  </div>
-</section>
+<Base title={title}>
+  <slot />
+</Base>

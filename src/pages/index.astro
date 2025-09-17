@@ -1,22 +1,24 @@
 ---
-import config from "@/config/config.json";
-import Base from "@/layouts/Base.astro";
-import Pagination from "@/layouts/components/Pagination.astro";
-import Posts from "@/layouts/Posts.astro";
-import { getSinglePage } from "@/lib/contentParser.astro";
-import { sortByDate } from "@/lib/utils/sortFunctions";
-
-const posts = await getSinglePage("posts");
-const sortedPosts = sortByDate(posts);
-const totalPages = Math.ceil(posts.length / config.settings.pagination);
-const currentPosts = sortedPosts.slice(0, config.settings.pagination);
+import Layout from '../layouts/Default.astro';
+import Hero from '../components/Hero.astro';
+import ProblemsSolutions from '../components/ProblemsSolutions.astro';
+import Features from '../components/Features.astro';
+import Benefits from '../components/Benefits.astro';
+import SDGs from '../components/SDGs.astro';
+import PartnerProgram from '../components/PartnerProgram.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+import CTA from '../components/CTA.astro';
 ---
 
-<Base>
-  <section class="section">
-    <div class="container">
-      <Posts posts={currentPosts} className="mb-16" />
-      <Pagination currentPage={1} totalPages={totalPages} />
-    </div>
-  </section>
-</Base>
+<Layout title="TapForge - NFCデジタル名刺で世界と繋がる">
+  <Hero />
+  <ProblemsSolutions />
+  <Features />
+  <Benefits />
+  <SDGs />
+  <PartnerProgram />
+  <Testimonials />
+  <FAQ />
+  <CTA />
+</Layout>

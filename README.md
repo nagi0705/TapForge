@@ -1,102 +1,112 @@
-<h1 align=center>Bookworm Light Astro</h1>
-<p align=center>Bookworm Light is a feature-rich, minimal, highly customizable, easy-to-use free Astro blog theme.</p>
-<h2 align="center"> <a target="_blank" href="https://bookworm-light-astro.vercel.app/" rel="nofollow">👀Demo</a> | <a  target="_blank" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fbookworm-light-astro.vercel.app%2F&form_factor=desktop">Page Speed (100%)🚀</a>
+# TapForge
+
+<p align="center">NFCデジタル名刺で世界と繋がる。AI駆動の次世代名刺であなたのビジネスを加速。</p>
+
+<h2 align="center">
+  <a target="_blank" href="https://tapforge.cor-jp.com" rel="nofollow">🌐 公式サイト</a> | 
+  <a target="_blank" href="https://cor-jp.com" rel="nofollow">📞 お問い合わせ</a>
 </h2>
 
-<p align=center>
-  <a href="https://github.com/withastro/astro/releases/tag/astro%405.5.2" alt="Contributors">
-    <img src="https://img.shields.io/static/v1?label=ASTRO&message=5.5&color=000&logo=astro" />
+<p align="center">
+  <a href="https://github.com/withastro/astro/releases/tag/astro%405.8.0" alt="Astro Version">
+    <img src="https://img.shields.io/static/v1?label=ASTRO&message=5.8&color=000&logo=astro" />
   </a>
-
-  <a href="https://github.com/themefisher/bookworm-light-astro/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/themefisher/bookworm-light-astro" alt="license"></a>
-
-  <img src="https://img.shields.io/github/languages/code-size/themefisher/bookworm-light-astro" alt="code size">
-
-  <a href="https://github.com/themefisher/bookworm-light-astro/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/themefisher/bigspring-light-astro" alt="contributors"></a>
+  <a href="https://github.com/komatsuzakinagisa/tapforge/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/komatsuzakinagisa/tapforge" alt="license">
+  </a>
+  <img src="https://img.shields.io/badge/Mobile%20Optimized-80%25%20Smartphone-blue" alt="Mobile Optimized">
+  <img src="https://img.shields.io/badge/Multilingual-4%20Languages-green" alt="Multilingual">
 </p>
 
-![bookworm-light](https://demo.gethugothemes.com/thumbnails/bookworm-light.png)
+## 🚀 概要
 
-Bookworm Light is a minimal multi-author free Astro blog theme which is perfect for any kind of blog website. Whether you're interested in food, beauty, travel, photography, lifestyle, fitness, health, or other topics, this theme is a great fit. The theme is super fast and SEO friendly which makes it easier for your content to be discovered by search engines.
+TapForgeは、フリーランサー向けのNFCデジタル名刺サービスです。アプリ不要、月額無料で多言語プロフィールを共有し、海外案件獲得を支援します。
 
-## 🔑Key Features
+## ✨ 主な特徴
 
-- 🎨 Highly Customizable (Color, Font, Menu, Social Links, SEO Meta Tags, etc.)
-- 👥 Multi-Author Support
-- 📚 Authors Page
-- 👤 Author Single Page
-- 🔍 Search Functionality with FuseJS
-- 🏷️ Tags and Categories Support
-- 📲 Post Social Share Option
-- 🔗 Similar Post Suggestions
-- ⚡ Fast by Default (95+ Google PageSpeed Score)
-- ⚙️ Netlify Settings Pre-configured
-- 📬 Contact Form Support
-- 🌅 Support OG Image
-- ✍️ Write and Update Content in Markdown / MDX
-- 📚 MDX Components Auto Import
-- 📝 Includes Draft Pages and Posts
-- 🚀 Built with Tailwind CSS Framework
-- 📱 Fully Responsive on Desktops, Tablets, and Smartphones
-- 🔍 SEO Friendly
+- 🤖 **AI名刺撮影・VCard変換** - 紙の名刺をAIでデータ化（精度95%）
+- 🌍 **多言語対応** - 日本語、英語、中国語、スペイン語の4言語対応
+- 📱 **アプリ不要** - NFCタップで即座にプロフィール表示
+- 💰 **月額無料** - 初期費用3,000円のみ、月額料金なし
+- 🌱 **ペーパーレス** - SDGs目標12に貢献
+- 📱 **モバイル最適化** - 80%スマホ想定のレスポンシブデザイン
 
-<!-- installation -->
+## 🛠️ 技術仕様
 
-## 🔧Installation
+- **フレームワーク**: Astro + Tailwind CSS
+- **多言語対応**: カスタムi18n実装
+- **ホスティング**: Vercel（独自ドメイン対応）
+- **SEO最適化**: メタタグ、キーワード最適化
+- **アクセシビリティ**: WCAG 2.1準拠
 
-After downloading the template, you have some prerequisites to install. Then you can run it on your localhost. You can view the package.json file to see which scripts are included.
+## 💰 料金体系（税込）
 
-### ⚙️Install prerequisites (once for a machine)
+- **初期費用**: 3,000円（1枚目）
+- **追加カード**: 600円/枚（2枚目以降）
+- **月額料金**: 0円（完全無料）
 
-- **Node Installation:** [Install node js](https://nodejs.org/en/download/) [Recommended LTS version]
+## 🎯 対象ユーザー
 
-### 🖥️Local setup
+- IT/コンサル/クリエイティブ業界のフリーランサー（25〜45歳）
+- 海外案件を増やしたい方
+- 名刺管理を効率化したい方
+- 環境に配慮したビジネス活動をしたい方
 
-After successfully installing those dependencies, open this template with any IDE [[VS Code](https://code.visualstudio.com/) recommended], and then open the internal terminal of IDM [vs code shortcut <code>ctrl/cmd+\`</code>]
+## 🔧 開発環境のセットアップ
 
-- Install dependencies
+### 前提条件
 
-```
-npm install
-```
+- **Node.js**: [Node.js](https://nodejs.org/en/download/) をインストール（推奨LTS版）
 
-- Run locally
+### ローカル開発
 
-```
-npm run dev
-```
+1. **依存関係のインストール**
+   ```bash
+   npm install
+   ```
 
-After that, it will open up a preview of the template in your default browser, watch for changes to source files, and live-reload the browser when changes are saved.
+2. **開発サーバーの起動**
+   ```bash
+   npm run dev
+   ```
 
-## 🔨Production Build
+3. **本番ビルド**
+   ```bash
+   npm run build
+   ```
 
-After finishing all the customization, you can create a production build by running this command.
+## 📊 導入効果
 
-```
-npm run build
-```
+- **コスト削減**: 年間300枚の紙名刺コストが0円に
+- **効率化**: 名刺整理が5分で完了（50枚一括デジタル化）
+- **ビジネス拡大**: フォロー率が15%から40%に向上
+- **環境配慮**: 年間300枚の紙削減でSDGsに貢献
 
-<!-- reporting issue -->
+## 🌍 SDGsへの貢献
 
-## 🐞Reporting Issues
+- **目標12**: ペーパーレス化により年間300枚の紙を削減
+- **目標10**: 4言語対応により国際案件における不平等を解消
+- **目標17**: 名刺交換を通じて共創を促進
 
-We use GitHub Issues as the official bug tracker for this Template. Please Search [existing issues](https://github.com/themefisher/bookworm-light-astro/issues). It’s possible someone has already reported the same problem.
-If your problem or idea has not been addressed yet, feel free to [open a new issue](https://github.com/themefisher/bookworm-light-astro/issues).
+## 📞 お問い合わせ
 
-<!-- licence -->
+- **公式サイト**: [Cor.株式会社](https://cor-jp.com)
+- **無料トライアル**: 50名限定（アンケートで1枚無料）
+- **共創パートナー優待制度**: 既存顧客様限定の特別価格
 
-## 📄License
+## 📄 ライセンス
 
-Copyright (c) 2023 - Present, Designed & Developed by [Themefisher](https://themefisher.com)
+Copyright (c) 2025 - Present, Developed by [Cor.株式会社](https://cor-jp.com)
 
-**Code License:** Released under the [MIT](https://github.com/themefisher/bookworm-light-astro/blob/main/LICENSE) license.
+**Code License:** Released under the [MIT](LICENSE) license.
 
-**Image license:** The images are only for demonstration purposes. They have their license, we don't have permission to share those images.
+## 🏆 クレジット
 
-## 👨‍💻Need Custom Development Services?
+- [Astro](https://astro.build/) - 静的サイトジェネレーター
+- [Tailwind CSS](https://tailwindcss.com/) - CSSフレームワーク
+- [React](https://reactjs.org/) - UIライブラリ
+- [TypeScript](https://www.typescriptlang.org/) - プログラミング言語
 
-Besides developing beautifully designed and blazing-fast themes, we help businesses create fast, performance-focused, scalable & secure websites based on NextJs, Hugo, Astro, etc.
+---
 
-If you need a custom theme, theme customization, or complete website development services from scratch you can [Hire Us](https://themefisher.com/contact).
+**TapForge** - 未来を先取る、スマートな出会いをすべての人へ

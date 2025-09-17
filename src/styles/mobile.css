@@ -1,0 +1,175 @@
+/* Mobile Optimization for TapForge */
+
+/* Ensure minimum touch target size (48px) */
+.touch-target {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+  /* Hero Section Mobile Optimization */
+  .hero-mobile {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .hero-mobile h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-mobile p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* CTA Buttons Mobile */
+  .cta-mobile {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Navigation Mobile */
+  .nav-mobile {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .nav-mobile li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Language Switcher Mobile */
+  .language-switcher-mobile {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  /* Form Mobile */
+  .form-mobile {
+    padding: 1rem;
+  }
+  
+  .form-mobile iframe {
+    height: 600px;
+  }
+  
+  /* Table Mobile - Horizontal Scroll */
+  .table-mobile {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .table-mobile table {
+    min-width: 600px;
+  }
+  
+  /* Grid Mobile - Stack Vertically */
+  .grid-mobile {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  /* Testimonials Mobile */
+  .testimonial-mobile {
+    margin-bottom: 1rem;
+  }
+  
+  /* FAQ Mobile */
+  .faq-mobile summary {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  
+  .faq-mobile div {
+    padding: 1rem;
+  }
+}
+
+/* Tablet Optimization */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-tablet h1 {
+    font-size: 3rem;
+  }
+  
+  .grid-tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .hover-effect:hover {
+    transform: none;
+  }
+  
+  /* Increase touch targets */
+  button, a, input, select, textarea {
+    min-height: 44px;
+  }
+  
+  /* Improve tap feedback */
+  .tap-feedback:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .high-dpi {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-landscape {
+    padding: 1rem;
+  }
+  
+  .hero-landscape h1 {
+    font-size: 1.5rem;
+  }
+  
+  .form-landscape iframe {
+    height: 400px;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-friendly {
+    background: white !important;
+    color: black !important;
+  }
+}
