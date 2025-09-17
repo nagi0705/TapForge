@@ -9,79 +9,66 @@
     </h2>
     <p class="text-lg text-gray-600 mb-2">
       <span class="text-red-500 font-bold">50名限定!</span>
-      アンケートで1枚無料
+      あなたの名刺を1枚無料で作成します。
     </p>
     <p class="text-sm text-gray-500">
-      30日間、デザイン変更無制限、AI名刺撮影・VCard変換利用可
+      デザイン変更無制限、AI名刺撮影・VCard変換利用可
     </p>
   </div>
-  
+
   <!-- Google Forms Embed -->
   <div class="bg-gray-50 rounded-lg p-6">
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLSdummy-form-id/viewform?embedded=true" 
-      width="100%" 
-      height="800" 
-      frameborder="0" 
-      marginheight="0" 
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdummy-form-id/viewform?embedded=true"
+      width="100%"
+      height="800"
+      frameborder="0"
+      marginheight="0"
       marginwidth="0"
       class="rounded-lg"
     >
       読み込み中...
     </iframe>
   </div>
-  
-  <!-- Form Description -->
-  <div class="mt-6 text-center">
-    <div class="bg-blue-50 rounded-lg p-4">
-      <h3 class="font-semibold text-gray-900 mb-2">アンケート内容（6問、3分以内）</h3>
-      <ul class="text-sm text-gray-600 space-y-1 text-left max-w-md mx-auto">
-        <li>• 使用頻度（必須）</li>
-        <li>• AI満足度（必須）</li>
-        <li>• 多言語利用シーン（必須）</li>
-        <li>• 改善点（任意）</li>
-        <li>• 本導入意向（任意）</li>
-        <li>• 海外案件ニーズ（任意）</li>
-      </ul>
-    </div>
-  </div>
-  
   <!-- Terms and Conditions -->
   <div class="mt-6 text-center">
     <p class="text-xs text-gray-500">
-      申し込みにより、<a href="#" class="text-blue-600 hover:underline">利用規約</a>および
-      <a href="#" class="text-blue-600 hover:underline">プライバシーポリシー</a>に同意したものとみなされます。
+      申し込みにより、<a href="#" class="text-blue-600 hover:underline"
+        >利用規約</a
+      >および
+      <a href="#" class="text-blue-600 hover:underline">プライバシーポリシー</a
+      >に同意したものとみなされます。
     </p>
   </div>
 </div>
 
 <script>
   // Form validation and submission handling
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener("DOMContentLoaded", function () {
     // Add smooth scrolling for anchor links
     const trialLinks = document.querySelectorAll('a[href="#trial"]');
-    trialLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
+    trialLinks.forEach((link) => {
+      link.addEventListener("click", function (e) {
         e.preventDefault();
-        const trialSection = document.getElementById('trial');
+        const trialSection = document.getElementById("trial");
         if (trialSection) {
-          trialSection.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
+          trialSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
           });
         }
       });
     });
-    
+
     // Track form interactions for analytics
     const form = document.querySelector('iframe[src*="google.com/forms"]');
     if (form) {
-      form.addEventListener('load', function() {
+      form.addEventListener("load", function () {
         // Track form load event
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'form_load', {
-            'event_category': 'trial_form',
-            'event_label': 'google_forms_loaded'
+        if (typeof window !== "undefined" && (window as any).gtag) {
+          (window as any).gtag("event", "form_load", {
+            event_category: "trial_form",
+            event_label: "google_forms_loaded",
           });
         }
       });
