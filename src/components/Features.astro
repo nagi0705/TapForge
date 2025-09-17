@@ -1,5 +1,5 @@
 ---
-// Features Section
+import { features, pricingPlans } from "../config/features";
 ---
 
 <section id="features" class="py-20 bg-white">
@@ -19,88 +19,78 @@
         最新技術で名刺交換を革新
       </p>
     </div>
-    
+
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <!-- Feature 1: AI Business Card Recognition -->
-      <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
-        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
-        </div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-2">AI名刺撮影・VCard変換</h3>
-        <p class="text-gray-600 text-sm">紙の名刺をAIでデータ化（精度95%）、VCardとしてスマートフォンに保存</p>
-      </div>
-      
-      <!-- Feature 2: Multilingual Support -->
-      <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
-        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
-          </svg>
-        </div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-2">多言語対応</h3>
-        <p class="text-gray-600 text-sm">日本語、英語、中国語（簡体字）、スペイン語の4言語に自動で切り替わり</p>
-      </div>
-      
-      <!-- Feature 3: No App Required -->
-      <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
-        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-          </svg>
-        </div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-2">アプリ不要</h3>
-        <p class="text-gray-600 text-sm">NFCタップで即座にプロフィールを表示（オンライン環境）</p>
-      </div>
-      
-      <!-- Feature 4: Paperless -->
-      <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
-        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-          </svg>
-        </div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-2">ペーパーレス</h3>
-        <p class="text-gray-600 text-sm">SDGs目標12に貢献、完全ペーパーレスで環境に配慮</p>
-      </div>
+      {
+        features.map((feature) => (
+          <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
+            <div
+              class={`w-16 h-16 ${feature.icon.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}
+            >
+              <svg
+                class={`w-8 h-8 ${feature.icon.iconColor}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d={feature.icon.svgPath}
+                />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              {feature.title}
+            </h3>
+            <p class="text-gray-600 text-sm">{feature.description}</p>
+          </div>
+        ))
+      }
     </div>
-    
+
     <!-- Pricing Information -->
-    <div class="mt-16 bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-8">
+    <div
+      class="mt-16 bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-8"
+    >
       <div class="text-center">
         <h3 class="text-2xl font-bold text-gray-900 mb-4">料金体系（税込）</h3>
         <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div class="bg-white rounded-lg p-6 shadow-sm">
-            <h4 class="font-semibold text-gray-900 mb-2">初期費用</h4>
-            <div class="text-2xl font-bold text-blue-600 mb-2">¥3,000</div>
-            <p class="text-sm text-gray-600">1枚目</p>
-          </div>
-          <div class="bg-white rounded-lg p-6 shadow-sm">
-            <h4 class="font-semibold text-gray-900 mb-2">追加カード</h4>
-            <div class="text-2xl font-bold text-green-600 mb-2">¥600</div>
-            <p class="text-sm text-gray-600">2枚目以降</p>
-          </div>
-          <div class="bg-white rounded-lg p-6 shadow-sm">
-            <h4 class="font-semibold text-gray-900 mb-2">月額料金</h4>
-            <div class="text-2xl font-bold text-purple-600 mb-2">¥0</div>
-            <p class="text-sm text-gray-600">完全無料</p>
-          </div>
+          {
+            pricingPlans.map((plan) => (
+              <div class="bg-white rounded-lg p-6 shadow-sm">
+                <h4 class="font-semibold text-gray-900 mb-2">{plan.title}</h4>
+                <div class={`text-2xl font-bold ${plan.priceColor} mb-2`}>
+                  {plan.price}
+                </div>
+                <p class="text-sm text-gray-600">{plan.description}</p>
+              </div>
+            ))
+          }
         </div>
         <p class="text-lg font-semibold text-gray-700 mt-6">
           業界最安値で技術を民主化
         </p>
       </div>
     </div>
-    
+
     <!-- Demo Video Section -->
     <div class="mt-16 text-center">
       <h3 class="text-2xl font-bold text-gray-900 mb-8">デモ動画</h3>
       <div class="bg-gray-100 rounded-2xl p-8 max-w-2xl mx-auto">
-        <div class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
+        <div
+          class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center"
+        >
           <div class="text-center">
-            <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
+            <svg
+              class="w-16 h-16 text-gray-400 mx-auto mb-4"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"
+              ></path>
             </svg>
             <p class="text-gray-600">AI名刺撮影デモ動画</p>
             <p class="text-sm text-gray-500">（YouTubeリンク予定）</p>
