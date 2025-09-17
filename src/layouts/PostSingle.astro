@@ -30,7 +30,7 @@ const { title, description, authors, categories, image, date, tags } =
                 .filter((author) =>
                   authors
                     .map((author: string) => slugify(author))
-                    .includes(slugify(author.data.title))
+                    .includes(slugify(author.data.title)),
                 )
                 .map((author) => (
                   <a

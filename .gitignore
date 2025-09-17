@@ -23,3 +23,8 @@ package-lock.json
 
 # ignore .astro directory
 .astro
+
+# MCP and Serena config files
+.mcp.json
+.serena/
+.claude/
