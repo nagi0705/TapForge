@@ -12,6 +12,15 @@ export const defaultLanguage: Language = "ja";
 
 export const translations = {
   ja: {
+    // Navigation
+    nav: {
+      home: "ホーム",
+      features: "特徴",
+      pricing: "料金",
+      testimonials: "お客様の声",
+      faq: "FAQ",
+      contact: "お問い合わせ",
+    },
     // Hero Section
     hero: {
       title: "タップで世界と繋がる。",
@@ -72,6 +81,15 @@ export const translations = {
     },
   },
   en: {
+    // Navigation
+    nav: {
+      home: "Home",
+      features: "Features",
+      pricing: "Pricing",
+      testimonials: "Testimonials",
+      faq: "FAQ",
+      contact: "Contact",
+    },
     // Hero Section
     hero: {
       title: "Connect with the world with a tap.",
@@ -133,6 +151,15 @@ export const translations = {
     },
   },
   zh: {
+    // Navigation
+    nav: {
+      home: "首页",
+      features: "特点",
+      pricing: "价格",
+      testimonials: "客户评价",
+      faq: "常见问题",
+      contact: "联系我们",
+    },
     // Hero Section
     hero: {
       title: "轻触连接世界。",
@@ -193,6 +220,15 @@ export const translations = {
     },
   },
   es: {
+    // Navigation
+    nav: {
+      home: "Inicio",
+      features: "Características",
+      pricing: "Precios",
+      testimonials: "Testimonios",
+      faq: "Preguntas Frecuentes",
+      contact: "Contacto",
+    },
     // Hero Section
     hero: {
       title: "Conecta con el mundo con un toque.",

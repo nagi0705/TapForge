@@ -8,21 +8,53 @@ interface Props {
 const { currentLang = "ja" } = Astro.props;
 ---
 
-<div class="relative inline-block text-left">
+<style>
+  .language-switcher {
+    position: relative;
+  }
+  
+  .language-switcher:hover .language-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .language-switcher:hover .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+  
+  .language-menu {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .dropdown-arrow {
+    transition: transform 0.2s ease-in-out;
+  }
+</style>
+
+<div class="language-switcher relative inline-block text-left">
   <div>
     <button
       type="button"
-      class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+      class="inline-flex items-center justify-center gap-x-2 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm border border-gray-200 hover:bg-gray-50 transition-colors duration-200 min-w-[120px] cursor-pointer"
       id="language-menu-button"
       aria-expanded="false"
       aria-haspopup="true"
+      onclick="console.log('Button clicked via onclick'); toggleLanguageMenu();"
     >
-      <span class="flex items-center">
-        <span class="mr-2">🌐</span>
+      <!-- 地球儀アイコン -->
+      <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"></path>
+      </svg>
+      
+      <!-- 言語テキスト -->
+      <span class="text-gray-700 font-medium">
         {languages[currentLang]}
       </span>
+      
+      <!-- ドロップダウン矢印 -->
       <svg
-        class="-mr-1 h-5 w-5 text-gray-400"
+        class="dropdown-arrow w-3 h-3 text-gray-400"
+        id="dropdown-arrow"
         viewBox="0 0 20 20"
         fill="currentColor"
         aria-hidden="true"
@@ -36,32 +68,41 @@ const { currentLang = "ja" } = Astro.props;
   </div>
 
   <div
-    class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden"
+    class="language-menu absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-lg bg-white shadow-lg border border-gray-200 focus:outline-none opacity-0 invisible"
+    id="language-menu"
     role="menu"
     aria-orientation="vertical"
-    aria-labelledby="language-menu-button"
     tabindex="-1"
   >
-    <div class="py-1" role="none">
+    <div class="py-2" role="none">
       {
         Object.entries(languages).map(([code, name]) => (
           <a
             href={`?lang=${code}`}
-            class={`flex items-center px-4 py-2 text-sm ${
+            class={`flex items-center px-4 py-3 text-sm transition-colors duration-150 ${
               code === currentLang
-                ? "bg-blue-50 text-blue-700"
-                : "text-gray-700 hover:bg-gray-100"
+                ? "bg-blue-50 text-blue-700 border-r-2 border-blue-500"
+                : "text-gray-700 hover:bg-gray-50"
             }`}
             role="menuitem"
             tabindex="-1"
+            onclick={`console.log('Language ${code} clicked'); switchLanguage('${code}'); return false;`}
           >
-            <span class="mr-3">
+            <!-- 国旗アイコン -->
+            <span class="mr-3 text-lg">
               {code === "ja" && "🇯🇵"}
               {code === "en" && "🇺🇸"}
               {code === "zh" && "🇨🇳"}
               {code === "es" && "🇪🇸"}
             </span>
-            {name}
+            <!-- 言語名 -->
+            <span class="font-medium">{name}</span>
+            <!-- 現在選択中の言語にチェックマーク -->
+            {code === currentLang && (
+              <svg class="ml-auto w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            )}
           </a>
         ))
       }
@@ -70,28 +111,118 @@ const { currentLang = "ja" } = Astro.props;
 </div>
 
 <script>
-  // Language switcher functionality
-  document.addEventListener("DOMContentLoaded", function () {
+  // Global function for language switching
+  window.switchLanguage = function(langCode) {
+    console.log("Switching to language:", langCode);
+    
+    // Store language preference in localStorage
+    localStorage.setItem('preferred-language', langCode);
+    
+    // Force page reload with new language parameter
+    const currentUrl = new URL(window.location);
+    currentUrl.searchParams.set('lang', langCode);
+    
+    // Use window.location.replace to avoid back button issues
+    window.location.replace(currentUrl.toString());
+  };
+
+  // Global function for onclick handler
+  window.toggleLanguageMenu = function() {
+    console.log("toggleLanguageMenu called");
     const button = document.getElementById("language-menu-button");
-    const menu = button?.nextElementSibling;
+    const menu = document.getElementById("language-menu");
+    const arrow = document.getElementById("dropdown-arrow");
 
-    if (button && menu) {
-      button.addEventListener("click", function () {
-        const isExpanded = button.getAttribute("aria-expanded") === "true";
-        button.setAttribute("aria-expanded", String(!isExpanded));
-        menu.classList.toggle("hidden");
-      });
+    if (!button || !menu || !arrow) {
+      console.error("Language switcher elements not found");
+      return;
+    }
 
-      // Close menu when clicking outside
-      document.addEventListener("click", function (event) {
-        if (
-          !button.contains(event.target as Node) &&
-          !menu.contains(event.target as Node)
-        ) {
-          button.setAttribute("aria-expanded", "false");
-          menu.classList.add("hidden");
+    const isOpen = menu.classList.contains("opacity-100");
+    
+    if (isOpen) {
+      // Close menu
+      menu.classList.remove("opacity-100", "visible");
+      menu.classList.add("opacity-0", "invisible");
+      arrow.classList.remove("rotate-180");
+      button.setAttribute("aria-expanded", "false");
+    } else {
+      // Open menu
+      menu.classList.remove("opacity-0", "invisible");
+      menu.classList.add("opacity-100", "visible");
+      arrow.classList.add("rotate-180");
+      button.setAttribute("aria-expanded", "true");
+    }
+    
+    console.log("Menu toggled, isOpen:", !isOpen);
+  };
+
+  // Simple and reliable language switcher
+  function initLanguageSwitcher() {
+    const button = document.getElementById("language-menu-button");
+    const menu = document.getElementById("language-menu");
+    const arrow = document.getElementById("dropdown-arrow");
+
+    if (!button || !menu || !arrow) {
+      console.error("Language switcher elements not found");
+      return;
+    }
+
+    console.log("Language switcher initialized successfully");
+
+    // Button click handler
+    button.addEventListener("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log("Button clicked via addEventListener");
+      window.toggleLanguageMenu();
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", function(e) {
+      if (!button.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove("opacity-100", "visible");
+        menu.classList.add("opacity-0", "invisible");
+        arrow.classList.remove("rotate-180");
+        button.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Close menu when pressing Escape
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") {
+        menu.classList.remove("opacity-100", "visible");
+        menu.classList.add("opacity-0", "invisible");
+        arrow.classList.remove("rotate-180");
+        button.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Add click handlers to language links
+    const languageLinks = menu.querySelectorAll('a[href*="lang="]');
+    languageLinks.forEach(link => {
+      link.addEventListener("click", function(e) {
+        e.preventDefault();
+        const href = this.getAttribute("href");
+        const langMatch = href.match(/lang=([^&]+)/);
+        if (langMatch) {
+          const langCode = langMatch[1];
+          console.log("Language link clicked:", langCode);
+          window.switchLanguage(langCode);
         }
       });
-    }
-  });
+    });
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initLanguageSwitcher);
+  } else {
+    initLanguageSwitcher();
+  }
+
+  // Fallback initialization
+  setTimeout(initLanguageSwitcher, 100);
+  setTimeout(initLanguageSwitcher, 500);
+  setTimeout(initLanguageSwitcher, 1000);
 </script>

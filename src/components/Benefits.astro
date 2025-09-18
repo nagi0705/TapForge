@@ -14,43 +14,82 @@ import { benefits } from "../config/features";
     </div>
 
     <!-- Key Benefits Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
       {
         benefits.map((benefit) => (
-          <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
-            <div
-              class={`w-16 h-16 ${benefit.icon.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}
-            >
-              <svg
-                class={`w-8 h-8 ${benefit.icon.iconColor}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d={benefit.icon.svgPath}
-                />
-              </svg>
+          <div class="group relative">
+            <!-- Glow Effect -->
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-2xl blur-lg opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+            
+            <!-- Card -->
+            <div class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 group-hover:scale-105">
+              <!-- Premium Badge -->
+              <div class="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center shadow-xl">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+              </div>
+              
+              <!-- Icon with gradient background -->
+              <div class="relative mb-6">
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-2xl blur-sm opacity-30"></div>
+                <div
+                  class={`relative w-20 h-20 ${benefit.icon.bgColor} rounded-2xl flex items-center justify-center mx-auto shadow-lg`}
+                >
+                  <svg
+                    class={`w-10 h-10 ${benefit.icon.iconColor}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d={benefit.icon.svgPath}
+                    />
+                  </svg>
+                </div>
+              </div>
+              
+              <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-gray-900 transition-colors">
+                {benefit.title}
+              </h3>
+              
+              <!-- Metric with gradient text -->
+              <div class={`text-4xl font-black bg-gradient-to-r ${benefit.metricColor.replace('text-', 'from-').replace('-600', '-600 to-').replace('-600', '-500')} bg-clip-text text-transparent mb-3`}>
+                {benefit.metric}
+              </div>
+              
+              <p class="text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                {benefit.description}
+              </p>
+              
+              <!-- Decorative line -->
+              <div class="mt-6 w-16 h-1 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">
-              {benefit.title}
-            </h3>
-            <div class={`text-3xl font-bold ${benefit.metricColor} mb-2`}>
-              {benefit.metric}
-            </div>
-            <p class="text-sm text-gray-600">{benefit.description}</p>
           </div>
         ))
       }
+      </div>
     </div>
 
     <!-- Detailed Comparison Table -->
-    <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-      <div class="px-8 py-6 bg-gray-50 border-b">
-        <h3 class="text-2xl font-bold text-gray-900 text-center">詳細比較</h3>
+    <div class="max-w-6xl mx-auto">
+      <div class="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-white/20">
+      <!-- Gradient overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-purple-50/30 to-pink-50/50"></div>
+      
+      <div class="relative px-8 py-8 bg-gradient-to-r from-gray-50/80 to-gray-100/80 border-b border-gray-200/50">
+        <div class="text-center">
+          <h3 class="text-3xl font-black bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-2">
+            詳細比較
+          </h3>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto"></div>
+        </div>
       </div>
 
       <div class="overflow-x-auto">
@@ -71,74 +110,147 @@ import { benefits } from "../config/features";
               >
             </tr>
           </thead>
-          <tbody class="divide-y divide-gray-200">
-            <tr>
-              <td class="px-6 py-4 text-sm font-medium text-gray-900"
+          <tbody class="divide-y divide-gray-100">
+            <tr class="hover:bg-gray-50/50 transition-colors">
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800"
                 >年間コスト</td
               >
-              <td class="px-6 py-4 text-sm text-gray-600 text-center">¥3,000</td
-              >
-              <td class="px-6 py-4 text-sm text-gray-600 text-center"
-                >¥0（初期費用のみ）</td
-              >
+              <td class="px-6 py-6 text-sm text-gray-500 text-center">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
+                  ¥3,000
+                </span>
+              </td>
+              <td class="px-6 py-6 text-center">
+                <div class="relative inline-flex items-center justify-center w-full max-w-[200px]">
+                  <div class="absolute inset-0 bg-gradient-to-r from-red-400 to-pink-500 rounded-2xl blur-sm opacity-75"></div>
+                  <div class="relative bg-white rounded-2xl p-4 shadow-lg border border-red-100 w-full">
+                    <div class="flex items-center justify-center space-x-2">
+                      <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                      <span class="text-xl font-bold bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">¥0</span>
+                    </div>
+                    <div class="text-xs text-gray-500 mt-1 font-medium text-center">（初期費用のみ）</div>
+                  </div>
+                </div>
+              </td>
             </tr>
-            <tr class="bg-gray-50">
-              <td class="px-6 py-4 text-sm font-medium text-gray-900"
+            <tr class="bg-gray-50/30 hover:bg-gray-50/50 transition-colors">
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800"
                 >整理時間</td
               >
-              <td class="px-6 py-4 text-sm text-gray-600 text-center"
-                >30分/50枚</td
-              >
-              <td class="px-6 py-4 text-sm text-gray-600 text-center"
-                >5分/50枚</td
-              >
+              <td class="px-6 py-6 text-sm text-gray-500 text-center">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
+                  30分/50枚
+                </span>
+              </td>
+              <td class="px-6 py-6 text-center">
+                <div class="relative inline-flex items-center justify-center w-full max-w-[200px]">
+                  <div class="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 rounded-2xl blur-sm opacity-75"></div>
+                  <div class="relative bg-white rounded-2xl p-4 shadow-lg border border-orange-100 w-full">
+                    <div class="flex items-center justify-center space-x-2">
+                      <div class="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
+                      <span class="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">5分</span>
+                    </div>
+                    <div class="text-xs text-gray-500 mt-1 font-medium text-center">/50枚</div>
+                  </div>
+                </div>
+              </td>
             </tr>
-            <tr>
-              <td class="px-6 py-4 text-sm font-medium text-gray-900"
+            <tr class="hover:bg-gray-50/50 transition-colors">
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800"
                 >フォロー率</td
               >
-              <td class="px-6 py-4 text-sm text-gray-600 text-center">15%</td>
-              <td class="px-6 py-4 text-sm text-gray-600 text-center">40%</td>
+              <td class="px-6 py-6 text-sm text-gray-500 text-center">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
+                  15%
+                </span>
+              </td>
+              <td class="px-6 py-6 text-center">
+                <div class="relative inline-flex items-center justify-center w-full max-w-[200px]">
+                  <div class="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-500 rounded-2xl blur-sm opacity-75"></div>
+                  <div class="relative bg-white rounded-2xl p-4 shadow-lg border border-purple-100 w-full">
+                    <div class="flex items-center justify-center space-x-2">
+                      <div class="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
+                      <span class="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">40%</span>
+                    </div>
+                  </div>
+                </div>
+              </td>
             </tr>
-            <tr class="bg-gray-50">
-              <td class="px-6 py-4 text-sm font-medium text-gray-900"
+            <tr class="bg-gray-50/30 hover:bg-gray-50/50 transition-colors">
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800"
                 >多言語対応</td
               >
-              <td class="px-6 py-4 text-sm text-gray-600 text-center">なし</td>
-              <td class="px-6 py-4 text-sm text-gray-600 text-center"
-                >4言語対応</td
-              >
+              <td class="px-6 py-6 text-sm text-gray-500 text-center">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
+                  なし
+                </span>
+              </td>
+              <td class="px-6 py-6 text-center">
+                <div class="relative inline-flex items-center justify-center w-full max-w-[200px]">
+                  <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-2xl blur-sm opacity-75"></div>
+                  <div class="relative bg-white rounded-2xl p-4 shadow-lg border border-blue-100 w-full">
+                    <div class="flex items-center justify-center space-x-2">
+                      <div class="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                      <span class="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">4言語</span>
+                    </div>
+                    <div class="text-xs text-gray-500 mt-1 font-medium text-center">対応</div>
+                  </div>
+                </div>
+              </td>
             </tr>
-            <tr>
-              <td class="px-6 py-4 text-sm font-medium text-gray-900"
+            <tr class="hover:bg-gray-50/50 transition-colors">
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800"
                 >環境負荷</td
               >
-              <td class="px-6 py-4 text-sm text-gray-600 text-center"
-                >高（紙使用）</td
-              >
-              <td class="px-6 py-4 text-sm text-gray-600 text-center"
-                >ゼロ（ペーパーレス）</td
-              >
+              <td class="px-6 py-6 text-sm text-gray-500 text-center">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
+                  高（紙使用）
+                </span>
+              </td>
+              <td class="px-6 py-6 text-center">
+                <div class="relative inline-flex items-center justify-center w-full max-w-[200px]">
+                  <div class="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 rounded-2xl blur-sm opacity-75"></div>
+                  <div class="relative bg-white rounded-2xl p-4 shadow-lg border border-green-100 w-full">
+                    <div class="flex items-center justify-center space-x-2">
+                      <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                      <span class="text-xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">ゼロ</span>
+                    </div>
+                    <div class="text-xs text-gray-500 mt-1 font-medium text-center">（ペーパーレス）</div>
+                  </div>
+                </div>
+              </td>
             </tr>
-            <tr class="bg-gray-50">
-              <td class="px-6 py-4 text-sm font-medium text-gray-900"
+            <tr class="bg-gray-50/30 hover:bg-gray-50/50 transition-colors">
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800"
                 >更新の容易さ</td
               >
-              <td class="px-6 py-4 text-sm text-gray-600 text-center"
-                >再印刷が必要</td
-              >
-              <td class="px-6 py-4 text-sm text-gray-600 text-center"
-                >即座に更新可能</td
-              >
+              <td class="px-6 py-6 text-sm text-gray-500 text-center">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
+                  再印刷が必要
+                </span>
+              </td>
+              <td class="px-6 py-6 text-center">
+                <div class="relative inline-flex items-center justify-center w-full max-w-[200px]">
+                  <div class="absolute inset-0 bg-gradient-to-r from-indigo-400 to-blue-500 rounded-2xl blur-sm opacity-75"></div>
+                  <div class="relative bg-white rounded-2xl p-4 shadow-lg border border-indigo-100 w-full">
+                    <div class="flex items-center justify-center space-x-2">
+                      <div class="w-3 h-3 bg-indigo-500 rounded-full animate-pulse"></div>
+                      <span class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">即座</span>
+                    </div>
+                    <div class="text-xs text-gray-500 mt-1 font-medium text-center">更新可能</div>
+                  </div>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
+      </div>
     </div>
 
     <!-- Target Message -->
-    <div class="mt-12 text-center">
-      <div class="bg-blue-50 rounded-xl p-8 max-w-4xl mx-auto">
+    <div class="mt-12 text-center max-w-5xl mx-auto">
+      <div class="bg-blue-50 rounded-xl p-8">
         <h3 class="text-2xl font-bold text-blue-900 mb-4">
           海外案件を増やしたいフリーランサーに最適
         </h3>
