@@ -1,16 +1,27 @@
 ---
 import { benefits } from "../config/features";
-import { getTranslation, type Language } from "../lib/i18n";
+import { translations, type Language } from "../lib/i18n";
+
+// Get current language from URL parameter
+const url = new URL(Astro.request.url);
+const lang = (url.searchParams.get('lang') as Language) || 'ja';
+const t = translations[lang].benefits;
+
+// Debug: Log the data
+console.log('Benefits - Lang:', lang);
+console.log('Benefits - t:', t);
+console.log('Benefits - t.items:', t.items);
+console.log('Benefits - benefits array:', benefits);
 ---
 
 <section id="pricing" class="py-20 bg-gray-50">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" id="benefits-title">
-        導入効果
+        {t.title}
       </h2>
       <p class="text-xl text-gray-600" id="benefits-subtitle">
-        フリーランサーのビジネスを加速させる具体的な効果
+        {t.subtitle}
       </p>
     </div>
 
@@ -117,7 +128,7 @@ import { getTranslation, type Language } from "../lib/i18n";
                 >年間コスト</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600" id="traditional-annual-cost">
+                <span class="inline-flex items-center px-4 py-2 rounded-full text-base font-semibold bg-gray-100 text-gray-700" id="traditional-annual-cost">
                   ¥3,000
                 </span>
               </td>
@@ -139,7 +150,7 @@ import { getTranslation, type Language } from "../lib/i18n";
                 >整理時間</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600" id="traditional-organization-time">
+                <span class="inline-flex items-center px-4 py-2 rounded-full text-base font-semibold bg-gray-100 text-gray-700" id="traditional-organization-time">
                   30分/50枚
                 </span>
               </td>
@@ -161,7 +172,7 @@ import { getTranslation, type Language } from "../lib/i18n";
                 >フォロー率</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600" id="traditional-follow-up-rate">
+                <span class="inline-flex items-center px-4 py-2 rounded-full text-base font-semibold bg-gray-100 text-gray-700" id="traditional-follow-up-rate">
                   15%
                 </span>
               </td>
@@ -182,7 +193,7 @@ import { getTranslation, type Language } from "../lib/i18n";
                 >多言語対応</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600" id="traditional-multilingual">
+                <span class="inline-flex items-center px-4 py-2 rounded-full text-base font-semibold bg-gray-100 text-gray-700" id="traditional-multilingual">
                   なし
                 </span>
               </td>
@@ -204,7 +215,7 @@ import { getTranslation, type Language } from "../lib/i18n";
                 >環境負荷</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600" id="traditional-environmental-impact">
+                <span class="inline-flex items-center px-4 py-2 rounded-full text-base font-semibold bg-gray-100 text-gray-700" id="traditional-environmental-impact">
                   高（紙使用）
                 </span>
               </td>
@@ -226,7 +237,7 @@ import { getTranslation, type Language } from "../lib/i18n";
                 >更新の容易さ</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600" id="traditional-update-ease">
+                <span class="inline-flex items-center px-4 py-2 rounded-full text-base font-semibold bg-gray-100 text-gray-700" id="traditional-update-ease">
                   再印刷が必要
                 </span>
               </td>
@@ -280,9 +291,145 @@ import { getTranslation, type Language } from "../lib/i18n";
     const storedLang = localStorage.getItem('preferred-language');
     const currentLang = urlLang || storedLang || 'ja';
     
+    // Force update benefits content immediately
+    forceUpdateBenefitsContent(currentLang);
+    
+    // Also force update after delays to ensure DOM is ready
+    setTimeout(() => {
+      forceUpdateBenefitsContent(currentLang);
+    }, 100);
+    
+    setTimeout(() => {
+      forceUpdateBenefitsContent(currentLang);
+    }, 500);
+    
+    setTimeout(() => {
+      forceUpdateBenefitsContent(currentLang);
+    }, 1000);
+    
+    setTimeout(() => {
+      forceUpdateBenefitsContent(currentLang);
+    }, 2000);
+    
+    // Also try to update when window loads completely
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        forceUpdateBenefitsContent(currentLang);
+      }, 500);
+    });
+    
     // Update benefits content based on language
     updateBenefitsContent(currentLang);
   });
+
+  function forceUpdateBenefitsContent(lang) {
+    // Force update benefit cards with hardcoded values
+    const benefitData = {
+      'ja': [
+        { title: 'コスト削減', metric: '¥3,000', description: '年間300枚の紙名刺コストが0円に' },
+        { title: '効率化', metric: '5分', description: '名刺整理が50枚一括デジタル化で完了' },
+        { title: 'ビジネス拡大', metric: '40%', description: 'フォロー率が15%から向上' },
+        { title: '環境配慮', metric: '300枚', description: '年間の紙削減でSDGsに貢献' }
+      ],
+      'en': [
+        { title: 'Cost Reduction', metric: '¥3,000', description: 'Annual cost of 300 paper business cards becomes 0 yen' },
+        { title: 'Efficiency', metric: '5 min', description: 'Business card organization of 50 cards completed with batch digitalization' },
+        { title: 'Business Growth', metric: '40%', description: 'Follow-up rate improved from 15%' },
+        { title: 'Environmental Consideration', metric: '300 cards', description: 'Annual paper reduction contributes to SDGs' }
+      ],
+      'zh': [
+        { title: '成本削减', metric: '¥3,000', description: '每年300张纸质名片成本变为0日元' },
+        { title: '效率化', metric: '5分钟', description: '50张名片整理通过批量数字化完成' },
+        { title: '业务扩展', metric: '40%', description: '跟进率从15%提升' },
+        { title: '环保考虑', metric: '300张', description: '年度纸张减少为SDGs做贡献' }
+      ],
+      'es': [
+        { title: 'Reducción de Costos', metric: '¥3,000', description: 'El costo anual de 300 tarjetas de presentación de papel se convierte en 0 yenes' },
+        { title: 'Eficiencia', metric: '5 min', description: 'Organización de 50 tarjetas de presentación completada con digitalización por lotes' },
+        { title: 'Crecimiento del Negocio', metric: '40%', description: 'Tasa de seguimiento mejorada del 15%' },
+        { title: 'Consideración Ambiental', metric: '300 tarjetas', description: 'Reducción anual de papel contribuye a los ODS' }
+      ]
+    };
+
+    const currentData = benefitData[lang] || benefitData['ja'];
+    
+    // Force update each benefit card - try multiple selectors
+    for (let i = 0; i < 4; i++) {
+      // Try multiple ways to find elements
+      const titleElement = document.getElementById(`benefit-${i}-title`) || 
+                          document.querySelector(`[id*="benefit"][id*="${i}"][id*="title"]`) ||
+                          document.querySelectorAll('h3')[i];
+      
+      const metricElement = document.getElementById(`benefit-${i}-metric`) || 
+                           document.querySelector(`[id*="benefit"][id*="${i}"][id*="metric"]`) ||
+                           document.querySelectorAll('.text-4xl')[i];
+      
+      const descElement = document.getElementById(`benefit-${i}-description`) || 
+                         document.querySelector(`[id*="benefit"][id*="${i}"][id*="description"]`) ||
+                         document.querySelectorAll('p')[i + 4]; // Skip first few p tags
+      
+      console.log(`Looking for benefit ${i} elements:`, {
+        title: titleElement,
+        metric: metricElement,
+        desc: descElement
+      });
+      
+      // Force update title
+      if (titleElement && currentData[i]) {
+        titleElement.innerHTML = currentData[i].title;
+        titleElement.style.cssText = `
+          color: #1f2937 !important;
+          font-weight: bold !important;
+          font-size: 1.25rem !important;
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          position: relative !important;
+          z-index: 999 !important;
+        `;
+        console.log(`Force updated benefit ${i} title: ${currentData[i].title}`);
+      } else {
+        console.log(`Title element ${i} not found or no data`);
+      }
+      
+      // Force update metric
+      if (metricElement && currentData[i]) {
+        metricElement.innerHTML = currentData[i].metric;
+        metricElement.style.cssText = `
+          color: #3b82f6 !important;
+          font-weight: 900 !important;
+          font-size: 2.25rem !important;
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          position: relative !important;
+          z-index: 999 !important;
+          background: none !important;
+          background-image: none !important;
+        `;
+        console.log(`Force updated benefit ${i} metric: ${currentData[i].metric}`);
+      } else {
+        console.log(`Metric element ${i} not found or no data`);
+      }
+      
+      // Force update description
+      if (descElement && currentData[i]) {
+        descElement.innerHTML = currentData[i].description;
+        descElement.style.cssText = `
+          color: #4b5563 !important;
+          font-size: 0.875rem !important;
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          position: relative !important;
+          z-index: 999 !important;
+        `;
+        console.log(`Force updated benefit ${i} description: ${currentData[i].description}`);
+      } else {
+        console.log(`Description element ${i} not found or no data`);
+      }
+    }
+  }
 
   function updateBenefitsContent(lang) {
     const translations = {
