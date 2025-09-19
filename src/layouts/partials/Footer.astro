@@ -1,5 +1,12 @@
 ---
-// TapForge Footer Component
+import { translations, type Language } from '../../lib/i18n';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang = 'ja' } = Astro.props;
+const t = translations[lang].footer;
 ---
 
 <footer class="bg-gray-900 text-white py-16">
@@ -16,47 +23,47 @@
           <span class="text-xl font-bold">TapForge</span>
         </div>
         <p class="text-gray-300 mb-4">
-          NFCデジタル名刺で世界と繋がる。AI駆動の次世代名刺であなたのビジネスを加速。
+          {t.description}
         </p>
         <p class="text-sm text-gray-400">
-          未来を先取る、スマートな出会いをすべての人へ
+          {t.tagline}
         </p>
       </div>
 
       <!-- Quick Links -->
       <div>
-        <h3 class="text-lg font-semibold mb-4 text-white">クイックリンク</h3>
+        <h3 class="text-lg font-semibold mb-4 text-white">{t.quickLinks.title}</h3>
         <ul class="space-y-2">
           <li>
             <a
               href="#features"
               class="text-gray-300 hover:text-white transition-colors smooth-scroll"
-              >特徴</a>
+              >{t.quickLinks.features}</a>
           </li>
           <li>
             <a
               href="#pricing"
               class="text-gray-300 hover:text-white transition-colors smooth-scroll"
-              >料金</a>
+              >{t.quickLinks.pricing}</a>
           </li>
           <li>
             <a
               href="#testimonials"
               class="text-gray-300 hover:text-white transition-colors smooth-scroll"
-              >お客様の声</a>
+              >{t.quickLinks.testimonials}</a>
           </li>
           <li>
             <a
               href="#faq"
               class="text-gray-300 hover:text-white transition-colors smooth-scroll"
-              >FAQ</a>
+              >{t.quickLinks.faq}</a>
           </li>
         </ul>
       </div>
 
       <!-- Contact -->
       <div>
-        <h3 class="text-lg font-semibold mb-4 text-white">お問い合わせ</h3>
+        <h3 class="text-lg font-semibold mb-4 text-white">{t.contact.title}</h3>
         <ul class="space-y-2">
           <li>
             <a
@@ -65,7 +72,7 @@
               rel="noopener noreferrer"
               class="text-gray-300 hover:text-white transition-colors"
             >
-              Cor.株式会社
+              {t.contact.company}
             </a>
           </li>
           <li>
@@ -73,7 +80,7 @@
               href="#trial"
               class="text-gray-300 hover:text-white transition-colors smooth-scroll"
             >
-              無料トライアル
+              {t.contact.trial}
             </a>
           </li>
         </ul>
@@ -84,18 +91,18 @@
     <div class="border-t border-gray-700 mt-12 pt-8">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <p class="text-gray-400 text-sm">
-          © 2025 TapForge by Cor.株式会社. All rights reserved.
+          {t.copyright}
         </p>
         <div class="flex space-x-6 mt-4 md:mt-0">
           <a
             href="#"
             class="text-gray-400 hover:text-white transition-colors text-sm"
-            >プライバシーポリシー</a
+            >{t.legal.privacy}</a
           >
           <a
             href="#"
             class="text-gray-400 hover:text-white transition-colors text-sm"
-            >利用規約</a
+            >{t.legal.terms}</a
           >
         </div>
       </div>
@@ -124,5 +131,151 @@
         }
       });
     });
+
+    // Footer language switching
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const storedLang = localStorage.getItem('preferred-language');
+    const currentLang = urlLang || storedLang || 'ja';
+    
+    updateFooterContent(currentLang);
   });
+
+  function updateFooterContent(lang) {
+    const translations = {
+      ja: {
+        description: "NFCデジタル名刺で世界と繋がる。AI駆動の次世代名刺であなたのビジネスを加速。",
+        tagline: "未来を先取る、スマートな出会いをすべての人へ",
+        quickLinks: {
+          title: "クイックリンク",
+          features: "特徴",
+          pricing: "料金",
+          testimonials: "お客様の声",
+          faq: "FAQ"
+        },
+        contact: {
+          title: "お問い合わせ",
+          company: "Cor.株式会社",
+          trial: "無料トライアル"
+        },
+        copyright: "© 2025 TapForge by Cor.株式会社. All rights reserved.",
+        legal: {
+          privacy: "プライバシーポリシー",
+          terms: "利用規約"
+        }
+      },
+      en: {
+        description: "Connect with the world through NFC digital business cards. Accelerate your business with AI-powered next-generation business cards.",
+        tagline: "Pioneering the future, smart encounters for everyone",
+        quickLinks: {
+          title: "Quick Links",
+          features: "Features",
+          pricing: "Pricing",
+          testimonials: "Testimonials",
+          faq: "FAQ"
+        },
+        contact: {
+          title: "Contact",
+          company: "Cor. Co., Ltd.",
+          trial: "Free Trial"
+        },
+        copyright: "© 2025 TapForge by Cor. Co., Ltd. All rights reserved.",
+        legal: {
+          privacy: "Privacy Policy",
+          terms: "Terms of Service"
+        }
+      },
+      zh: {
+        description: "通过NFC数字名片连接世界。AI驱动的下一代名片加速您的业务。",
+        tagline: "开创未来，为每个人提供智能相遇",
+        quickLinks: {
+          title: "快速链接",
+          features: "特点",
+          pricing: "价格",
+          testimonials: "客户评价",
+          faq: "常见问题"
+        },
+        contact: {
+          title: "联系我们",
+          company: "Cor.株式会社",
+          trial: "免费试用"
+        },
+        copyright: "© 2025 TapForge by Cor.株式会社. 版权所有。",
+        legal: {
+          privacy: "隐私政策",
+          terms: "服务条款"
+        }
+      },
+      es: {
+        description: "Conecta con el mundo a través de tarjetas de presentación digitales NFC. Acelera tu negocio con tarjetas de presentación de próxima generación impulsadas por IA.",
+        tagline: "Pioneros del futuro, encuentros inteligentes para todos",
+        quickLinks: {
+          title: "Enlaces Rápidos",
+          features: "Características",
+          pricing: "Precios",
+          testimonials: "Testimonios",
+          faq: "Preguntas Frecuentes"
+        },
+        contact: {
+          title: "Contacto",
+          company: "Cor. Co., Ltd.",
+          trial: "Prueba Gratuita"
+        },
+        copyright: "© 2025 TapForge by Cor. Co., Ltd. Todos los derechos reservados.",
+        legal: {
+          privacy: "Política de Privacidad",
+          terms: "Términos de Servicio"
+        }
+      }
+    };
+
+    const t = translations[lang] || translations['ja'];
+
+    // Update description and tagline
+    const descriptionElement = document.querySelector('footer .text-gray-300');
+    if (descriptionElement) {
+      descriptionElement.textContent = t.description;
+    }
+    const taglineElement = document.querySelector('footer .text-sm.text-gray-400');
+    if (taglineElement) {
+      taglineElement.textContent = t.tagline;
+    }
+
+    // Update quick links
+    const quickLinksTitle = document.querySelector('footer h3');
+    if (quickLinksTitle) {
+      quickLinksTitle.textContent = t.quickLinks.title;
+    }
+    const quickLinksItems = document.querySelectorAll('footer .space-y-2 a');
+    if (quickLinksItems.length >= 4) {
+      quickLinksItems[0].textContent = t.quickLinks.features;
+      quickLinksItems[1].textContent = t.quickLinks.pricing;
+      quickLinksItems[2].textContent = t.quickLinks.testimonials;
+      quickLinksItems[3].textContent = t.quickLinks.faq;
+    }
+
+    // Update contact section
+    const contactTitle = document.querySelectorAll('footer h3')[1];
+    if (contactTitle) {
+      contactTitle.textContent = t.contact.title;
+    }
+    const contactItems = document.querySelectorAll('footer .space-y-2')[1]?.querySelectorAll('a');
+    if (contactItems && contactItems.length >= 2) {
+      contactItems[0].textContent = t.contact.company;
+      contactItems[1].textContent = t.contact.trial;
+    }
+
+    // Update copyright
+    const copyrightElement = document.querySelector('footer .text-gray-400.text-sm');
+    if (copyrightElement) {
+      copyrightElement.textContent = t.copyright;
+    }
+
+    // Update legal links
+    const legalLinks = document.querySelectorAll('footer .flex.space-x-6 a');
+    if (legalLinks.length >= 2) {
+      legalLinks[0].textContent = t.legal.privacy;
+      legalLinks[1].textContent = t.legal.terms;
+    }
+  }
 </script>

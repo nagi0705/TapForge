@@ -9,16 +9,21 @@ import PartnerProgram from "../components/PartnerProgram.astro";
 import Testimonials from "../components/Testimonials.astro";
 import FAQ from "../components/FAQ.astro";
 import CTA from "../components/CTA.astro";
+import { type Language } from "../lib/i18n";
+
+// Get language from URL parameter or default to Japanese
+const url = new URL(Astro.request.url);
+const lang = (url.searchParams.get('lang') as Language) || 'ja';
 ---
 
-<Layout title="TapForge - NFCデジタル名刺で世界と繋がる">
-  <Hero />
-  <ProblemsSolutions />
-  <Features />
-  <Benefits />
-  <SDGs />
-  <PartnerProgram />
-  <Testimonials />
-  <FAQ />
-  <CTA />
+<Layout title="TapForge - NFCデジタル名刺で世界と繋がる" lang={lang}>
+  <Hero lang={lang} />
+  <ProblemsSolutions lang={lang} />
+  <Features lang={lang} />
+  <Benefits lang={lang} />
+  <SDGs lang={lang} />
+  <PartnerProgram lang={lang} />
+  <Testimonials lang={lang} />
+  <FAQ lang={lang} />
+  <CTA lang={lang} />
 </Layout>

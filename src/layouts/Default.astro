@@ -2,9 +2,9 @@
 import Base from "./Base.astro";
 
 // TapForge Default Layout
-const { title = "TapForge" } = Astro.props;
+const { title = "TapForge", lang = 'ja' } = Astro.props;
 ---
 
-<Base title={title}>
+<Base title={title} lang={lang}>
   <slot />
 </Base>

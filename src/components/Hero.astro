@@ -160,7 +160,13 @@
     // Update CTA button
     const ctaElement = document.getElementById('hero-cta');
     if (ctaElement) {
-      ctaElement.innerHTML = `<span class="text-red-500 font-bold mr-2">50名限定!</span>${t.cta}`;
+      const limitedText = {
+        'ja': '50名限定!',
+        'en': 'Limited to 50!',
+        'zh': '限50名！',
+        'es': '¡Limitado a 50!'
+      };
+      ctaElement.innerHTML = `<span class="text-red-500 font-bold mr-2">${limitedText[lang] || limitedText['ja']}</span>${t.cta}`;
     }
     
     // Update features

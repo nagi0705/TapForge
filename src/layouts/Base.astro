@@ -24,10 +24,11 @@ export interface Props {
   image?: string;
   noindex?: boolean;
   canonical?: string;
+  lang?: string;
 }
 
 // distructure frontmatters
-const { title, meta_title, description, image, noindex, canonical } =
+const { title, meta_title, description, image, noindex, canonical, lang = 'ja' } =
   Astro.props;
 ---
 
@@ -156,6 +157,6 @@ const { title, meta_title, description, image, noindex, canonical } =
     <main id="main-content" class="min-h-[60vh]">
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} />
   </body>
 </html>

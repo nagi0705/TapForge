@@ -1,5 +1,6 @@
 ---
 import TrialForm from "./TrialForm.astro";
+import { getTranslation, type Language } from "../lib/i18n";
 // CTA Section
 ---
 
@@ -12,11 +13,11 @@ import TrialForm from "./TrialForm.astro";
           alt="TapForge" 
           class="w-16 h-16 rounded-xl shadow-lg mr-4"
         />
-        <h2 class="text-3xl md:text-4xl font-bold">
+        <h2 class="text-3xl md:text-4xl font-bold" id="cta-title">
           今すぐ始めませんか？
         </h2>
       </div>
-      <p class="text-xl mb-12 opacity-90">
+      <p class="text-xl mb-12 opacity-90" id="cta-description">
         50名限定の無料トライアルで、TapForgeの力を体験してください
       </p>
 
@@ -68,7 +69,7 @@ import TrialForm from "./TrialForm.astro";
                 >
                   <span class="text-white font-bold text-sm">T</span>
                 </div>
-                <p class="text-xs text-gray-600">プロフィール表示</p>
+                <p class="text-xs text-gray-600" id="profile-display">プロフィール表示</p>
               </div>
             </div>
           </div>
@@ -77,6 +78,7 @@ import TrialForm from "./TrialForm.astro";
           <div class="mt-4 text-center">
             <span
               class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse"
+              id="tap-now"
             >
               今すぐタップ!
             </span>
@@ -92,9 +94,10 @@ import TrialForm from "./TrialForm.astro";
         <a
           href="#trial"
           class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center justify-center min-h-[48px] w-full sm:w-auto"
+          id="cta-trial-button"
         >
-          <span class="text-red-500 font-bold mr-2">50名限定!</span>
-          無料トライアル申し込み
+          <span class="text-red-500 font-bold mr-2" id="cta-limited">50名限定!</span>
+          <span id="cta-trial-text">無料トライアル申し込み</span>
         </a>
 
         <!-- Contact Button -->
@@ -103,6 +106,7 @@ import TrialForm from "./TrialForm.astro";
           target="_blank"
           rel="noopener noreferrer"
           class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center min-h-[48px] w-full sm:w-auto"
+          id="cta-contact-button"
         >
           <svg
             class="w-5 h-5 mr-2"
@@ -117,12 +121,12 @@ import TrialForm from "./TrialForm.astro";
               d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
             ></path>
           </svg>
-          お問い合わせ（共創パートナー向け）
+          <span id="cta-contact-text">お問い合わせ（共創パートナー向け）</span>
         </a>
       </div>
 
       <!-- Trust Indicators -->
-      <div class="mt-12 flex flex-wrap justify-center gap-8 text-sm opacity-80">
+      <div class="mt-12 flex flex-wrap justify-center gap-8 text-sm opacity-80" id="cta-features">
         <div class="flex items-center">
           <svg
             class="w-5 h-5 text-green-400 mr-2"
@@ -134,7 +138,7 @@ import TrialForm from "./TrialForm.astro";
               d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
               clip-rule="evenodd"></path>
           </svg>
-          アプリ不要
+          <span id="cta-feature-1">アプリ不要</span>
         </div>
         <div class="flex items-center">
           <svg
@@ -147,7 +151,7 @@ import TrialForm from "./TrialForm.astro";
               d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
               clip-rule="evenodd"></path>
           </svg>
-          月額無料
+          <span id="cta-feature-2">月額無料</span>
         </div>
         <div class="flex items-center">
           <svg
@@ -160,7 +164,7 @@ import TrialForm from "./TrialForm.astro";
               d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
               clip-rule="evenodd"></path>
           </svg>
-          4言語対応
+          <span id="cta-feature-3">4言語対応</span>
         </div>
         <div class="flex items-center">
           <svg
@@ -173,7 +177,7 @@ import TrialForm from "./TrialForm.astro";
               d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
               clip-rule="evenodd"></path>
           </svg>
-          AI名刺撮影
+          <span id="cta-feature-4">AI名刺撮影</span>
         </div>
       </div>
     </div>
@@ -186,3 +190,114 @@ import TrialForm from "./TrialForm.astro";
     <TrialForm />
   </div>
 </section>
+
+<script>
+  // CTA section language switching
+  document.addEventListener("DOMContentLoaded", function () {
+    // Get current language from URL or localStorage
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const storedLang = localStorage.getItem('preferred-language');
+    const currentLang = urlLang || storedLang || 'ja';
+    
+    // Update CTA content based on language
+    updateCTAContent(currentLang);
+  });
+
+  function updateCTAContent(lang) {
+    const translations = {
+      'ja': {
+        title: '今すぐ始めませんか？',
+        description: '50名限定の無料トライアルで、TapForgeの力を体験してください',
+        limited: '50名限定!',
+        trialButton: '無料トライアル申し込み',
+        contactButton: 'お問い合わせ（共創パートナー向け）',
+        tapNow: '今すぐタップ!',
+        profileDisplay: 'プロフィール表示',
+        features: ['アプリ不要', '月額無料', '4言語対応', 'AI名刺撮影']
+      },
+      'en': {
+        title: 'Ready to get started?',
+        description: 'Experience the power of TapForge with our limited free trial for 50 people',
+        limited: 'Limited to 50!',
+        trialButton: 'Apply for Free Trial',
+        contactButton: 'Contact (For Co-creation Partners)',
+        tapNow: 'Tap Now!',
+        profileDisplay: 'Profile Display',
+        features: ['No App Required', 'Free Monthly', '4 Languages', 'AI Business Card Scanning']
+      },
+      'zh': {
+        title: '准备开始了吗？',
+        description: '通过我们限50人的免费试用体验TapForge的力量',
+        limited: '限50名！',
+        trialButton: '申请免费试用',
+        contactButton: '联系我们（共创合作伙伴）',
+        tapNow: '立即轻触！',
+        profileDisplay: '个人资料显示',
+        features: ['无需应用', '月费免费', '4种语言', 'AI名片扫描']
+      },
+      'es': {
+        title: '¿Listo para comenzar?',
+        description: 'Experimenta el poder de TapForge con nuestra prueba gratuita limitada para 50 personas',
+        limited: '¡Limitado a 50!',
+        trialButton: 'Solicitar Prueba Gratuita',
+        contactButton: 'Contacto (Para Socios de Co-creación)',
+        tapNow: '¡Toca Ahora!',
+        profileDisplay: 'Mostrar Perfil',
+        features: ['Sin App Requerida', 'Mensualidad Gratuita', '4 Idiomas', 'Escaneo de Tarjeta con IA']
+      }
+    };
+
+    const t = translations[lang] || translations['ja'];
+    
+    // Update title
+    const titleElement = document.getElementById('cta-title');
+    if (titleElement) {
+      titleElement.textContent = t.title;
+    }
+    
+    // Update description
+    const descElement = document.getElementById('cta-description');
+    if (descElement) {
+      descElement.textContent = t.description;
+    }
+    
+    // Update limited text
+    const limitedElement = document.getElementById('cta-limited');
+    if (limitedElement) {
+      limitedElement.textContent = t.limited;
+    }
+    
+    // Update trial button text
+    const trialTextElement = document.getElementById('cta-trial-text');
+    if (trialTextElement) {
+      trialTextElement.textContent = t.trialButton;
+    }
+    
+    // Update contact button text
+    const contactTextElement = document.getElementById('cta-contact-text');
+    if (contactTextElement) {
+      contactTextElement.textContent = t.contactButton;
+    }
+    
+    // Update tap now text
+    const tapNowElement = document.getElementById('tap-now');
+    if (tapNowElement) {
+      tapNowElement.textContent = t.tapNow;
+    }
+    
+    // Update profile display text
+    const profileDisplayElement = document.getElementById('profile-display');
+    if (profileDisplayElement) {
+      profileDisplayElement.textContent = t.profileDisplay;
+    }
+    
+    // Update features
+    for (let i = 0; i < t.features.length; i++) {
+      const featureElement = document.getElementById(`cta-feature-${i + 1}`);
+      if (featureElement) {
+        featureElement.textContent = t.features[i];
+      }
+    }
+  }
+</script>
