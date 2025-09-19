@@ -5,7 +5,8 @@ import { IoSearch } from "react-icons/io5";
 import { getTranslation, type Language } from "../../lib/i18n";
 
 // Get current language from URL
-const currentLang: Language = Astro.url.searchParams.get('lang') as Language || 'ja';
+const urlLang = Astro.url.searchParams.get('lang') as Language;
+const currentLang: Language = urlLang || 'ja';
 
 // TapForge navigation menu with i18n
 const main = [
@@ -21,9 +22,10 @@ const main = [
 <header class="header pt-6">
   <nav class="navbar container">
     <!-- logo -->
-    <div class="order-0">
+    <div class="order-0 flex-shrink-0">
       <Logo />
     </div>
+    
     <!-- navbar toggler -->
     <input id="nav-toggle" type="checkbox" class="hidden" />
     <label
@@ -50,16 +52,17 @@ const main = [
     </label>
     <!-- /navbar toggler -->
 
+    <!-- Navigation Menu -->
     <ul
       id="nav-menu"
-      class="navbar-nav order-3 hidden w-full md:order-1 md:flex md:w-auto"
+      class="navbar-nav order-3 hidden w-full md:order-1 md:flex md:w-auto md:flex-1 md:justify-center md:max-w-lg"
     >
       {
         main.map((menu) => (
           <li class="nav-item">
             <a
               href={menu.url}
-              class={`nav-link block ${menu.url.startsWith("#") ? "smooth-scroll" : ""}`}
+              class={`nav-link ${menu.url.startsWith("#") ? "smooth-scroll" : ""}`}
               target={menu.url.startsWith("http") ? "_blank" : undefined}
               rel={
                 menu.url.startsWith("http") ? "noopener noreferrer" : undefined
@@ -71,14 +74,16 @@ const main = [
         ))
       }
     </ul>
-        <div class="order-1 ml-auto flex items-center md:order-2 md:ml-0">
-          <!-- Language Switcher -->
-          <div class="mr-4">
-            <LanguageSwitcher currentLang={currentLang} />
-          </div>
+    
+    <!-- Right side controls -->
+    <div class="order-1 flex items-center md:order-2 md:flex-shrink-0">
+      <!-- Language Switcher -->
+      <div class="mr-2 md:mr-4">
+        <LanguageSwitcher currentLang={currentLang} />
+      </div>
       <!-- Search (optional for TapForge) -->
       <a
-        class="inline-block cursor-pointer p-2 text-xl text-dark transition hover:text-primary"
+        class="inline-block cursor-pointer p-2 text-lg text-dark transition hover:text-primary md:text-xl"
         href="/search"
         title="search"
         aria-label="search"
@@ -116,6 +121,26 @@ const main = [
       };
       languageButton.textContent = languageNames[lang] || '日本語';
     }
+    
+    // Update language menu active state
+    const languageMenu = document.querySelector('#language-menu');
+    if (languageMenu) {
+      const menuItems = languageMenu.querySelectorAll('a');
+      menuItems.forEach(item => {
+        const href = item.getAttribute('href');
+        const langMatch = href.match(/lang=([^&]+)/);
+        if (langMatch) {
+          const itemLang = langMatch[1];
+          if (itemLang === lang) {
+            item.classList.add('bg-blue-50', 'text-blue-700', 'border-r-2', 'border-blue-500');
+            item.classList.remove('text-gray-700', 'hover:bg-gray-50');
+          } else {
+            item.classList.remove('bg-blue-50', 'text-blue-700', 'border-r-2', 'border-blue-500');
+            item.classList.add('text-gray-700', 'hover:bg-gray-50');
+          }
+        }
+      });
+    }
   }
 
   function updatePageContent(lang) {
@@ -126,7 +151,7 @@ const main = [
         home: 'ホーム',
         features: '特徴',
         pricing: '料金',
-        testimonials: 'お客様の声',
+        testimonials: 'レビュー',
         faq: 'FAQ',
         contact: 'お問い合わせ'
       },
@@ -134,7 +159,7 @@ const main = [
         home: 'Home',
         features: 'Features',
         pricing: 'Pricing',
-        testimonials: 'Testimonials',
+        testimonials: 'Reviews',
         faq: 'FAQ',
         contact: 'Contact'
       },
@@ -142,16 +167,16 @@ const main = [
         home: '首页',
         features: '特点',
         pricing: '价格',
-        testimonials: '客户评价',
-        faq: '常见问题',
-        contact: '联系我们'
+        testimonials: '评价',
+        faq: 'FAQ',
+        contact: '联系'
       },
       'es': {
         home: 'Inicio',
         features: 'Características',
         pricing: 'Precios',
         testimonials: 'Testimonios',
-        faq: 'Preguntas Frecuentes',
+        faq: 'FAQ',
         contact: 'Contacto'
       }
     };

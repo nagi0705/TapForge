@@ -17,9 +17,9 @@ export const translations = {
       home: "ホーム",
       features: "特徴",
       pricing: "料金",
-      testimonials: "お客様の声",
+      testimonials: "レビュー",
       faq: "FAQ",
-      contact: "お問い合わせ",
+      contact: "お問合",
     },
     // Hero Section
     hero: {
@@ -416,7 +416,7 @@ export const translations = {
       home: "Home",
       features: "Features",
       pricing: "Pricing",
-      testimonials: "Testimonials",
+      testimonials: "Reviews",
       faq: "FAQ",
       contact: "Contact",
     },
@@ -816,9 +816,9 @@ export const translations = {
       home: "首页",
       features: "特点",
       pricing: "价格",
-      testimonials: "客户评价",
-      faq: "常见问题",
-      contact: "联系我们",
+      testimonials: "评价",
+      faq: "FAQ",
+      contact: "联系",
     },
     // Hero Section
     hero: {
@@ -1216,7 +1216,7 @@ export const translations = {
       features: "Características",
       pricing: "Precios",
       testimonials: "Testimonios",
-      faq: "Preguntas Frecuentes",
+      faq: "FAQ",
       contact: "Contacto",
     },
     // Hero Section
