@@ -315,8 +315,8 @@ const defaultLang: Language = "ja";
     },
   };
 
-  // Load content based on language parameter
-  document.addEventListener("DOMContentLoaded", function () {
+  // Function to load content based on language parameter
+  function loadPrivacyContent() {
     const urlParams = new URLSearchParams(window.location.search);
     const lang = urlParams.get("lang") || "ja";
     const content = privacyContent[lang] || privacyContent.ja;
@@ -360,5 +360,11 @@ const defaultLang: Language = "ja";
         contentContainer.appendChild(sectionElement);
       });
     }
-  });
+  }
+
+  // Load content on DOMContentLoaded (for direct page access)
+  document.addEventListener("DOMContentLoaded", loadPrivacyContent);
+
+  // Load content on page navigation (for SPA routing)
+  document.addEventListener("astro:after-swap", loadPrivacyContent);
 </script>
