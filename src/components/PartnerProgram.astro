@@ -1,18 +1,21 @@
 ---
-import { translations, type Language } from '../lib/i18n';
+import { translations, type Language } from "../lib/i18n";
 
 interface Props {
   lang: Language;
 }
 
-const { lang = 'ja' } = Astro.props;
+const { lang = "ja" } = Astro.props;
 const t = translations[lang].partnerProgram;
 ---
 
 <section class="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" id="partner-program-title">
+      <h2
+        class="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+        id="partner-program-title"
+      >
         {t.title}
       </h2>
       <p class="text-xl text-gray-600" id="partner-program-subtitle">
@@ -40,16 +43,25 @@ const t = translations[lang].partnerProgram;
               ></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4" id="partner-program-heading">
+          <h3
+            class="text-2xl font-bold text-gray-900 mb-4"
+            id="partner-program-heading"
+          >
             {t.heading}
           </h3>
         </div>
 
         <div class="prose prose-lg max-w-none text-gray-700 mb-8">
-          <p class="text-center text-lg leading-relaxed" id="partner-program-description">
+          <p
+            class="text-center text-lg leading-relaxed"
+            id="partner-program-description"
+          >
             {t.description}
           </p>
-          <p class="text-center text-lg leading-relaxed mt-4" id="partner-program-contact-note">
+          <p
+            class="text-center text-lg leading-relaxed mt-4"
+            id="partner-program-contact-note"
+          >
             {t.contactNote}
           </p>
         </div>
@@ -72,8 +84,18 @@ const t = translations[lang].partnerProgram;
               </svg>
             </div>
             <div>
-              <h4 class="font-semibold text-gray-900" id="benefit-special-price-title">{t.benefits.specialPrice.title}</h4>
-              <p class="text-sm text-gray-600" id="benefit-special-price-description">{t.benefits.specialPrice.description}</p>
+              <h4
+                class="font-semibold text-gray-900"
+                id="benefit-special-price-title"
+              >
+                {t.benefits.specialPrice.title}
+              </h4>
+              <p
+                class="text-sm text-gray-600"
+                id="benefit-special-price-description"
+              >
+                {t.benefits.specialPrice.description}
+              </p>
             </div>
           </div>
 
@@ -93,8 +115,18 @@ const t = translations[lang].partnerProgram;
               </svg>
             </div>
             <div>
-              <h4 class="font-semibold text-gray-900" id="benefit-priority-support-title">{t.benefits.prioritySupport.title}</h4>
-              <p class="text-sm text-gray-600" id="benefit-priority-support-description">{t.benefits.prioritySupport.description}</p>
+              <h4
+                class="font-semibold text-gray-900"
+                id="benefit-priority-support-title"
+              >
+                {t.benefits.prioritySupport.title}
+              </h4>
+              <p
+                class="text-sm text-gray-600"
+                id="benefit-priority-support-description"
+              >
+                {t.benefits.prioritySupport.description}
+              </p>
             </div>
           </div>
 
@@ -114,8 +146,18 @@ const t = translations[lang].partnerProgram;
               </svg>
             </div>
             <div>
-              <h4 class="font-semibold text-gray-900" id="benefit-customization-title">{t.benefits.customization.title}</h4>
-              <p class="text-sm text-gray-600" id="benefit-customization-description">{t.benefits.customization.description}</p>
+              <h4
+                class="font-semibold text-gray-900"
+                id="benefit-customization-title"
+              >
+                {t.benefits.customization.title}
+              </h4>
+              <p
+                class="text-sm text-gray-600"
+                id="benefit-customization-description"
+              >
+                {t.benefits.customization.description}
+              </p>
             </div>
           </div>
 
@@ -135,8 +177,18 @@ const t = translations[lang].partnerProgram;
               </svg>
             </div>
             <div>
-              <h4 class="font-semibold text-gray-900" id="benefit-long-term-partnership-title">{t.benefits.longTermPartnership.title}</h4>
-              <p class="text-sm text-gray-600" id="benefit-long-term-partnership-description">{t.benefits.longTermPartnership.description}</p>
+              <h4
+                class="font-semibold text-gray-900"
+                id="benefit-long-term-partnership-title"
+              >
+                {t.benefits.longTermPartnership.title}
+              </h4>
+              <p
+                class="text-sm text-gray-600"
+                id="benefit-long-term-partnership-description"
+              >
+                {t.benefits.longTermPartnership.description}
+              </p>
             </div>
           </div>
         </div>
@@ -181,9 +233,9 @@ const t = translations[lang].partnerProgram;
   // Partner Program section language switching
   document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    const storedLang = localStorage.getItem('preferred-language');
-    const currentLang = urlLang || storedLang || 'ja';
+    const urlLang = urlParams.get("lang");
+    const storedLang = localStorage.getItem("preferred-language");
+    const currentLang = urlLang || storedLang || "ja";
     updatePartnerProgramContent(currentLang);
   });
 
@@ -193,185 +245,223 @@ const t = translations[lang].partnerProgram;
         title: "共創パートナー優待制度",
         subtitle: "長期的なパートナーシップに基づく特別価格",
         heading: "Cor.株式会社の他のサービスをご利用中のお客様へ",
-        description: "Cor.株式会社の他のサービスを利用中の顧客には、長期的なパートナーシップに基づき特別価格で提供いたします。",
+        description:
+          "Cor.株式会社の他のサービスを利用中の顧客には、長期的なパートナーシップに基づき特別価格で提供いたします。",
         contactNote: "詳細はお問い合わせください。",
         benefits: {
           specialPrice: {
             title: "特別価格での提供",
-            description: "既存顧客様限定の優待価格"
+            description: "既存顧客様限定の優待価格",
           },
           prioritySupport: {
             title: "優先サポート",
-            description: "専任担当者によるサポート"
+            description: "専任担当者によるサポート",
           },
           customization: {
             title: "カスタマイズ対応",
-            description: "お客様のニーズに合わせた調整"
+            description: "お客様のニーズに合わせた調整",
           },
           longTermPartnership: {
             title: "長期パートナーシップ",
-            description: "継続的な関係構築"
-          }
+            description: "継続的な関係構築",
+          },
         },
         ctaButton: "お問い合わせ",
-        additionalInfo: "この制度は公式サイト（cor-jp.com）の内容に基づいています"
+        additionalInfo:
+          "この制度は公式サイト（cor-jp.com）の内容に基づいています",
       },
       en: {
         title: "Co-creation Partner Program",
         subtitle: "Special pricing based on long-term partnership",
         heading: "To customers using other services of Cor. Co., Ltd.",
-        description: "For customers using other services of Cor. Co., Ltd., we provide special pricing based on long-term partnership.",
+        description:
+          "For customers using other services of Cor. Co., Ltd., we provide special pricing based on long-term partnership.",
         contactNote: "Please contact us for details.",
         benefits: {
           specialPrice: {
             title: "Special Pricing",
-            description: "Exclusive preferential pricing for existing customers"
+            description:
+              "Exclusive preferential pricing for existing customers",
           },
           prioritySupport: {
             title: "Priority Support",
-            description: "Support by dedicated staff"
+            description: "Support by dedicated staff",
           },
           customization: {
             title: "Customization Support",
-            description: "Adjustments tailored to customer needs"
+            description: "Adjustments tailored to customer needs",
           },
           longTermPartnership: {
             title: "Long-term Partnership",
-            description: "Continuous relationship building"
-          }
+            description: "Continuous relationship building",
+          },
         },
         ctaButton: "Contact Us",
-        additionalInfo: "This program is based on the content of the official website (cor-jp.com)"
+        additionalInfo:
+          "This program is based on the content of the official website (cor-jp.com)",
       },
       zh: {
         title: "共创合作伙伴优待制度",
         subtitle: "基于长期合作伙伴关系的特别价格",
         heading: "致使用Cor.株式会社其他服务的客户",
-        description: "对于使用Cor.株式会社其他服务的客户，我们将基于长期合作伙伴关系提供特别价格。",
+        description:
+          "对于使用Cor.株式会社其他服务的客户，我们将基于长期合作伙伴关系提供特别价格。",
         contactNote: "详情请联系我们。",
         benefits: {
           specialPrice: {
             title: "特别价格提供",
-            description: "现有客户专享优待价格"
+            description: "现有客户专享优待价格",
           },
           prioritySupport: {
             title: "优先支持",
-            description: "专职人员支持"
+            description: "专职人员支持",
           },
           customization: {
             title: "定制化支持",
-            description: "根据客户需求调整"
+            description: "根据客户需求调整",
           },
           longTermPartnership: {
             title: "长期合作伙伴关系",
-            description: "持续的关系建设"
-          }
+            description: "持续的关系建设",
+          },
         },
         ctaButton: "联系我们",
-        additionalInfo: "此制度基于官方网站（cor-jp.com）的内容"
+        additionalInfo: "此制度基于官方网站（cor-jp.com）的内容",
       },
       es: {
         title: "Programa de Socios de Co-creación",
         subtitle: "Precios especiales basados en asociación a largo plazo",
         heading: "Para clientes que utilizan otros servicios de Cor. Co., Ltd.",
-        description: "Para clientes que utilizan otros servicios de Cor. Co., Ltd., ofrecemos precios especiales basados en asociación a largo plazo.",
+        description:
+          "Para clientes que utilizan otros servicios de Cor. Co., Ltd., ofrecemos precios especiales basados en asociación a largo plazo.",
         contactNote: "Por favor contáctanos para más detalles.",
         benefits: {
           specialPrice: {
             title: "Precios Especiales",
-            description: "Precios preferenciales exclusivos para clientes existentes"
+            description:
+              "Precios preferenciales exclusivos para clientes existentes",
           },
           prioritySupport: {
             title: "Soporte Prioritario",
-            description: "Soporte por personal dedicado"
+            description: "Soporte por personal dedicado",
           },
           customization: {
             title: "Soporte de Personalización",
-            description: "Ajustes adaptados a las necesidades del cliente"
+            description: "Ajustes adaptados a las necesidades del cliente",
           },
           longTermPartnership: {
             title: "Asociación a Largo Plazo",
-            description: "Construcción continua de relaciones"
-          }
+            description: "Construcción continua de relaciones",
+          },
         },
         ctaButton: "Contáctanos",
-        additionalInfo: "Este programa se basa en el contenido del sitio web oficial (cor-jp.com)"
-      }
+        additionalInfo:
+          "Este programa se basa en el contenido del sitio web oficial (cor-jp.com)",
+      },
     };
 
-    const t = translations[lang] || translations['ja'];
+    const t = translations[lang] || translations["ja"];
 
     // Update main title and subtitle
-    const titleElement = document.getElementById('partner-program-title');
+    const titleElement = document.getElementById("partner-program-title");
     if (titleElement) {
       titleElement.textContent = t.title;
     }
-    const subtitleElement = document.getElementById('partner-program-subtitle');
+    const subtitleElement = document.getElementById("partner-program-subtitle");
     if (subtitleElement) {
       subtitleElement.textContent = t.subtitle;
     }
 
     // Update heading
-    const headingElement = document.getElementById('partner-program-heading');
+    const headingElement = document.getElementById("partner-program-heading");
     if (headingElement) {
       headingElement.textContent = t.heading;
     }
 
     // Update description and contact note
-    const descriptionElement = document.getElementById('partner-program-description');
+    const descriptionElement = document.getElementById(
+      "partner-program-description",
+    );
     if (descriptionElement) {
       descriptionElement.textContent = t.description;
     }
-    const contactNoteElement = document.getElementById('partner-program-contact-note');
+    const contactNoteElement = document.getElementById(
+      "partner-program-contact-note",
+    );
     if (contactNoteElement) {
       contactNoteElement.textContent = t.contactNote;
     }
 
     // Update benefits
-    const specialPriceTitleElement = document.getElementById('benefit-special-price-title');
+    const specialPriceTitleElement = document.getElementById(
+      "benefit-special-price-title",
+    );
     if (specialPriceTitleElement) {
       specialPriceTitleElement.textContent = t.benefits.specialPrice.title;
     }
-    const specialPriceDescElement = document.getElementById('benefit-special-price-description');
+    const specialPriceDescElement = document.getElementById(
+      "benefit-special-price-description",
+    );
     if (specialPriceDescElement) {
       specialPriceDescElement.textContent = t.benefits.specialPrice.description;
     }
 
-    const prioritySupportTitleElement = document.getElementById('benefit-priority-support-title');
+    const prioritySupportTitleElement = document.getElementById(
+      "benefit-priority-support-title",
+    );
     if (prioritySupportTitleElement) {
-      prioritySupportTitleElement.textContent = t.benefits.prioritySupport.title;
+      prioritySupportTitleElement.textContent =
+        t.benefits.prioritySupport.title;
     }
-    const prioritySupportDescElement = document.getElementById('benefit-priority-support-description');
+    const prioritySupportDescElement = document.getElementById(
+      "benefit-priority-support-description",
+    );
     if (prioritySupportDescElement) {
-      prioritySupportDescElement.textContent = t.benefits.prioritySupport.description;
+      prioritySupportDescElement.textContent =
+        t.benefits.prioritySupport.description;
     }
 
-    const customizationTitleElement = document.getElementById('benefit-customization-title');
+    const customizationTitleElement = document.getElementById(
+      "benefit-customization-title",
+    );
     if (customizationTitleElement) {
       customizationTitleElement.textContent = t.benefits.customization.title;
     }
-    const customizationDescElement = document.getElementById('benefit-customization-description');
+    const customizationDescElement = document.getElementById(
+      "benefit-customization-description",
+    );
     if (customizationDescElement) {
-      customizationDescElement.textContent = t.benefits.customization.description;
+      customizationDescElement.textContent =
+        t.benefits.customization.description;
     }
 
-    const longTermPartnershipTitleElement = document.getElementById('benefit-long-term-partnership-title');
+    const longTermPartnershipTitleElement = document.getElementById(
+      "benefit-long-term-partnership-title",
+    );
     if (longTermPartnershipTitleElement) {
-      longTermPartnershipTitleElement.textContent = t.benefits.longTermPartnership.title;
+      longTermPartnershipTitleElement.textContent =
+        t.benefits.longTermPartnership.title;
     }
-    const longTermPartnershipDescElement = document.getElementById('benefit-long-term-partnership-description');
+    const longTermPartnershipDescElement = document.getElementById(
+      "benefit-long-term-partnership-description",
+    );
     if (longTermPartnershipDescElement) {
-      longTermPartnershipDescElement.textContent = t.benefits.longTermPartnership.description;
+      longTermPartnershipDescElement.textContent =
+        t.benefits.longTermPartnership.description;
     }
 
     // Update CTA button
-    const ctaButtonElement = document.getElementById('partner-program-cta-button');
+    const ctaButtonElement = document.getElementById(
+      "partner-program-cta-button",
+    );
     if (ctaButtonElement) {
       ctaButtonElement.textContent = t.ctaButton;
     }
 
     // Update additional info
-    const additionalInfoElement = document.getElementById('partner-program-additional-info');
+    const additionalInfoElement = document.getElementById(
+      "partner-program-additional-info",
+    );
     if (additionalInfoElement) {
       additionalInfoElement.textContent = t.additionalInfo;
     }

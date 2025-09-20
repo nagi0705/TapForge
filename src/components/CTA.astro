@@ -8,9 +8,9 @@ import { getTranslation, type Language } from "../lib/i18n";
   <div class="container mx-auto px-4">
     <div class="text-center text-white">
       <div class="flex items-center justify-center mb-6">
-        <img 
-          src="/images/favicon.ico" 
-          alt="TapForge" 
+        <img
+          src="/images/favicon.ico"
+          alt="TapForge"
           class="w-16 h-16 rounded-xl shadow-lg mr-4"
         />
         <h2 class="text-3xl md:text-4xl font-bold" id="cta-title">
@@ -69,7 +69,9 @@ import { getTranslation, type Language } from "../lib/i18n";
                 >
                   <span class="text-white font-bold text-sm">T</span>
                 </div>
-                <p class="text-xs text-gray-600" id="profile-display">プロフィール表示</p>
+                <p class="text-xs text-gray-600" id="profile-display">
+                  プロフィール表示
+                </p>
               </div>
             </div>
           </div>
@@ -96,7 +98,9 @@ import { getTranslation, type Language } from "../lib/i18n";
           class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center justify-center min-h-[48px] w-full sm:w-auto"
           id="cta-trial-button"
         >
-          <span class="text-red-500 font-bold mr-2" id="cta-limited">50名限定!</span>
+          <span class="text-red-500 font-bold mr-2" id="cta-limited"
+            >50名限定!</span
+          >
           <span id="cta-trial-text">無料トライアル申し込み</span>
         </a>
 
@@ -126,7 +130,10 @@ import { getTranslation, type Language } from "../lib/i18n";
       </div>
 
       <!-- Trust Indicators -->
-      <div class="mt-12 flex flex-wrap justify-center gap-8 text-sm opacity-80" id="cta-features">
+      <div
+        class="mt-12 flex flex-wrap justify-center gap-8 text-sm opacity-80"
+        id="cta-features"
+      >
         <div class="flex items-center">
           <svg
             class="w-5 h-5 text-green-400 mr-2"
@@ -196,102 +203,115 @@ import { getTranslation, type Language } from "../lib/i18n";
   document.addEventListener("DOMContentLoaded", function () {
     // Get current language from URL or localStorage
     const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    const storedLang = localStorage.getItem('preferred-language');
-    const currentLang = urlLang || storedLang || 'ja';
-    
+    const urlLang = urlParams.get("lang");
+    const storedLang = localStorage.getItem("preferred-language");
+    const currentLang = urlLang || storedLang || "ja";
+
     // Update CTA content based on language
     updateCTAContent(currentLang);
   });
 
   function updateCTAContent(lang) {
     const translations = {
-      'ja': {
-        title: '今すぐ始めませんか？',
-        description: '50名限定の無料トライアルで、TapForgeの力を体験してください',
-        limited: '50名限定!',
-        trialButton: '無料トライアル申し込み',
-        contactButton: 'お問い合わせ（共創パートナー向け）',
-        tapNow: '今すぐタップ!',
-        profileDisplay: 'プロフィール表示',
-        features: ['アプリ不要', '月額無料', '4言語対応', 'AI名刺撮影']
+      ja: {
+        title: "今すぐ始めませんか？",
+        description:
+          "50名限定の無料トライアルで、TapForgeの力を体験してください",
+        limited: "50名限定!",
+        trialButton: "無料トライアル申し込み",
+        contactButton: "お問い合わせ（共創パートナー向け）",
+        tapNow: "今すぐタップ!",
+        profileDisplay: "プロフィール表示",
+        features: ["アプリ不要", "月額無料", "4言語対応", "AI名刺撮影"],
       },
-      'en': {
-        title: 'Ready to get started?',
-        description: 'Experience the power of TapForge with our limited free trial for 50 people',
-        limited: 'Limited to 50!',
-        trialButton: 'Apply for Free Trial',
-        contactButton: 'Contact (For Co-creation Partners)',
-        tapNow: 'Tap Now!',
-        profileDisplay: 'Profile Display',
-        features: ['No App Required', 'Free Monthly', '4 Languages', 'AI Business Card Scanning']
+      en: {
+        title: "Ready to get started?",
+        description:
+          "Experience the power of TapForge with our limited free trial for 50 people",
+        limited: "Limited to 50!",
+        trialButton: "Apply for Free Trial",
+        contactButton: "Contact (For Co-creation Partners)",
+        tapNow: "Tap Now!",
+        profileDisplay: "Profile Display",
+        features: [
+          "No App Required",
+          "Free Monthly",
+          "4 Languages",
+          "AI Business Card Scanning",
+        ],
       },
-      'zh': {
-        title: '准备开始了吗？',
-        description: '通过我们限50人的免费试用体验TapForge的力量',
-        limited: '限50名！',
-        trialButton: '申请免费试用',
-        contactButton: '联系我们（共创合作伙伴）',
-        tapNow: '立即轻触！',
-        profileDisplay: '个人资料显示',
-        features: ['无需应用', '月费免费', '4种语言', 'AI名片扫描']
+      zh: {
+        title: "准备开始了吗？",
+        description: "通过我们限50人的免费试用体验TapForge的力量",
+        limited: "限50名！",
+        trialButton: "申请免费试用",
+        contactButton: "联系我们（共创合作伙伴）",
+        tapNow: "立即轻触！",
+        profileDisplay: "个人资料显示",
+        features: ["无需应用", "月费免费", "4种语言", "AI名片扫描"],
       },
-      'es': {
-        title: '¿Listo para comenzar?',
-        description: 'Experimenta el poder de TapForge con nuestra prueba gratuita limitada para 50 personas',
-        limited: '¡Limitado a 50!',
-        trialButton: 'Solicitar Prueba Gratuita',
-        contactButton: 'Contacto (Para Socios de Co-creación)',
-        tapNow: '¡Toca Ahora!',
-        profileDisplay: 'Mostrar Perfil',
-        features: ['Sin App Requerida', 'Mensualidad Gratuita', '4 Idiomas', 'Escaneo de Tarjeta con IA']
-      }
+      es: {
+        title: "¿Listo para comenzar?",
+        description:
+          "Experimenta el poder de TapForge con nuestra prueba gratuita limitada para 50 personas",
+        limited: "¡Limitado a 50!",
+        trialButton: "Solicitar Prueba Gratuita",
+        contactButton: "Contacto (Para Socios de Co-creación)",
+        tapNow: "¡Toca Ahora!",
+        profileDisplay: "Mostrar Perfil",
+        features: [
+          "Sin App Requerida",
+          "Mensualidad Gratuita",
+          "4 Idiomas",
+          "Escaneo de Tarjeta con IA",
+        ],
+      },
     };
 
-    const t = translations[lang] || translations['ja'];
-    
+    const t = translations[lang] || translations["ja"];
+
     // Update title
-    const titleElement = document.getElementById('cta-title');
+    const titleElement = document.getElementById("cta-title");
     if (titleElement) {
       titleElement.textContent = t.title;
     }
-    
+
     // Update description
-    const descElement = document.getElementById('cta-description');
+    const descElement = document.getElementById("cta-description");
     if (descElement) {
       descElement.textContent = t.description;
     }
-    
+
     // Update limited text
-    const limitedElement = document.getElementById('cta-limited');
+    const limitedElement = document.getElementById("cta-limited");
     if (limitedElement) {
       limitedElement.textContent = t.limited;
     }
-    
+
     // Update trial button text
-    const trialTextElement = document.getElementById('cta-trial-text');
+    const trialTextElement = document.getElementById("cta-trial-text");
     if (trialTextElement) {
       trialTextElement.textContent = t.trialButton;
     }
-    
+
     // Update contact button text
-    const contactTextElement = document.getElementById('cta-contact-text');
+    const contactTextElement = document.getElementById("cta-contact-text");
     if (contactTextElement) {
       contactTextElement.textContent = t.contactButton;
     }
-    
+
     // Update tap now text
-    const tapNowElement = document.getElementById('tap-now');
+    const tapNowElement = document.getElementById("tap-now");
     if (tapNowElement) {
       tapNowElement.textContent = t.tapNow;
     }
-    
+
     // Update profile display text
-    const profileDisplayElement = document.getElementById('profile-display');
+    const profileDisplayElement = document.getElementById("profile-display");
     if (profileDisplayElement) {
       profileDisplayElement.textContent = t.profileDisplay;
     }
-    
+
     // Update features
     for (let i = 0; i < t.features.length; i++) {
       const featureElement = document.getElementById(`cta-feature-${i + 1}`);

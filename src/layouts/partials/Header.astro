@@ -5,17 +5,23 @@ import { IoSearch } from "react-icons/io5";
 import { getTranslation, type Language } from "../../lib/i18n";
 
 // Get current language from URL
-const urlLang = Astro.url.searchParams.get('lang') as Language;
-const currentLang: Language = urlLang || 'ja';
+const urlLang = Astro.url.searchParams.get("lang") as Language;
+const currentLang: Language = urlLang || "ja";
 
 // TapForge navigation menu with i18n
 const main = [
   { name: getTranslation(currentLang, "nav.home"), url: "/" },
   { name: getTranslation(currentLang, "nav.features"), url: "#features" },
   { name: getTranslation(currentLang, "nav.pricing"), url: "#pricing" },
-  { name: getTranslation(currentLang, "nav.testimonials"), url: "#testimonials" },
+  {
+    name: getTranslation(currentLang, "nav.testimonials"),
+    url: "#testimonials",
+  },
   { name: getTranslation(currentLang, "nav.faq"), url: "#faq" },
-  { name: getTranslation(currentLang, "nav.contact"), url: "https://cor-jp.com/contact/" },
+  {
+    name: getTranslation(currentLang, "nav.contact"),
+    url: "https://cor-jp.com/contact/",
+  },
 ];
 ---
 
@@ -25,7 +31,7 @@ const main = [
     <div class="order-0 flex-shrink-0">
       <Logo />
     </div>
-    
+
     <!-- navbar toggler -->
     <input id="nav-toggle" type="checkbox" class="hidden" />
     <label
@@ -74,7 +80,7 @@ const main = [
         ))
       }
     </ul>
-    
+
     <!-- Right side controls -->
     <div class="order-1 flex items-center md:order-2 md:flex-shrink-0">
       <!-- Language Switcher -->
@@ -99,44 +105,54 @@ const main = [
   document.addEventListener("DOMContentLoaded", function () {
     // Get current language from URL or localStorage
     const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    const storedLang = localStorage.getItem('preferred-language');
-    const currentLang = urlLang || storedLang || 'ja';
-    
+    const urlLang = urlParams.get("lang");
+    const storedLang = localStorage.getItem("preferred-language");
+    const currentLang = urlLang || storedLang || "ja";
+
     // Update language switcher display
     updateLanguageDisplay(currentLang);
-    
+
     // Update page content based on language
     updatePageContent(currentLang);
   });
 
   function updateLanguageDisplay(lang) {
-    const languageButton = document.querySelector('#language-menu-button span');
+    const languageButton = document.querySelector("#language-menu-button span");
     if (languageButton) {
       const languageNames = {
-        'ja': '日本語',
-        'en': 'English', 
-        'zh': '中文',
-        'es': 'Español'
+        ja: "日本語",
+        en: "English",
+        zh: "中文",
+        es: "Español",
       };
-      languageButton.textContent = languageNames[lang] || '日本語';
+      languageButton.textContent = languageNames[lang] || "日本語";
     }
-    
+
     // Update language menu active state
-    const languageMenu = document.querySelector('#language-menu');
+    const languageMenu = document.querySelector("#language-menu");
     if (languageMenu) {
-      const menuItems = languageMenu.querySelectorAll('a');
-      menuItems.forEach(item => {
-        const href = item.getAttribute('href');
+      const menuItems = languageMenu.querySelectorAll("a");
+      menuItems.forEach((item) => {
+        const href = item.getAttribute("href");
         const langMatch = href.match(/lang=([^&]+)/);
         if (langMatch) {
           const itemLang = langMatch[1];
           if (itemLang === lang) {
-            item.classList.add('bg-blue-50', 'text-blue-700', 'border-r-2', 'border-blue-500');
-            item.classList.remove('text-gray-700', 'hover:bg-gray-50');
+            item.classList.add(
+              "bg-blue-50",
+              "text-blue-700",
+              "border-r-2",
+              "border-blue-500",
+            );
+            item.classList.remove("text-gray-700", "hover:bg-gray-50");
           } else {
-            item.classList.remove('bg-blue-50', 'text-blue-700', 'border-r-2', 'border-blue-500');
-            item.classList.add('text-gray-700', 'hover:bg-gray-50');
+            item.classList.remove(
+              "bg-blue-50",
+              "text-blue-700",
+              "border-r-2",
+              "border-blue-500",
+            );
+            item.classList.add("text-gray-700", "hover:bg-gray-50");
           }
         }
       });
@@ -145,46 +161,53 @@ const main = [
 
   function updatePageContent(lang) {
     // Update navigation menu
-    const navItems = document.querySelectorAll('.nav-link');
+    const navItems = document.querySelectorAll(".nav-link");
     const translations = {
-      'ja': {
-        home: 'ホーム',
-        features: '特徴',
-        pricing: '料金',
-        testimonials: 'レビュー',
-        faq: 'FAQ',
-        contact: 'お問い合わせ'
+      ja: {
+        home: "ホーム",
+        features: "特徴",
+        pricing: "料金",
+        testimonials: "レビュー",
+        faq: "FAQ",
+        contact: "お問い合わせ",
       },
-      'en': {
-        home: 'Home',
-        features: 'Features',
-        pricing: 'Pricing',
-        testimonials: 'Reviews',
-        faq: 'FAQ',
-        contact: 'Contact'
+      en: {
+        home: "Home",
+        features: "Features",
+        pricing: "Pricing",
+        testimonials: "Reviews",
+        faq: "FAQ",
+        contact: "Contact",
       },
-      'zh': {
-        home: '首页',
-        features: '特点',
-        pricing: '价格',
-        testimonials: '评价',
-        faq: 'FAQ',
-        contact: '联系'
+      zh: {
+        home: "首页",
+        features: "特点",
+        pricing: "价格",
+        testimonials: "评价",
+        faq: "FAQ",
+        contact: "联系",
       },
-      'es': {
-        home: 'Inicio',
-        features: 'Características',
-        pricing: 'Precios',
-        testimonials: 'Testimonios',
-        faq: 'FAQ',
-        contact: 'Contacto'
-      }
+      es: {
+        home: "Inicio",
+        features: "Características",
+        pricing: "Precios",
+        testimonials: "Testimonios",
+        faq: "FAQ",
+        contact: "Contacto",
+      },
     };
 
-    const t = translations[lang] || translations['ja'];
-    
+    const t = translations[lang] || translations["ja"];
+
     navItems.forEach((item, index) => {
-      const keys = ['home', 'features', 'pricing', 'testimonials', 'faq', 'contact'];
+      const keys = [
+        "home",
+        "features",
+        "pricing",
+        "testimonials",
+        "faq",
+        "contact",
+      ];
       if (keys[index]) {
         item.textContent = t[keys[index]];
       }
@@ -198,7 +221,9 @@ const main = [
     link.addEventListener("click", function (e) {
       e.preventDefault();
 
-      const targetId = (e.currentTarget as HTMLAnchorElement).getAttribute("href");
+      const targetId = (e.currentTarget as HTMLAnchorElement).getAttribute(
+        "href",
+      );
       if (targetId && targetId.startsWith("#")) {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {

@@ -6,202 +6,265 @@ import { getTranslation, type Language } from "../lib/i18n";
 <section class="py-20 bg-gray-50">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" id="problems-title">
+      <h2
+        class="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+        id="problems-title"
+      >
         名刺整理、面倒ですよね？
       </h2>
-      <p class="text-xl text-gray-600" id="problems-subtitle">TapForgeなら5分で解決！</p>
+      <p class="text-xl text-gray-600" id="problems-subtitle">
+        TapForgeなら5分で解決！
+      </p>
     </div>
 
     <div class="max-w-5xl mx-auto">
       <div class="grid lg:grid-cols-2 gap-20 items-start">
         <!-- Problems -->
         <div class="space-y-8">
-          <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center lg:text-left" id="problems-section-title">
+          <h3
+            class="text-2xl font-bold text-gray-900 mb-6 text-center lg:text-left"
+            id="problems-section-title"
+          >
             フリーランサーの悩み
           </h3>
 
-        <div class="space-y-6">
-          <div class="flex items-start space-x-4 max-w-md mx-auto lg:mx-0">
-            <div
-              class="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center"
-            >
-              <svg
-                class="w-5 h-5 text-red-600"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4 max-w-md mx-auto lg:mx-0">
+              <div
+                class="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                  clip-rule="evenodd"></path>
-              </svg>
+                <svg
+                  class="w-5 h-5 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h4
+                  class="font-semibold text-gray-900 mb-2"
+                  id="problem-1-title"
+                >
+                  紙の名刺にかかるコスト
+                </h4>
+                <p class="text-gray-600" id="problem-1-desc">
+                  年間300枚で約3,000円の印刷費
+                </p>
+              </div>
             </div>
-            <div>
-              <h4 class="font-semibold text-gray-900 mb-2" id="problem-1-title">
-                紙の名刺にかかるコスト
-              </h4>
-              <p class="text-gray-600" id="problem-1-desc">年間300枚で約3,000円の印刷費</p>
-            </div>
-          </div>
 
-          <div class="flex items-start space-x-4 max-w-md mx-auto lg:mx-0">
-            <div
-              class="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center"
-            >
-              <svg
-                class="w-5 h-5 text-red-600"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+            <div class="flex items-start space-x-4 max-w-md mx-auto lg:mx-0">
+              <div
+                class="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                  clip-rule="evenodd"></path>
-              </svg>
+                <svg
+                  class="w-5 h-5 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h4
+                  class="font-semibold text-gray-900 mb-2"
+                  id="problem-2-title"
+                >
+                  整理の手間
+                </h4>
+                <p class="text-gray-600" id="problem-2-desc">
+                  50枚の名刺整理に30分以上
+                </p>
+              </div>
             </div>
-            <div>
-              <h4 class="font-semibold text-gray-900 mb-2" id="problem-2-title">整理の手間</h4>
-              <p class="text-gray-600" id="problem-2-desc">50枚の名刺整理に30分以上</p>
-            </div>
-          </div>
 
-          <div class="flex items-start space-x-4 max-w-md mx-auto lg:mx-0">
-            <div
-              class="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center"
-            >
-              <svg
-                class="w-5 h-5 text-red-600"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+            <div class="flex items-start space-x-4 max-w-md mx-auto lg:mx-0">
+              <div
+                class="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                  clip-rule="evenodd"></path>
-              </svg>
+                <svg
+                  class="w-5 h-5 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h4
+                  class="font-semibold text-gray-900 mb-2"
+                  id="problem-3-title"
+                >
+                  海外クライアントとの言語の壁
+                </h4>
+                <p class="text-gray-600" id="problem-3-desc">
+                  英語プロフィール作成に時間がかかる
+                </p>
+              </div>
             </div>
-            <div>
-              <h4 class="font-semibold text-gray-900 mb-2" id="problem-3-title">
-                海外クライアントとの言語の壁
-              </h4>
-              <p class="text-gray-600" id="problem-3-desc">英語プロフィール作成に時間がかかる</p>
-            </div>
-          </div>
 
-          <div class="flex items-start space-x-4 max-w-md mx-auto lg:mx-0">
-            <div
-              class="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center"
-            >
-              <svg
-                class="w-5 h-5 text-red-600"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+            <div class="flex items-start space-x-4 max-w-md mx-auto lg:mx-0">
+              <div
+                class="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-semibold text-gray-900 mb-2" id="problem-4-title">
-                フォローアップ率の低さ
-              </h4>
-              <p class="text-gray-600" id="problem-4-desc">名刺交換後の連絡率は15%程度</p>
+                <svg
+                  class="w-5 h-5 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h4
+                  class="font-semibold text-gray-900 mb-2"
+                  id="problem-4-title"
+                >
+                  フォローアップ率の低さ
+                </h4>
+                <p class="text-gray-600" id="problem-4-desc">
+                  名刺交換後の連絡率は15%程度
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
         <!-- Solutions -->
         <div class="space-y-8">
-          <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center lg:text-left" id="solutions-section-title">TapForgeの解決策</h3>
+          <h3
+            class="text-2xl font-bold text-gray-900 mb-6 text-center lg:text-left"
+            id="solutions-section-title"
+          >
+            TapForgeの解決策
+          </h3>
 
-        <div class="space-y-6">
-          <div class="flex items-start space-x-4 max-w-md mx-auto lg:mx-0">
-            <div
-              class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center"
-            >
-              <svg
-                class="w-5 h-5 text-green-600"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4 max-w-md mx-auto lg:mx-0">
+              <div
+                class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
+                <svg
+                  class="w-5 h-5 text-green-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h4
+                  class="font-semibold text-gray-900 mb-2"
+                  id="solution-1-title"
+                >
+                  コストゼロ
+                </h4>
+                <p class="text-gray-600" id="solution-1-desc">
+                  初期3,000円のみ、月額無料
+                </p>
+              </div>
             </div>
-            <div>
-              <h4 class="font-semibold text-gray-900 mb-2" id="solution-1-title">コストゼロ</h4>
-              <p class="text-gray-600" id="solution-1-desc">初期3,000円のみ、月額無料</p>
+
+            <div class="flex items-start space-x-4 max-w-md mx-auto lg:mx-0">
+              <div
+                class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5 text-green-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h4
+                  class="font-semibold text-gray-900 mb-2"
+                  id="solution-2-title"
+                >
+                  5分で完了
+                </h4>
+                <p class="text-gray-600" id="solution-2-desc">
+                  AI名刺撮影でVCard変換
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4 max-w-md mx-auto lg:mx-0">
+              <div
+                class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5 text-green-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h4
+                  class="font-semibold text-gray-900 mb-2"
+                  id="solution-3-title"
+                >
+                  4言語対応
+                </h4>
+                <p class="text-gray-600" id="solution-3-desc">
+                  日英中西で国際ビジネス支援
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4 max-w-md mx-auto lg:mx-0">
+              <div
+                class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5 text-green-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h4
+                  class="font-semibold text-gray-900 mb-2"
+                  id="solution-4-title"
+                >
+                  フォロー率40%
+                </h4>
+                <p class="text-gray-600" id="solution-4-desc">
+                  AIと多言語効果で向上
+                </p>
+              </div>
             </div>
           </div>
-
-          <div class="flex items-start space-x-4 max-w-md mx-auto lg:mx-0">
-            <div
-              class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center"
-            >
-              <svg
-                class="w-5 h-5 text-green-600"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-semibold text-gray-900 mb-2" id="solution-2-title">5分で完了</h4>
-              <p class="text-gray-600" id="solution-2-desc">AI名刺撮影でVCard変換</p>
-            </div>
-          </div>
-
-          <div class="flex items-start space-x-4 max-w-md mx-auto lg:mx-0">
-            <div
-              class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center"
-            >
-              <svg
-                class="w-5 h-5 text-green-600"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-semibold text-gray-900 mb-2" id="solution-3-title">4言語対応</h4>
-              <p class="text-gray-600" id="solution-3-desc">日英中西で国際ビジネス支援</p>
-            </div>
-          </div>
-
-          <div class="flex items-start space-x-4 max-w-md mx-auto lg:mx-0">
-            <div
-              class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center"
-            >
-              <svg
-                class="w-5 h-5 text-green-600"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-semibold text-gray-900 mb-2" id="solution-4-title">フォロー率40%</h4>
-              <p class="text-gray-600" id="solution-4-desc">AIと多言語効果で向上</p>
-            </div>
-          </div>
-        </div>
         </div>
       </div>
     </div>
@@ -209,35 +272,74 @@ import { getTranslation, type Language } from "../lib/i18n";
     <!-- Cost Comparison Chart -->
     <div class="mt-16 relative">
       <!-- Background glow -->
-      <div class="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-10"></div>
-      
-      <div class="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-10 border border-white/20">
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-10"
+      >
+      </div>
+
+      <div
+        class="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-10 border border-white/20"
+      >
         <div class="text-center mb-12">
-          <h3 class="text-4xl font-black bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-4" id="cost-comparison-title">
+          <h3
+            class="text-4xl font-black bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-4"
+            id="cost-comparison-title"
+          >
             コスト比較
           </h3>
-          <div class="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto"></div>
+          <div
+            class="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto"
+          >
+          </div>
         </div>
 
         <div class="grid md:grid-cols-2 gap-12">
           <!-- Traditional Business Cards -->
           <div class="group">
             <div class="text-center">
-              <h4 class="text-xl font-bold text-gray-700 mb-6" id="traditional-cards-title">従来の紙名刺</h4>
-              <div class="relative bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-8 border border-red-200/50 shadow-lg group-hover:shadow-xl transition-all duration-300 w-full max-w-[400px] mx-auto">
-                <div class="text-4xl font-black text-red-600 mb-3">¥3,000</div>
-                <div class="text-sm text-gray-600 mb-6 font-medium" id="traditional-cards-period">年間300枚</div>
-                <div class="space-y-3 text-sm text-gray-600">
-                  <div class="flex items-center justify-center">
-                    <div class="w-2 h-2 bg-red-400 rounded-full mr-3"></div>
-                    <span id="traditional-printing-cost">印刷費: ¥3,000</span>
+              <h4
+                class="text-xl font-bold text-gray-700 mb-6"
+                id="traditional-cards-title"
+              >
+                従来の紙名刺
+              </h4>
+              <div
+                class="relative bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-8 border border-red-200/50 shadow-lg group-hover:shadow-xl transition-all duration-300 w-full max-w-[400px] mx-auto h-80 flex flex-col justify-between"
+              >
+                <div>
+                  <div class="text-4xl font-black text-red-600 mb-3">
+                    ¥5,000
                   </div>
-                  <div class="flex items-center justify-center">
-                    <div class="w-2 h-2 bg-red-400 rounded-full mr-3"></div>
+                  <div
+                    class="text-sm text-gray-600 mb-6 font-medium"
+                    id="traditional-cards-period"
+                  >
+                    年間500枚
+                  </div>
+                </div>
+                <div class="space-y-4 text-sm text-gray-600">
+                  <div class="flex items-center">
+                    <div
+                      class="w-10 h-10 bg-white rounded-full border-2 border-red-500 flex items-center justify-center shadow-lg mr-3 flex-shrink-0"
+                    >
+                      <span class="text-xs font-black text-red-600">¥5K</span>
+                    </div>
+                    <span id="traditional-printing-cost">印刷費: ¥5,000</span>
+                  </div>
+                  <div class="flex items-center">
+                    <div
+                      class="w-10 h-10 bg-white rounded-full border-2 border-red-500 flex items-center justify-center shadow-lg mr-3 flex-shrink-0"
+                    >
+                      <span class="text-xs font-black text-red-600">30分</span>
+                    </div>
                     <span id="traditional-org-time">整理時間: 30分</span>
                   </div>
-                  <div class="flex items-center justify-center">
-                    <div class="w-2 h-2 bg-red-400 rounded-full mr-3"></div>
+                  <div class="flex items-center">
+                    <div
+                      class="w-10 h-10 bg-white rounded-full border-2 border-red-500 flex items-center justify-center shadow-lg mr-3 flex-shrink-0"
+                    >
+                      <span class="text-xs font-black text-red-600">高</span>
+                    </div>
                     <span id="traditional-env-impact">環境負荷: 高</span>
                   </div>
                 </div>
@@ -248,48 +350,102 @@ import { getTranslation, type Language } from "../lib/i18n";
           <!-- TapForge -->
           <div class="group relative">
             <!-- Premium Badge -->
-            <div class="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center shadow-2xl z-10">
-              <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
+            <div
+              class="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center shadow-2xl z-10"
+            >
+              <div
+                class="w-16 h-16 bg-white rounded-full flex items-center justify-center"
+              >
                 <span class="text-2xl font-black text-red-500">!</span>
               </div>
             </div>
-            
+
             <div class="text-center">
-              <h4 class="text-xl font-bold text-gray-700 mb-6" id="tapforge-title">TapForge</h4>
-              <div class="relative bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-8 border-4 border-green-200/50 shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 w-full max-w-[400px] mx-auto">
+              <h4
+                class="text-xl font-bold text-gray-700 mb-6"
+                id="tapforge-title"
+              >
+                TapForge
+              </h4>
+              <div
+                class="relative bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-8 border-4 border-green-200/50 shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 w-full max-w-[400px] mx-auto h-80 flex flex-col justify-between"
+              >
                 <!-- Glow effect -->
-                <div class="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 rounded-2xl blur-sm opacity-20"></div>
-                
-                <div class="relative">
-                  <div class="text-4xl font-black bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-3">¥3,000</div>
-                  <div class="text-sm text-gray-600 mb-6 font-medium" id="tapforge-period">初期費用のみ</div>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 rounded-2xl blur-sm opacity-20"
+                >
+                </div>
+
+                <div class="relative flex flex-col justify-between h-full">
+                  <div>
+                    <div
+                      class="text-4xl font-black bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-3"
+                    >
+                      ¥0
+                    </div>
+                    <div
+                      class="text-sm text-gray-600 mb-6 font-medium"
+                      id="tapforge-period"
+                    >
+                      初期費用(¥3,000)のみ
+                    </div>
+                  </div>
                   <div class="space-y-4 text-sm text-gray-600">
-                    <div class="flex items-center justify-center">
-                      <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-r from-red-400 to-pink-500 rounded-full blur-sm opacity-75"></div>
-                        <div class="relative w-10 h-10 bg-white rounded-full border-2 border-red-500 flex items-center justify-center shadow-lg">
-                          <span class="text-xs font-black text-red-600">¥0</span>
+                    <div class="flex items-center">
+                      <div class="relative flex-shrink-0">
+                        <div
+                          class="absolute inset-0 bg-gradient-to-r from-red-400 to-pink-500 rounded-full blur-sm opacity-75"
+                        >
+                        </div>
+                        <div
+                          class="relative w-10 h-10 bg-white rounded-full border-2 border-red-500 flex items-center justify-center shadow-lg"
+                        >
+                          <span class="text-xs font-black text-red-600">¥0</span
+                          >
                         </div>
                       </div>
-                      <span class="ml-3 font-bold text-red-600" id="tapforge-monthly-cost">月額料金: ¥0</span>
+                      <span
+                        class="ml-3 font-bold text-red-600"
+                        id="tapforge-monthly-cost">月額料金: ¥0</span
+                      >
                     </div>
-                    <div class="flex items-center justify-center">
-                      <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 rounded-full blur-sm opacity-75"></div>
-                        <div class="relative w-10 h-10 bg-white rounded-full border-2 border-orange-500 flex items-center justify-center shadow-lg">
-                          <span class="text-xs font-black text-orange-600">5分</span>
+                    <div class="flex items-center">
+                      <div class="relative flex-shrink-0">
+                        <div
+                          class="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 rounded-full blur-sm opacity-75"
+                        >
+                        </div>
+                        <div
+                          class="relative w-10 h-10 bg-white rounded-full border-2 border-orange-500 flex items-center justify-center shadow-lg"
+                        >
+                          <span class="text-xs font-black text-orange-600"
+                            >5分</span
+                          >
                         </div>
                       </div>
-                      <span class="ml-3 font-bold text-orange-600" id="tapforge-org-time">整理時間: 5分</span>
+                      <span
+                        class="ml-3 font-bold text-orange-600"
+                        id="tapforge-org-time">整理時間: 5分</span
+                      >
                     </div>
-                    <div class="flex items-center justify-center">
-                      <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full blur-sm opacity-75"></div>
-                        <div class="relative w-10 h-10 bg-white rounded-full border-2 border-green-500 flex items-center justify-center shadow-lg">
-                          <span class="text-xs font-black text-green-600">ゼロ</span>
+                    <div class="flex items-center">
+                      <div class="relative flex-shrink-0">
+                        <div
+                          class="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full blur-sm opacity-75"
+                        >
+                        </div>
+                        <div
+                          class="relative w-10 h-10 bg-white rounded-full border-2 border-green-500 flex items-center justify-center shadow-lg"
+                        >
+                          <span class="text-xs font-black text-green-600"
+                            >ゼロ</span
+                          >
                         </div>
                       </div>
-                      <span class="ml-3 font-bold text-green-600" id="tapforge-env-impact">環境負荷: ゼロ</span>
+                      <span
+                        class="ml-3 font-bold text-green-600"
+                        id="tapforge-env-impact">環境負荷: ゼロ</span
+                      >
                     </div>
                   </div>
                 </div>
@@ -299,7 +455,9 @@ import { getTranslation, type Language } from "../lib/i18n";
         </div>
 
         <div class="text-center mt-12">
-          <div class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg">
+          <div
+            class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg"
+          >
             <span class="text-lg font-bold text-white" id="target-audience">
               海外案件を増やしたいフリーランサーに最適
             </span>
@@ -315,191 +473,251 @@ import { getTranslation, type Language } from "../lib/i18n";
   document.addEventListener("DOMContentLoaded", function () {
     // Get current language from URL or localStorage
     const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    const storedLang = localStorage.getItem('preferred-language');
-    const currentLang = urlLang || storedLang || 'ja';
-    
+    const urlLang = urlParams.get("lang");
+    const storedLang = localStorage.getItem("preferred-language");
+    const currentLang = urlLang || storedLang || "ja";
+
     // Update problems & solutions content based on language
     updateProblemsSolutionsContent(currentLang);
   });
 
   function updateProblemsSolutionsContent(lang) {
     const translations = {
-      'ja': {
-        title: '名刺整理、面倒ですよね？',
-        subtitle: 'TapForgeなら5分で解決！',
-        problemsTitle: 'フリーランサーの悩み',
-        solutionsTitle: 'TapForgeの解決策',
+      ja: {
+        title: "名刺整理、面倒ですよね？",
+        subtitle: "TapForgeなら5分で解決！",
+        problemsTitle: "フリーランサーの悩み",
+        solutionsTitle: "TapForgeの解決策",
         problems: [
-          { title: '紙の名刺にかかるコスト', desc: '年間300枚で約3,000円の印刷費' },
-          { title: '整理の手間', desc: '50枚の名刺整理に30分以上' },
-          { title: '海外クライアントとの言語の壁', desc: '英語プロフィール作成に時間がかかる' },
-          { title: 'フォローアップ率の低さ', desc: '名刺交換後の連絡率は15%程度' }
+          {
+            title: "紙の名刺にかかるコスト",
+            desc: "年間500枚で約5,000円の印刷費",
+          },
+          { title: "整理の手間", desc: "50枚の名刺整理に30分以上" },
+          {
+            title: "海外クライアントとの言語の壁",
+            desc: "英語プロフィール作成に時間がかかる",
+          },
+          {
+            title: "フォローアップ率の低さ",
+            desc: "名刺交換後の連絡率は15%程度",
+          },
         ],
         solutions: [
-          { title: 'コストゼロ', desc: '初期3,000円のみ、月額無料' },
-          { title: '5分で完了', desc: 'AI名刺撮影でVCard変換' },
-          { title: '4言語対応', desc: '日英中西で国際ビジネス支援' },
-          { title: 'フォロー率40%', desc: 'AIと多言語効果で向上' }
+          { title: "コストゼロ", desc: "初期3,000円のみ、月額無料" },
+          { title: "5分で完了", desc: "AI名刺撮影でVCard変換" },
+          { title: "4言語対応", desc: "日英中西で国際ビジネス支援" },
+          { title: "フォロー率40%", desc: "AIと多言語効果で向上" },
         ],
         costComparison: {
-          title: 'コスト比較',
+          title: "コスト比較",
           traditional: {
-            title: '従来の紙名刺',
-            period: '年間300枚',
-            printingCost: '印刷費: ¥3,000',
-            orgTime: '整理時間: 30分',
-            envImpact: '環境負荷: 高'
+            title: "従来の紙名刺",
+            period: "年間500枚",
+            printingCost: "印刷費: ¥5,000",
+            orgTime: "整理時間: 30分",
+            envImpact: "環境負荷: 高",
           },
           tapforge: {
-            title: 'TapForge',
-            period: '初期費用のみ',
-            monthlyCost: '月額料金: ¥0',
-            orgTime: '整理時間: 5分',
-            envImpact: '環境負荷: ゼロ'
+            title: "TapForge",
+            period: "初期費用のみ",
+            monthlyCost: "月額料金: ¥0",
+            orgTime: "整理時間: 5分",
+            envImpact: "環境負荷: ゼロ",
           },
-          targetAudience: '海外案件を増やしたいフリーランサーに最適'
-        }
+          targetAudience: "海外案件を増やしたいフリーランサーに最適",
+        },
       },
-      'en': {
-        title: 'Business card organization is troublesome, right?',
-        subtitle: 'TapForge solves it in 5 minutes!',
-        problemsTitle: 'Freelancer Problems',
-        solutionsTitle: 'TapForge Solutions',
+      en: {
+        title: "Business card organization is troublesome, right?",
+        subtitle: "TapForge solves it in 5 minutes!",
+        problemsTitle: "Freelancer Problems",
+        solutionsTitle: "TapForge Solutions",
         problems: [
-          { title: 'Cost of paper business cards', desc: 'About 3,000 yen for 300 cards per year' },
-          { title: 'Organization hassle', desc: '30+ minutes to organize 50 business cards' },
-          { title: 'Language barriers with overseas clients', desc: 'Time-consuming to create English profiles' },
-          { title: 'Low follow-up rate', desc: 'Only 15% contact rate after business card exchange' }
+          {
+            title: "Cost of paper business cards",
+            desc: "About 5,000 yen for 500 cards per year",
+          },
+          {
+            title: "Organization hassle",
+            desc: "30+ minutes to organize 50 business cards",
+          },
+          {
+            title: "Language barriers with overseas clients",
+            desc: "Time-consuming to create English profiles",
+          },
+          {
+            title: "Low follow-up rate",
+            desc: "Only 15% contact rate after business card exchange",
+          },
         ],
         solutions: [
-          { title: 'Zero Cost', desc: 'Only initial 3,000 yen, free monthly' },
-          { title: 'Complete in 5 minutes', desc: 'AI business card shooting to VCard conversion' },
-          { title: '4 Language Support', desc: 'Japanese, English, Chinese, Spanish for international business' },
-          { title: '40% Follow-up Rate', desc: 'Improved with AI and multilingual effects' }
+          { title: "Zero Cost", desc: "Only initial 3,000 yen, free monthly" },
+          {
+            title: "Complete in 5 minutes",
+            desc: "AI business card shooting to VCard conversion",
+          },
+          {
+            title: "4 Language Support",
+            desc: "Japanese, English, Chinese, Spanish for international business",
+          },
+          {
+            title: "40% Follow-up Rate",
+            desc: "Improved with AI and multilingual effects",
+          },
         ],
         costComparison: {
-          title: 'Cost Comparison',
+          title: "Cost Comparison",
           traditional: {
-            title: 'Traditional Paper Business Cards',
-            period: '300 cards per year',
-            printingCost: 'Printing cost: ¥3,000',
-            orgTime: 'Organization time: 30 minutes',
-            envImpact: 'Environmental impact: High'
+            title: "Traditional Paper Business Cards",
+            period: "500 cards per year",
+            printingCost: "Printing cost: ¥5,000",
+            orgTime: "Organization time: 30 minutes",
+            envImpact: "Environmental impact: High",
           },
           tapforge: {
-            title: 'TapForge',
-            period: 'Initial cost only',
-            monthlyCost: 'Monthly fee: ¥0',
-            orgTime: 'Organization time: 5 minutes',
-            envImpact: 'Environmental impact: Zero'
+            title: "TapForge",
+            period: "Initial cost only",
+            monthlyCost: "Monthly fee: ¥0",
+            orgTime: "Organization time: 5 minutes",
+            envImpact: "Environmental impact: Zero",
           },
-          targetAudience: 'Perfect for freelancers who want to increase overseas projects'
-        }
+          targetAudience:
+            "Perfect for freelancers who want to increase overseas projects",
+        },
       },
-      'zh': {
-        title: '名片整理很麻烦，对吧？',
-        subtitle: 'TapForge 5分钟解决！',
-        problemsTitle: '自由职业者的烦恼',
-        solutionsTitle: 'TapForge解决方案',
+      zh: {
+        title: "名片整理很麻烦，对吧？",
+        subtitle: "TapForge 5分钟解决！",
+        problemsTitle: "自由职业者的烦恼",
+        solutionsTitle: "TapForge解决方案",
         problems: [
-          { title: '纸质名片的成本', desc: '每年300张约3,000日元的印刷费' },
-          { title: '整理的麻烦', desc: '整理50张名片需要30分钟以上' },
-          { title: '与海外客户的语言障碍', desc: '制作英文个人资料很耗时' },
-          { title: '跟进率低', desc: '名片交换后的联系率只有15%左右' }
+          { title: "纸质名片的成本", desc: "每年500张约5,000日元的印刷费" },
+          { title: "整理的麻烦", desc: "整理50张名片需要30分钟以上" },
+          { title: "与海外客户的语言障碍", desc: "制作英文个人资料很耗时" },
+          { title: "跟进率低", desc: "名片交换后的联系率只有15%左右" },
         ],
         solutions: [
-          { title: '零成本', desc: '仅初始3,000日元，月费免费' },
-          { title: '5分钟完成', desc: 'AI名片拍摄到VCard转换' },
-          { title: '4语言支持', desc: '日英中西支持国际业务' },
-          { title: '40%跟进率', desc: '通过AI和多语言效果提升' }
+          { title: "零成本", desc: "仅初始3,000日元，月费免费" },
+          { title: "5分钟完成", desc: "AI名片拍摄到VCard转换" },
+          { title: "4语言支持", desc: "日英中西支持国际业务" },
+          { title: "40%跟进率", desc: "通过AI和多语言效果提升" },
         ],
         costComparison: {
-          title: '成本比较',
+          title: "成本比较",
           traditional: {
-            title: '传统纸质名片',
-            period: '每年300张',
-            printingCost: '印刷费: ¥3,000',
-            orgTime: '整理时间: 30分钟',
-            envImpact: '环境影响: 高'
+            title: "传统纸质名片",
+            period: "每年500张",
+            printingCost: "印刷费: ¥5,000",
+            orgTime: "整理时间: 30分钟",
+            envImpact: "环境影响: 高",
           },
           tapforge: {
-            title: 'TapForge',
-            period: '仅初始费用',
-            monthlyCost: '月费: ¥0',
-            orgTime: '整理时间: 5分钟',
-            envImpact: '环境影响: 零'
+            title: "TapForge",
+            period: "仅初始费用",
+            monthlyCost: "月费: ¥0",
+            orgTime: "整理时间: 5分钟",
+            envImpact: "环境影响: 零",
           },
-          targetAudience: '适合想要增加海外项目的自由职业者'
-        }
+          targetAudience: "适合想要增加海外项目的自由职业者",
+        },
       },
-      'es': {
-        title: 'Organizar tarjetas de presentación es molesto, ¿verdad?',
-        subtitle: '¡TapForge lo resuelve en 5 minutos!',
-        problemsTitle: 'Problemas de Freelancers',
-        solutionsTitle: 'Soluciones TapForge',
+      es: {
+        title: "Organizar tarjetas de presentación es molesto, ¿verdad?",
+        subtitle: "¡TapForge lo resuelve en 5 minutos!",
+        problemsTitle: "Problemas de Freelancers",
+        solutionsTitle: "Soluciones TapForge",
         problems: [
-          { title: 'Costo de tarjetas de presentación de papel', desc: 'Aproximadamente 3,000 yenes por 300 tarjetas al año' },
-          { title: 'Molestia de organización', desc: '30+ minutos para organizar 50 tarjetas de presentación' },
-          { title: 'Barreras de idioma con clientes extranjeros', desc: 'Consume tiempo crear perfiles en inglés' },
-          { title: 'Baja tasa de seguimiento', desc: 'Solo 15% de tasa de contacto después del intercambio de tarjetas' }
+          {
+            title: "Costo de tarjetas de presentación de papel",
+            desc: "Aproximadamente 5,000 yenes por 500 tarjetas al año",
+          },
+          {
+            title: "Molestia de organización",
+            desc: "30+ minutos para organizar 50 tarjetas de presentación",
+          },
+          {
+            title: "Barreras de idioma con clientes extranjeros",
+            desc: "Consume tiempo crear perfiles en inglés",
+          },
+          {
+            title: "Baja tasa de seguimiento",
+            desc: "Solo 15% de tasa de contacto después del intercambio de tarjetas",
+          },
         ],
         solutions: [
-          { title: 'Costo Cero', desc: 'Solo 3,000 yenes iniciales, mensualidad gratuita' },
-          { title: 'Completar en 5 minutos', desc: 'Fotografía de tarjeta de presentación con IA a conversión VCard' },
-          { title: 'Soporte de 4 Idiomas', desc: 'Japonés, Inglés, Chino, Español para negocios internacionales' },
-          { title: '40% Tasa de Seguimiento', desc: 'Mejorado con efectos de IA y multilingües' }
+          {
+            title: "Costo Cero",
+            desc: "Solo 3,000 yenes iniciales, mensualidad gratuita",
+          },
+          {
+            title: "Completar en 5 minutos",
+            desc: "Fotografía de tarjeta de presentación con IA a conversión VCard",
+          },
+          {
+            title: "Soporte de 4 Idiomas",
+            desc: "Japonés, Inglés, Chino, Español para negocios internacionales",
+          },
+          {
+            title: "40% Tasa de Seguimiento",
+            desc: "Mejorado con efectos de IA y multilingües",
+          },
         ],
         costComparison: {
-          title: 'Comparación de Costos',
+          title: "Comparación de Costos",
           traditional: {
-            title: 'Tarjetas de Presentación de Papel Tradicionales',
-            period: '300 tarjetas por año',
-            printingCost: 'Costo de impresión: ¥3,000',
-            orgTime: 'Tiempo de organización: 30 minutos',
-            envImpact: 'Impacto ambiental: Alto'
+            title: "Tarjetas de Presentación de Papel Tradicionales",
+            period: "500 tarjetas por año",
+            printingCost: "Costo de impresión: ¥5,000",
+            orgTime: "Tiempo de organización: 30 minutos",
+            envImpact: "Impacto ambiental: Alto",
           },
           tapforge: {
-            title: 'TapForge',
-            period: 'Solo costo inicial',
-            monthlyCost: 'Tarifa mensual: ¥0',
-            orgTime: 'Tiempo de organización: 5 minutos',
-            envImpact: 'Impacto ambiental: Cero'
+            title: "TapForge",
+            period: "Solo costo inicial",
+            monthlyCost: "Tarifa mensual: ¥0",
+            orgTime: "Tiempo de organización: 5 minutos",
+            envImpact: "Impacto ambiental: Cero",
           },
-          targetAudience: 'Perfecto para freelancers que quieren aumentar proyectos en el extranjero'
-        }
-      }
+          targetAudience:
+            "Perfecto para freelancers que quieren aumentar proyectos en el extranjero",
+        },
+      },
     };
 
-    const t = translations[lang] || translations['ja'];
-    
+    const t = translations[lang] || translations["ja"];
+
     // Update main title and subtitle
-    const titleElement = document.getElementById('problems-title');
+    const titleElement = document.getElementById("problems-title");
     if (titleElement) {
       titleElement.textContent = t.title;
     }
-    
-    const subtitleElement = document.getElementById('problems-subtitle');
+
+    const subtitleElement = document.getElementById("problems-subtitle");
     if (subtitleElement) {
       subtitleElement.textContent = t.subtitle;
     }
-    
+
     // Update section titles
-    const problemsTitleElement = document.getElementById('problems-section-title');
+    const problemsTitleElement = document.getElementById(
+      "problems-section-title",
+    );
     if (problemsTitleElement) {
       problemsTitleElement.textContent = t.problemsTitle;
     }
-    
-    const solutionsTitleElement = document.getElementById('solutions-section-title');
+
+    const solutionsTitleElement = document.getElementById(
+      "solutions-section-title",
+    );
     if (solutionsTitleElement) {
       solutionsTitleElement.textContent = t.solutionsTitle;
     }
-    
+
     // Update problems
     for (let i = 0; i < t.problems.length; i++) {
       const titleElement = document.getElementById(`problem-${i + 1}-title`);
       const descElement = document.getElementById(`problem-${i + 1}-desc`);
-      
+
       if (titleElement) {
         titleElement.textContent = t.problems[i].title;
       }
@@ -507,12 +725,12 @@ import { getTranslation, type Language } from "../lib/i18n";
         descElement.textContent = t.problems[i].desc;
       }
     }
-    
+
     // Update solutions
     for (let i = 0; i < t.solutions.length; i++) {
       const titleElement = document.getElementById(`solution-${i + 1}-title`);
       const descElement = document.getElementById(`solution-${i + 1}-desc`);
-      
+
       if (titleElement) {
         titleElement.textContent = t.solutions[i].title;
       }
@@ -520,64 +738,81 @@ import { getTranslation, type Language } from "../lib/i18n";
         descElement.textContent = t.solutions[i].desc;
       }
     }
-    
+
     // Update cost comparison
-    const costTitleElement = document.getElementById('cost-comparison-title');
+    const costTitleElement = document.getElementById("cost-comparison-title");
     if (costTitleElement) {
       costTitleElement.textContent = t.costComparison.title;
     }
-    
-    const traditionalTitleElement = document.getElementById('traditional-cards-title');
+
+    const traditionalTitleElement = document.getElementById(
+      "traditional-cards-title",
+    );
     if (traditionalTitleElement) {
       traditionalTitleElement.textContent = t.costComparison.traditional.title;
     }
-    
-    const traditionalPeriodElement = document.getElementById('traditional-cards-period');
+
+    const traditionalPeriodElement = document.getElementById(
+      "traditional-cards-period",
+    );
     if (traditionalPeriodElement) {
-      traditionalPeriodElement.textContent = t.costComparison.traditional.period;
+      traditionalPeriodElement.textContent =
+        t.costComparison.traditional.period;
     }
-    
-    const traditionalPrintingElement = document.getElementById('traditional-printing-cost');
+
+    const traditionalPrintingElement = document.getElementById(
+      "traditional-printing-cost",
+    );
     if (traditionalPrintingElement) {
-      traditionalPrintingElement.textContent = t.costComparison.traditional.printingCost;
+      traditionalPrintingElement.textContent =
+        t.costComparison.traditional.printingCost;
     }
-    
-    const traditionalOrgTimeElement = document.getElementById('traditional-org-time');
+
+    const traditionalOrgTimeElement = document.getElementById(
+      "traditional-org-time",
+    );
     if (traditionalOrgTimeElement) {
-      traditionalOrgTimeElement.textContent = t.costComparison.traditional.orgTime;
+      traditionalOrgTimeElement.textContent =
+        t.costComparison.traditional.orgTime;
     }
-    
-    const traditionalEnvElement = document.getElementById('traditional-env-impact');
+
+    const traditionalEnvElement = document.getElementById(
+      "traditional-env-impact",
+    );
     if (traditionalEnvElement) {
-      traditionalEnvElement.textContent = t.costComparison.traditional.envImpact;
+      traditionalEnvElement.textContent =
+        t.costComparison.traditional.envImpact;
     }
-    
-    const tapforgeTitleElement = document.getElementById('tapforge-title');
+
+    const tapforgeTitleElement = document.getElementById("tapforge-title");
     if (tapforgeTitleElement) {
       tapforgeTitleElement.textContent = t.costComparison.tapforge.title;
     }
-    
-    const tapforgePeriodElement = document.getElementById('tapforge-period');
+
+    const tapforgePeriodElement = document.getElementById("tapforge-period");
     if (tapforgePeriodElement) {
       tapforgePeriodElement.textContent = t.costComparison.tapforge.period;
     }
-    
-    const tapforgeMonthlyElement = document.getElementById('tapforge-monthly-cost');
+
+    const tapforgeMonthlyElement = document.getElementById(
+      "tapforge-monthly-cost",
+    );
     if (tapforgeMonthlyElement) {
-      tapforgeMonthlyElement.textContent = t.costComparison.tapforge.monthlyCost;
+      tapforgeMonthlyElement.textContent =
+        t.costComparison.tapforge.monthlyCost;
     }
-    
-    const tapforgeOrgTimeElement = document.getElementById('tapforge-org-time');
+
+    const tapforgeOrgTimeElement = document.getElementById("tapforge-org-time");
     if (tapforgeOrgTimeElement) {
       tapforgeOrgTimeElement.textContent = t.costComparison.tapforge.orgTime;
     }
-    
-    const tapforgeEnvElement = document.getElementById('tapforge-env-impact');
+
+    const tapforgeEnvElement = document.getElementById("tapforge-env-impact");
     if (tapforgeEnvElement) {
       tapforgeEnvElement.textContent = t.costComparison.tapforge.envImpact;
     }
-    
-    const targetAudienceElement = document.getElementById('target-audience');
+
+    const targetAudienceElement = document.getElementById("target-audience");
     if (targetAudienceElement) {
       targetAudienceElement.textContent = t.costComparison.targetAudience;
     }
