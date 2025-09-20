@@ -40,40 +40,25 @@ import { getTranslation, type Language } from "../lib/i18n";
             </p>
           </div>
 
-          <!-- Contact Form (Temporary) -->
+          <!-- Trial Application -->
           <div class="bg-gray-50 rounded-lg p-6">
             <div class="text-center">
               <h3
                 class="text-xl font-semibold text-gray-800 mb-4"
-                id="contact-form-title"
+                id="trial-form-title"
               >
-                お問い合わせフォーム
+                無料トライアル申し込み
               </h3>
-              <p class="text-gray-600 mb-6" id="contact-form-description">
-                無料トライアルについてご質問がございましたら、下記のボタンからお問い合わせください。
+              <p class="text-gray-600 mb-6" id="trial-form-description">
+                今すぐ無料トライアルに申し込んで、TapForgeの力を体験してください。
               </p>
               <a
-                href="https://cor-jp.com/contact/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                id="contact-form-button"
+                href="#trial"
+                class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center justify-center min-h-[48px]"
+                id="trial-form-button"
               >
-                <svg
-                  class="w-5 h-5 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                  ></path>
-                </svg>
-                <span id="contact-form-button-text">お問い合わせフォームへ</span
-                >
+                <span class="text-red-500 font-bold mr-2" id="trial-form-limited">50名限定!</span>
+                <span id="trial-form-button-text">無料トライアル申し込み</span>
               </a>
             </div>
           </div>
@@ -96,46 +81,6 @@ import { getTranslation, type Language } from "../lib/i18n";
         </div>
       </div>
 
-      <!-- CTA Buttons -->
-      <div
-        class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-2xl mx-auto"
-      >
-        <!-- Trial Button -->
-        <a
-          href="#trial"
-          class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center justify-center min-h-[48px] w-full sm:w-auto"
-          id="cta-trial-button"
-        >
-          <span class="text-red-500 font-bold mr-2" id="cta-limited"
-            >50名限定!</span
-          >
-          <span id="cta-trial-text">無料トライアル申し込み</span>
-        </a>
-
-        <!-- Contact Button -->
-        <a
-          href="https://cor-jp.com/contact/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center min-h-[48px] w-full sm:w-auto"
-          id="cta-contact-button"
-        >
-          <svg
-            class="w-5 h-5 mr-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-            ></path>
-          </svg>
-          <span id="cta-contact-text">お問い合わせ（共創パートナー向け）</span>
-        </a>
-      </div>
 
       <!-- Trust Indicators -->
       <div
@@ -209,7 +154,7 @@ import { getTranslation, type Language } from "../lib/i18n";
           "50名限定の無料トライアルで、TapForgeの力を体験してください",
         limited: "50名限定!",
         trialButton: "無料トライアル申し込み",
-        contactButton: "お問い合わせ（共創パートナー向け）",
+        contactButton: "お問い合わせはこちら",
         features: [
           "アプリ不要",
           "月額無料",
@@ -223,10 +168,11 @@ import { getTranslation, type Language } from "../lib/i18n";
         description: "あなたの名刺を1枚無料で作成します。",
         subDescription:
           "デザイン変更無制限、OCR名刺読み取り機能・VCard変換利用可",
-        contactFormTitle: "お問い合わせフォーム",
-        contactFormDescription:
-          "無料トライアルについてご質問がございましたら、下記のボタンからお問い合わせください。",
-        contactFormButton: "お問い合わせフォームへ",
+        trialFormTitle: "無料トライアル申し込み",
+        trialFormDescription:
+          "今すぐ無料トライアルに申し込んで、TapForgeの力を体験してください。",
+        trialFormButton: "無料トライアル申し込み",
+        trialFormLimited: "50名限定!",
         termsTextStart: "申し込みにより、",
         termsLink: "利用規約",
         termsAnd: "および",
@@ -241,7 +187,7 @@ import { getTranslation, type Language } from "../lib/i18n";
           "Experience the power of TapForge with our limited free trial for 50 people",
         limited: "Limited to 50!",
         trialButton: "Apply for Free Trial",
-        contactButton: "Contact (For Co-creation Partners)",
+        contactButton: "Contact Us Here",
         features: [
           "No App Required",
           "Free Monthly",
@@ -255,10 +201,11 @@ import { getTranslation, type Language } from "../lib/i18n";
         description: "We'll create one business card for you for free.",
         subDescription:
           "Unlimited design changes, OCR business card reading & VCard conversion available",
-        contactFormTitle: "Contact Form",
-        contactFormDescription:
-          "If you have any questions about the free trial, please contact us through the button below.",
-        contactFormButton: "Go to Contact Form",
+        trialFormTitle: "Apply for Free Trial",
+        trialFormDescription:
+          "Apply for the free trial now and experience the power of TapForge.",
+        trialFormButton: "Apply for Free Trial",
+        trialFormLimited: "Limited to 50!",
         termsTextStart: "By applying, you agree to our ",
         termsLink: "Terms of Service",
         termsAnd: " and ",
@@ -272,7 +219,7 @@ import { getTranslation, type Language } from "../lib/i18n";
         description: "通过我们限50人的免费试用体验TapForge的力量",
         limited: "限50名！",
         trialButton: "申请免费试用",
-        contactButton: "联系我们（共创合作伙伴）",
+        contactButton: "联系我们",
         features: ["无需应用", "月费免费", "4种语言", "OCR名片读取"],
       },
       trial: {
@@ -280,10 +227,11 @@ import { getTranslation, type Language } from "../lib/i18n";
         limited: "限50名！",
         description: "我们将为您免费制作一张名片。",
         subDescription: "无限设计更改，OCR名片读取和VCard转换可用",
-        contactFormTitle: "联系表单",
-        contactFormDescription:
-          "如果您对免费试用有任何疑问，请通过下面的按钮联系我们。",
-        contactFormButton: "前往联系表单",
+        trialFormTitle: "申请免费试用",
+        trialFormDescription:
+          "立即申请免费试用，体验TapForge的力量。",
+        trialFormButton: "申请免费试用",
+        trialFormLimited: "限50名！",
         termsTextStart: "申请即表示您同意我们的",
         termsLink: "服务条款",
         termsAnd: "和",
@@ -298,7 +246,7 @@ import { getTranslation, type Language } from "../lib/i18n";
           "Experimenta el poder de TapForge con nuestra prueba gratuita limitada para 50 personas",
         limited: "¡Limitado a 50!",
         trialButton: "Solicitar Prueba Gratuita",
-        contactButton: "Contacto (Para Socios de Co-creación)",
+        contactButton: "Contáctanos Aquí",
         features: [
           "Sin App Requerida",
           "Mensualidad Gratuita",
@@ -312,10 +260,11 @@ import { getTranslation, type Language } from "../lib/i18n";
         description: "Crearemos una tarjeta de presentación gratis para ti.",
         subDescription:
           "Cambios de diseño ilimitados, lectura OCR de tarjetas y conversión VCard disponibles",
-        contactFormTitle: "Formulario de Contacto",
-        contactFormDescription:
-          "Si tienes alguna pregunta sobre la prueba gratuita, contáctanos a través del botón de abajo.",
-        contactFormButton: "Ir al Formulario de Contacto",
+        trialFormTitle: "Solicitar Prueba Gratuita",
+        trialFormDescription:
+          "Solicita la prueba gratuita ahora y experimenta el poder de TapForge.",
+        trialFormButton: "Solicitar Prueba Gratuita",
+        trialFormLimited: "¡Limitado a 50!",
         termsTextStart: "Al solicitar, aceptas nuestros ",
         termsLink: "Términos de Servicio",
         termsAnd: " y ",
@@ -354,8 +303,6 @@ import { getTranslation, type Language } from "../lib/i18n";
     // Update CTA section
     updateElement("cta-title", cta.title);
     updateElement("cta-description", cta.description);
-    updateElement("cta-limited", cta.limited);
-    updateElement("cta-trial-text", cta.trialButton);
     updateElement("cta-contact-text", cta.contactButton);
 
     // Update features
@@ -368,9 +315,10 @@ import { getTranslation, type Language } from "../lib/i18n";
     updateElement("trial-limited", trial.limited);
     updateElement("trial-description", trial.description);
     updateElement("trial-sub-description", trial.subDescription);
-    updateElement("contact-form-title", trial.contactFormTitle);
-    updateElement("contact-form-description", trial.contactFormDescription);
-    updateElement("contact-form-button-text", trial.contactFormButton);
+    updateElement("trial-form-title", trial.trialFormTitle);
+    updateElement("trial-form-description", trial.trialFormDescription);
+    updateElement("trial-form-button-text", trial.trialFormButton);
+    updateElement("trial-form-limited", trial.trialFormLimited);
 
     // Update terms and privacy
     updateElement("terms-text-start", trial.termsTextStart);
@@ -402,19 +350,17 @@ import { getTranslation, type Language } from "../lib/i18n";
       });
     });
 
-    // Track contact form clicks
-    const contactButton = document.querySelector(
-      'a[href*="cor-jp.com/contact"]',
-    );
-    if (contactButton) {
-      contactButton.addEventListener("click", function () {
+    // Track trial form clicks
+    const trialButtons = document.querySelectorAll('a[href="#trial"]');
+    trialButtons.forEach((button) => {
+      button.addEventListener("click", function () {
         if (typeof window !== "undefined" && (window as any).gtag) {
-          (window as any).gtag("event", "contact_form_click", {
+          (window as any).gtag("event", "trial_form_click", {
             event_category: "trial_form",
-            event_label: "contact_form_clicked",
+            event_label: "trial_form_clicked",
           });
         }
       });
-    }
+    });
   });
 </script>
