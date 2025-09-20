@@ -13,7 +13,7 @@ import { type Language } from "../lib/i18n";
 
 // Get language from URL parameter or default to Japanese
 const url = new URL(Astro.request.url);
-const lang = (url.searchParams.get('lang') as Language) || 'ja';
+const lang = (url.searchParams.get("lang") as Language) || "ja";
 ---
 
 <Layout title="TapForge - NFCデジタル名刺で世界と繋がる" lang={lang}>

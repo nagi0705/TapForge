@@ -3,9 +3,9 @@ import type { Feature, Benefit, PricingPlan } from "../types/features";
 export const features: Feature[] = [
   {
     id: "ai-scan",
-    title: "AI名刺撮影・VCard変換",
+    title: "OCR名刺読み取り機能付きNFC名刺",
     description:
-      "紙の名刺をAIでデータ化（精度95%）、VCardとしてスマートフォンに保存",
+      "通常別アプリで月額500円のOCR機能を無料で統合。紙の名刺をAIでデータ化（精度95%）し、VCardとしてスマートフォンに直接保存",
     icon: {
       bgColor: "bg-blue-100",
       iconColor: "text-blue-600",
@@ -52,8 +52,8 @@ export const benefits: Benefit[] = [
   {
     id: "cost-reduction",
     title: "コスト削減",
-    metric: "¥3,000",
-    description: "年間300枚の紙名刺コストが0円に",
+    metric: "¥8,000",
+    description: "従来の紙名刺5,000円+OCRアプリ6,000円→TapForge3,000円で実現",
     metricColor: "text-green-600",
     icon: {
       bgColor: "bg-green-100",

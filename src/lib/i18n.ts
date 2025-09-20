@@ -19,7 +19,7 @@ export const translations = {
       pricing: "料金",
       testimonials: "レビュー",
       faq: "FAQ",
-      contact: "お問合",
+      contact: "お問合せ",
     },
     // Hero Section
     hero: {
@@ -44,7 +44,7 @@ export const translations = {
         title: "フリーランサーの悩み",
         cost: {
           title: "紙の名刺にかかるコスト",
-          description: "年間300枚で約3,000円の印刷費",
+          description: "年間500枚で約5,000円の印刷費",
         },
         organization: {
           title: "整理の手間",
@@ -100,7 +100,8 @@ export const translations = {
       description: "あなたの名刺を1枚無料で作成します。",
       subDescription: "デザイン変更無制限、AI名刺撮影・VCard変換利用可",
       contactFormTitle: "お問い合わせフォーム",
-      contactFormDescription: "無料トライアルのお申し込みは、下記のボタンからお問い合わせください。",
+      contactFormDescription:
+        "無料トライアルのお申し込みは、下記のボタンからお問い合わせください。",
       contactFormButton: "お問い合わせフォームへ",
       termsText: "申し込みにより、",
       termsLink: "利用規約",
@@ -113,8 +114,8 @@ export const translations = {
       title: "コスト比較",
       traditional: {
         title: "従来の紙名刺",
-        period: "年間300枚",
-        printingCost: "印刷費: ¥3,000",
+        period: "年間500枚",
+        printingCost: "印刷費: ¥5,000",
         orgTime: "整理時間: 30分",
         envImpact: "環境負荷: 高",
       },
@@ -133,12 +134,14 @@ export const translations = {
       subtitle: "最新技術で名刺交換を革新",
       items: {
         aiScan: {
-          title: "AI名刺撮影・VCard変換",
-          description: "紙の名刺をAIでデータ化（精度95%）、VCardとしてスマートフォンに保存",
+          title: "OCR名刺読み取り機能付きNFC名刺",
+          description:
+            "通常別アプリで月額500円のOCR機能を無料で統合。紙の名刺をAIでデータ化（精度95%）し、VCardとしてスマートフォンに直接保存",
         },
         multilingual: {
           title: "多言語対応",
-          description: "日本語、英語、中国語（簡体字）、スペイン語の4言語に自動で切り替わり",
+          description:
+            "日本語、英語、中国語（簡体字）、スペイン語の4言語に自動で切り替わり",
         },
         noApp: {
           title: "アプリ不要",
@@ -168,7 +171,8 @@ export const translations = {
             description: "完全無料",
           },
         },
-        tagline: "業界最安値で技術を民主化",
+        tagline:
+          "OCR機能付きNFC名刺の業界最安値 - 通常年間11,000円の機能を3,000円で提供",
       },
       demo: {
         title: "デモ動画",
@@ -183,8 +187,9 @@ export const translations = {
       items: {
         costReduction: {
           title: "コスト削減",
-          metric: "¥3,000",
-          description: "年間300枚の紙名刺コストが0円に",
+          metric: "¥8,000",
+          description:
+            "従来の紙名刺5,000円+OCRアプリ6,000円→TapForge3,000円で実現",
         },
         timeEfficiency: {
           title: "効率化",
@@ -198,7 +203,7 @@ export const translations = {
         },
         environmental: {
           title: "環境配慮",
-          metric: "300枚",
+          metric: "500枚",
           description: "年間の紙削減でSDGsに貢献",
         },
       },
@@ -206,14 +211,14 @@ export const translations = {
         title: "詳細比較",
         headers: {
           item: "項目",
-          traditional: "従来の紙名刺",
+          traditional: "従来の紙名刺+OCRアプリ",
           tapforge: "TapForge",
         },
         rows: {
           annualCost: {
             item: "年間コスト",
-            traditional: "¥3,000",
-            tapforge: "¥0",
+            traditional: "¥11,000",
+            tapforge: "¥3,000",
             tapforgeNote: "（初期費用のみ）",
           },
           organizationTime: {
@@ -249,7 +254,8 @@ export const translations = {
       },
       target: {
         title: "海外案件を増やしたいフリーランサーに最適",
-        description: "多言語対応とAI機能により、国際的なビジネス展開を強力にサポートします",
+        description:
+          "多言語対応とAI機能により、国際的なビジネス展開を強力にサポートします",
         tags: {
           global: "🌍 グローバル対応",
           ai: "🤖 AI活用",
@@ -265,75 +271,69 @@ export const translations = {
       goals: {
         goal12: {
           title: "つくる責任 つかう責任",
-          items: [
-            "ペーパーレス化",
-            "年間300枚の紙削減",
-            "持続可能な消費"
-          ]
+          items: ["ペーパーレス化", "年間500枚の紙削減", "持続可能な消費"],
         },
         goal10: {
           title: "人や国の不平等をなくそう",
-          items: [
-            "4言語対応",
-            "国際案件での不平等解消",
-            "言語バリアの解消"
-          ]
+          items: ["4言語対応", "国際案件での不平等解消", "言語バリアの解消"],
         },
         goal17: {
           title: "パートナーシップで目標を達成しよう",
           items: [
             "名刺交換を通じた共創",
             "グローバルなつながり",
-            "技術革新の共有"
-          ]
-        }
+            "技術革新の共有",
+          ],
+        },
       },
       environmental: {
         title: "環境への配慮",
         metrics: {
           paperReduction: {
-            value: "300枚",
-            description: "年間削減される紙の枚数"
+            value: "500枚",
+            description: "年間削減される紙の枚数",
           },
           paperless: {
             value: "100%",
-            description: "ペーパーレス化の実現"
+            description: "ペーパーレス化の実現",
           },
           updates: {
             value: "∞",
-            description: "更新可能なデジタル名刺"
-          }
+            description: "更新可能なデジタル名刺",
+          },
         },
-        summary: "持続可能なビジネス活動で、地球環境とビジネス成長を両立"
-      }
+        summary: "持続可能なビジネス活動で、地球環境とビジネス成長を両立",
+      },
     },
     // Partner Program Section
     partnerProgram: {
       title: "共創パートナー優待制度",
       subtitle: "長期的なパートナーシップに基づく特別価格",
       heading: "Cor.株式会社の他のサービスをご利用中のお客様へ",
-      description: "Cor.株式会社の他のサービスを利用中の顧客には、長期的なパートナーシップに基づき特別価格で提供いたします。",
+      description:
+        "Cor.株式会社の他のサービスを利用中の顧客には、長期的なパートナーシップに基づき特別価格で提供いたします。",
       contactNote: "詳細はお問い合わせください。",
       benefits: {
         specialPrice: {
           title: "特別価格での提供",
-          description: "既存顧客様限定の優待価格"
+          description: "既存顧客様限定の優待価格",
         },
         prioritySupport: {
           title: "優先サポート",
-          description: "専任担当者によるサポート"
+          description: "専任担当者によるサポート",
         },
         customization: {
           title: "カスタマイズ対応",
-          description: "お客様のニーズに合わせた調整"
+          description: "お客様のニーズに合わせた調整",
         },
         longTermPartnership: {
           title: "長期パートナーシップ",
-          description: "継続的な関係構築"
-        }
+          description: "継続的な関係構築",
+        },
       },
       ctaButton: "お問い合わせ",
-      additionalInfo: "この制度は公式サイト（cor-jp.com）の内容に基づいています"
+      additionalInfo:
+        "この制度は公式サイト（cor-jp.com）の内容に基づいています",
     },
     // Testimonials Section
     testimonials: {
@@ -343,17 +343,19 @@ export const translations = {
         {
           name: "鈴木様",
           role: "Webデザイナー",
-          message: "紙名刺の整理が5分で完了！英語プロフィールで海外案件が増えました。AI名刺撮影の精度も高く、VCard変換もスムーズです。フリーランサーにとって本当に便利なサービスです。",
-          tags: ["効率化", "海外案件", "AI精度"]
+          message:
+            "紙名刺の整理が5分で完了！英語プロフィールで海外案件が増えました。AI名刺撮影の精度も高く、VCard変換もスムーズです。フリーランサーにとって本当に便利なサービスです。",
+          tags: ["効率化", "海外案件", "AI精度"],
         },
         {
           name: "田中様",
           role: "ITコンサルタント",
-          message: "アプリ不要で簡単。クライアントに好印象を与えています。多言語対応で海外のクライアントとのコミュニケーションもスムーズになりました。コストパフォーマンスも抜群です。",
-          tags: ["簡単操作", "好印象", "コスパ"]
-        }
+          message:
+            "アプリ不要で簡単。クライアントに好印象を与えています。多言語対応で海外のクライアントとのコミュニケーションもスムーズになりました。コストパフォーマンスも抜群です。",
+          tags: ["簡単操作", "好印象", "コスパ"],
+        },
       ],
-      note: "これらの声は仮想的なものです。トライアル参加者50名の中から5件の実際のレビューを選抜して差し替える予定です。"
+      note: "これらの声は仮想的なものです。トライアル参加者50名の中から5件の実際のレビューを選抜して差し替える予定です。",
     },
     // FAQ Section
     faq: {
@@ -362,52 +364,58 @@ export const translations = {
       items: [
         {
           question: "どのスマホでもNFCは使えますか？",
-          answer: "95%のスマホで互換性があります。iPhone 7以降、Android NFC対応機種でご利用いただけます。\n具体的な対応機種については、各スマホメーカーの公式サイトをご確認ください。"
+          answer:
+            "95%のスマホで互換性があります。iPhone 7以降、Android NFC対応機種でご利用いただけます。\n具体的な対応機種については、各スマホメーカーの公式サイトをご確認ください。",
         },
         {
           question: "名刺読み取りの精度は？",
-          answer: "AI名刺撮影・VCard変換の精度は95%です。継続的な改善により、さらなる精度向上を目指しています。\n認識に失敗した場合は、手動での修正も可能です。"
+          answer:
+            "AI名刺撮影・VCard変換の精度は95%です。継続的な改善により、さらなる精度向上を目指しています。\n認識に失敗した場合は、手動での修正も可能です。",
         },
         {
           question: "デザイン変更は自分でできるのですか？",
-          answer: "管理画面から無制限でデザイン変更が可能です。\nライトカラー（白・ライトブルー・ベージュ）の3種類から選択でき、テキストや連絡先情報も簡単に更新できます。"
+          answer:
+            "管理画面から無制限でデザイン変更が可能です。\nライトカラー（白・ライトブルー・ベージュ）の3種類から選択でき、テキストや連絡先情報も簡単に更新できます。",
         },
         {
           question: "多言語対応の使い方を教えてください",
-          answer: "4言語（日本語・英語・中国語・スペイン語）にご自身で切り替えることができます。\nプロフィール画面で表示言語を選択できるため、相手のスマートフォンの言語設定に関わらず、好きな言語でご利用いただけます。"
+          answer:
+            "4言語（日本語・英語・中国語・スペイン語）にご自身で切り替えることができます。\nプロフィール画面で表示言語を選択できるため、相手のスマートフォンの言語設定に関わらず、好きな言語でご利用いただけます。",
         },
         {
           question: "オフラインでも使えますか？",
-          answer: "現在はオンライン環境でのご利用を推奨しています。\nオフライン機能は今後検討中です。アプリ不要のメリットを活かし、オンライン環境での安定したサービス提供を優先しています。"
-        }
+          answer:
+            "現在はオンライン環境でのご利用を推奨しています。\nオフライン機能は今後検討中です。アプリ不要のメリットを活かし、オンライン環境での安定したサービス提供を優先しています。",
+        },
       ],
       additionalHelp: {
         title: "その他のご質問はお気軽にお問い合わせください",
         description: "専門スタッフが丁寧にお答えいたします",
-        button: "お問い合わせ"
-      }
+        button: "お問い合わせ",
+      },
     },
     // Footer Section
     footer: {
-      description: "NFCデジタル名刺で世界と繋がる。AI駆動の次世代名刺であなたのビジネスを加速。",
+      description:
+        "NFCデジタル名刺で世界と繋がる。AI駆動の次世代名刺であなたのビジネスを加速。",
       tagline: "未来を先取る、スマートな出会いをすべての人へ",
       quickLinks: {
         title: "クイックリンク",
         features: "特徴",
         pricing: "料金",
         testimonials: "お客様の声",
-        faq: "FAQ"
+        faq: "FAQ",
       },
       contact: {
         title: "お問い合わせ",
         company: "Cor.株式会社",
-        trial: "無料トライアル"
+        trial: "無料トライアル",
       },
       copyright: "© 2025 TapForge by Cor.株式会社. All rights reserved.",
       legal: {
         privacy: "プライバシーポリシー",
-        terms: "利用規約"
-      }
+        terms: "利用規約",
+      },
     },
   },
   en: {
@@ -443,7 +451,7 @@ export const translations = {
         title: "Freelancer Problems",
         cost: {
           title: "Cost of paper business cards",
-          description: "About 3,000 yen for 300 cards per year",
+          description: "About 5,000 yen for 500 cards per year",
         },
         organization: {
           title: "Organization hassle",
@@ -482,7 +490,8 @@ export const translations = {
     // CTA Section
     cta: {
       title: "Ready to get started?",
-      description: "Experience the power of TapForge with our limited free trial for 50 people",
+      description:
+        "Experience the power of TapForge with our limited free trial for 50 people",
       trialButton: "Apply for Free Trial",
       contactButton: "Contact (For Co-creation Partners)",
       tapNow: "Tap Now!",
@@ -498,9 +507,11 @@ export const translations = {
     trialForm: {
       title: "Apply for Free Trial",
       description: "We'll create one business card for you for free.",
-      subDescription: "Unlimited design changes, AI business card scanning & VCard conversion available",
+      subDescription:
+        "Unlimited design changes, AI business card scanning & VCard conversion available",
       contactFormTitle: "Contact Form",
-      contactFormDescription: "To apply for the free trial, please contact us through the button below.",
+      contactFormDescription:
+        "To apply for the free trial, please contact us through the button below.",
       contactFormButton: "Go to Contact Form",
       termsText: "By applying, you agree to our ",
       termsLink: "Terms of Service",
@@ -513,8 +524,8 @@ export const translations = {
       title: "Cost Comparison",
       traditional: {
         title: "Traditional Paper Business Cards",
-        period: "300 cards per year",
-        printingCost: "Printing cost: ¥3,000",
+        period: "500 cards per year",
+        printingCost: "Printing cost: ¥5,000",
         orgTime: "Organization time: 30 minutes",
         envImpact: "Environmental impact: High",
       },
@@ -525,28 +536,34 @@ export const translations = {
         orgTime: "Organization time: 5 minutes",
         envImpact: "Environmental impact: Zero",
       },
-      targetAudience: "Perfect for freelancers who want to increase overseas projects",
+      targetAudience:
+        "Perfect for freelancers who want to increase overseas projects",
     },
     // Features Section
     features: {
       title: "TapForge Features",
-      subtitle: "Revolutionizing business card exchange with cutting-edge technology",
+      subtitle:
+        "Revolutionizing business card exchange with cutting-edge technology",
       items: {
         aiScan: {
           title: "AI Business Card Scanning & VCard Conversion",
-          description: "Digitize paper business cards with AI (95% accuracy) and save as VCard to smartphones",
+          description:
+            "Digitize paper business cards with AI (95% accuracy) and save as VCard to smartphones",
         },
         multilingual: {
           title: "Multilingual Support",
-          description: "Automatically switches between 4 languages: Japanese, English, Chinese (Simplified), Spanish",
+          description:
+            "Automatically switches between 4 languages: Japanese, English, Chinese (Simplified), Spanish",
         },
         noApp: {
           title: "No App Required",
-          description: "Instantly display profiles with NFC tap (online environment)",
+          description:
+            "Instantly display profiles with NFC tap (online environment)",
         },
         paperless: {
           title: "Paperless",
-          description: "Contributes to SDGs Goal 12, completely paperless and environmentally conscious",
+          description:
+            "Contributes to SDGs Goal 12, completely paperless and environmentally conscious",
         },
       },
       pricing: {
@@ -583,13 +600,14 @@ export const translations = {
       items: {
         costReduction: {
           title: "Cost Reduction",
-          metric: "¥3,000",
-          description: "Annual cost of 300 paper business cards becomes 0 yen",
+          metric: "¥2,000",
+          description: "Annual cost of 500 paper business cards becomes 0 yen",
         },
         timeEfficiency: {
           title: "Efficiency",
           metric: "5 min",
-          description: "Business card organization of 50 cards completed with batch digitalization",
+          description:
+            "Business card organization of 50 cards completed with batch digitalization",
         },
         businessGrowth: {
           title: "Business Growth",
@@ -598,7 +616,7 @@ export const translations = {
         },
         environmental: {
           title: "Environmental Consideration",
-          metric: "300 cards",
+          metric: "500 cards",
           description: "Annual paper reduction contributes to SDGs",
         },
       },
@@ -612,7 +630,7 @@ export const translations = {
         rows: {
           annualCost: {
             item: "Annual Cost",
-            traditional: "¥3,000",
+            traditional: "¥5,000",
             tapforge: "¥0",
             tapforgeNote: "(Initial cost only)",
           },
@@ -649,7 +667,8 @@ export const translations = {
       },
       target: {
         title: "Perfect for freelancers who want to increase overseas projects",
-        description: "Supports international business expansion with multilingual support and AI features",
+        description:
+          "Supports international business expansion with multilingual support and AI features",
         tags: {
           global: "🌍 Global Support",
           ai: "🤖 AI Utilization",
@@ -667,73 +686,76 @@ export const translations = {
           title: "Responsible Consumption and Production",
           items: [
             "Paperless",
-            "300 sheets of paper reduced annually",
-            "Sustainable consumption"
-          ]
+            "500 sheets of paper reduced annually",
+            "Sustainable consumption",
+          ],
         },
         goal10: {
           title: "Reduced Inequalities",
           items: [
             "4-language support",
             "Elimination of inequality in international projects",
-            "Elimination of language barriers"
-          ]
+            "Elimination of language barriers",
+          ],
         },
         goal17: {
           title: "Partnerships for the Goals",
           items: [
             "Co-creation through business card exchange",
             "Global connections",
-            "Sharing technological innovation"
-          ]
-        }
+            "Sharing technological innovation",
+          ],
+        },
       },
       environmental: {
         title: "Environmental Consideration",
         metrics: {
           paperReduction: {
-            value: "300 sheets",
-            description: "Annual paper reduction"
+            value: "500 sheets",
+            description: "Annual paper reduction",
           },
           paperless: {
             value: "100%",
-            description: "Paperless achievement"
+            description: "Paperless achievement",
           },
           updates: {
             value: "∞",
-            description: "Updatable digital business cards"
-          }
+            description: "Updatable digital business cards",
+          },
         },
-        summary: "Sustainable business activities that balance environmental protection and business growth"
-      }
+        summary:
+          "Sustainable business activities that balance environmental protection and business growth",
+      },
     },
     // Partner Program Section
     partnerProgram: {
       title: "Co-creation Partner Program",
       subtitle: "Special pricing based on long-term partnership",
       heading: "To customers using other services of Cor. Co., Ltd.",
-      description: "For customers using other services of Cor. Co., Ltd., we provide special pricing based on long-term partnership.",
+      description:
+        "For customers using other services of Cor. Co., Ltd., we provide special pricing based on long-term partnership.",
       contactNote: "Please contact us for details.",
       benefits: {
         specialPrice: {
           title: "Special Pricing",
-          description: "Exclusive preferential pricing for existing customers"
+          description: "Exclusive preferential pricing for existing customers",
         },
         prioritySupport: {
           title: "Priority Support",
-          description: "Support by dedicated staff"
+          description: "Support by dedicated staff",
         },
         customization: {
           title: "Customization Support",
-          description: "Adjustments tailored to customer needs"
+          description: "Adjustments tailored to customer needs",
         },
         longTermPartnership: {
           title: "Long-term Partnership",
-          description: "Continuous relationship building"
-        }
+          description: "Continuous relationship building",
+        },
       },
       ctaButton: "Contact Us",
-      additionalInfo: "This program is based on the content of the official website (cor-jp.com)"
+      additionalInfo:
+        "This program is based on the content of the official website (cor-jp.com)",
     },
     // Testimonials Section
     testimonials: {
@@ -743,17 +765,19 @@ export const translations = {
         {
           name: "Mr. Suzuki",
           role: "Web Designer",
-          message: "Paper business card organization completed in 5 minutes! English profiles have increased overseas projects. AI business card shooting accuracy is high, and VCard conversion is smooth. It's really a convenient service for freelancers.",
-          tags: ["Efficiency", "Overseas Projects", "AI Accuracy"]
+          message:
+            "Paper business card organization completed in 5 minutes! English profiles have increased overseas projects. AI business card shooting accuracy is high, and VCard conversion is smooth. It's really a convenient service for freelancers.",
+          tags: ["Efficiency", "Overseas Projects", "AI Accuracy"],
         },
         {
           name: "Mr. Tanaka",
           role: "IT Consultant",
-          message: "No app required, simple. It makes a good impression on clients. Multilingual support has made communication with overseas clients smooth. The cost performance is also excellent.",
-          tags: ["Easy Operation", "Good Impression", "Cost Performance"]
-        }
+          message:
+            "No app required, simple. It makes a good impression on clients. Multilingual support has made communication with overseas clients smooth. The cost performance is also excellent.",
+          tags: ["Easy Operation", "Good Impression", "Cost Performance"],
+        },
       ],
-      note: "These voices are hypothetical. We plan to select 5 actual reviews from 50 trial participants and replace them."
+      note: "These voices are hypothetical. We plan to select 5 actual reviews from 50 trial participants and replace them.",
     },
     // FAQ Section
     faq: {
@@ -762,52 +786,58 @@ export const translations = {
       items: [
         {
           question: "Can NFC be used on any smartphone?",
-          answer: "Compatible with 95% of smartphones. Available on iPhone 7 and later, and Android NFC-compatible models.\nFor specific compatible models, please check the official website of each smartphone manufacturer."
+          answer:
+            "Compatible with 95% of smartphones. Available on iPhone 7 and later, and Android NFC-compatible models.\nFor specific compatible models, please check the official website of each smartphone manufacturer.",
         },
         {
           question: "What is the accuracy of business card reading?",
-          answer: "AI business card shooting and VCard conversion accuracy is 95%. We aim for further accuracy improvement through continuous improvement.\nIf recognition fails, manual correction is also possible."
+          answer:
+            "AI business card shooting and VCard conversion accuracy is 95%. We aim for further accuracy improvement through continuous improvement.\nIf recognition fails, manual correction is also possible.",
         },
         {
           question: "Can I change the design myself?",
-          answer: "Unlimited design changes are possible from the management screen.\nYou can choose from 3 types of light colors (white, light blue, beige), and text and contact information can be easily updated."
+          answer:
+            "Unlimited design changes are possible from the management screen.\nYou can choose from 3 types of light colors (white, light blue, beige), and text and contact information can be easily updated.",
         },
         {
           question: "Please tell me how to use multilingual support",
-          answer: "You can switch to 4 languages (Japanese, English, Chinese, Spanish) yourself.\nYou can select the display language on the profile screen, so you can use it in your preferred language regardless of the other party's smartphone language settings."
+          answer:
+            "You can switch to 4 languages (Japanese, English, Chinese, Spanish) yourself.\nYou can select the display language on the profile screen, so you can use it in your preferred language regardless of the other party's smartphone language settings.",
         },
         {
           question: "Can it be used offline?",
-          answer: "Currently, we recommend using it in an online environment.\nOffline functionality is under consideration for the future. We prioritize stable service provision in an online environment, taking advantage of the no-app benefit."
-        }
+          answer:
+            "Currently, we recommend using it in an online environment.\nOffline functionality is under consideration for the future. We prioritize stable service provision in an online environment, taking advantage of the no-app benefit.",
+        },
       ],
       additionalHelp: {
         title: "Please feel free to contact us for other questions",
         description: "Our professional staff will answer you carefully",
-        button: "Contact Us"
-      }
+        button: "Contact Us",
+      },
     },
     // Footer Section
     footer: {
-      description: "Connect with the world through NFC digital business cards. Accelerate your business with AI-powered next-generation business cards.",
+      description:
+        "Connect with the world through NFC digital business cards. Accelerate your business with AI-powered next-generation business cards.",
       tagline: "Pioneering the future, smart encounters for everyone",
       quickLinks: {
         title: "Quick Links",
         features: "Features",
         pricing: "Pricing",
         testimonials: "Testimonials",
-        faq: "FAQ"
+        faq: "FAQ",
       },
       contact: {
         title: "Contact",
         company: "Cor. Co., Ltd.",
-        trial: "Free Trial"
+        trial: "Free Trial",
       },
       copyright: "© 2025 TapForge by Cor. Co., Ltd. All rights reserved.",
       legal: {
         privacy: "Privacy Policy",
-        terms: "Terms of Service"
-      }
+        terms: "Terms of Service",
+      },
     },
   },
   zh: {
@@ -843,7 +873,7 @@ export const translations = {
         title: "自由职业者的烦恼",
         cost: {
           title: "纸质名片的成本",
-          description: "每年300张约3,000日元的印刷费",
+          description: "每年500张约5,000日元的印刷费",
         },
         organization: {
           title: "整理的麻烦",
@@ -881,7 +911,8 @@ export const translations = {
     // CTA Section
     cta: {
       title: "¿Listo para comenzar?",
-      description: "Experimenta el poder de TapForge con nuestra prueba gratuita limitada para 50 personas",
+      description:
+        "Experimenta el poder de TapForge con nuestra prueba gratuita limitada para 50 personas",
       trialButton: "Solicitar Prueba Gratuita",
       contactButton: "Contacto (Para Socios de Co-creación)",
       tapNow: "¡Toca Ahora!",
@@ -897,9 +928,11 @@ export const translations = {
     trialForm: {
       title: "Solicitar Prueba Gratuita",
       description: "Crearemos una tarjeta de presentación gratis para ti.",
-      subDescription: "Cambios de diseño ilimitados, escaneo de tarjeta con IA y conversión VCard disponibles",
+      subDescription:
+        "Cambios de diseño ilimitados, escaneo de tarjeta con IA y conversión VCard disponibles",
       contactFormTitle: "Formulario de Contacto",
-      contactFormDescription: "Para solicitar la prueba gratuita, contáctanos a través del botón de abajo.",
+      contactFormDescription:
+        "Para solicitar la prueba gratuita, contáctanos a través del botón de abajo.",
       contactFormButton: "Ir al Formulario de Contacto",
       termsText: "Al solicitar, aceptas nuestros ",
       termsLink: "Términos de Servicio",
@@ -912,8 +945,8 @@ export const translations = {
       title: "成本比较",
       traditional: {
         title: "传统纸质名片",
-        period: "每年300张",
-        printingCost: "印刷费: ¥3,000",
+        period: "每年500张",
+        printingCost: "印刷费: ¥5,000",
         orgTime: "整理时间: 30分钟",
         envImpact: "环境影响: 高",
       },
@@ -982,8 +1015,8 @@ export const translations = {
       items: {
         costReduction: {
           title: "成本削减",
-          metric: "¥3,000",
-          description: "每年300张纸质名片成本变为0日元",
+          metric: "¥2,000",
+          description: "每年500张纸质名片成本变为0日元",
         },
         timeEfficiency: {
           title: "效率化",
@@ -997,7 +1030,7 @@ export const translations = {
         },
         environmental: {
           title: "环保考虑",
-          metric: "300张",
+          metric: "500张",
           description: "年度纸张减少为SDGs做贡献",
         },
       },
@@ -1011,7 +1044,7 @@ export const translations = {
         rows: {
           annualCost: {
             item: "年度成本",
-            traditional: "¥3,000",
+            traditional: "¥5,000",
             tapforge: "¥0",
             tapforgeNote: "（仅初始费用）",
           },
@@ -1064,75 +1097,64 @@ export const translations = {
       goals: {
         goal12: {
           title: "负责任消费和生产",
-          items: [
-            "无纸化",
-            "每年减少300张纸张",
-            "可持续消费"
-          ]
+          items: ["无纸化", "每年减少500张纸张", "可持续消费"],
         },
         goal10: {
           title: "减少不平等",
-          items: [
-            "4语言支持",
-            "消除国际项目中的不平等",
-            "消除语言障碍"
-          ]
+          items: ["4语言支持", "消除国际项目中的不平等", "消除语言障碍"],
         },
         goal17: {
           title: "促进目标实现的伙伴关系",
-          items: [
-            "通过名片交换共创",
-            "全球连接",
-            "分享技术创新"
-          ]
-        }
+          items: ["通过名片交换共创", "全球连接", "分享技术创新"],
+        },
       },
       environmental: {
         title: "环境考虑",
         metrics: {
           paperReduction: {
-            value: "300张",
-            description: "年度纸张减少"
+            value: "500张",
+            description: "年度纸张减少",
           },
           paperless: {
             value: "100%",
-            description: "无纸化实现"
+            description: "无纸化实现",
           },
           updates: {
             value: "∞",
-            description: "可更新的数字名片"
-          }
+            description: "可更新的数字名片",
+          },
         },
-        summary: "可持续商业活动，平衡环境保护和业务增长"
-      }
+        summary: "可持续商业活动，平衡环境保护和业务增长",
+      },
     },
     // Partner Program Section
     partnerProgram: {
       title: "共创合作伙伴优待制度",
       subtitle: "基于长期合作伙伴关系的特别价格",
       heading: "致使用Cor.株式会社其他服务的客户",
-      description: "对于使用Cor.株式会社其他服务的客户，我们将基于长期合作伙伴关系提供特别价格。",
+      description:
+        "对于使用Cor.株式会社其他服务的客户，我们将基于长期合作伙伴关系提供特别价格。",
       contactNote: "详情请联系我们。",
       benefits: {
         specialPrice: {
           title: "特别价格提供",
-          description: "现有客户专享优待价格"
+          description: "现有客户专享优待价格",
         },
         prioritySupport: {
           title: "优先支持",
-          description: "专职人员支持"
+          description: "专职人员支持",
         },
         customization: {
           title: "定制化支持",
-          description: "根据客户需求调整"
+          description: "根据客户需求调整",
         },
         longTermPartnership: {
           title: "长期合作伙伴关系",
-          description: "持续的关系建设"
-        }
+          description: "持续的关系建设",
+        },
       },
       ctaButton: "联系我们",
-      additionalInfo: "此制度基于官方网站（cor-jp.com）的内容"
+      additionalInfo: "此制度基于官方网站（cor-jp.com）的内容",
     },
     // Testimonials Section
     testimonials: {
@@ -1142,17 +1164,19 @@ export const translations = {
         {
           name: "铃木先生",
           role: "网页设计师",
-          message: "纸质名片整理5分钟完成！英文个人资料增加了海外项目。AI名片拍摄精度高，VCard转换也很流畅。对于自由职业者来说真的是很方便的服务。",
-          tags: ["效率化", "海外项目", "AI精度"]
+          message:
+            "纸质名片整理5分钟完成！英文个人资料增加了海外项目。AI名片拍摄精度高，VCard转换也很流畅。对于自由职业者来说真的是很方便的服务。",
+          tags: ["效率化", "海外项目", "AI精度"],
         },
         {
           name: "田中先生",
           role: "IT顾问",
-          message: "无需应用，简单易用。给客户留下了好印象。多语言支持使与海外客户的沟通变得顺畅。性价比也很出色。",
-          tags: ["简单操作", "好印象", "性价比"]
-        }
+          message:
+            "无需应用，简单易用。给客户留下了好印象。多语言支持使与海外客户的沟通变得顺畅。性价比也很出色。",
+          tags: ["简单操作", "好印象", "性价比"],
+        },
       ],
-      note: "这些评价是假设的。我们计划从50名试用参与者中选择5个实际评价进行替换。"
+      note: "这些评价是假设的。我们计划从50名试用参与者中选择5个实际评价进行替换。",
     },
     // FAQ Section
     faq: {
@@ -1161,30 +1185,35 @@ export const translations = {
       items: [
         {
           question: "任何智能手机都可以使用NFC吗？",
-          answer: "与95%的智能手机兼容。可在iPhone 7及以后版本、Android NFC兼容机型上使用。\n关于具体兼容机型，请查看各智能手机制造商的官方网站。"
+          answer:
+            "与95%的智能手机兼容。可在iPhone 7及以后版本、Android NFC兼容机型上使用。\n关于具体兼容机型，请查看各智能手机制造商的官方网站。",
         },
         {
           question: "名片读取的精度如何？",
-          answer: "AI名片拍摄和VCard转换精度为95%。通过持续改进，我们致力于进一步提高精度。\n如果识别失败，也可以手动修正。"
+          answer:
+            "AI名片拍摄和VCard转换精度为95%。通过持续改进，我们致力于进一步提高精度。\n如果识别失败，也可以手动修正。",
         },
         {
           question: "可以自己更改设计吗？",
-          answer: "可以从管理画面无限制地更改设计。\n可以选择3种浅色（白色、浅蓝色、米色），文本和联系信息也可以轻松更新。"
+          answer:
+            "可以从管理画面无限制地更改设计。\n可以选择3种浅色（白色、浅蓝色、米色），文本和联系信息也可以轻松更新。",
         },
         {
           question: "请告诉我多语言支持的使用方法",
-          answer: "可以自己切换到4种语言（日语、英语、中文、西班牙语）。\n可以在个人资料画面选择显示语言，因此无论对方的智能手机语言设置如何，都可以用自己喜欢的语言使用。"
+          answer:
+            "可以自己切换到4种语言（日语、英语、中文、西班牙语）。\n可以在个人资料画面选择显示语言，因此无论对方的智能手机语言设置如何，都可以用自己喜欢的语言使用。",
         },
         {
           question: "离线时也可以使用吗？",
-          answer: "目前建议在在线环境下使用。\n离线功能正在考虑中。我们优先在在线环境下提供稳定服务，发挥无需应用的优势。"
-        }
+          answer:
+            "目前建议在在线环境下使用。\n离线功能正在考虑中。我们优先在在线环境下提供稳定服务，发挥无需应用的优势。",
+        },
       ],
       additionalHelp: {
         title: "如有其他问题请随时联系我们",
         description: "专业工作人员会仔细回答您的问题",
-        button: "联系我们"
-      }
+        button: "联系我们",
+      },
     },
     // Footer Section
     footer: {
@@ -1195,18 +1224,18 @@ export const translations = {
         features: "特点",
         pricing: "价格",
         testimonials: "客户评价",
-        faq: "常见问题"
+        faq: "常见问题",
       },
       contact: {
         title: "联系我们",
         company: "Cor.株式会社",
-        trial: "免费试用"
+        trial: "免费试用",
       },
       copyright: "© 2025 TapForge by Cor.株式会社. 版权所有。",
       legal: {
         privacy: "隐私政策",
-        terms: "服务条款"
-      }
+        terms: "服务条款",
+      },
     },
   },
   es: {
@@ -1242,7 +1271,7 @@ export const translations = {
         title: "Problemas de Freelancers",
         cost: {
           title: "Costo de tarjetas de presentación de papel",
-          description: "Aproximadamente 3,000 yenes por 300 tarjetas al año",
+          description: "Aproximadamente 5,000 yenes por 500 tarjetas al año",
         },
         organization: {
           title: "Molestia de organización",
@@ -1283,7 +1312,8 @@ export const translations = {
     // CTA Section
     cta: {
       title: "¿Listo para comenzar?",
-      description: "Experimenta el poder de TapForge con nuestra prueba gratuita limitada para 50 personas",
+      description:
+        "Experimenta el poder de TapForge con nuestra prueba gratuita limitada para 50 personas",
       trialButton: "Solicitar Prueba Gratuita",
       contactButton: "Contacto (Para Socios de Co-creación)",
       tapNow: "¡Toca Ahora!",
@@ -1299,9 +1329,11 @@ export const translations = {
     trialForm: {
       title: "Solicitar Prueba Gratuita",
       description: "Crearemos una tarjeta de presentación gratis para ti.",
-      subDescription: "Cambios de diseño ilimitados, escaneo de tarjeta con IA y conversión VCard disponibles",
+      subDescription:
+        "Cambios de diseño ilimitados, escaneo de tarjeta con IA y conversión VCard disponibles",
       contactFormTitle: "Formulario de Contacto",
-      contactFormDescription: "Para solicitar la prueba gratuita, contáctanos a través del botón de abajo.",
+      contactFormDescription:
+        "Para solicitar la prueba gratuita, contáctanos a través del botón de abajo.",
       contactFormButton: "Ir al Formulario de Contacto",
       termsText: "Al solicitar, aceptas nuestros ",
       termsLink: "Términos de Servicio",
@@ -1314,8 +1346,8 @@ export const translations = {
       title: "Comparación de Costos",
       traditional: {
         title: "Tarjetas de Presentación de Papel Tradicionales",
-        period: "300 tarjetas por año",
-        printingCost: "Costo de impresión: ¥3,000",
+        period: "500 tarjetas por año",
+        printingCost: "Costo de impresión: ¥5,000",
         orgTime: "Tiempo de organización: 30 minutos",
         envImpact: "Impacto ambiental: Alto",
       },
@@ -1326,28 +1358,34 @@ export const translations = {
         orgTime: "Tiempo de organización: 5 minutos",
         envImpact: "Impacto ambiental: Cero",
       },
-      targetAudience: "Perfecto para freelancers que quieren aumentar proyectos en el extranjero",
+      targetAudience:
+        "Perfecto para freelancers que quieren aumentar proyectos en el extranjero",
     },
     // Features Section
     features: {
       title: "Características de TapForge",
-      subtitle: "Revolucionando el intercambio de tarjetas de presentación con tecnología de vanguardia",
+      subtitle:
+        "Revolucionando el intercambio de tarjetas de presentación con tecnología de vanguardia",
       items: {
         aiScan: {
           title: "Escaneo de Tarjeta con IA y Conversión VCard",
-          description: "Digitaliza tarjetas de presentación de papel con IA (95% precisión) y guarda como VCard en smartphones",
+          description:
+            "Digitaliza tarjetas de presentación de papel con IA (95% precisión) y guarda como VCard en smartphones",
         },
         multilingual: {
           title: "Soporte Multilingüe",
-          description: "Cambia automáticamente entre 4 idiomas: Japonés, Inglés, Chino (Simplificado), Español",
+          description:
+            "Cambia automáticamente entre 4 idiomas: Japonés, Inglés, Chino (Simplificado), Español",
         },
         noApp: {
           title: "Sin App Requerida",
-          description: "Muestra perfiles instantáneamente con toque NFC (entorno en línea)",
+          description:
+            "Muestra perfiles instantáneamente con toque NFC (entorno en línea)",
         },
         paperless: {
           title: "Sin Papel",
-          description: "Contribuye al Objetivo 12 de los ODS, completamente sin papel y consciente del medio ambiente",
+          description:
+            "Contribuye al Objetivo 12 de los ODS, completamente sin papel y consciente del medio ambiente",
         },
       },
       pricing: {
@@ -1369,7 +1407,8 @@ export const translations = {
             description: "Completamente gratis",
           },
         },
-        tagline: "Democratizando la tecnología al precio más bajo de la industria",
+        tagline:
+          "Democratizando la tecnología al precio más bajo de la industria",
       },
       demo: {
         title: "Video Demo",
@@ -1384,13 +1423,15 @@ export const translations = {
       items: {
         costReduction: {
           title: "Reducción de Costos",
-          metric: "¥3,000",
-          description: "El costo anual de 300 tarjetas de presentación de papel se convierte en 0 yenes",
+          metric: "¥2,000",
+          description:
+            "El costo anual de 500 tarjetas de presentación de papel se convierte en 0 yenes",
         },
         timeEfficiency: {
           title: "Eficiencia",
           metric: "5 min",
-          description: "Organización de 50 tarjetas de presentación completada con digitalización por lotes",
+          description:
+            "Organización de 50 tarjetas de presentación completada con digitalización por lotes",
         },
         businessGrowth: {
           title: "Crecimiento del Negocio",
@@ -1399,7 +1440,7 @@ export const translations = {
         },
         environmental: {
           title: "Consideración Ambiental",
-          metric: "300 tarjetas",
+          metric: "500 tarjetas",
           description: "Reducción anual de papel contribuye a los ODS",
         },
       },
@@ -1413,7 +1454,7 @@ export const translations = {
         rows: {
           annualCost: {
             item: "Costo Anual",
-            traditional: "¥3,000",
+            traditional: "¥5,000",
             tapforge: "¥0",
             tapforgeNote: "(Solo costo inicial)",
           },
@@ -1449,8 +1490,10 @@ export const translations = {
         },
       },
       target: {
-        title: "Perfecto para freelancers que quieren aumentar proyectos en el extranjero",
-        description: "Apoya la expansión de negocios internacionales con soporte multilingüe y características de IA",
+        title:
+          "Perfecto para freelancers que quieren aumentar proyectos en el extranjero",
+        description:
+          "Apoya la expansión de negocios internacionales con soporte multilingüe y características de IA",
         tags: {
           global: "🌍 Soporte Global",
           ai: "🤖 Utilización de IA",
@@ -1468,73 +1511,77 @@ export const translations = {
           title: "Consumo y Producción Responsables",
           items: [
             "Sin papel",
-            "300 hojas de papel reducidas anualmente",
-            "Consumo sostenible"
-          ]
+            "500 hojas de papel reducidas anualmente",
+            "Consumo sostenible",
+          ],
         },
         goal10: {
           title: "Reducción de las Desigualdades",
           items: [
             "Soporte de 4 idiomas",
             "Eliminación de desigualdad en proyectos internacionales",
-            "Eliminación de barreras de idioma"
-          ]
+            "Eliminación de barreras de idioma",
+          ],
         },
         goal17: {
           title: "Alianzas para Lograr los Objetivos",
           items: [
             "Co-creación a través del intercambio de tarjetas",
             "Conexiones globales",
-            "Compartir innovación tecnológica"
-          ]
-        }
+            "Compartir innovación tecnológica",
+          ],
+        },
       },
       environmental: {
         title: "Consideración Ambiental",
         metrics: {
           paperReduction: {
-            value: "300 hojas",
-            description: "Reducción anual de papel"
+            value: "500 hojas",
+            description: "Reducción anual de papel",
           },
           paperless: {
             value: "100%",
-            description: "Logro sin papel"
+            description: "Logro sin papel",
           },
           updates: {
             value: "∞",
-            description: "Tarjetas digitales actualizables"
-          }
+            description: "Tarjetas digitales actualizables",
+          },
         },
-        summary: "Actividades comerciales sostenibles que equilibran la protección ambiental y el crecimiento empresarial"
-      }
+        summary:
+          "Actividades comerciales sostenibles que equilibran la protección ambiental y el crecimiento empresarial",
+      },
     },
     // Partner Program Section
     partnerProgram: {
       title: "Programa de Socios de Co-creación",
       subtitle: "Precios especiales basados en asociación a largo plazo",
       heading: "Para clientes que utilizan otros servicios de Cor. Co., Ltd.",
-      description: "Para clientes que utilizan otros servicios de Cor. Co., Ltd., ofrecemos precios especiales basados en asociación a largo plazo.",
+      description:
+        "Para clientes que utilizan otros servicios de Cor. Co., Ltd., ofrecemos precios especiales basados en asociación a largo plazo.",
       contactNote: "Por favor contáctanos para más detalles.",
       benefits: {
         specialPrice: {
           title: "Precios Especiales",
-          description: "Precios preferenciales exclusivos para clientes existentes"
+          description:
+            "Precios preferenciales exclusivos para clientes existentes",
         },
         prioritySupport: {
           title: "Soporte Prioritario",
-          description: "Soporte por personal dedicado"
+          description: "Soporte por personal dedicado",
         },
         customization: {
           title: "Soporte de Personalización",
-          description: "Ajustes adaptados a las necesidades del cliente"
+          description: "Ajustes adaptados a las necesidades del cliente",
         },
         longTermPartnership: {
           title: "Asociación a Largo Plazo",
-          description: "Construcción continua de relaciones"
-        }
+          description: "Construcción continua de relaciones",
+        },
       },
       ctaButton: "Contáctanos",
-      additionalInfo: "Este programa se basa en el contenido del sitio web oficial (cor-jp.com)"
+      additionalInfo:
+        "Este programa se basa en el contenido del sitio web oficial (cor-jp.com)",
     },
     // Testimonials Section
     testimonials: {
@@ -1544,17 +1591,23 @@ export const translations = {
         {
           name: "Sr. Suzuki",
           role: "Diseñador Web",
-          message: "¡La organización de tarjetas de presentación de papel se completó en 5 minutos! Los perfiles en inglés han aumentado los proyectos en el extranjero. La precisión del disparo de tarjetas de presentación con IA es alta y la conversión VCard es fluida. Es realmente un servicio conveniente para freelancers.",
-          tags: ["Eficiencia", "Proyectos Extranjeros", "Precisión IA"]
+          message:
+            "¡La organización de tarjetas de presentación de papel se completó en 5 minutos! Los perfiles en inglés han aumentado los proyectos en el extranjero. La precisión del disparo de tarjetas de presentación con IA es alta y la conversión VCard es fluida. Es realmente un servicio conveniente para freelancers.",
+          tags: ["Eficiencia", "Proyectos Extranjeros", "Precisión IA"],
         },
         {
           name: "Sr. Tanaka",
           role: "Consultor IT",
-          message: "Sin aplicación requerida, simple. Da una buena impresión a los clientes. El soporte multilingüe ha hecho que la comunicación con clientes extranjeros sea fluida. La relación costo-beneficio también es excelente.",
-          tags: ["Operación Fácil", "Buena Impresión", "Relación Costo-Beneficio"]
-        }
+          message:
+            "Sin aplicación requerida, simple. Da una buena impresión a los clientes. El soporte multilingüe ha hecho que la comunicación con clientes extranjeros sea fluida. La relación costo-beneficio también es excelente.",
+          tags: [
+            "Operación Fácil",
+            "Buena Impresión",
+            "Relación Costo-Beneficio",
+          ],
+        },
       ],
-      note: "Estas voces son hipotéticas. Planeamos seleccionar 5 reseñas reales de 50 participantes de prueba y reemplazarlas."
+      note: "Estas voces son hipotéticas. Planeamos seleccionar 5 reseñas reales de 50 participantes de prueba y reemplazarlas.",
     },
     // FAQ Section
     faq: {
@@ -1563,52 +1616,61 @@ export const translations = {
       items: [
         {
           question: "¿Se puede usar NFC en cualquier smartphone?",
-          answer: "Compatible con el 95% de los smartphones. Disponible en iPhone 7 y posteriores, y modelos Android compatibles con NFC.\nPara modelos específicos compatibles, consulte el sitio web oficial de cada fabricante de smartphones."
+          answer:
+            "Compatible con el 95% de los smartphones. Disponible en iPhone 7 y posteriores, y modelos Android compatibles con NFC.\nPara modelos específicos compatibles, consulte el sitio web oficial de cada fabricante de smartphones.",
         },
         {
-          question: "¿Cuál es la precisión de la lectura de tarjetas de presentación?",
-          answer: "La precisión del disparo de tarjetas de presentación con IA y la conversión VCard es del 95%. Buscamos una mayor precisión a través de mejoras continuas.\nSi el reconocimiento falla, también es posible la corrección manual."
+          question:
+            "¿Cuál es la precisión de la lectura de tarjetas de presentación?",
+          answer:
+            "La precisión del disparo de tarjetas de presentación con IA y la conversión VCard es del 95%. Buscamos una mayor precisión a través de mejoras continuas.\nSi el reconocimiento falla, también es posible la corrección manual.",
         },
         {
           question: "¿Puedo cambiar el diseño yo mismo?",
-          answer: "Los cambios de diseño ilimitados son posibles desde la pantalla de administración.\nPuedes elegir entre 3 tipos de colores claros (blanco, azul claro, beige), y el texto y la información de contacto se pueden actualizar fácilmente."
+          answer:
+            "Los cambios de diseño ilimitados son posibles desde la pantalla de administración.\nPuedes elegir entre 3 tipos de colores claros (blanco, azul claro, beige), y el texto y la información de contacto se pueden actualizar fácilmente.",
         },
         {
           question: "Por favor, dime cómo usar el soporte multilingüe",
-          answer: "Puedes cambiar a 4 idiomas (japonés, inglés, chino, español) tú mismo.\nPuedes seleccionar el idioma de visualización en la pantalla de perfil, por lo que puedes usarlo en tu idioma preferido independientemente de la configuración de idioma del smartphone de la otra parte."
+          answer:
+            "Puedes cambiar a 4 idiomas (japonés, inglés, chino, español) tú mismo.\nPuedes seleccionar el idioma de visualización en la pantalla de perfil, por lo que puedes usarlo en tu idioma preferido independientemente de la configuración de idioma del smartphone de la otra parte.",
         },
         {
           question: "¿Se puede usar sin conexión?",
-          answer: "Actualmente recomendamos usarlo en un entorno en línea.\nLa funcionalidad sin conexión está bajo consideración para el futuro. Priorizamos la provisión de servicios estables en un entorno en línea, aprovechando el beneficio de no requerir aplicación."
-        }
+          answer:
+            "Actualmente recomendamos usarlo en un entorno en línea.\nLa funcionalidad sin conexión está bajo consideración para el futuro. Priorizamos la provisión de servicios estables en un entorno en línea, aprovechando el beneficio de no requerir aplicación.",
+        },
       ],
       additionalHelp: {
         title: "Por favor, no dudes en contactarnos para otras preguntas",
-        description: "Nuestro personal profesional te responderá cuidadosamente",
-        button: "Contáctanos"
-      }
+        description:
+          "Nuestro personal profesional te responderá cuidadosamente",
+        button: "Contáctanos",
+      },
     },
     // Footer Section
     footer: {
-      description: "Conecta con el mundo a través de tarjetas de presentación digitales NFC. Acelera tu negocio con tarjetas de presentación de próxima generación impulsadas por IA.",
+      description:
+        "Conecta con el mundo a través de tarjetas de presentación digitales NFC. Acelera tu negocio con tarjetas de presentación de próxima generación impulsadas por IA.",
       tagline: "Pioneros del futuro, encuentros inteligentes para todos",
       quickLinks: {
         title: "Enlaces Rápidos",
         features: "Características",
         pricing: "Precios",
         testimonials: "Testimonios",
-        faq: "Preguntas Frecuentes"
+        faq: "Preguntas Frecuentes",
       },
       contact: {
         title: "Contacto",
         company: "Cor. Co., Ltd.",
-        trial: "Prueba Gratuita"
+        trial: "Prueba Gratuita",
       },
-      copyright: "© 2025 TapForge by Cor. Co., Ltd. Todos los derechos reservados.",
+      copyright:
+        "© 2025 TapForge by Cor. Co., Ltd. Todos los derechos reservados.",
       legal: {
         privacy: "Política de Privacidad",
-        terms: "Términos de Servicio"
-      }
+        terms: "Términos de Servicio",
+      },
     },
   },
 } as const;

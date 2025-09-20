@@ -7,12 +7,15 @@ import { getTranslation, type Language } from "../lib/i18n";
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
       <div class="flex items-center justify-center mb-4">
-        <img 
-          src="/images/favicon.ico" 
-          alt="TapForge" 
+        <img
+          src="/images/favicon.png"
+          alt="TapForge"
           class="w-12 h-12 rounded-lg mr-3"
         />
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900" id="features-title">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-gray-900"
+          id="features-title"
+        >
           TapForgeの特徴
         </h2>
       </div>
@@ -42,10 +45,18 @@ import { getTranslation, type Language } from "../lib/i18n";
                 />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2" id={`feature-${index}-title`}>
+            <h3
+              class="text-lg font-semibold text-gray-900 mb-2"
+              id={`feature-${index}-title`}
+            >
               {feature.title}
             </h3>
-            <p class="text-gray-600 text-sm" id={`feature-${index}-description`}>{feature.description}</p>
+            <p
+              class="text-gray-600 text-sm"
+              id={`feature-${index}-description`}
+            >
+              {feature.description}
+            </p>
           </div>
         ))
       }
@@ -56,21 +67,42 @@ import { getTranslation, type Language } from "../lib/i18n";
       class="mt-16 bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-8"
     >
       <div class="text-center">
-        <h3 class="text-2xl font-bold text-gray-900 mb-4" id="pricing-title">料金体系（税込）</h3>
-        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto" id="pricing-grid">
+        <h3 class="text-2xl font-bold text-gray-900 mb-4" id="pricing-title">
+          料金体系（税込）
+        </h3>
+        <div
+          class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+          id="pricing-grid"
+        >
           {
             pricingPlans.map((plan, index) => (
               <div class="bg-white rounded-lg p-6 shadow-sm">
-                <h4 class="font-semibold text-gray-900 mb-2" id={`plan-${index}-title`}>{plan.title}</h4>
-                <div class={`text-2xl font-bold ${plan.priceColor} mb-2`} id={`plan-${index}-price`}>
+                <h4
+                  class="font-semibold text-gray-900 mb-2"
+                  id={`plan-${index}-title`}
+                >
+                  {plan.title}
+                </h4>
+                <div
+                  class={`text-2xl font-bold ${plan.priceColor} mb-2`}
+                  id={`plan-${index}-price`}
+                >
                   {plan.price}
                 </div>
-                <p class="text-sm text-gray-600" id={`plan-${index}-description`}>{plan.description}</p>
+                <p
+                  class="text-sm text-gray-600"
+                  id={`plan-${index}-description`}
+                >
+                  {plan.description}
+                </p>
               </div>
             ))
           }
         </div>
-        <p class="text-lg font-semibold text-gray-700 mt-6" id="pricing-tagline">
+        <p
+          class="text-lg font-semibold text-gray-700 mt-6"
+          id="pricing-tagline"
+        >
           業界最安値で技術を民主化
         </p>
       </div>
@@ -78,7 +110,9 @@ import { getTranslation, type Language } from "../lib/i18n";
 
     <!-- Demo Video Section -->
     <div class="mt-16 text-center">
-      <h3 class="text-2xl font-bold text-gray-900 mb-8" id="demo-title">デモ動画</h3>
+      <h3 class="text-2xl font-bold text-gray-900 mb-8" id="demo-title">
+        デモ動画
+      </h3>
       <div class="bg-gray-100 rounded-2xl p-8 max-w-2xl mx-auto">
         <div
           class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center"
@@ -93,8 +127,12 @@ import { getTranslation, type Language } from "../lib/i18n";
                 d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"
               ></path>
             </svg>
-            <p class="text-gray-600" id="demo-description">AI名刺撮影デモ動画</p>
-            <p class="text-sm text-gray-500" id="demo-note">（YouTubeリンク予定）</p>
+            <p class="text-gray-600" id="demo-description">
+              AI名刺撮影デモ動画
+            </p>
+            <p class="text-sm text-gray-500" id="demo-note">
+              （YouTubeリンク予定）
+            </p>
           </div>
         </div>
       </div>
@@ -107,180 +145,219 @@ import { getTranslation, type Language } from "../lib/i18n";
   document.addEventListener("DOMContentLoaded", function () {
     // Get current language from URL or localStorage
     const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    const storedLang = localStorage.getItem('preferred-language');
-    const currentLang = urlLang || storedLang || 'ja';
-    
+    const urlLang = urlParams.get("lang");
+    const storedLang = localStorage.getItem("preferred-language");
+    const currentLang = urlLang || storedLang || "ja";
+
     // Update features content based on language
     updateFeaturesContent(currentLang);
   });
 
   function updateFeaturesContent(lang) {
     const translations = {
-      'ja': {
-        title: 'TapForgeの特徴',
-        subtitle: '最新技術で名刺交換を革新',
+      ja: {
+        title: "TapForgeの特徴",
+        subtitle: "最新技術で名刺交換を革新",
         features: [
           {
-            title: 'AI名刺撮影・VCard変換',
-            description: '紙の名刺をAIでデータ化（精度95%）、VCardとしてスマートフォンに保存'
+            title: "AI名刺撮影・VCard変換",
+            description:
+              "紙の名刺をAIでデータ化（精度95%）、VCardとしてスマートフォンに保存",
           },
           {
-            title: '多言語対応',
-            description: '日本語、英語、中国語（簡体字）、スペイン語の4言語に自動で切り替わり'
+            title: "多言語対応",
+            description:
+              "日本語、英語、中国語（簡体字）、スペイン語の4言語に自動で切り替わり",
           },
           {
-            title: 'アプリ不要',
-            description: 'NFCタップで即座にプロフィールを表示（オンライン環境）'
+            title: "アプリ不要",
+            description:
+              "NFCタップで即座にプロフィールを表示（オンライン環境）",
           },
           {
-            title: 'ペーパーレス',
-            description: 'SDGs目標12に貢献、完全ペーパーレスで環境に配慮'
-          }
+            title: "ペーパーレス",
+            description: "SDGs目標12に貢献、完全ペーパーレスで環境に配慮",
+          },
         ],
         pricing: {
-          title: '料金体系（税込）',
+          title: "料金体系（税込）",
           plans: [
-            { title: '初期費用', price: '¥3,000', description: '1枚目' },
-            { title: '追加カード', price: '¥600', description: '2枚目以降' },
-            { title: '月額料金', price: '¥0', description: '完全無料' }
+            { title: "初期費用", price: "¥3,000", description: "1枚目" },
+            { title: "追加カード", price: "¥600", description: "2枚目以降" },
+            { title: "月額料金", price: "¥0", description: "完全無料" },
           ],
-          tagline: '業界最安値で技術を民主化'
+          tagline: "業界最安値で技術を民主化",
         },
         demo: {
-          title: 'デモ動画',
-          description: 'AI名刺撮影デモ動画',
-          note: '（YouTubeリンク予定）'
-        }
+          title: "デモ動画",
+          description: "AI名刺撮影デモ動画",
+          note: "（YouTubeリンク予定）",
+        },
       },
-      'en': {
-        title: 'TapForge Features',
-        subtitle: 'Revolutionizing business card exchange with cutting-edge technology',
+      en: {
+        title: "TapForge Features",
+        subtitle:
+          "Revolutionizing business card exchange with cutting-edge technology",
         features: [
           {
-            title: 'AI Business Card Scanning & VCard Conversion',
-            description: 'Digitize paper business cards with AI (95% accuracy) and save as VCard to smartphones'
+            title: "AI Business Card Scanning & VCard Conversion",
+            description:
+              "Digitize paper business cards with AI (95% accuracy) and save as VCard to smartphones",
           },
           {
-            title: 'Multilingual Support',
-            description: 'Automatically switches between 4 languages: Japanese, English, Chinese (Simplified), Spanish'
+            title: "Multilingual Support",
+            description:
+              "Automatically switches between 4 languages: Japanese, English, Chinese (Simplified), Spanish",
           },
           {
-            title: 'No App Required',
-            description: 'Instantly display profiles with NFC tap (online environment)'
+            title: "No App Required",
+            description:
+              "Instantly display profiles with NFC tap (online environment)",
           },
           {
-            title: 'Paperless',
-            description: 'Contributes to SDGs Goal 12, completely paperless and environmentally conscious'
-          }
+            title: "Paperless",
+            description:
+              "Contributes to SDGs Goal 12, completely paperless and environmentally conscious",
+          },
         ],
         pricing: {
-          title: 'Pricing (Tax Included)',
+          title: "Pricing (Tax Included)",
           plans: [
-            { title: 'Initial Cost', price: '¥3,000', description: 'First card' },
-            { title: 'Additional Cards', price: '¥600', description: '2nd card onwards' },
-            { title: 'Monthly Fee', price: '¥0', description: 'Completely free' }
+            {
+              title: "Initial Cost",
+              price: "¥3,000",
+              description: "First card",
+            },
+            {
+              title: "Additional Cards",
+              price: "¥600",
+              description: "2nd card onwards",
+            },
+            {
+              title: "Monthly Fee",
+              price: "¥0",
+              description: "Completely free",
+            },
           ],
-          tagline: 'Democratizing technology at industry\'s lowest price'
+          tagline: "Democratizing technology at industry's lowest price",
         },
         demo: {
-          title: 'Demo Video',
-          description: 'AI Business Card Scanning Demo Video',
-          note: '(YouTube link coming soon)'
-        }
+          title: "Demo Video",
+          description: "AI Business Card Scanning Demo Video",
+          note: "(YouTube link coming soon)",
+        },
       },
-      'zh': {
-        title: 'TapForge特点',
-        subtitle: '用最新技术革新名片交换',
+      zh: {
+        title: "TapForge特点",
+        subtitle: "用最新技术革新名片交换",
         features: [
           {
-            title: 'AI名片扫描·VCard转换',
-            description: '用AI将纸质名片数字化（精度95%），保存为VCard到智能手机'
+            title: "AI名片扫描·VCard转换",
+            description:
+              "用AI将纸质名片数字化（精度95%），保存为VCard到智能手机",
           },
           {
-            title: '多语言支持',
-            description: '自动切换4种语言：日语、英语、中文（简体）、西班牙语'
+            title: "多语言支持",
+            description: "自动切换4种语言：日语、英语、中文（简体）、西班牙语",
           },
           {
-            title: '无需应用',
-            description: 'NFC轻触即可立即显示个人资料（在线环境）'
+            title: "无需应用",
+            description: "NFC轻触即可立即显示个人资料（在线环境）",
           },
           {
-            title: '无纸化',
-            description: '为SDGs目标12做贡献，完全无纸化，环保意识'
-          }
+            title: "无纸化",
+            description: "为SDGs目标12做贡献，完全无纸化，环保意识",
+          },
         ],
         pricing: {
-          title: '价格体系（含税）',
+          title: "价格体系（含税）",
           plans: [
-            { title: '初始费用', price: '¥3,000', description: '第1张' },
-            { title: '追加卡片', price: '¥600', description: '第2张起' },
-            { title: '月费', price: '¥0', description: '完全免费' }
+            { title: "初始费用", price: "¥3,000", description: "第1张" },
+            { title: "追加卡片", price: "¥600", description: "第2张起" },
+            { title: "月费", price: "¥0", description: "完全免费" },
           ],
-          tagline: '以行业最低价格普及技术'
+          tagline: "以行业最低价格普及技术",
         },
         demo: {
-          title: '演示视频',
-          description: 'AI名片扫描演示视频',
-          note: '（YouTube链接即将推出）'
-        }
+          title: "演示视频",
+          description: "AI名片扫描演示视频",
+          note: "（YouTube链接即将推出）",
+        },
       },
-      'es': {
-        title: 'Características de TapForge',
-        subtitle: 'Revolucionando el intercambio de tarjetas de presentación con tecnología de vanguardia',
+      es: {
+        title: "Características de TapForge",
+        subtitle:
+          "Revolucionando el intercambio de tarjetas de presentación con tecnología de vanguardia",
         features: [
           {
-            title: 'Escaneo de Tarjeta con IA y Conversión VCard',
-            description: 'Digitaliza tarjetas de presentación de papel con IA (95% precisión) y guarda como VCard en smartphones'
+            title: "Escaneo de Tarjeta con IA y Conversión VCard",
+            description:
+              "Digitaliza tarjetas de presentación de papel con IA (95% precisión) y guarda como VCard en smartphones",
           },
           {
-            title: 'Soporte Multilingüe',
-            description: 'Cambia automáticamente entre 4 idiomas: Japonés, Inglés, Chino (Simplificado), Español'
+            title: "Soporte Multilingüe",
+            description:
+              "Cambia automáticamente entre 4 idiomas: Japonés, Inglés, Chino (Simplificado), Español",
           },
           {
-            title: 'Sin App Requerida',
-            description: 'Muestra perfiles instantáneamente con toque NFC (entorno en línea)'
+            title: "Sin App Requerida",
+            description:
+              "Muestra perfiles instantáneamente con toque NFC (entorno en línea)",
           },
           {
-            title: 'Sin Papel',
-            description: 'Contribuye al Objetivo 12 de los ODS, completamente sin papel y consciente del medio ambiente'
-          }
+            title: "Sin Papel",
+            description:
+              "Contribuye al Objetivo 12 de los ODS, completamente sin papel y consciente del medio ambiente",
+          },
         ],
         pricing: {
-          title: 'Precios (Impuestos Incluidos)',
+          title: "Precios (Impuestos Incluidos)",
           plans: [
-            { title: 'Costo Inicial', price: '¥3,000', description: 'Primera tarjeta' },
-            { title: 'Tarjetas Adicionales', price: '¥600', description: '2da tarjeta en adelante' },
-            { title: 'Tarifa Mensual', price: '¥0', description: 'Completamente gratis' }
+            {
+              title: "Costo Inicial",
+              price: "¥3,000",
+              description: "Primera tarjeta",
+            },
+            {
+              title: "Tarjetas Adicionales",
+              price: "¥600",
+              description: "2da tarjeta en adelante",
+            },
+            {
+              title: "Tarifa Mensual",
+              price: "¥0",
+              description: "Completamente gratis",
+            },
           ],
-          tagline: 'Democratizando la tecnología al precio más bajo de la industria'
+          tagline:
+            "Democratizando la tecnología al precio más bajo de la industria",
         },
         demo: {
-          title: 'Video Demo',
-          description: 'Video Demo de Escaneo de Tarjeta con IA',
-          note: '(Enlace de YouTube próximamente)'
-        }
-      }
+          title: "Video Demo",
+          description: "Video Demo de Escaneo de Tarjeta con IA",
+          note: "(Enlace de YouTube próximamente)",
+        },
+      },
     };
 
-    const t = translations[lang] || translations['ja'];
-    
+    const t = translations[lang] || translations["ja"];
+
     // Update main title and subtitle
-    const titleElement = document.getElementById('features-title');
+    const titleElement = document.getElementById("features-title");
     if (titleElement) {
       titleElement.textContent = t.title;
     }
-    
-    const subtitleElement = document.getElementById('features-subtitle');
+
+    const subtitleElement = document.getElementById("features-subtitle");
     if (subtitleElement) {
       subtitleElement.textContent = t.subtitle;
     }
-    
+
     // Update features
     for (let i = 0; i < t.features.length; i++) {
       const titleElement = document.getElementById(`feature-${i}-title`);
       const descElement = document.getElementById(`feature-${i}-description`);
-      
+
       if (titleElement) {
         titleElement.textContent = t.features[i].title;
       }
@@ -288,18 +365,18 @@ import { getTranslation, type Language } from "../lib/i18n";
         descElement.textContent = t.features[i].description;
       }
     }
-    
+
     // Update pricing
-    const pricingTitleElement = document.getElementById('pricing-title');
+    const pricingTitleElement = document.getElementById("pricing-title");
     if (pricingTitleElement) {
       pricingTitleElement.textContent = t.pricing.title;
     }
-    
+
     for (let i = 0; i < t.pricing.plans.length; i++) {
       const titleElement = document.getElementById(`plan-${i}-title`);
       const priceElement = document.getElementById(`plan-${i}-price`);
       const descElement = document.getElementById(`plan-${i}-description`);
-      
+
       if (titleElement) {
         titleElement.textContent = t.pricing.plans[i].title;
       }
@@ -310,24 +387,24 @@ import { getTranslation, type Language } from "../lib/i18n";
         descElement.textContent = t.pricing.plans[i].description;
       }
     }
-    
-    const taglineElement = document.getElementById('pricing-tagline');
+
+    const taglineElement = document.getElementById("pricing-tagline");
     if (taglineElement) {
       taglineElement.textContent = t.pricing.tagline;
     }
-    
+
     // Update demo section
-    const demoTitleElement = document.getElementById('demo-title');
+    const demoTitleElement = document.getElementById("demo-title");
     if (demoTitleElement) {
       demoTitleElement.textContent = t.demo.title;
     }
-    
-    const demoDescElement = document.getElementById('demo-description');
+
+    const demoDescElement = document.getElementById("demo-description");
     if (demoDescElement) {
       demoDescElement.textContent = t.demo.description;
     }
-    
-    const demoNoteElement = document.getElementById('demo-note');
+
+    const demoNoteElement = document.getElementById("demo-note");
     if (demoNoteElement) {
       demoNoteElement.textContent = t.demo.note;
     }
