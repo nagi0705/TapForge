@@ -22,9 +22,15 @@
 
 TapForgeは、フリーランサー向けのNFCデジタル名刺サービスです。アプリ不要、月額無料で多言語プロフィールを共有し、海外案件獲得を支援します。
 
+### 最新更新（2025年9月20日）
+
+- TrialFormコンポーネントをCTAコンポーネントに統合
+- JavaScriptコードのリファクタリングによりパフォーマンス向上
+- 多言語サポートの改善
+
 ## ✨ 主な特徴
 
-- 🤖 **AI名刺撮影・VCard変換** - 紙の名刺をAIでデータ化（精度95%）
+- 🤖 **OCR名刺読み取り機能付きNFC名刺** - 通常別アプリで月額500円のOCR機能を無料で統合
 - 🌍 **多言語対応** - 日本語、英語、中国語、スペイン語の4言語対応
 - 📱 **アプリ不要** - NFCタップで即座にプロフィール表示
 - 💰 **月額無料** - 初期費用3,000円のみ、月額料金なし
@@ -33,11 +39,14 @@ TapForgeは、フリーランサー向けのNFCデジタル名刺サービスで
 
 ## 🛠️ 技術仕様
 
-- **フレームワーク**: Astro + Tailwind CSS
-- **多言語対応**: カスタムi18n実装
+- **フレームワーク**: Astro 5.8 + Tailwind CSS v4
+- **UIライブラリ**: React 19
+- **言語**: TypeScript（Strict mode）
+- **多言語対応**: カスタムi18n実装（4言語対応）
 - **ホスティング**: Vercel（独自ドメイン対応）
 - **SEO最適化**: メタタグ、キーワード最適化
 - **アクセシビリティ**: WCAG 2.1準拠
+- **パフォーマンス**: 静的生成 + 選択的ハイドレーション
 
 ## 💰 料金体系（税込）
 
@@ -72,14 +81,29 @@ TapForgeは、フリーランサー向けのNFCデジタル名刺サービスで
    npm run dev
    ```
 
+   開発サーバーは http://localhost:4321 で起動します。
+
 3. **本番ビルド**
+
    ```bash
    npm run build
    ```
 
+4. **コード品質チェック**
+
+   ```bash
+   npx astro check    # TypeScript型チェック
+   npm run format     # Prettierでフォーマット
+   ```
+
+5. **プレビュー**
+   ```bash
+   npm run preview    # ビルド結果のプレビュー
+   ```
+
 ## 📊 導入効果
 
-- **コスト削減**: 年間300枚の紙名刺コストが0円に
+- **コスト削減**: 従来の紙名刺5,000円+OCRアプリ6,000円→TapForge3,000円で実現
 - **効率化**: 名刺整理が5分で完了（50枚一括デジタル化）
 - **ビジネス拡大**: フォロー率が15%から40%に向上
 - **環境配慮**: 年間300枚の紙削減でSDGsに貢献
@@ -104,10 +128,11 @@ Copyright (c) 2025 - Present, Developed by [Cor.株式会社](https://cor-jp.com
 
 ## 🏆 クレジット
 
-- [Astro](https://astro.build/) - 静的サイトジェネレーター
-- [Tailwind CSS](https://tailwindcss.com/) - CSSフレームワーク
-- [React](https://reactjs.org/) - UIライブラリ
+- [Astro 5.8](https://astro.build/) - 静的サイトジェネレーター
+- [Tailwind CSS v4](https://tailwindcss.com/) - CSSフレームワーク
+- [React 19](https://reactjs.org/) - UIライブラリ
 - [TypeScript](https://www.typescriptlang.org/) - プログラミング言語
+- [MDX](https://mdxjs.com/) - リッチコンテンツ作成
 
 ---
 

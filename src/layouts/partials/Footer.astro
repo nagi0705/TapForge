@@ -89,28 +89,32 @@ const t = translations[lang].footer;
               {t.contact.trial}
             </a>
           </li>
+          <li>
+            <a
+              href={`/privacy${lang !== "ja" ? `?lang=${lang}` : ""}`}
+              class="text-gray-300 hover:text-white transition-colors"
+            >
+              {t.legal.privacy}
+            </a>
+          </li>
+          <li>
+            <a
+              href={`/terms${lang !== "ja" ? `?lang=${lang}` : ""}`}
+              class="text-gray-300 hover:text-white transition-colors"
+            >
+              {t.legal.terms}
+            </a>
+          </li>
         </ul>
       </div>
     </div>
 
     <!-- Bottom Section -->
     <div class="border-t border-gray-700 mt-12 pt-8">
-      <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="text-center">
         <p class="text-gray-400 text-sm">
           {t.copyright}
         </p>
-        <div class="flex space-x-6 mt-4 md:mt-0">
-          <a
-            href={`/privacy${lang !== "ja" ? `?lang=${lang}` : ""}`}
-            class="text-gray-400 hover:text-white transition-colors text-sm"
-            >{t.legal.privacy}</a
-          >
-          <a
-            href={`/terms${lang !== "ja" ? `?lang=${lang}` : ""}`}
-            class="text-gray-400 hover:text-white transition-colors text-sm"
-            >{t.legal.terms}</a
-          >
-        </div>
       </div>
     </div>
   </div>
@@ -166,6 +170,8 @@ const t = translations[lang].footer;
           title: "お問い合わせ",
           company: "Cor.株式会社",
           trial: "無料トライアル",
+          privacy: "プライバシーポリシー",
+          terms: "利用規約",
         },
         copyright: "© 2025 TapForge by Cor.株式会社. All rights reserved.",
         legal: {
@@ -188,6 +194,8 @@ const t = translations[lang].footer;
           title: "Contact",
           company: "Cor. Co., Ltd.",
           trial: "Free Trial",
+          privacy: "Privacy Policy",
+          terms: "Terms of Service",
         },
         copyright: "© 2025 TapForge by Cor. Co., Ltd. All rights reserved.",
         legal: {
@@ -210,6 +218,8 @@ const t = translations[lang].footer;
           title: "联系我们",
           company: "Cor.株式会社",
           trial: "免费试用",
+          privacy: "隐私政策",
+          terms: "服务条款",
         },
         copyright: "© 2025 TapForge by Cor.株式会社. 版权所有。",
         legal: {
@@ -232,6 +242,8 @@ const t = translations[lang].footer;
           title: "Contacto",
           company: "Cor. Co., Ltd.",
           trial: "Prueba Gratuita",
+          privacy: "Política de Privacidad",
+          terms: "Términos de Servicio",
         },
         copyright:
           "© 2025 TapForge by Cor. Co., Ltd. Todos los derechos reservados.",
@@ -277,9 +289,11 @@ const t = translations[lang].footer;
     const contactItems = document
       .querySelectorAll("footer .space-y-2")[1]
       ?.querySelectorAll("a");
-    if (contactItems && contactItems.length >= 2) {
+    if (contactItems && contactItems.length >= 4) {
       contactItems[0].textContent = t.contact.company;
       contactItems[1].textContent = t.contact.trial;
+      contactItems[2].textContent = t.contact.privacy;
+      contactItems[3].textContent = t.contact.terms;
     }
 
     // Update copyright
@@ -288,13 +302,6 @@ const t = translations[lang].footer;
     );
     if (copyrightElement) {
       copyrightElement.textContent = t.copyright;
-    }
-
-    // Update legal links
-    const legalLinks = document.querySelectorAll("footer .flex.space-x-6 a");
-    if (legalLinks.length >= 2) {
-      legalLinks[0].textContent = t.legal.privacy;
-      legalLinks[1].textContent = t.legal.terms;
     }
   }
 </script>

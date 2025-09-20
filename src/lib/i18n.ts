@@ -134,9 +134,9 @@ export const translations = {
       subtitle: "最新技術で名刺交換を革新",
       items: {
         aiScan: {
-          title: "AI名刺撮影・VCard変換",
+          title: "OCR名刺読み取り機能付きNFC名刺",
           description:
-            "紙の名刺をAIでデータ化（精度95%）、VCardとしてスマートフォンに保存",
+            "通常別アプリで月額500円のOCR機能を無料で統合。紙の名刺をAIでデータ化（精度95%）し、VCardとしてスマートフォンに直接保存",
         },
         multilingual: {
           title: "多言語対応",
@@ -171,7 +171,8 @@ export const translations = {
             description: "完全無料",
           },
         },
-        tagline: "業界最安値で技術を民主化",
+        tagline:
+          "OCR機能付きNFC名刺の業界最安値 - 通常年間11,000円の機能を3,000円で提供",
       },
       demo: {
         title: "デモ動画",
@@ -186,8 +187,9 @@ export const translations = {
       items: {
         costReduction: {
           title: "コスト削減",
-          metric: "¥2,000",
-          description: "年間500枚の紙名刺コストが0円に",
+          metric: "¥8,000",
+          description:
+            "従来の紙名刺5,000円+OCRアプリ6,000円→TapForge3,000円で実現",
         },
         timeEfficiency: {
           title: "効率化",
@@ -209,14 +211,14 @@ export const translations = {
         title: "詳細比較",
         headers: {
           item: "項目",
-          traditional: "従来の紙名刺",
+          traditional: "従来の紙名刺+OCRアプリ",
           tapforge: "TapForge",
         },
         rows: {
           annualCost: {
             item: "年間コスト",
-            traditional: "¥5,000",
-            tapforge: "¥0",
+            traditional: "¥11,000",
+            tapforge: "¥3,000",
             tapforgeNote: "（初期費用のみ）",
           },
           organizationTime: {
