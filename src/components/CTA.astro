@@ -1,16 +1,15 @@
 ---
-import TrialForm from "./TrialForm.astro";
 import { getTranslation, type Language } from "../lib/i18n";
-// CTA Section
+// CTA Section with integrated Trial Form
 ---
 
 <section class="py-20 bg-gradient-to-br from-blue-600 to-purple-700">
   <div class="container mx-auto px-4">
     <div class="text-center text-white">
       <div class="flex items-center justify-center mb-6">
-        <img 
-          src="/images/favicon.ico" 
-          alt="TapForge" 
+        <img
+          src="/images/favicon.png"
+          alt="TapForge"
           class="w-16 h-16 rounded-xl shadow-lg mr-4"
         />
         <h2 class="text-3xl md:text-4xl font-bold" id="cta-title">
@@ -21,112 +20,73 @@ import { getTranslation, type Language } from "../lib/i18n";
         50名限定の無料トライアルで、TapForgeの力を体験してください
       </p>
 
-      <!-- Visual Demo -->
-      <div class="mb-12 max-w-md mx-auto">
-        <div class="bg-white rounded-2xl p-6 shadow-2xl">
-          <div class="flex items-center justify-center space-x-4">
-            <!-- NFC Card -->
-            <div
-              class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 text-center"
-            >
-              <div
-                class="w-12 h-8 bg-blue-500 rounded mx-auto mb-2 flex items-center justify-center"
+      <!-- Trial Form Section -->
+      <div class="mb-12 max-w-2xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+          <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4" id="trial-title">
+              無料トライアルについて
+            </h2>
+            <p class="text-lg text-gray-600 mb-2">
+              <span class="text-red-500 font-bold" id="trial-limited"
+                >50名限定!</span
               >
-                <svg
-                  class="w-6 h-6 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"
-                  ></path>
-                </svg>
-              </div>
-              <p class="text-xs text-gray-600">TapForge</p>
-            </div>
-
-            <!-- Arrow -->
-            <div class="text-blue-500">
-              <svg
-                class="w-8 h-8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+              <span id="trial-description"
+                >あなたの名刺を1枚無料で作成します。</span
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-              </svg>
-            </div>
-
-            <!-- Phone -->
-            <div class="bg-gray-900 rounded-lg p-2">
-              <div class="bg-white rounded p-2 text-center">
-                <div
-                  class="w-8 h-8 bg-blue-500 rounded-full mx-auto mb-1 flex items-center justify-center"
-                >
-                  <span class="text-white font-bold text-sm">T</span>
-                </div>
-                <p class="text-xs text-gray-600" id="profile-display">プロフィール表示</p>
-              </div>
-            </div>
+            </p>
+            <p class="text-sm text-gray-500" id="trial-sub-description">
+              デザイン変更無制限、OCR名刺読み取り機能・VCard変換利用可
+            </p>
           </div>
 
-          <!-- Tap Indicator -->
-          <div class="mt-4 text-center">
-            <span
-              class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse"
-              id="tap-now"
-            >
-              今すぐタップ!
-            </span>
+          <!-- Trial Application -->
+          <div class="bg-gray-50 rounded-lg p-6">
+            <div class="text-center">
+              <h3
+                class="text-xl font-semibold text-gray-800 mb-4"
+                id="trial-form-title"
+              >
+                無料トライアル申し込み
+              </h3>
+              <p class="text-gray-600 mb-6" id="trial-form-description">
+                今すぐ無料トライアルに申し込んで、TapForgeの力を体験してください。
+              </p>
+              <a
+                href="#trial"
+                class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center justify-center min-h-[48px]"
+                id="trial-form-button"
+              >
+                <span class="text-red-500 font-bold mr-2" id="trial-form-limited">50名限定!</span>
+                <span id="trial-form-button-text">無料トライアル申し込み</span>
+              </a>
+            </div>
+          </div>
+          <!-- Terms and Conditions -->
+          <div class="mt-6 text-center">
+            <p class="text-xs text-gray-500" id="terms-text">
+              <span id="terms-text-start">申し込みにより、</span><a
+                href="/terms"
+                class="text-blue-600 hover:underline"
+                id="terms-link"
+                data-link="terms">利用規約</a
+              ><span id="terms-and">および</span><a
+                href="/privacy"
+                class="text-blue-600 hover:underline"
+                id="privacy-link"
+                data-link="privacy">プライバシーポリシー</a
+              ><span id="terms-text-end">に同意したものとみなされます。</span>
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- CTA Buttons -->
-      <div
-        class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-2xl mx-auto"
-      >
-        <!-- Trial Button -->
-        <a
-          href="#trial"
-          class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center justify-center min-h-[48px] w-full sm:w-auto"
-          id="cta-trial-button"
-        >
-          <span class="text-red-500 font-bold mr-2" id="cta-limited">50名限定!</span>
-          <span id="cta-trial-text">無料トライアル申し込み</span>
-        </a>
-
-        <!-- Contact Button -->
-        <a
-          href="https://cor-jp.com/contact/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center min-h-[48px] w-full sm:w-auto"
-          id="cta-contact-button"
-        >
-          <svg
-            class="w-5 h-5 mr-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-            ></path>
-          </svg>
-          <span id="cta-contact-text">お問い合わせ（共創パートナー向け）</span>
-        </a>
-      </div>
 
       <!-- Trust Indicators -->
-      <div class="mt-12 flex flex-wrap justify-center gap-8 text-sm opacity-80" id="cta-features">
+      <div
+        class="mt-12 flex flex-wrap justify-center gap-8 text-sm opacity-80"
+        id="cta-features"
+      >
         <div class="flex items-center">
           <svg
             class="w-5 h-5 text-green-400 mr-2"
@@ -184,120 +144,223 @@ import { getTranslation, type Language } from "../lib/i18n";
   </div>
 </section>
 
-<!-- Trial Form Section -->
-<section class="py-20 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <TrialForm />
-  </div>
-</section>
-
 <script>
-  // CTA section language switching
-  document.addEventListener("DOMContentLoaded", function () {
-    // Get current language from URL or localStorage
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    const storedLang = localStorage.getItem('preferred-language');
-    const currentLang = urlLang || storedLang || 'ja';
-    
-    // Update CTA content based on language
-    updateCTAContent(currentLang);
-  });
+  // Language translations for CTA component
+  const ctaTranslations = {
+    ja: {
+      cta: {
+        title: "今すぐ始めませんか？",
+        description:
+          "50名限定の無料トライアルで、TapForgeの力を体験してください",
+        limited: "50名限定!",
+        trialButton: "無料トライアル申し込み",
+        contactButton: "お問い合わせはこちら",
+        features: [
+          "アプリ不要",
+          "月額無料",
+          "4言語対応",
+          "OCR名刺読み取り機能",
+        ],
+      },
+      trial: {
+        title: "無料トライアルについて",
+        limited: "50名限定!",
+        description: "あなたの名刺を1枚無料で作成します。",
+        subDescription:
+          "デザイン変更無制限、OCR名刺読み取り機能・VCard変換利用可",
+        trialFormTitle: "無料トライアル申し込み",
+        trialFormDescription:
+          "今すぐ無料トライアルに申し込んで、TapForgeの力を体験してください。",
+        trialFormButton: "無料トライアル申し込み",
+        trialFormLimited: "50名限定!",
+        termsTextStart: "申し込みにより、",
+        termsLink: "利用規約",
+        termsAnd: "および",
+        privacyLink: "プライバシーポリシー",
+        termsTextEnd: "に同意したものとみなされます。",
+      },
+    },
+    en: {
+      cta: {
+        title: "Ready to get started?",
+        description:
+          "Experience the power of TapForge with our limited free trial for 50 people",
+        limited: "Limited to 50!",
+        trialButton: "Apply for Free Trial",
+        contactButton: "Contact Us Here",
+        features: [
+          "No App Required",
+          "Free Monthly",
+          "4 Languages",
+          "OCR Business Card Reading",
+        ],
+      },
+      trial: {
+        title: "About Free Trial",
+        limited: "Limited to 50!",
+        description: "We'll create one business card for you for free.",
+        subDescription:
+          "Unlimited design changes, OCR business card reading & VCard conversion available",
+        trialFormTitle: "Apply for Free Trial",
+        trialFormDescription:
+          "Apply for the free trial now and experience the power of TapForge.",
+        trialFormButton: "Apply for Free Trial",
+        trialFormLimited: "Limited to 50!",
+        termsTextStart: "By applying, you agree to our ",
+        termsLink: "Terms of Service",
+        termsAnd: " and ",
+        privacyLink: "Privacy Policy",
+        termsTextEnd: ".",
+      },
+    },
+    zh: {
+      cta: {
+        title: "准备开始了吗？",
+        description: "通过我们限50人的免费试用体验TapForge的力量",
+        limited: "限50名！",
+        trialButton: "申请免费试用",
+        contactButton: "联系我们",
+        features: ["无需应用", "月费免费", "4种语言", "OCR名片读取"],
+      },
+      trial: {
+        title: "关于免费试用",
+        limited: "限50名！",
+        description: "我们将为您免费制作一张名片。",
+        subDescription: "无限设计更改，OCR名片读取和VCard转换可用",
+        trialFormTitle: "申请免费试用",
+        trialFormDescription:
+          "立即申请免费试用，体验TapForge的力量。",
+        trialFormButton: "申请免费试用",
+        trialFormLimited: "限50名！",
+        termsTextStart: "申请即表示您同意我们的",
+        termsLink: "服务条款",
+        termsAnd: "和",
+        privacyLink: "隐私政策",
+        termsTextEnd: "。",
+      },
+    },
+    es: {
+      cta: {
+        title: "¿Listo para comenzar?",
+        description:
+          "Experimenta el poder de TapForge con nuestra prueba gratuita limitada para 50 personas",
+        limited: "¡Limitado a 50!",
+        trialButton: "Solicitar Prueba Gratuita",
+        contactButton: "Contáctanos Aquí",
+        features: [
+          "Sin App Requerida",
+          "Mensualidad Gratuita",
+          "4 Idiomas",
+          "Lectura OCR de Tarjetas",
+        ],
+      },
+      trial: {
+        title: "Acerca de la Prueba Gratuita",
+        limited: "¡Limitado a 50!",
+        description: "Crearemos una tarjeta de presentación gratis para ti.",
+        subDescription:
+          "Cambios de diseño ilimitados, lectura OCR de tarjetas y conversión VCard disponibles",
+        trialFormTitle: "Solicitar Prueba Gratuita",
+        trialFormDescription:
+          "Solicita la prueba gratuita ahora y experimenta el poder de TapForge.",
+        trialFormButton: "Solicitar Prueba Gratuita",
+        trialFormLimited: "¡Limitado a 50!",
+        termsTextStart: "Al solicitar, aceptas nuestros ",
+        termsLink: "Términos de Servicio",
+        termsAnd: " y ",
+        privacyLink: "Política de Privacidad",
+        termsTextEnd: ".",
+      },
+    },
+  };
 
-  function updateCTAContent(lang) {
-    const translations = {
-      'ja': {
-        title: '今すぐ始めませんか？',
-        description: '50名限定の無料トライアルで、TapForgeの力を体験してください',
-        limited: '50名限定!',
-        trialButton: '無料トライアル申し込み',
-        contactButton: 'お問い合わせ（共創パートナー向け）',
-        tapNow: '今すぐタップ!',
-        profileDisplay: 'プロフィール表示',
-        features: ['アプリ不要', '月額無料', '4言語対応', 'AI名刺撮影']
-      },
-      'en': {
-        title: 'Ready to get started?',
-        description: 'Experience the power of TapForge with our limited free trial for 50 people',
-        limited: 'Limited to 50!',
-        trialButton: 'Apply for Free Trial',
-        contactButton: 'Contact (For Co-creation Partners)',
-        tapNow: 'Tap Now!',
-        profileDisplay: 'Profile Display',
-        features: ['No App Required', 'Free Monthly', '4 Languages', 'AI Business Card Scanning']
-      },
-      'zh': {
-        title: '准备开始了吗？',
-        description: '通过我们限50人的免费试用体验TapForge的力量',
-        limited: '限50名！',
-        trialButton: '申请免费试用',
-        contactButton: '联系我们（共创合作伙伴）',
-        tapNow: '立即轻触！',
-        profileDisplay: '个人资料显示',
-        features: ['无需应用', '月费免费', '4种语言', 'AI名片扫描']
-      },
-      'es': {
-        title: '¿Listo para comenzar?',
-        description: 'Experimenta el poder de TapForge con nuestra prueba gratuita limitada para 50 personas',
-        limited: '¡Limitado a 50!',
-        trialButton: 'Solicitar Prueba Gratuita',
-        contactButton: 'Contacto (Para Socios de Co-creación)',
-        tapNow: '¡Toca Ahora!',
-        profileDisplay: 'Mostrar Perfil',
-        features: ['Sin App Requerida', 'Mensualidad Gratuita', '4 Idiomas', 'Escaneo de Tarjeta con IA']
-      }
-    };
-
-    const t = translations[lang] || translations['ja'];
-    
-    // Update title
-    const titleElement = document.getElementById('cta-title');
-    if (titleElement) {
-      titleElement.textContent = t.title;
-    }
-    
-    // Update description
-    const descElement = document.getElementById('cta-description');
-    if (descElement) {
-      descElement.textContent = t.description;
-    }
-    
-    // Update limited text
-    const limitedElement = document.getElementById('cta-limited');
-    if (limitedElement) {
-      limitedElement.textContent = t.limited;
-    }
-    
-    // Update trial button text
-    const trialTextElement = document.getElementById('cta-trial-text');
-    if (trialTextElement) {
-      trialTextElement.textContent = t.trialButton;
-    }
-    
-    // Update contact button text
-    const contactTextElement = document.getElementById('cta-contact-text');
-    if (contactTextElement) {
-      contactTextElement.textContent = t.contactButton;
-    }
-    
-    // Update tap now text
-    const tapNowElement = document.getElementById('tap-now');
-    if (tapNowElement) {
-      tapNowElement.textContent = t.tapNow;
-    }
-    
-    // Update profile display text
-    const profileDisplayElement = document.getElementById('profile-display');
-    if (profileDisplayElement) {
-      profileDisplayElement.textContent = t.profileDisplay;
-    }
-    
-    // Update features
-    for (let i = 0; i < t.features.length; i++) {
-      const featureElement = document.getElementById(`cta-feature-${i + 1}`);
-      if (featureElement) {
-        featureElement.textContent = t.features[i];
-      }
-    }
+  // Helper function to update element text content
+  function updateElement(id, text) {
+    const element = document.getElementById(id);
+    if (element) element.textContent = text;
   }
+
+  // Helper function to update element attribute
+  function updateElementAttr(id, attr, value) {
+    const element = document.getElementById(id);
+    if (element) element.setAttribute(attr, value);
+  }
+
+  // Get current language
+  function getCurrentLanguage() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get("lang");
+    const storedLang = localStorage.getItem("preferred-language");
+    return urlLang || storedLang || "ja";
+  }
+
+  // Update CTA content
+  function updateCTAContent(lang) {
+    const translations = ctaTranslations[lang] || ctaTranslations["ja"];
+    const cta = translations.cta;
+    const trial = translations.trial;
+
+    // Update CTA section
+    updateElement("cta-title", cta.title);
+    updateElement("cta-description", cta.description);
+    updateElement("cta-contact-text", cta.contactButton);
+
+    // Update features
+    cta.features.forEach((feature, index) => {
+      updateElement(`cta-feature-${index + 1}`, feature);
+    });
+
+    // Update trial form section
+    updateElement("trial-title", trial.title);
+    updateElement("trial-limited", trial.limited);
+    updateElement("trial-description", trial.description);
+    updateElement("trial-sub-description", trial.subDescription);
+    updateElement("trial-form-title", trial.trialFormTitle);
+    updateElement("trial-form-description", trial.trialFormDescription);
+    updateElement("trial-form-button-text", trial.trialFormButton);
+    updateElement("trial-form-limited", trial.trialFormLimited);
+
+    // Update terms and privacy
+    updateElement("terms-text-start", trial.termsTextStart);
+    updateElement("terms-link", trial.termsLink);
+    updateElement("terms-and", trial.termsAnd);
+    updateElement("privacy-link", trial.privacyLink);
+    updateElement("terms-text-end", trial.termsTextEnd);
+
+    // Update links with language parameter
+    const termsHref = lang === "ja" ? "/terms" : `/terms?lang=${lang}`;
+    const privacyHref = lang === "ja" ? "/privacy" : `/privacy?lang=${lang}`;
+    updateElementAttr("terms-link", "href", termsHref);
+    updateElementAttr("privacy-link", "href", privacyHref);
+  }
+
+  // Initialize on DOMContentLoaded
+  document.addEventListener("DOMContentLoaded", function () {
+    const currentLang = getCurrentLanguage();
+    updateCTAContent(currentLang);
+
+    // Smooth scrolling for trial links
+    document.querySelectorAll('a[href="#trial"]').forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const trialSection = document.getElementById("trial");
+        if (trialSection) {
+          trialSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+
+    // Track trial form clicks
+    const trialButtons = document.querySelectorAll('a[href="#trial"]');
+    trialButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        if (typeof window !== "undefined" && (window as any).gtag) {
+          (window as any).gtag("event", "trial_form_click", {
+            event_category: "trial_form",
+            event_label: "trial_form_clicked",
+          });
+        }
+      });
+    });
+  });
 </script>

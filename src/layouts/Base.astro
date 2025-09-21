@@ -13,7 +13,7 @@ const siteConfig = {
     "TapForge: アプリ不要、AIで名刺をデジタル化。月額無料で世界と繋がる次世代名刺。フリーランサーの海外案件獲得を支援。",
   base_url: "https://tapforge.cor-jp.com",
   favicon: "/images/favicon.ico",
-  author: "Cor.株式会社"
+  author: "Cor.株式会社",
 };
 
 // types for frontmatters
@@ -28,8 +28,15 @@ export interface Props {
 }
 
 // distructure frontmatters
-const { title, meta_title, description, image, noindex, canonical, lang = 'ja' } =
-  Astro.props;
+const {
+  title,
+  meta_title,
+  description,
+  image,
+  noindex,
+  canonical,
+  lang = "ja",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -131,17 +138,13 @@ const { title, meta_title, description, image, noindex, canonical, lang = 'ja' }
     <!-- og-image -->
     <meta
       property="og:image"
-      content={`${siteConfig.base_url}${
-        image ? image : "/images/favicon.ico"
-      }`}
+      content={`${siteConfig.base_url}${image ? image : "/images/favicon.ico"}`}
     />
 
     <!-- twitter-image -->
     <meta
       name="twitter:image"
-      content={`${siteConfig.base_url}${
-        image ? image : "/images/favicon.ico"
-      }`}
+      content={`${siteConfig.base_url}${image ? image : "/images/favicon.ico"}`}
     />
     <meta name="twitter:card" content="summary_large_image" />
 

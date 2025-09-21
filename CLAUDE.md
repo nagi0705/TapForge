@@ -51,3 +51,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Multilingual**: 4-language support (JP, EN, CN, ES) with custom i18n
 - **Component-based**: Astro components for static parts, React for interactivity
 - **Performance-focused**: Static generation with selective hydration
+
+### Legal Pages
+
+- `src/pages/terms.astro` - Terms of Service (利用規約) with client-side language switching
+- `src/pages/privacy.astro` - Privacy Policy (プライバシーポリシー) with client-side language switching
+- Both pages use JavaScript for dynamic language detection via URL parameters (`?lang=`)
+- Content is embedded directly in page scripts for optimal performance
+- Company: Cor.株式会社 (https://cor-jp.com/)
+- Last updated: 2025年9月20日

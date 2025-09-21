@@ -1,11 +1,11 @@
 ---
-import { translations, type Language } from '../lib/i18n';
+import { translations, type Language } from "../lib/i18n";
 
 interface Props {
   lang: Language;
 }
 
-const { lang = 'ja' } = Astro.props;
+const { lang = "ja" } = Astro.props;
 const t = translations[lang].testimonials;
 ---
 
@@ -22,9 +22,13 @@ const t = translations[lang].testimonials;
 
     <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
       <!-- Testimonial 1 -->
-      <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+      <div
+        class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow"
+      >
         <div class="flex items-center mb-6">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4"
+          >
             <img
               src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=64&h=64&fit=crop&crop=face"
               alt={t.items[0].name}
@@ -32,7 +36,9 @@ const t = translations[lang].testimonials;
             />
           </div>
           <div>
-            <h3 class="text-lg font-semibold text-gray-900">{t.items[0].name}</h3>
+            <h3 class="text-lg font-semibold text-gray-900">
+              {t.items[0].name}
+            </h3>
             <p class="text-sm text-gray-600">{t.items[0].role}</p>
           </div>
         </div>
@@ -40,19 +46,29 @@ const t = translations[lang].testimonials;
         <div class="mb-4">
           <div class="flex text-yellow-400">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path>
             </svg>
             <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path>
             </svg>
             <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path>
             </svg>
             <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path>
             </svg>
             <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path>
             </svg>
           </div>
         </div>
@@ -62,16 +78,28 @@ const t = translations[lang].testimonials;
         </blockquote>
 
         <div class="mt-4 flex flex-wrap gap-2">
-          <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">{t.items[0].tags[0]}</span>
-          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">{t.items[0].tags[1]}</span>
-          <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">{t.items[0].tags[2]}</span>
+          <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
+            >{t.items[0].tags[0]}</span
+          >
+          <span
+            class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full"
+            >{t.items[0].tags[1]}</span
+          >
+          <span
+            class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full"
+            >{t.items[0].tags[2]}</span
+          >
         </div>
       </div>
 
       <!-- Testimonial 2 -->
-      <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+      <div
+        class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow"
+      >
         <div class="flex items-center mb-6">
-          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mr-4">
+          <div
+            class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mr-4"
+          >
             <img
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face"
               alt={t.items[1].name}
@@ -79,7 +107,9 @@ const t = translations[lang].testimonials;
             />
           </div>
           <div>
-            <h3 class="text-lg font-semibold text-gray-900">{t.items[1].name}</h3>
+            <h3 class="text-lg font-semibold text-gray-900">
+              {t.items[1].name}
+            </h3>
             <p class="text-sm text-gray-600">{t.items[1].role}</p>
           </div>
         </div>
@@ -87,19 +117,29 @@ const t = translations[lang].testimonials;
         <div class="mb-4">
           <div class="flex text-yellow-400">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path>
             </svg>
             <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path>
             </svg>
             <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path>
             </svg>
             <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path>
             </svg>
             <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path>
             </svg>
           </div>
         </div>
@@ -109,13 +149,20 @@ const t = translations[lang].testimonials;
         </blockquote>
 
         <div class="mt-4 flex flex-wrap gap-2">
-          <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">{t.items[1].tags[0]}</span>
-          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">{t.items[1].tags[1]}</span>
-          <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full">{t.items[1].tags[2]}</span>
+          <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
+            >{t.items[1].tags[0]}</span
+          >
+          <span
+            class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full"
+            >{t.items[1].tags[1]}</span
+          >
+          <span
+            class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full"
+            >{t.items[1].tags[2]}</span
+          >
         </div>
       </div>
     </div>
-
 
     <!-- Note about future testimonials -->
     <div class="mt-12 text-center">
@@ -133,10 +180,10 @@ const t = translations[lang].testimonials;
   // Client-side language switching for Testimonials
   document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    const storedLang = localStorage.getItem('preferred-language');
-    const currentLang = urlLang || storedLang || 'ja';
-    
+    const urlLang = urlParams.get("lang");
+    const storedLang = localStorage.getItem("preferred-language");
+    const currentLang = urlLang || storedLang || "ja";
+
     updateTestimonialsContent(currentLang);
   });
 
@@ -149,17 +196,19 @@ const t = translations[lang].testimonials;
           {
             name: "鈴木様",
             role: "Webデザイナー",
-            message: "紙名刺の整理が5分で完了！英語プロフィールで海外案件が増えました。AI名刺撮影の精度も高く、VCard変換もスムーズです。フリーランサーにとって本当に便利なサービスです。",
-            tags: ["効率化", "海外案件", "AI精度"]
+            message:
+              "紙名刺の整理が5分で完了！英語プロフィールで海外案件が増えました。AI名刺撮影の精度も高く、VCard変換もスムーズです。フリーランサーにとって本当に便利なサービスです。",
+            tags: ["効率化", "海外案件", "AI精度"],
           },
           {
             name: "田中様",
             role: "ITコンサルタント",
-            message: "アプリ不要で簡単。クライアントに好印象を与えています。多言語対応で海外のクライアントとのコミュニケーションもスムーズになりました。コストパフォーマンスも抜群です。",
-            tags: ["簡単操作", "好印象", "コスパ"]
-          }
+            message:
+              "アプリ不要で簡単。クライアントに好印象を与えています。多言語対応で海外のクライアントとのコミュニケーションもスムーズになりました。コストパフォーマンスも抜群です。",
+            tags: ["簡単操作", "好印象", "コスパ"],
+          },
         ],
-        note: "これらの声は仮想的なものです。トライアル参加者50名の中から5件の実際のレビューを選抜して差し替える予定です。"
+        note: "これらの声は仮想的なものです。トライアル参加者50名の中から5件の実際のレビューを選抜して差し替える予定です。",
       },
       en: {
         title: "Customer Testimonials",
@@ -168,17 +217,19 @@ const t = translations[lang].testimonials;
           {
             name: "Mr. Suzuki",
             role: "Web Designer",
-            message: "Paper business card organization completed in 5 minutes! English profiles have increased overseas projects. AI business card shooting accuracy is high, and VCard conversion is smooth. It's really a convenient service for freelancers.",
-            tags: ["Efficiency", "Overseas Projects", "AI Accuracy"]
+            message:
+              "Paper business card organization completed in 5 minutes! English profiles have increased overseas projects. AI business card shooting accuracy is high, and VCard conversion is smooth. It's really a convenient service for freelancers.",
+            tags: ["Efficiency", "Overseas Projects", "AI Accuracy"],
           },
           {
             name: "Mr. Tanaka",
             role: "IT Consultant",
-            message: "No app required, simple. It makes a good impression on clients. Multilingual support has made communication with overseas clients smooth. The cost performance is also excellent.",
-            tags: ["Easy Operation", "Good Impression", "Cost Performance"]
-          }
+            message:
+              "No app required, simple. It makes a good impression on clients. Multilingual support has made communication with overseas clients smooth. The cost performance is also excellent.",
+            tags: ["Easy Operation", "Good Impression", "Cost Performance"],
+          },
         ],
-        note: "These voices are hypothetical. We plan to select 5 actual reviews from 50 trial participants and replace them."
+        note: "These voices are hypothetical. We plan to select 5 actual reviews from 50 trial participants and replace them.",
       },
       zh: {
         title: "客户评价",
@@ -187,17 +238,19 @@ const t = translations[lang].testimonials;
           {
             name: "铃木先生",
             role: "网页设计师",
-            message: "纸质名片整理5分钟完成！英文个人资料增加了海外项目。AI名片拍摄精度高，VCard转换也很流畅。对于自由职业者来说真的是很方便的服务。",
-            tags: ["效率化", "海外项目", "AI精度"]
+            message:
+              "纸质名片整理5分钟完成！英文个人资料增加了海外项目。AI名片拍摄精度高，VCard转换也很流畅。对于自由职业者来说真的是很方便的服务。",
+            tags: ["效率化", "海外项目", "AI精度"],
           },
           {
             name: "田中先生",
             role: "IT顾问",
-            message: "无需应用，简单易用。给客户留下了好印象。多语言支持使与海外客户的沟通变得顺畅。性价比也很出色。",
-            tags: ["简单操作", "好印象", "性价比"]
-          }
+            message:
+              "无需应用，简单易用。给客户留下了好印象。多语言支持使与海外客户的沟通变得顺畅。性价比也很出色。",
+            tags: ["简单操作", "好印象", "性价比"],
+          },
         ],
-        note: "这些评价是假设的。我们计划从50名试用参与者中选择5个实际评价进行替换。"
+        note: "这些评价是假设的。我们计划从50名试用参与者中选择5个实际评价进行替换。",
       },
       es: {
         title: "Testimonios de Clientes",
@@ -206,48 +259,62 @@ const t = translations[lang].testimonials;
           {
             name: "Sr. Suzuki",
             role: "Diseñador Web",
-            message: "¡La organización de tarjetas de presentación de papel se completó en 5 minutos! Los perfiles en inglés han aumentado los proyectos en el extranjero. La precisión del disparo de tarjetas de presentación con IA es alta y la conversión VCard es fluida. Es realmente un servicio conveniente para freelancers.",
-            tags: ["Eficiencia", "Proyectos Extranjeros", "Precisión IA"]
+            message:
+              "¡La organización de tarjetas de presentación de papel se completó en 5 minutos! Los perfiles en inglés han aumentado los proyectos en el extranjero. La precisión del disparo de tarjetas de presentación con IA es alta y la conversión VCard es fluida. Es realmente un servicio conveniente para freelancers.",
+            tags: ["Eficiencia", "Proyectos Extranjeros", "Precisión IA"],
           },
           {
             name: "Sr. Tanaka",
             role: "Consultor IT",
-            message: "Sin aplicación requerida, simple. Da una buena impresión a los clientes. El soporte multilingüe ha hecho que la comunicación con clientes extranjeros sea fluida. La relación costo-beneficio también es excelente.",
-            tags: ["Operación Fácil", "Buena Impresión", "Relación Costo-Beneficio"]
-          }
+            message:
+              "Sin aplicación requerida, simple. Da una buena impresión a los clientes. El soporte multilingüe ha hecho que la comunicación con clientes extranjeros sea fluida. La relación costo-beneficio también es excelente.",
+            tags: [
+              "Operación Fácil",
+              "Buena Impresión",
+              "Relación Costo-Beneficio",
+            ],
+          },
         ],
-        note: "Estas voces son hipotéticas. Planeamos seleccionar 5 reseñas reales de 50 participantes de prueba y reemplazarlas."
-      }
+        note: "Estas voces son hipotéticas. Planeamos seleccionar 5 reseñas reales de 50 participantes de prueba y reemplazarlas.",
+      },
     };
 
-    const t = translations[lang] || translations['ja'];
+    const t = translations[lang] || translations["ja"];
 
     // Update title and subtitle
-    const titleElement = document.querySelector('#testimonials h2');
+    const titleElement = document.querySelector("#testimonials h2");
     if (titleElement) {
       titleElement.textContent = t.title;
     }
-    const subtitleElement = document.querySelector('#testimonials p');
+    const subtitleElement = document.querySelector("#testimonials p");
     if (subtitleElement) {
       subtitleElement.textContent = t.subtitle;
     }
 
     // Update testimonial 1
-    const testimonial1Name = document.querySelector('#testimonials .grid > div:first-child h3');
+    const testimonial1Name = document.querySelector(
+      "#testimonials .grid > div:first-child h3",
+    );
     if (testimonial1Name) {
       testimonial1Name.textContent = t.items[0].name;
     }
-    const testimonial1Role = document.querySelector('#testimonials .grid > div:first-child p');
+    const testimonial1Role = document.querySelector(
+      "#testimonials .grid > div:first-child p",
+    );
     if (testimonial1Role) {
       testimonial1Role.textContent = t.items[0].role;
     }
-    const testimonial1Message = document.querySelector('#testimonials .grid > div:first-child blockquote');
+    const testimonial1Message = document.querySelector(
+      "#testimonials .grid > div:first-child blockquote",
+    );
     if (testimonial1Message) {
       testimonial1Message.textContent = `「${t.items[0].message}」`;
     }
-    
+
     // Update testimonial 1 tags
-    const testimonial1Tags = document.querySelectorAll('#testimonials .grid > div:first-child .mt-4 span');
+    const testimonial1Tags = document.querySelectorAll(
+      "#testimonials .grid > div:first-child .mt-4 span",
+    );
     testimonial1Tags.forEach((tag, index) => {
       if (t.items[0].tags[index]) {
         tag.textContent = t.items[0].tags[index];
@@ -255,21 +322,29 @@ const t = translations[lang].testimonials;
     });
 
     // Update testimonial 2
-    const testimonial2Name = document.querySelector('#testimonials .grid > div:last-child h3');
+    const testimonial2Name = document.querySelector(
+      "#testimonials .grid > div:last-child h3",
+    );
     if (testimonial2Name) {
       testimonial2Name.textContent = t.items[1].name;
     }
-    const testimonial2Role = document.querySelector('#testimonials .grid > div:last-child p');
+    const testimonial2Role = document.querySelector(
+      "#testimonials .grid > div:last-child p",
+    );
     if (testimonial2Role) {
       testimonial2Role.textContent = t.items[1].role;
     }
-    const testimonial2Message = document.querySelector('#testimonials .grid > div:last-child blockquote');
+    const testimonial2Message = document.querySelector(
+      "#testimonials .grid > div:last-child blockquote",
+    );
     if (testimonial2Message) {
       testimonial2Message.textContent = `「${t.items[1].message}」`;
     }
-    
+
     // Update testimonial 2 tags
-    const testimonial2Tags = document.querySelectorAll('#testimonials .grid > div:last-child .mt-4 span');
+    const testimonial2Tags = document.querySelectorAll(
+      "#testimonials .grid > div:last-child .mt-4 span",
+    );
     testimonial2Tags.forEach((tag, index) => {
       if (t.items[1].tags[index]) {
         tag.textContent = t.items[1].tags[index];
@@ -277,7 +352,7 @@ const t = translations[lang].testimonials;
     });
 
     // Update note
-    const noteElement = document.querySelector('#testimonials .mt-12 p');
+    const noteElement = document.querySelector("#testimonials .mt-12 p");
     if (noteElement) {
       noteElement.textContent = `※ ${t.note}`;
     }
