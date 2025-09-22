@@ -2,11 +2,22 @@
 import Layout from "../layouts/Default.astro";
 import { type Language } from "../lib/i18n";
 
-// Default to Japanese for static generation
-const defaultLang: Language = "ja";
+// Get language from URL query parameter during SSR
+const urlLang = Astro.url.searchParams.get("lang") as Language | null;
+const currentLang: Language = urlLang || "ja";
+
+// Set title based on language
+const pageTitle =
+  currentLang === "ja"
+    ? "TapForge - プライバシーポリシー"
+    : currentLang === "en"
+      ? "TapForge - Privacy Policy"
+      : currentLang === "zh"
+        ? "TapForge - 隐私政策"
+        : "TapForge - Política de Privacidad";
 ---
 
-<Layout title="TapForge - Privacy Policy" lang={defaultLang}>
+<Layout title={pageTitle} lang={currentLang}>
   <main class="container mx-auto px-4 py-16 max-w-4xl">
     <h1 id="page-title" class="text-4xl font-bold mb-4 text-gray-900">
       プライバシーポリシー
@@ -318,7 +329,9 @@ const defaultLang: Language = "ja";
   // Function to load content based on language parameter
   function loadPrivacyContent() {
     const urlParams = new URLSearchParams(window.location.search);
-    const lang = urlParams.get("lang") || "ja";
+    const urlLang = urlParams.get("lang");
+    const storedLang = localStorage.getItem("preferred-language");
+    const lang = urlLang || storedLang || "ja";
     const content = privacyContent[lang] || privacyContent.ja;
 
     // Update page title
@@ -363,8 +376,16 @@ const defaultLang: Language = "ja";
   }
 
   // Load content on DOMContentLoaded (for direct page access)
-  document.addEventListener("DOMContentLoaded", loadPrivacyContent);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", loadPrivacyContent);
+  } else {
+    // DOM is already loaded, execute immediately
+    loadPrivacyContent();
+  }
 
   // Load content on page navigation (for SPA routing)
   document.addEventListener("astro:after-swap", loadPrivacyContent);
+
+  // Also try to load content immediately for cases where the script runs after DOM is ready
+  setTimeout(loadPrivacyContent, 0);
 </script>

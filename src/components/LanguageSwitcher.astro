@@ -108,14 +108,17 @@ const { currentLang = "ja" } = Astro.props;
   // Global function for language switching
   window.switchLanguage = function(langCode) {
     console.log("Switching to language:", langCode);
-    
+
     // Store language preference in localStorage
     localStorage.setItem('preferred-language', langCode);
-    
+
+    // Dispatch custom event for immediate UI updates
+    window.dispatchEvent(new CustomEvent('languagechange', { detail: { lang: langCode } }));
+
     // Force page reload with new language parameter
     const currentUrl = new URL(window.location);
     currentUrl.searchParams.set('lang', langCode);
-    
+
     // Use window.location.replace to avoid back button issues
     window.location.replace(currentUrl.toString());
   };

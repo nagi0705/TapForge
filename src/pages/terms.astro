@@ -2,11 +2,22 @@
 import Layout from "../layouts/Default.astro";
 import { type Language } from "../lib/i18n";
 
-// Default to Japanese for static generation
-const defaultLang: Language = "ja";
+// Get language from URL query parameter during SSR
+const urlLang = Astro.url.searchParams.get("lang") as Language | null;
+const currentLang: Language = urlLang || "ja";
+
+// Set title based on language
+const pageTitle =
+  currentLang === "ja"
+    ? "TapForge - 利用規約"
+    : currentLang === "en"
+      ? "TapForge - Terms of Service"
+      : currentLang === "zh"
+        ? "TapForge - 服务条款"
+        : "TapForge - Términos de Servicio";
 ---
 
-<Layout title="TapForge - Terms of Service" lang={defaultLang}>
+<Layout title={pageTitle} lang={currentLang}>
   <main class="container mx-auto px-4 py-16 max-w-4xl">
     <h1 id="page-title" class="text-4xl font-bold mb-4 text-gray-900">
       利用規約
@@ -295,7 +306,9 @@ const defaultLang: Language = "ja";
   // Function to load content based on language parameter
   function loadTermsContent() {
     const urlParams = new URLSearchParams(window.location.search);
-    const lang = urlParams.get("lang") || "ja";
+    const urlLang = urlParams.get("lang");
+    const storedLang = localStorage.getItem("preferred-language");
+    const lang = urlLang || storedLang || "ja";
     const content = termsContent[lang] || termsContent.ja;
 
     // Update page title
@@ -338,8 +351,16 @@ const defaultLang: Language = "ja";
   }
 
   // Load content on DOMContentLoaded (for direct page access)
-  document.addEventListener("DOMContentLoaded", loadTermsContent);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", loadTermsContent);
+  } else {
+    // DOM is already loaded, execute immediately
+    loadTermsContent();
+  }
 
   // Load content on page navigation (for SPA routing)
   document.addEventListener("astro:after-swap", loadTermsContent);
+
+  // Also try to load content immediately for cases where the script runs after DOM is ready
+  setTimeout(loadTermsContent, 0);
 </script>
