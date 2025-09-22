@@ -1,5 +1,4 @@
 ---
-import { getTranslation, type Language } from "../lib/i18n";
 // CTA Section with integrated Trial Form
 ---
 
@@ -276,13 +275,13 @@ import { getTranslation, type Language } from "../lib/i18n";
   };
 
   // Helper function to update element text content
-  function updateElement(id, text) {
+  function updateElement(id: string, text: string) {
     const element = document.getElementById(id);
     if (element) element.textContent = text;
   }
 
   // Helper function to update element attribute
-  function updateElementAttr(id, attr, value) {
+  function updateElementAttr(id: string, attr: string, value: string) {
     const element = document.getElementById(id);
     if (element) element.setAttribute(attr, value);
   }
@@ -296,8 +295,10 @@ import { getTranslation, type Language } from "../lib/i18n";
   }
 
   // Update CTA content
-  function updateCTAContent(lang) {
-    const translations = ctaTranslations[lang] || ctaTranslations["ja"];
+  function updateCTAContent(lang: string) {
+    const translations =
+      ctaTranslations[lang as keyof typeof ctaTranslations] ||
+      ctaTranslations["ja"];
     const cta = translations.cta;
     const trial = translations.trial;
 
@@ -307,7 +308,7 @@ import { getTranslation, type Language } from "../lib/i18n";
     updateElement("cta-contact-text", cta.contactButton);
 
     // Update features
-    cta.features.forEach((feature, index) => {
+    cta.features.forEach((feature: string, index: number) => {
       updateElement(`cta-feature-${index + 1}`, feature);
     });
 

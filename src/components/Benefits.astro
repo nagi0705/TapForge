@@ -383,17 +383,17 @@ const benefits = [
     updateBenefitsContent(newLang);
   });
 
-  function updateBenefitsContent(lang) {
-    const t = translations[lang]?.benefits || translations["ja"].benefits;
+  function updateBenefitsContent(lang: string) {
+    const t = (translations as any)[lang] || translations["ja"];
 
     // Update main title and subtitle
     updateElementContent('benefits-title', t.title);
     updateElementContent('benefits-subtitle', t.subtitle);
 
     // Update benefit cards
-    for (let i = 0; i < t.items.costReduction ? 4 : t.benefits?.length || 0; i++) {
-      const benefitKeys = ['costReduction', 'timeEfficiency', 'businessGrowth', 'environmental'];
-      const benefitData = t.items ? t.items[benefitKeys[i]] : t.benefits[i];
+    const benefitKeys = ['costReduction', 'timeEfficiency', 'businessGrowth', 'environmental'];
+    for (let i = 0; i < benefitKeys.length; i++) {
+      const benefitData = t.items ? t.items[benefitKeys[i] as keyof typeof t.items] : null;
 
       if (benefitData) {
         updateElementContent(`benefit-${i}-title`, benefitData.title);

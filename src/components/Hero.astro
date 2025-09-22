@@ -128,7 +128,7 @@
     updateHeroContent(currentLang);
   });
 
-  function updateHeroContent(lang) {
+  function updateHeroContent(lang: string) {
     const translations = {
       ja: {
         title:
@@ -164,7 +164,7 @@
       },
     };
 
-    const t = translations[lang] || translations["ja"];
+    const t = (translations as any)[lang] || translations["ja"];
 
     // Update title
     const titleElement = document.getElementById("hero-title");
@@ -187,7 +187,7 @@
         zh: "限50名！",
         es: "¡Limitado a 50!",
       };
-      ctaElement.innerHTML = `<span class="text-red-500 font-bold mr-2">${limitedText[lang] || limitedText["ja"]}</span>${t.cta}`;
+      ctaElement.innerHTML = `<span class="text-red-500 font-bold mr-2">${(limitedText as any)[lang] || limitedText["ja"]}</span>${t.cta}`;
     }
 
     // Update features

@@ -332,7 +332,7 @@ const pageTitle =
     const urlLang = urlParams.get("lang");
     const storedLang = localStorage.getItem("preferred-language");
     const lang = urlLang || storedLang || "ja";
-    const content = privacyContent[lang] || privacyContent.ja;
+    const content = (privacyContent as any)[lang] || privacyContent.ja;
 
     // Update page title
     document.title =
@@ -354,7 +354,7 @@ const pageTitle =
     const contentContainer = document.getElementById("privacy-content");
     if (contentContainer) {
       contentContainer.innerHTML = "";
-      content.sections.forEach((section) => {
+      content.sections.forEach((section: any) => {
         const sectionElement = document.createElement("section");
         sectionElement.className =
           "border-b border-gray-200 pb-6 last:border-0";

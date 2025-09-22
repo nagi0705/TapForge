@@ -129,7 +129,6 @@ const t = translations[lang].footer;
     initializeOnDOMReady,
     setupLanguageChangeListeners,
     updateLinksWithLanguage,
-    updateMultipleElements,
   } from "../../lib/languageUtils";
   import { translations } from "../../lib/i18n";
 
@@ -148,19 +147,10 @@ const t = translations[lang].footer;
   // Initialize on DOM ready with utility function
   initializeOnDOMReady(initializeFooter);
 
-  function updateFooterContent(lang) {
-    const t = translations[lang]?.footer || translations["ja"].footer;
+  function updateFooterContent(lang: string) {
+    const t = (translations as any)[lang]?.footer || translations["ja"].footer;
 
-    // Update all footer text elements
-    const updates = [
-      { id: "footer-description", content: t.description },
-      { id: "footer-tagline", content: t.tagline },
-      { id: "footer-quicklinks-title", content: t.quickLinks.title },
-      { id: "footer-contact-title", content: t.contact.title },
-      { id: "footer-copyright", content: t.copyright },
-    ];
-
-    // Try to update elements if they have IDs, otherwise use selectors
+    // Try to update elements using selectors
     const descriptionElement = document.querySelector("footer .text-gray-300");
     if (descriptionElement) {
       descriptionElement.textContent = t.description;
@@ -212,9 +202,9 @@ const t = translations[lang].footer;
     }
   }
 
-  function updateFooterLinks(lang) {
+  function updateFooterLinks(lang: string) {
     // Update legal links with language parameter
-    updateLinksWithLanguage(lang, ["#privacy-link", "#terms-link"]);
+    updateLinksWithLanguage(lang as any, ["#privacy-link", "#terms-link"]);
   }
 
   // Setup language change listeners

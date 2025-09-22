@@ -105,8 +105,16 @@ const { currentLang = "ja" } = Astro.props;
 </div>
 
 <script>
+  // Extend window interface
+  declare global {
+    interface Window {
+      switchLanguage: (langCode: string) => void;
+      toggleLanguageMenu: () => void;
+    }
+  }
+
   // Global function for language switching
-  window.switchLanguage = function(langCode) {
+  window.switchLanguage = function(langCode: string) {
     console.log("Switching to language:", langCode);
 
     // Store language preference in localStorage
@@ -116,7 +124,7 @@ const { currentLang = "ja" } = Astro.props;
     window.dispatchEvent(new CustomEvent('languagechange', { detail: { lang: langCode } }));
 
     // Force page reload with new language parameter
-    const currentUrl = new URL(window.location);
+    const currentUrl = new URL(window.location.href);
     currentUrl.searchParams.set('lang', langCode);
 
     // Use window.location.replace to avoid back button issues
@@ -124,7 +132,7 @@ const { currentLang = "ja" } = Astro.props;
   };
 
   // Global function for onclick handler
-  window.toggleLanguageMenu = function() {
+  window.toggleLanguageMenu = function(this: any) {
     console.log("toggleLanguageMenu called");
     const button = document.getElementById("language-menu-button");
     const menu = document.getElementById("language-menu");
@@ -177,7 +185,7 @@ const { currentLang = "ja" } = Astro.props;
 
     // Close menu when clicking outside
     document.addEventListener("click", function(e) {
-      if (!button.contains(e.target) && !menu.contains(e.target)) {
+      if (!button.contains(e.target as Node) && !menu.contains(e.target as Node)) {
         menu.classList.remove("opacity-100", "visible");
         menu.classList.add("opacity-0", "invisible");
         arrow.classList.remove("rotate-180");
@@ -198,7 +206,7 @@ const { currentLang = "ja" } = Astro.props;
     // Add click handlers to language links
     const languageLinks = menu.querySelectorAll('a[href*="lang="]');
     languageLinks.forEach(link => {
-      link.addEventListener("click", function(e) {
+      link.addEventListener("click", function(this: HTMLAnchorElement, e) {
         e.preventDefault();
         const href = this.getAttribute("href");
         const langMatch = href.match(/lang=([^&]+)/);
