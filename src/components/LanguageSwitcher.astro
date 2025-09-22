@@ -209,7 +209,7 @@ const { currentLang = "ja" } = Astro.props;
       link.addEventListener("click", function(this: HTMLAnchorElement, e) {
         e.preventDefault();
         const href = this.getAttribute("href");
-        const langMatch = href.match(/lang=([^&]+)/);
+        const langMatch = href?.match(/lang=([^&]+)/);
         if (langMatch) {
           const langCode = langMatch[1];
           console.log("Language link clicked:", langCode);
