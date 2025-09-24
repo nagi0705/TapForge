@@ -630,8 +630,8 @@ export const translations = {
         rows: {
           annualCost: {
             item: "Annual Cost",
-            traditional: "¥5,000",
-            tapforge: "¥0",
+            traditional: "$70",
+            tapforge: "$40",
             tapforgeNote: "(Initial cost only)",
           },
           organizationTime: {
@@ -839,6 +839,146 @@ export const translations = {
         terms: "Terms of Service",
       },
     },
+    // Legal pages content
+    legal: {
+      privacy: {
+        title: "Privacy Policy",
+        lastUpdated: "Last Updated: September 20, 2025",
+        sections: [
+          {
+            title: "1. Introduction",
+            content:
+              'Cor. Co., Ltd. ("Company") considers the protection of user personal information an important responsibility and establishes this Privacy Policy ("Policy") for the TapForge service ("Service").',
+          },
+          {
+            title: "2. Information We Collect",
+            content:
+              "We may collect the following information:\n\n【Automatically Collected Information】\n• IP address\n• Browser type and version\n• Device information\n• Access date and time\n• Referrer information\n\n【Information Provided by Users】\n• Name\n• Email address\n• Phone number\n• Company/Organization name\n• Job title/Position\n• Profile information\n• Social media account information",
+          },
+          {
+            title: "3. Use of Information",
+            content:
+              "We use collected information for:\n• Service provision and operation\n• User support\n• Service improvement and feature development\n• Usage statistics analysis\n• Security maintenance and enhancement\n• Marketing and advertising (only with consent)\n• Legal compliance",
+          },
+          {
+            title: "4. Information Sharing and Disclosure",
+            content:
+              "We do not sell, rent, or share personal information with third parties except:\n• With user consent\n• To service providers necessary for operations\n• When legally required\n• To protect user or public safety\n• In case of business succession",
+          },
+          {
+            title: "5. Data Storage and Security",
+            content:
+              "We implement industry-standard security measures to prevent unauthorized access, loss, destruction, alteration, or leakage of personal information. Data is encrypted and stored on secure servers.",
+          },
+          {
+            title: "6. Use of Cookies",
+            content:
+              "The Service uses cookies to improve user experience for:\n• Maintaining login status\n• Saving language preferences\n• Usage analysis\n• Advertising effectiveness measurement\n\nYou can disable cookies through browser settings, though some features may become unavailable.",
+          },
+          {
+            title: "7. Third-Party Services",
+            content:
+              "The Service may use third-party services like Google Analytics. These services are subject to their own privacy policies.",
+          },
+          {
+            title: "8. Children's Privacy",
+            content:
+              "The Service is not intended for children under 13. Children under 13 should not provide personal information without parental consent.",
+          },
+          {
+            title: "9. User Rights",
+            content:
+              "Users have the following rights regarding their personal information:\n• Right of access\n• Right to rectification\n• Right to erasure\n• Right to restrict processing\n• Right to data portability\n• Right to object\n\nTo exercise these rights, please contact us.",
+          },
+          {
+            title: "10. Data Retention",
+            content:
+              "Personal information is retained for the period necessary for service provision or as legally required. Unnecessary information is appropriately deleted or anonymized.",
+          },
+          {
+            title: "11. International Data Transfer",
+            content:
+              "Personal information may be processed on servers outside Japan. Such information will be protected according to this Policy.",
+          },
+          {
+            title: "12. Policy Changes",
+            content:
+              "This Policy may be updated as necessary. Significant changes will be notified through the Service.",
+          },
+          {
+            title: "13. Contact Us",
+            content:
+              "For inquiries about this Policy, please contact:\n\nCor. Co., Ltd.\nPrivacy Department\nWebsite: https://cor-jp.com/\n\nWe have appointed a personal information protection manager for appropriate management.",
+          },
+        ],
+      },
+      terms: {
+        title: "Terms of Service",
+        lastUpdated: "Last Updated: September 20, 2025",
+        sections: [
+          {
+            title: "1. Acceptance of Terms",
+            content:
+              'By using the TapForge service ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use the Service.',
+          },
+          {
+            title: "2. Description of Service",
+            content:
+              "TapForge is a digital business card service utilizing NFC (Near Field Communication) technology. Users can create, share, and manage digital profiles through our Service.",
+          },
+          {
+            title: "3. Account Registration",
+            content:
+              "Some features require account registration. You must provide accurate and complete information and keep it updated. You are responsible for maintaining the security of your account.",
+          },
+          {
+            title: "4. Fees",
+            content:
+              "Basic services are free. Additional features may incur fees. We will notify you in advance of any changes to our pricing structure.",
+          },
+          {
+            title: "5. Prohibited Activities",
+            content:
+              "The following activities are prohibited:\n• Violating any applicable laws\n• Infringing on the rights of other users or third parties\n• Registering false information\n• Interfering with Service operations\n• Unauthorized access or hacking\n• Unauthorized commercial use",
+          },
+          {
+            title: "6. Intellectual Property",
+            content:
+              "All intellectual property rights related to the Service belong to Cor. Co., Ltd. or its licensors. While you retain copyright to your content, you grant us a license to use it as necessary for Service provision.",
+          },
+          {
+            title: "7. Privacy",
+            content:
+              "Personal information is handled according to our separate Privacy Policy.",
+          },
+          {
+            title: "8. Disclaimer",
+            content:
+              'The Service is provided "as is" without warranties. Cor. Co., Ltd. is not liable for damages arising from Service use, except in cases of willful misconduct or gross negligence.',
+          },
+          {
+            title: "9. Service Modification/Termination",
+            content:
+              "Cor. Co., Ltd. may modify or terminate the Service with prior notice.",
+          },
+          {
+            title: "10. Changes to Terms",
+            content:
+              "These Terms may be updated as needed. Updated Terms become effective upon publication on the Service.",
+          },
+          {
+            title: "11. Governing Law",
+            content:
+              "These Terms are governed by Japanese law. Disputes shall be subject to the exclusive jurisdiction of the Tokyo District Court.",
+          },
+          {
+            title: "12. Contact",
+            content:
+              "For inquiries regarding these Terms, please contact:\nCor. Co., Ltd.\nWebsite: https://cor-jp.com/",
+          },
+        ],
+      },
+    },
   },
   zh: {
     // Navigation
@@ -1044,8 +1184,8 @@ export const translations = {
         rows: {
           annualCost: {
             item: "年度成本",
-            traditional: "¥5,000",
-            tapforge: "¥0",
+            traditional: "¥350",
+            tapforge: "¥200",
             tapforgeNote: "（仅初始费用）",
           },
           organizationTime: {
@@ -1454,8 +1594,8 @@ export const translations = {
         rows: {
           annualCost: {
             item: "Costo Anual",
-            traditional: "¥5,000",
-            tapforge: "¥0",
+            traditional: "€60",
+            tapforge: "€35",
             tapforgeNote: "(Solo costo inicial)",
           },
           organizationTime: {
@@ -1670,6 +1810,146 @@ export const translations = {
       legal: {
         privacy: "Política de Privacidad",
         terms: "Términos de Servicio",
+      },
+    },
+    // Legal pages content
+    legal: {
+      privacy: {
+        title: "プライバシーポリシー",
+        lastUpdated: "最終更新日: 2025年9月20日",
+        sections: [
+          {
+            title: "1. はじめに",
+            content:
+              "Cor.株式会社（以下「当社」）は、TapForgeサービス（以下「本サービス」）の提供にあたり、ユーザーの個人情報の保護を重要な責務と考え、以下のプライバシーポリシー（以下「本ポリシー」）を定めます。",
+          },
+          {
+            title: "2. 収集する情報",
+            content:
+              "当社は、以下の情報を収集する場合があります：\n\n【自動的に収集される情報】\n・IPアドレス\n・ブラウザの種類とバージョン\n・デバイス情報\n・アクセス日時\n・リファラー情報\n\n【ユーザーから提供される情報】\n・氏名\n・メールアドレス\n・電話番号\n・会社名・組織名\n・職種・役職\n・プロフィール情報\n・SNSアカウント情報",
+          },
+          {
+            title: "3. 情報の利用目的",
+            content:
+              "収集した情報は以下の目的で利用します：\n・本サービスの提供・運営\n・ユーザーサポート\n・サービスの改善・新機能の開発\n・利用統計の分析\n・セキュリティの維持・向上\n・マーケティング・広告配信（同意を得た場合のみ）\n・法的要求への対応",
+          },
+          {
+            title: "4. 情報の共有と開示",
+            content:
+              "当社は、以下の場合を除き、個人情報を第三者に販売、貸与、または共有することはありません：\n・ユーザーの同意がある場合\n・サービス提供に必要な業務委託先への提供\n・法的要求がある場合\n・ユーザーや公衆の安全を守る必要がある場合\n・事業承継の場合",
+          },
+          {
+            title: "5. データの保管とセキュリティ",
+            content:
+              "当社は、業界標準のセキュリティ対策を実施し、個人情報の不正アクセス、紛失、破壊、改ざん、漏洩を防ぐよう努めています。データは暗号化され、安全なサーバーに保管されます。",
+          },
+          {
+            title: "6. Cookie（クッキー）の使用",
+            content:
+              "本サービスでは、ユーザー体験の向上のためCookieを使用しています。Cookieは以下の目的で使用されます：\n・ログイン状態の維持\n・言語設定の保存\n・利用状況の分析\n・広告の効果測定\n\nブラウザの設定でCookieを無効にすることができますが、一部のサービス機能が利用できなくなる場合があります。",
+          },
+          {
+            title: "7. 第三者サービスとの連携",
+            content:
+              "本サービスは、Google Analytics等の第三者サービスを利用する場合があります。これらのサービスには、それぞれのプライバシーポリシーが適用されます。",
+          },
+          {
+            title: "8. 子どものプライバシー",
+            content:
+              "本サービスは13歳未満の子どもを対象としていません。13歳未満の方は、保護者の同意なく個人情報を提供しないでください。",
+          },
+          {
+            title: "9. ユーザーの権利",
+            content:
+              "ユーザーは自己の個人情報について以下の権利を有します：\n・アクセス権（開示請求）\n・訂正権\n・削除権\n・処理の制限を求める権利\n・データポータビリティの権利\n・異議申立権\n\nこれらの権利行使については、お問い合わせ窓口までご連絡ください。",
+          },
+          {
+            title: "10. データの保存期間",
+            content:
+              "個人情報は、サービス提供に必要な期間または法的要求により定められた期間保存されます。不要になった情報は適切に削除または匿名化されます。",
+          },
+          {
+            title: "11. 国際データ転送",
+            content:
+              "本サービスの提供にあたり、個人情報が日本国外のサーバーで処理される場合があります。その際も本ポリシーに従い適切に保護されます。",
+          },
+          {
+            title: "12. ポリシーの変更",
+            content:
+              "本ポリシーは必要に応じて変更されることがあります。重要な変更がある場合は、サービス上で通知します。",
+          },
+          {
+            title: "13. お問い合わせ",
+            content:
+              "本ポリシーに関するお問い合わせは、以下までご連絡ください：\n\nCor.株式会社\nプライバシー担当\nウェブサイト: https://cor-jp.com/\n\n個人情報保護管理者を設置し、適切な管理を行っています。",
+          },
+        ],
+      },
+      terms: {
+        title: "利用規約",
+        lastUpdated: "最終更新日: 2025年9月20日",
+        sections: [
+          {
+            title: "1. 規約の同意",
+            content:
+              "TapForgeサービス（以下「本サービス」）をご利用いただくにあたり、以下の利用規約（以下「本規約」）をお読みいただき、内容にご同意いただく必要があります。本サービスを利用することで、本規約に同意したものとみなされます。",
+          },
+          {
+            title: "2. サービスの概要",
+            content:
+              "TapForgeは、NFC（近距離無線通信）技術を活用したデジタル名刺サービスです。ユーザーは本サービスを通じて、デジタルプロフィールの作成、共有、管理を行うことができます。",
+          },
+          {
+            title: "3. アカウント登録",
+            content:
+              "本サービスの一部機能を利用するためには、アカウント登録が必要です。登録時には正確で完全な情報を提供し、常に最新の状態に保つ責任があります。アカウントのセキュリティを維持する責任はユーザーにあります。",
+          },
+          {
+            title: "4. 利用料金",
+            content:
+              "基本サービスは無料でご利用いただけます。追加機能については別途料金が発生する場合があります。料金体系の変更がある場合は、事前にお知らせいたします。",
+          },
+          {
+            title: "5. 禁止事項",
+            content:
+              "以下の行為を禁止します：\n・法令に違反する行為\n・他のユーザーまたは第三者の権利を侵害する行為\n・虚偽の情報を登録する行為\n・本サービスの運営を妨げる行為\n・不正アクセスやハッキング行為\n・商業目的での無断使用",
+          },
+          {
+            title: "6. 知的財産権",
+            content:
+              "本サービスに関する著作権、商標権その他の知的財産権は、Cor.株式会社または正当な権利者に帰属します。ユーザーが作成したコンテンツについては、ユーザーが著作権を保持しますが、本サービスの提供に必要な範囲で使用許諾をいただきます。",
+          },
+          {
+            title: "7. プライバシー",
+            content:
+              "個人情報の取り扱いについては、別途定める「プライバシーポリシー」に従います。",
+          },
+          {
+            title: "8. 免責事項",
+            content:
+              "本サービスは「現状有姿」で提供され、明示的または黙示的な保証はありません。Cor.株式会社は、本サービスの利用により生じた損害について、故意または重大な過失がある場合を除き、責任を負いません。",
+          },
+          {
+            title: "9. サービスの変更・終了",
+            content:
+              "Cor.株式会社は、事前の通知をもって本サービスの内容を変更または終了することができます。",
+          },
+          {
+            title: "10. 規約の変更",
+            content:
+              "本規約は必要に応じて変更されることがあります。変更後の規約は、本サービス上での公開をもって効力を生じます。",
+          },
+          {
+            title: "11. 準拠法・管轄",
+            content:
+              "本規約は日本法に準拠し、本サービスに関する紛争については、東京地方裁判所を第一審の専属的合意管轄裁判所とします。",
+          },
+          {
+            title: "12. お問い合わせ",
+            content:
+              "本規約に関するお問い合わせは、以下までご連絡ください：\nCor.株式会社\nウェブサイト: https://cor-jp.com/\n",
+          },
+        ],
       },
     },
   },

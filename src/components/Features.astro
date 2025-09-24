@@ -1,6 +1,5 @@
 ---
 import { features, pricingPlans } from "../config/features";
-import { getTranslation, type Language } from "../lib/i18n";
 ---
 
 <section id="features" class="py-20 bg-white">
@@ -153,7 +152,7 @@ import { getTranslation, type Language } from "../lib/i18n";
     updateFeaturesContent(currentLang);
   });
 
-  function updateFeaturesContent(lang) {
+  function updateFeaturesContent(lang: string) {
     const translations = {
       ja: {
         title: "TapForgeの特徴",
@@ -340,7 +339,7 @@ import { getTranslation, type Language } from "../lib/i18n";
       },
     };
 
-    const t = translations[lang] || translations["ja"];
+    const t = (translations as any)[lang] || translations["ja"];
 
     // Update main title and subtitle
     const titleElement = document.getElementById("features-title");
