@@ -166,7 +166,7 @@ const t = translations[lang].footer;
     }
   });
 
-  function updateFooterContent(lang) {
+  function updateFooterContent(lang: string) {
     const translations = {
       ja: {
         description:
@@ -291,7 +291,7 @@ const t = translations[lang].footer;
       },
     };
 
-    const t = translations[lang] || translations["ja"];
+    const t = (translations as any)[lang] || translations["ja"];
 
     // Update description and tagline
     const descriptionElement = document.querySelector("footer .text-gray-300");

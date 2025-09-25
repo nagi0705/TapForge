@@ -63,12 +63,14 @@ console.log("=== END HERO DEBUG ===");
           {lang === "ko" ? (
             <>
               <span class="text-red-500">탭</span>으로 <span class="text-blue-600">세계</span>와 연결되세요.<br />
-              <span class="text-blue-600">AI 기반 차세대 명함</span>으로 비즈니스를 가속화하세요
+              월액 500엔으로 시작하는<br />
+              차세대 디지털 명함
             </>
           ) : (
             <>
               <span class="text-red-500">タップ</span>で<span class="text-blue-600">世界</span>と繋がる。<br />
-              <span class="text-blue-600">AI駆動の次世代名刺</span>であなたのビジネスを加速
+              月額500円で始める<br />
+              次世代デジタル名刺
             </>
           )}
         </h1>
@@ -92,11 +94,11 @@ console.log("=== END HERO DEBUG ===");
         >
           {lang === "ko" ? (
             <>
-              <span class="text-blue-600 font-semibold">AI 기반 차세대 명함</span>으로 비즈니스를 가속화하세요. 앱 불필요, 월 무료. NFC 탭 하나로 다국어 프로필을 공유하세요. 프리랜서의 해외 프로젝트 획득을 지원합니다.
+              <span class="text-blue-600 font-semibold">AI 기반 차세대 명함</span>으로 비즈니스를 가속화하세요. 앱 불필요, <span class="font-bold">월액 500엔부터</span>. NFC 탭 하나로 다국어 프로필을 공유하세요. 프리랜서의 해외 프로젝트 획득을 지원합니다.
             </>
           ) : (
             <>
-              <span class="text-blue-600 font-semibold">AI駆動の次世代名刺</span>であなたのビジネスを加速。アプリ不要、月額無料。NFCタップ一つで多言語プロフィールを共有。フリーランサーの海外案件獲得を支援します。
+              <span class="text-blue-600 font-semibold">AI駆動の次世代名刺</span>であなたのビジネスを加速。アプリ不要、<span class="font-bold">月額500円から</span>。NFCタップ一つで多言語プロフィールを共有。フリーランサーの海外案件獲得を支援します。
             </>
           )}
         </p>
@@ -110,13 +112,13 @@ console.log("=== END HERO DEBUG ===");
           >
             {lang === "ko" ? (
               <>
-                <span class="text-red-500 font-bold mr-2">50명 한정!</span>
-                무료 체험 신청
+                <span class="text-red-500 font-bold mr-2">100명 한정!</span>
+                조기 액세스 신청
               </>
             ) : (
               <>
-                <span class="text-red-500 font-bold mr-2">50名限定!</span>
-                無料トライアル申し込み
+                <span class="text-red-500 font-bold mr-2">100名限定!</span>
+                早期アクセスに申し込む
               </>
             )}
           </a>
@@ -150,7 +152,7 @@ console.log("=== END HERO DEBUG ===");
                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                 clip-rule="evenodd"></path>
             </svg>
-            {lang === "ko" ? "월 무료" : "月額無料"}
+            {lang === "ko" ? "월액 500엔~" : "月額500円～"}
           </div>
           <div class="flex items-center">
             <svg
@@ -188,35 +190,43 @@ console.log("=== END HERO DEBUG ===");
     const translations = {
       ja: {
         title:
-          '<span class="text-red-500">タップ</span>で<span class="text-blue-600">世界</span>と繋がる。<br><span class="text-blue-600">AI駆動の次世代名刺</span>であなたのビジネスを加速',
+          '<span class="text-red-500">タップ</span>で<span class="text-blue-600">世界</span>と繋がる。<br>月額500円で始める<br>次世代デジタル名刺',
         description:
-          '<span class="text-blue-600 font-semibold">AI駆動の次世代名刺</span>であなたのビジネスを加速。アプリ不要、月額無料。NFCタップ一つで多言語プロフィールを共有。フリーランサーの海外案件獲得を支援します。',
-        cta: "無料トライアル申し込み",
-        features: ["アプリ不要", "月額無料", "4言語対応"],
+          '<span class="text-blue-600 font-semibold">AI駆動の次世代名刺</span>であなたのビジネスを加速。アプリ不要、<span class="font-bold">月額500円から</span>。NFCタップ一つで多言語プロフィールを共有。フリーランサーの海外案件獲得を支援します。',
+        cta: "早期アクセスに申し込む",
+        features: ["アプリ不要", "月額500円～", "4言語対応"],
       },
       en: {
         title:
-          '<span class="text-red-500">Tap</span> to connect with the <span class="text-blue-600">world</span>.<br><span class="text-blue-600">AI-powered next-generation business card</span> to accelerate your business',
+          '<span class="text-red-500">Tap</span> to connect with the <span class="text-blue-600">world</span>.<br>Starting at ¥500/month<br>Next-generation digital business card',
         description:
-          '<span class="text-blue-600 font-semibold">AI-powered next-generation business card</span> to accelerate your business. No app required, free monthly. Share multilingual profiles with one NFC tap. Supporting freelancers in acquiring overseas projects.',
-        cta: "Apply for Free Trial",
-        features: ["No App Required", "Free Monthly", "4 Languages"],
+          '<span class="text-blue-600 font-semibold">AI-powered next-generation business card</span> to accelerate your business. No app required, <span class="font-bold">from ¥500/month</span>. Share multilingual profiles with one NFC tap. Supporting freelancers in acquiring overseas projects.',
+        cta: "Apply for Early Access",
+        features: ["No App Required", "From ¥500/month", "4 Languages"],
       },
       zh: {
         title:
-          '<span class="text-red-500">轻触</span>连接<span class="text-blue-600">世界</span>。<br><span class="text-blue-600">AI驱动的下一代名片</span>加速您的业务',
+          '<span class="text-red-500">轻触</span>连接<span class="text-blue-600">世界</span>。<br>月费¥500起<br>AI驱动的下一代名片',
         description:
-          '<span class="text-blue-600 font-semibold">AI驱动的下一代名片</span>加速您的业务。无需应用，月费免费。一次NFC轻触即可分享多语言个人资料。支持自由职业者获得海外项目。',
-        cta: "申请免费试用",
-        features: ["无需应用", "月费免费", "4种语言"],
+          '<span class="text-blue-600 font-semibold">AI驱动的下一代名片</span>加速您的业务。无需应用，<span class="font-bold">月费¥500起</span>。一次NFC轻触即可分享多语言个人资料。支持自由职业者获得海外项目。',
+        cta: "申请早期访问",
+        features: ["无需应用", "月费¥500起", "4种语言"],
+      },
+      ko: {
+        title:
+          '<span class="text-red-500">탭</span>으로 <span class="text-blue-600">세계</span>와 연결되세요.<br>월액 500엔으로 시작하는<br>차세대 디지털 명함',
+        description:
+          '<span class="text-blue-600 font-semibold">AI 기반 차세대 명함</span>으로 비즈니스를 가속화하세요. 앱 불필요, <span class="font-bold">월액 500엔부터</span>. NFC 탭 하나로 다국어 프로필을 공유하세요. 프리랜서의 해외 프로젝트 획득을 지원합니다.',
+        cta: "조기 액세스 신청",
+        features: ["앱 불필요", "월액 500엔~", "4개국어 지원"],
       },
       es: {
         title:
-          '<span class="text-red-500">Toca</span> para conectar con el <span class="text-blue-600">mundo</span>.<br><span class="text-blue-600">Tarjeta de presentación de próxima generación</span> impulsada por IA para acelerar tu negocio',
+          '<span class="text-red-500">Toca</span> para conectar con el <span class="text-blue-600">mundo</span>.<br>Desde ¥500/mes<br>Tarjeta de presentación de próxima generación',
         description:
-          '<span class="text-blue-600 font-semibold">Tarjeta de presentación de próxima generación</span> impulsada por IA para acelerar tu negocio. Sin aplicación requerida, mensualidad gratuita. Comparte perfiles multilingües con un toque NFC. Apoyando a freelancers en la adquisición de proyectos en el extranjero.',
-        cta: "Solicitar Prueba Gratuita",
-        features: ["Sin App Requerida", "Mensualidad Gratuita", "4 Idiomas"],
+          '<span class="text-blue-600 font-semibold">Tarjeta de presentación de próxima generación</span> impulsada por IA para acelerar tu negocio. Sin aplicación requerida, <span class="font-bold">desde ¥500/mes</span>. Comparte perfiles multilingües con un toque NFC. Apoyando a freelancers en la adquisición de proyectos en el extranjero.',
+        cta: "Solicitar Acceso Anticipado",
+        features: ["Sin App Requerida", "Desde ¥500/mes", "4 Idiomas"],
       },
     };
 
@@ -238,10 +248,11 @@ console.log("=== END HERO DEBUG ===");
     const ctaElement = document.getElementById("hero-cta");
     if (ctaElement) {
       const limitedText = {
-        ja: "50名限定!",
-        en: "Limited to 50!",
-        zh: "限50名！",
-        es: "¡Limitado a 50!",
+        ja: "100名限定!",
+        en: "Limited to 100!",
+        zh: "限100名！",
+        ko: "100명 한정!",
+        es: "¡Limitado a 100!",
       };
       ctaElement.innerHTML = `<span class="text-red-500 font-bold mr-2">${(limitedText as any)[lang] || limitedText["ja"]}</span>${t.cta}`;
     }

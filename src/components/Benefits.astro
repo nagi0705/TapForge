@@ -115,7 +115,7 @@ console.log('Benefits - benefits array:', benefits);
               >
               <th
                 class="px-6 py-4 text-center text-sm font-semibold text-gray-900"
-                id="table-header-traditional">従来の紙名刺</th
+                id="table-header-traditional">従来の紙名刺＋管理アプリ</th
               >
               <th
                 class="px-6 py-4 text-center text-sm font-semibold text-gray-900"
@@ -133,9 +133,9 @@ console.log('Benefits - benefits array:', benefits);
                   <div class="relative bg-gray-100 rounded-2xl p-4 shadow-lg border border-gray-200 w-full h-20 flex flex-col justify-center">
                     <div class="flex items-center justify-center space-x-2">
                       <div class="w-4 h-4 bg-gray-500 rounded-full"></div>
-                      <span class="text-xl font-bold text-gray-700">¥5,000</span>
+                      <span class="text-xl font-bold text-gray-700">¥11,000</span>
                     </div>
-                    <div class="text-xs text-gray-500 mt-2 font-medium text-center">年間コスト</div>
+                    <div class="text-xs text-gray-500 mt-2 font-medium text-center" id="annual-cost-traditional-note">紙名刺+管理アプリ</div>
                   </div>
                 </div>
               </td>
@@ -144,9 +144,9 @@ console.log('Benefits - benefits array:', benefits);
                   <div class="relative bg-white rounded-2xl p-4 shadow-lg border border-red-100 w-full h-20 flex flex-col justify-center">
                     <div class="flex items-center justify-center space-x-2">
                       <div class="w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
-                      <span class="text-xl font-bold text-red-600">¥0</span>
+                      <span class="text-xl font-bold text-red-600">¥6,000</span>
                     </div>
-                    <div class="text-xs text-gray-500 mt-2 font-medium text-center" id="annual-cost-note">（初期費用のみ）</div>
+                    <div class="text-xs text-gray-500 mt-2 font-medium text-center" id="annual-cost-note">早期アクセス（月額¥500×12）</div>
                   </div>
                 </div>
               </td>
@@ -160,9 +160,9 @@ console.log('Benefits - benefits array:', benefits);
                   <div class="relative bg-gray-100 rounded-2xl p-4 shadow-lg border border-gray-200 w-full h-20 flex flex-col justify-center">
                     <div class="flex items-center justify-center space-x-2">
                       <div class="w-4 h-4 bg-gray-500 rounded-full"></div>
-                      <span class="text-xl font-bold text-gray-700">30分</span>
+                      <span class="text-xl font-bold text-gray-700" id="organization-time-traditional">30分</span>
                     </div>
-                    <div class="text-xs text-gray-500 mt-2 font-medium text-center">/50枚</div>
+                    <div class="text-xs text-gray-500 mt-2 font-medium text-center" id="organization-time-traditional-unit">/50枚</div>
                   </div>
                 </div>
               </td>
@@ -171,7 +171,7 @@ console.log('Benefits - benefits array:', benefits);
                   <div class="relative bg-white rounded-2xl p-4 shadow-lg border border-orange-100 w-full h-20 flex flex-col justify-center">
                     <div class="flex items-center justify-center space-x-2">
                       <div class="w-4 h-4 bg-orange-500 rounded-full animate-pulse"></div>
-                      <span class="text-xl font-bold text-orange-600">5分</span>
+                      <span class="text-xl font-bold text-orange-600" id="organization-time-tapforge">5分</span>
                     </div>
                     <div class="text-xs text-gray-500 mt-2 font-medium text-center" id="organization-time-note">/50枚</div>
                   </div>
@@ -187,7 +187,7 @@ console.log('Benefits - benefits array:', benefits);
                   <div class="relative bg-gray-100 rounded-2xl p-4 shadow-lg border border-gray-200 w-full h-20 flex flex-col justify-center">
                     <div class="flex items-center justify-center space-x-2">
                       <div class="w-4 h-4 bg-gray-500 rounded-full"></div>
-                      <span class="text-xl font-bold text-gray-700">15%</span>
+                      <span class="text-xl font-bold text-gray-700" id="follow-rate-traditional">15%</span>
                     </div>
                     <div class="text-xs text-gray-500 mt-2 font-medium text-center">{currentLang === "ko" ? "팔로우율" : "フォロー率"}</div>
                   </div>
@@ -198,7 +198,7 @@ console.log('Benefits - benefits array:', benefits);
                   <div class="relative bg-white rounded-2xl p-4 shadow-lg border border-purple-100 w-full h-20 flex flex-col justify-center">
                     <div class="flex items-center justify-center space-x-2">
                       <div class="w-4 h-4 bg-purple-500 rounded-full animate-pulse"></div>
-                      <span class="text-xl font-bold text-purple-600">40%</span>
+                      <span class="text-xl font-bold text-purple-600" id="follow-rate-tapforge">40%</span>
                     </div>
                     <div class="text-xs text-gray-500 mt-2 font-medium text-center">{currentLang === "ko" ? "팔로우율" : "フォロー率"}</div>
                   </div>
@@ -214,9 +214,9 @@ console.log('Benefits - benefits array:', benefits);
                   <div class="relative bg-gray-100 rounded-2xl p-4 shadow-lg border border-gray-200 w-full h-20 flex flex-col justify-center">
                     <div class="flex items-center justify-center space-x-2">
                       <div class="w-4 h-4 bg-gray-500 rounded-full"></div>
-                      <span class="text-xl font-bold text-gray-700">なし</span>
+                      <span class="text-xl font-bold text-gray-700" id="multilingual-traditional">なし</span>
                     </div>
-                    <div class="text-xs text-gray-500 mt-2 font-medium text-center">多言語対応</div>
+                    <div class="text-xs text-gray-500 mt-2 font-medium text-center" id="multilingual-traditional-label">多言語対応</div>
                   </div>
                 </div>
               </td>
@@ -225,7 +225,7 @@ console.log('Benefits - benefits array:', benefits);
                   <div class="relative bg-white rounded-2xl p-4 shadow-lg border border-blue-100 w-full h-20 flex flex-col justify-center">
                     <div class="flex items-center justify-center space-x-2">
                       <div class="w-4 h-4 bg-blue-500 rounded-full animate-pulse"></div>
-                      <span class="text-xl font-bold text-blue-600">4言語</span>
+                      <span class="text-xl font-bold text-blue-600" id="multilingual-tapforge">4言語</span>
                     </div>
                     <div class="text-xs text-gray-500 mt-2 font-medium text-center" id="multilingual-note">対応</div>
                   </div>
@@ -241,7 +241,7 @@ console.log('Benefits - benefits array:', benefits);
                   <div class="relative bg-gray-100 rounded-2xl p-4 shadow-lg border border-gray-200 w-full h-20 flex flex-col justify-center">
                     <div class="flex items-center justify-center space-x-2">
                       <div class="w-4 h-4 bg-gray-500 rounded-full"></div>
-                      <span class="text-xl font-bold text-gray-700">高</span>
+                      <span class="text-xl font-bold text-gray-700" id="environmental-traditional">高</span>
                     </div>
                     <div class="text-xs text-gray-500 mt-2 font-medium text-center">{currentLang === "ko" ? "（종이 사용）" : "（紙使用）"}</div>
                   </div>
@@ -252,7 +252,7 @@ console.log('Benefits - benefits array:', benefits);
                   <div class="relative bg-white rounded-2xl p-4 shadow-lg border border-green-100 w-full h-20 flex flex-col justify-center">
                     <div class="flex items-center justify-center space-x-2">
                       <div class="w-4 h-4 bg-green-500 rounded-full animate-pulse"></div>
-                      <span class="text-xl font-bold text-green-600">ゼロ</span>
+                      <span class="text-xl font-bold text-green-600" id="environmental-tapforge">ゼロ</span>
                     </div>
                     <div class="text-xs text-gray-500 mt-2 font-medium text-center" id="environmental-impact-note">{currentLang === "ko" ? "（페이퍼리스）" : "（ペーパーレス）"}</div>
                   </div>
@@ -268,7 +268,7 @@ console.log('Benefits - benefits array:', benefits);
                   <div class="relative bg-gray-100 rounded-2xl p-4 shadow-lg border border-gray-200 w-full h-20 flex flex-col justify-center">
                     <div class="flex items-center justify-center space-x-2">
                       <div class="w-4 h-4 bg-gray-500 rounded-full"></div>
-                      <span class="text-xl font-bold text-gray-700">再印刷</span>
+                      <span class="text-xl font-bold text-gray-700" id="update-ease-traditional">再印刷</span>
                     </div>
                     <div class="text-xs text-gray-500 mt-2 font-medium text-center">{currentLang === "ko" ? "가 필요" : "が必要"}</div>
                   </div>
@@ -279,7 +279,7 @@ console.log('Benefits - benefits array:', benefits);
                   <div class="relative bg-white rounded-2xl p-4 shadow-lg border border-indigo-100 w-full h-20 flex flex-col justify-center">
                     <div class="flex items-center justify-center space-x-2">
                       <div class="w-4 h-4 bg-indigo-500 rounded-full animate-pulse"></div>
-                      <span class="text-xl font-bold text-indigo-600">即座</span>
+                      <span class="text-xl font-bold text-indigo-600" id="update-ease-tapforge">即座</span>
                     </div>
                     <div class="text-xs text-gray-500 mt-2 font-medium text-center" id="update-ease-note">{currentLang === "ko" ? "업데이트 가능" : "更新可能"}</div>
                   </div>
@@ -589,15 +589,15 @@ console.log('Benefits - benefits array:', benefits);
           title: '詳細比較',
           headers: {
             item: '項目',
-            traditional: '従来の紙名刺',
+            traditional: '従来の紙名刺＋管理アプリ',
             tapforge: 'TapForge'
           },
           rows: {
             annualCost: {
               item: '年間コスト',
-              traditional: '¥5,000',
-              tapforge: '¥0',
-              tapforgeNote: '（初期費用のみ）'
+              traditional: '¥11,000',
+              tapforge: '¥6,000',
+              tapforgeNote: '（早期アクセス）'
             },
             organizationTime: {
               item: '整理時間',
@@ -670,15 +670,15 @@ console.log('Benefits - benefits array:', benefits);
           title: 'Detailed Comparison',
           headers: {
             item: 'Item',
-            traditional: 'Traditional Paper Business Cards',
+            traditional: 'Paper Cards + Management App',
             tapforge: 'TapForge'
           },
           rows: {
             annualCost: {
               item: 'Annual Cost',
-              traditional: '¥5,000',
-              tapforge: '¥0',
-              tapforgeNote: '(Initial cost only)'
+              traditional: '¥11,000',
+              tapforge: '¥6,000',
+              tapforgeNote: '(Early Access)'
             },
             organizationTime: {
               item: 'Organization Time',
@@ -751,15 +751,15 @@ console.log('Benefits - benefits array:', benefits);
           title: '详细比较',
           headers: {
             item: '项目',
-            traditional: '传统纸质名片',
+            traditional: '纸名片+管理应用',
             tapforge: 'TapForge'
           },
           rows: {
             annualCost: {
               item: '年度成本',
-              traditional: '¥5,000',
-              tapforge: '¥0',
-              tapforgeNote: '（仅初始费用）'
+              traditional: '¥11,000',
+              tapforge: '¥6,000',
+              tapforgeNote: '（早期访问）'
             },
             organizationTime: {
               item: '整理时间',
@@ -832,15 +832,15 @@ console.log('Benefits - benefits array:', benefits);
           title: '상세 비교',
           headers: {
             item: '항목',
-            traditional: '기존 종이 명함',
+            traditional: '종이 명함+관리 앱',
             tapforge: 'TapForge'
           },
           rows: {
             annualCost: {
               item: '연간 비용',
-              traditional: '¥5,000',
-              tapforge: '¥0',
-              tapforgeNote: '(초기 비용만)'
+              traditional: '¥11,000',
+              tapforge: '¥6,000',
+              tapforgeNote: '(조기 액세스)'
             },
             organizationTime: {
               item: '정리 시간',
@@ -913,7 +913,7 @@ console.log('Benefits - benefits array:', benefits);
           title: 'Comparación Detallada',
           headers: {
             item: 'Elemento',
-            traditional: 'Tarjetas de Presentación de Papel Tradicionales',
+            traditional: 'Tarjetas de Papel + App de Gestión',
             tapforge: 'TapForge'
           },
           rows: {
@@ -1074,35 +1074,70 @@ console.log('Benefits - benefits array:', benefits);
       updateEaseNoteElement.textContent = t.comparison.rows.updateEase.tapforgeNote;
     }
     
-    // Update traditional values
-    const traditionalAnnualCostElement = document.getElementById('traditional-annual-cost');
-    if (traditionalAnnualCostElement) {
-      traditionalAnnualCostElement.textContent = t.comparison.rows.annualCost.traditional;
+    // Update traditional values with proper IDs
+    const annualCostTraditionalNote = document.getElementById('annual-cost-traditional-note');
+    if (annualCostTraditionalNote) {
+      annualCostTraditionalNote.textContent = lang === 'en' ? 'Paper Cards + App' : lang === 'zh' ? '纸质名片+应用' : lang === 'ko' ? '종이명함+앱' : lang === 'es' ? 'Tarjetas + App' : '紙名刺+管理アプリ';
     }
-    
-    const traditionalOrganizationTimeElement = document.getElementById('traditional-organization-time');
-    if (traditionalOrganizationTimeElement) {
-      traditionalOrganizationTimeElement.textContent = t.comparison.rows.organizationTime.traditional;
+
+    const organizationTimeTraditional = document.getElementById('organization-time-traditional');
+    if (organizationTimeTraditional) {
+      organizationTimeTraditional.textContent = lang === 'en' ? '30 min' : lang === 'zh' ? '30分钟' : lang === 'ko' ? '30분' : lang === 'es' ? '30 min' : '30分';
     }
-    
-    const traditionalFollowUpRateElement = document.getElementById('traditional-follow-up-rate');
-    if (traditionalFollowUpRateElement) {
-      traditionalFollowUpRateElement.textContent = t.comparison.rows.followUpRate.traditional;
+
+    const organizationTimeTraditionalUnit = document.getElementById('organization-time-traditional-unit');
+    if (organizationTimeTraditionalUnit) {
+      organizationTimeTraditionalUnit.textContent = lang === 'en' ? '/50 cards' : lang === 'zh' ? '/50张' : lang === 'ko' ? '/50장' : lang === 'es' ? '/50 tarjetas' : '/50枚';
     }
-    
-    const traditionalMultilingualElement = document.getElementById('traditional-multilingual');
-    if (traditionalMultilingualElement) {
-      traditionalMultilingualElement.textContent = t.comparison.rows.multilingual.traditional;
+
+    const organizationTimeTapForge = document.getElementById('organization-time-tapforge');
+    if (organizationTimeTapForge) {
+      organizationTimeTapForge.textContent = lang === 'en' ? '5 min' : lang === 'zh' ? '5分钟' : lang === 'ko' ? '5분' : lang === 'es' ? '5 min' : '5分';
     }
-    
-    const traditionalEnvironmentalImpactElement = document.getElementById('traditional-environmental-impact');
-    if (traditionalEnvironmentalImpactElement) {
-      traditionalEnvironmentalImpactElement.textContent = t.comparison.rows.environmentalImpact.traditional;
+
+    const followRateTraditional = document.getElementById('follow-rate-traditional');
+    if (followRateTraditional) {
+      followRateTraditional.textContent = '15%';
     }
-    
-    const traditionalUpdateEaseElement = document.getElementById('traditional-update-ease');
-    if (traditionalUpdateEaseElement) {
-      traditionalUpdateEaseElement.textContent = t.comparison.rows.updateEase.traditional;
+
+    const followRateTapForge = document.getElementById('follow-rate-tapforge');
+    if (followRateTapForge) {
+      followRateTapForge.textContent = '40%';
+    }
+
+    const multilingualTraditional = document.getElementById('multilingual-traditional');
+    if (multilingualTraditional) {
+      multilingualTraditional.textContent = lang === 'en' ? 'None' : lang === 'zh' ? '无' : lang === 'ko' ? '없음' : lang === 'es' ? 'Ninguno' : 'なし';
+    }
+
+    const multilingualTraditionalLabel = document.getElementById('multilingual-traditional-label');
+    if (multilingualTraditionalLabel) {
+      multilingualTraditionalLabel.textContent = lang === 'en' ? 'Multilingual' : lang === 'zh' ? '多语言支持' : lang === 'ko' ? '다국어 지원' : lang === 'es' ? 'Multilingüe' : '多言語対応';
+    }
+
+    const multilingualTapForge = document.getElementById('multilingual-tapforge');
+    if (multilingualTapForge) {
+      multilingualTapForge.textContent = lang === 'en' ? '4 Languages' : lang === 'zh' ? '4语言' : lang === 'ko' ? '4개국어' : lang === 'es' ? '4 Idiomas' : '4言語';
+    }
+
+    const environmentalTraditional = document.getElementById('environmental-traditional');
+    if (environmentalTraditional) {
+      environmentalTraditional.textContent = lang === 'en' ? 'High' : lang === 'zh' ? '高' : lang === 'ko' ? '높음' : lang === 'es' ? 'Alto' : '高';
+    }
+
+    const environmentalTapForge = document.getElementById('environmental-tapforge');
+    if (environmentalTapForge) {
+      environmentalTapForge.textContent = lang === 'en' ? 'Zero' : lang === 'zh' ? '零' : lang === 'ko' ? '제로' : lang === 'es' ? 'Cero' : 'ゼロ';
+    }
+
+    const updateEaseTraditional = document.getElementById('update-ease-traditional');
+    if (updateEaseTraditional) {
+      updateEaseTraditional.textContent = lang === 'en' ? 'Reprint' : lang === 'zh' ? '重新印刷' : lang === 'ko' ? '재인쇄' : lang === 'es' ? 'Reimpresión' : '再印刷';
+    }
+
+    const updateEaseTapForge = document.getElementById('update-ease-tapforge');
+    if (updateEaseTapForge) {
+      updateEaseTapForge.textContent = lang === 'en' ? 'Instant' : lang === 'zh' ? '即时' : lang === 'ko' ? '즉시' : lang === 'es' ? 'Instantáneo' : '即座';
     }
     
     // Update target section

@@ -129,7 +129,7 @@ const main = [
     }
   });
 
-  function updateLanguageDisplay(lang) {
+  function updateLanguageDisplay(lang: string) {
     const languageButton = document.querySelector("#language-menu-button span");
     if (languageButton) {
       const languageNames = {
@@ -138,7 +138,7 @@ const main = [
         zh: "中文",
         es: "Español",
       };
-      languageButton.textContent = languageNames[lang] || "日本語";
+      languageButton.textContent = (languageNames as any)[lang] || "日本語";
     }
 
     // Update language menu active state
@@ -147,7 +147,7 @@ const main = [
       const menuItems = languageMenu.querySelectorAll("a");
       menuItems.forEach((item) => {
         const href = item.getAttribute("href");
-        const langMatch = href.match(/lang=([^&]+)/);
+        const langMatch = href?.match(/lang=([^&]+)/);
         if (langMatch) {
           const itemLang = langMatch[1];
           if (itemLang === lang) {
@@ -172,7 +172,7 @@ const main = [
     }
   }
 
-  function updatePageContent(lang) {
+  function updatePageContent(lang: string) {
     // Update navigation menu
     const navItems = document.querySelectorAll(".nav-link");
     const translations = {
@@ -210,7 +210,7 @@ const main = [
       },
     };
 
-    const t = translations[lang] || translations["ja"];
+    const t = (translations as any)[lang] || translations["ja"];
 
     navItems.forEach((item, index) => {
       const keys = [
