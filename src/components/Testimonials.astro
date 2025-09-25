@@ -200,7 +200,7 @@ const t = translations[lang].testimonials;
     }
   });
 
-  function updateTestimonialsContent(lang) {
+  function updateTestimonialsContent(lang: string) {
     const translations = {
       ja: {
         title: "お客様の声",
@@ -313,7 +313,7 @@ const t = translations[lang].testimonials;
       },
     };
 
-    const t = translations[lang] || translations["ja"];
+    const t = (translations as any)[lang] || translations["ja"];
 
     // Update title and subtitle
     const titleElement = document.querySelector("#testimonials h2");

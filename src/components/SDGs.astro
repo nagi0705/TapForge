@@ -1,6 +1,5 @@
 ---
 // SDGs Contribution Section
-import { getTranslation, type Language } from "../lib/i18n";
 ---
 
 <section class="py-20 bg-white">
@@ -297,7 +296,7 @@ import { getTranslation, type Language } from "../lib/i18n";
     }
   });
 
-  function updateSDGsContent(lang) {
+  function updateSDGsContent(lang: string) {
     const translations = {
       ja: {
         title: "SDGsへの貢献",
@@ -515,7 +514,7 @@ import { getTranslation, type Language } from "../lib/i18n";
       },
     };
 
-    const t = translations[lang] || translations["ja"];
+    const t = (translations as any)[lang] || translations["ja"];
 
     // Update main title and subtitle
     const titleElement = document.getElementById("sdgs-title");

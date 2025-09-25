@@ -1,5 +1,4 @@
 ---
-import { getTranslation, type Language } from "../lib/i18n";
 // CTA Section with integrated Trial Form
 ---
 
@@ -57,7 +56,10 @@ import { getTranslation, type Language } from "../lib/i18n";
                 class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center justify-center min-h-[48px]"
                 id="trial-form-button"
               >
-                <span class="text-red-500 font-bold mr-2" id="trial-form-limited">50名限定!</span>
+                <span
+                  class="text-red-500 font-bold mr-2"
+                  id="trial-form-limited">50名限定!</span
+                >
                 <span id="trial-form-button-text">無料トライアル申し込み</span>
               </a>
             </div>
@@ -80,7 +82,6 @@ import { getTranslation, type Language } from "../lib/i18n";
           </div>
         </div>
       </div>
-
 
       <!-- Trust Indicators -->
       <div
@@ -228,8 +229,7 @@ import { getTranslation, type Language } from "../lib/i18n";
         description: "我们将为您免费制作一张名片。",
         subDescription: "无限设计更改，OCR名片读取和VCard转换可用",
         trialFormTitle: "申请免费试用",
-        trialFormDescription:
-          "立即申请免费试用，体验TapForge的力量。",
+        trialFormDescription: "立即申请免费试用，体验TapForge的力量。",
         trialFormButton: "申请免费试用",
         trialFormLimited: "限50名！",
         termsTextStart: "申请即表示您同意我们的",
@@ -305,13 +305,13 @@ import { getTranslation, type Language } from "../lib/i18n";
   };
 
   // Helper function to update element text content
-  function updateElement(id, text) {
+  function updateElement(id: string, text: string) {
     const element = document.getElementById(id);
     if (element) element.textContent = text;
   }
 
   // Helper function to update element attribute
-  function updateElementAttr(id, attr, value) {
+  function updateElementAttr(id: string, attr: string, value: string) {
     const element = document.getElementById(id);
     if (element) element.setAttribute(attr, value);
   }
@@ -325,8 +325,10 @@ import { getTranslation, type Language } from "../lib/i18n";
   }
 
   // Update CTA content
-  function updateCTAContent(lang) {
-    const translations = ctaTranslations[lang] || ctaTranslations["ja"];
+  function updateCTAContent(lang: string) {
+    const translations =
+      ctaTranslations[lang as keyof typeof ctaTranslations] ||
+      ctaTranslations["ja"];
     const cta = translations.cta;
     const trial = translations.trial;
 
@@ -336,7 +338,7 @@ import { getTranslation, type Language } from "../lib/i18n";
     updateElement("cta-contact-text", cta.contactButton);
 
     // Update features
-    cta.features.forEach((feature, index) => {
+    cta.features.forEach((feature: string, index: number) => {
       updateElement(`cta-feature-${index + 1}`, feature);
     });
 
