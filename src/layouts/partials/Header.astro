@@ -10,16 +10,16 @@ const currentLang: Language = urlLang || "ja";
 
 // TapForge navigation menu with i18n
 const main = [
-  { name: getTranslation(currentLang, "nav.home"), url: "/" },
-  { name: getTranslation(currentLang, "nav.features"), url: "#features" },
-  { name: getTranslation(currentLang, "nav.pricing"), url: "#pricing" },
+  { name: currentLang === "ko" ? "홈" : getTranslation(currentLang, "nav.home"), url: "/" },
+  { name: currentLang === "ko" ? "특징" : getTranslation(currentLang, "nav.features"), url: "#features" },
+  { name: currentLang === "ko" ? "가격" : getTranslation(currentLang, "nav.pricing"), url: "#pricing" },
   {
-    name: getTranslation(currentLang, "nav.testimonials"),
+    name: currentLang === "ko" ? "후기" : getTranslation(currentLang, "nav.testimonials"),
     url: "#testimonials",
   },
-  { name: getTranslation(currentLang, "nav.faq"), url: "#faq" },
+  { name: currentLang === "ko" ? "FAQ" : getTranslation(currentLang, "nav.faq"), url: "#faq" },
   {
-    name: getTranslation(currentLang, "nav.contact"),
+    name: currentLang === "ko" ? "문의" : getTranslation(currentLang, "nav.contact"),
     url: "https://cor-jp.com/contact/",
   },
 ];
@@ -114,6 +114,19 @@ const main = [
 
     // Update page content based on language
     updatePageContent(currentLang);
+    
+    // Force Korean translation if needed
+    if (currentLang === 'ko') {
+      setTimeout(() => {
+        forceKoreanHeaderTranslation();
+      }, 100);
+      setTimeout(() => {
+        forceKoreanHeaderTranslation();
+      }, 500);
+      setTimeout(() => {
+        forceKoreanHeaderTranslation();
+      }, 1000);
+    }
   });
 
   function updateLanguageDisplay(lang) {
@@ -235,4 +248,34 @@ const main = [
       }
     });
   });
+
+  function forceKoreanHeaderTranslation() {
+    console.log('Force updating Header content to Korean');
+    
+    // Force update navigation links
+    const navLinks = document.querySelectorAll('#nav-menu .nav-link');
+    const koreanNavLinks = ['홈', '특징', '가격', '후기', 'FAQ', '문의'];
+    
+    navLinks.forEach((link, index) => {
+      if (link && koreanNavLinks[index]) {
+        link.textContent = koreanNavLinks[index];
+        console.log(`Updated nav link ${index + 1} to Korean: ${koreanNavLinks[index]}`);
+      }
+    });
+    
+    // Force update language switcher display
+    const languageButton = document.querySelector('#language-menu-button span');
+    if (languageButton) {
+      languageButton.textContent = '한국어';
+      console.log('Updated language switcher to Korean');
+    }
+    
+    // Force update search title and aria-label
+    const searchLink = document.querySelector('a[href="/search"]');
+    if (searchLink) {
+      searchLink.setAttribute('title', '검색');
+      searchLink.setAttribute('aria-label', '검색');
+      console.log('Updated search link attributes to Korean');
+    }
+  }
 </script>

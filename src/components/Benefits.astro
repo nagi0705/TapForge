@@ -5,6 +5,7 @@ import { translations, type Language } from "../lib/i18n";
 // Get current language from URL parameter
 const url = new URL(Astro.request.url);
 const lang = (url.searchParams.get('lang') as Language) || 'ja';
+const currentLang = lang;
 const t = translations[lang].benefits;
 
 // Debug: Log the data
@@ -124,8 +125,8 @@ console.log('Benefits - benefits array:', benefits);
           </thead>
           <tbody class="divide-y divide-gray-100">
             <tr class="hover:bg-gray-50/50 transition-colors">
-              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-annual-cost"
-                >年間コスト</td
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-annual-cost" id="annual-cost-item"
+                >{currentLang === "ko" ? "연간 비용" : "年間コスト"}</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
                 <div class="relative inline-flex items-center justify-center w-full max-w-[200px]">
@@ -151,8 +152,8 @@ console.log('Benefits - benefits array:', benefits);
               </td>
             </tr>
             <tr class="bg-gray-50/30 hover:bg-gray-50/50 transition-colors">
-              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-organization-time"
-                >整理時間</td
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-organization-time" id="organization-time-item"
+                >{currentLang === "ko" ? "정리 시간" : "整理時間"}</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
                 <div class="relative inline-flex items-center justify-center w-full max-w-[200px]">
@@ -178,8 +179,8 @@ console.log('Benefits - benefits array:', benefits);
               </td>
             </tr>
             <tr class="hover:bg-gray-50/50 transition-colors">
-              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-follow-up-rate"
-                >フォロー率</td
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-follow-up-rate" id="follow-up-rate-item"
+                >{currentLang === "ko" ? "팔로우율" : "フォロー率"}</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
                 <div class="relative inline-flex items-center justify-center w-full max-w-[200px]">
@@ -188,7 +189,7 @@ console.log('Benefits - benefits array:', benefits);
                       <div class="w-4 h-4 bg-gray-500 rounded-full"></div>
                       <span class="text-xl font-bold text-gray-700">15%</span>
                     </div>
-                    <div class="text-xs text-gray-500 mt-2 font-medium text-center">フォロー率</div>
+                    <div class="text-xs text-gray-500 mt-2 font-medium text-center">{currentLang === "ko" ? "팔로우율" : "フォロー率"}</div>
                   </div>
                 </div>
               </td>
@@ -199,14 +200,14 @@ console.log('Benefits - benefits array:', benefits);
                       <div class="w-4 h-4 bg-purple-500 rounded-full animate-pulse"></div>
                       <span class="text-xl font-bold text-purple-600">40%</span>
                     </div>
-                    <div class="text-xs text-gray-500 mt-2 font-medium text-center">フォロー率</div>
+                    <div class="text-xs text-gray-500 mt-2 font-medium text-center">{currentLang === "ko" ? "팔로우율" : "フォロー率"}</div>
                   </div>
                 </div>
               </td>
             </tr>
             <tr class="bg-gray-50/30 hover:bg-gray-50/50 transition-colors">
-              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-multilingual"
-                >多言語対応</td
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-multilingual" id="multilingual-item"
+                >{currentLang === "ko" ? "다국어 지원" : "多言語対応"}</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
                 <div class="relative inline-flex items-center justify-center w-full max-w-[200px]">
@@ -232,8 +233,8 @@ console.log('Benefits - benefits array:', benefits);
               </td>
             </tr>
             <tr class="hover:bg-gray-50/50 transition-colors">
-              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-environmental-impact"
-                >環境負荷</td
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-environmental-impact" id="environmental-impact-item"
+                >{currentLang === "ko" ? "환경 부담" : "環境負荷"}</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
                 <div class="relative inline-flex items-center justify-center w-full max-w-[200px]">
@@ -242,7 +243,7 @@ console.log('Benefits - benefits array:', benefits);
                       <div class="w-4 h-4 bg-gray-500 rounded-full"></div>
                       <span class="text-xl font-bold text-gray-700">高</span>
                     </div>
-                    <div class="text-xs text-gray-500 mt-2 font-medium text-center">（紙使用）</div>
+                    <div class="text-xs text-gray-500 mt-2 font-medium text-center">{currentLang === "ko" ? "（종이 사용）" : "（紙使用）"}</div>
                   </div>
                 </div>
               </td>
@@ -253,14 +254,14 @@ console.log('Benefits - benefits array:', benefits);
                       <div class="w-4 h-4 bg-green-500 rounded-full animate-pulse"></div>
                       <span class="text-xl font-bold text-green-600">ゼロ</span>
                     </div>
-                    <div class="text-xs text-gray-500 mt-2 font-medium text-center" id="environmental-impact-note">（ペーパーレス）</div>
+                    <div class="text-xs text-gray-500 mt-2 font-medium text-center" id="environmental-impact-note">{currentLang === "ko" ? "（페이퍼리스）" : "（ペーパーレス）"}</div>
                   </div>
                 </div>
               </td>
             </tr>
             <tr class="bg-gray-50/30 hover:bg-gray-50/50 transition-colors">
-              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-update-ease"
-                >更新の容易さ</td
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-update-ease" id="update-ease-item"
+                >{currentLang === "ko" ? "업데이트 용이성" : "更新の容易さ"}</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
                 <div class="relative inline-flex items-center justify-center w-full max-w-[200px]">
@@ -269,7 +270,7 @@ console.log('Benefits - benefits array:', benefits);
                       <div class="w-4 h-4 bg-gray-500 rounded-full"></div>
                       <span class="text-xl font-bold text-gray-700">再印刷</span>
                     </div>
-                    <div class="text-xs text-gray-500 mt-2 font-medium text-center">が必要</div>
+                    <div class="text-xs text-gray-500 mt-2 font-medium text-center">{currentLang === "ko" ? "가 필요" : "が必要"}</div>
                   </div>
                 </div>
               </td>
@@ -280,7 +281,7 @@ console.log('Benefits - benefits array:', benefits);
                       <div class="w-4 h-4 bg-indigo-500 rounded-full animate-pulse"></div>
                       <span class="text-xl font-bold text-indigo-600">即座</span>
                     </div>
-                    <div class="text-xs text-gray-500 mt-2 font-medium text-center" id="update-ease-note">更新可能</div>
+                    <div class="text-xs text-gray-500 mt-2 font-medium text-center" id="update-ease-note">{currentLang === "ko" ? "업데이트 가능" : "更新可能"}</div>
                   </div>
                 </div>
               </td>
@@ -322,6 +323,10 @@ console.log('Benefits - benefits array:', benefits);
     const storedLang = localStorage.getItem('preferred-language');
     const currentLang = urlLang || storedLang || 'ja';
     
+    console.log('Benefits - Current language:', currentLang);
+    console.log('Benefits - URL lang:', urlLang);
+    console.log('Benefits - Stored lang:', storedLang);
+    
     // Force update benefits content immediately
     forceUpdateBenefitsContent(currentLang);
     
@@ -351,6 +356,20 @@ console.log('Benefits - benefits array:', benefits);
     
     // Update benefits content based on language
     updateBenefitsContent(currentLang);
+    
+    // Force update comparison table items for Korean
+    if (currentLang === 'ko') {
+      setTimeout(() => {
+        forceUpdateComparisonItems();
+      }, 100);
+      setTimeout(() => {
+        forceUpdateComparisonItems();
+      }, 500);
+      setTimeout(() => {
+        forceUpdateComparisonItems();
+      }, 1000);
+    }
+    
   });
 
   function forceUpdateBenefitsContent(lang) {
@@ -373,6 +392,12 @@ console.log('Benefits - benefits array:', benefits);
         { title: '效率化', metric: '5分钟', description: '50张名片整理通过批量数字化完成' },
         { title: '业务扩展', metric: '40%', description: '跟进率从15%提升' },
         { title: '环保考虑', metric: '500张', description: '年度纸张减少为SDGs做贡献' }
+      ],
+      'ko': [
+        { title: '비용 절감', metric: '¥8,000', description: '기존 종이 명함 5,000원 + OCR 앱 6,000원 → TapForge 3,000원으로 실현' },
+        { title: '효율화', metric: '5분', description: '명함 정리가 50장 일괄 디지털화로 완료' },
+        { title: '비즈니스 확장', metric: '40%', description: '팔로우율이 15%에서 향상' },
+        { title: '환경 고려', metric: '500장', description: '연간 종이 절약으로 SDGs에 기여' }
       ],
       'es': [
         { title: 'Reducción de Costos', metric: '¥2,000', description: 'El costo anual de 500 tarjetas de presentación de papel se convierte en 0 yenes' },
@@ -460,6 +485,77 @@ console.log('Benefits - benefits array:', benefits);
         console.log(`Description element ${i} not found or no data`);
       }
     }
+    
+    // Force update comparison table items for Korean
+    if (lang === 'ko') {
+      const comparisonItems = [
+        { id: 'annual-cost-item', text: '연간 비용' },
+        { id: 'organization-time-item', text: '정리 시간' },
+        { id: 'follow-up-rate-item', text: '팔로우율' },
+        { id: 'multilingual-item', text: '다국어 지원' },
+        { id: 'environmental-impact-item', text: '환경 부담' },
+        { id: 'update-ease-item', text: '업데이트 용이성' }
+      ];
+      
+      comparisonItems.forEach(item => {
+        const element = document.getElementById(item.id);
+        if (element) {
+          element.textContent = item.text;
+          element.innerHTML = item.text;
+          console.log(`Updated ${item.id} to: ${item.text}`);
+        } else {
+          console.log(`Element ${item.id} not found`);
+        }
+      });
+      
+      // Also try to update by class or other selectors
+      const allComparisonItems = document.querySelectorAll('[id*="row-"]');
+      allComparisonItems.forEach((element, index) => {
+        if (comparisonItems[index]) {
+          element.textContent = comparisonItems[index].text;
+          element.innerHTML = comparisonItems[index].text;
+          console.log(`Force updated element ${element.id} to: ${comparisonItems[index].text}`);
+        }
+      });
+    }
+  }
+
+  function forceUpdateComparisonItems() {
+    console.log('Force updating comparison items to Korean');
+    
+    // Force update comparison table items
+    const comparisonItems = [
+      { id: 'annual-cost-item', text: '연간 비용' },
+      { id: 'organization-time-item', text: '정리 시간' },
+      { id: 'follow-up-rate-item', text: '팔로우율' },
+      { id: 'multilingual-item', text: '다국어 지원' },
+      { id: 'environmental-impact-item', text: '환경 부담' },
+      { id: 'update-ease-item', text: '업데이트 용이성' }
+    ];
+    
+    comparisonItems.forEach(item => {
+      const element = document.getElementById(item.id);
+      if (element) {
+        element.textContent = item.text;
+        element.innerHTML = item.text;
+        console.log(`Force updated ${item.id} to: ${item.text}`);
+      } else {
+        console.log(`Element ${item.id} not found`);
+      }
+    });
+    
+    // Also try to update by row ID
+    const rowIds = ['row-annual-cost', 'row-organization-time', 'row-follow-up-rate', 'row-multilingual', 'row-environmental-impact', 'row-update-ease'];
+    const koreanTexts = ['연간 비용', '정리 시간', '팔로우율', '다국어 지원', '환경 부담', '업데이트 용이성'];
+    
+    rowIds.forEach((rowId, index) => {
+      const element = document.getElementById(rowId);
+      if (element) {
+        element.textContent = koreanTexts[index];
+        element.innerHTML = koreanTexts[index];
+        console.log(`Force updated ${rowId} to: ${koreanTexts[index]}`);
+      }
+    });
   }
 
   function updateBenefitsContent(lang) {
@@ -704,6 +800,87 @@ console.log('Benefits - benefits array:', benefits);
             ai: '🤖 AI利用',
             noApp: '📱 无需应用',
             costReduction: '💰 成本削减'
+          }
+        }
+      },
+      'ko': {
+        title: '도입 효과',
+        subtitle: '프리랜서의 비즈니스를 가속시키는 구체적인 효과',
+        benefits: [
+          {
+            title: '비용 절감',
+            metric: '¥8,000',
+            description: '기존 종이 명함 5,000원 + OCR 앱 6,000원 → TapForge 3,000원으로 실현'
+          },
+          {
+            title: '효율화',
+            metric: '5분',
+            description: '명함 정리가 50장 일괄 디지털화로 완료'
+          },
+          {
+            title: '비즈니스 확장',
+            metric: '40%',
+            description: '팔로우율이 15%에서 향상'
+          },
+          {
+            title: '환경 고려',
+            metric: '500장',
+            description: '연간 종이 절약으로 SDGs에 기여'
+          }
+        ],
+        comparison: {
+          title: '상세 비교',
+          headers: {
+            item: '항목',
+            traditional: '기존 종이 명함',
+            tapforge: 'TapForge'
+          },
+          rows: {
+            annualCost: {
+              item: '연간 비용',
+              traditional: '¥5,000',
+              tapforge: '¥0',
+              tapforgeNote: '(초기 비용만)'
+            },
+            organizationTime: {
+              item: '정리 시간',
+              traditional: '30분/50장',
+              tapforge: '5분',
+              tapforgeNote: '/50장'
+            },
+            followUpRate: {
+              item: '팔로우율',
+              traditional: '15%',
+              tapforge: '40%'
+            },
+            multilingual: {
+              item: '다국어 지원',
+              traditional: '없음',
+              tapforge: '4개국어',
+              tapforgeNote: '지원'
+            },
+            environmentalImpact: {
+              item: '환경 부담',
+              traditional: '높음 (종이 사용)',
+              tapforge: '제로',
+              tapforgeNote: '(페이퍼리스)'
+            },
+            updateEase: {
+              item: '업데이트 용이성',
+              traditional: '재인쇄 필요',
+              tapforge: '즉시',
+              tapforgeNote: '업데이트 가능'
+            }
+          }
+        },
+        target: {
+          title: '해외 프로젝트를 늘리고 싶은 프리랜서에게 최적',
+          description: '다국어 지원과 AI 기능으로 국제적인 비즈니스 확장을 강력히 지원합니다',
+          tags: {
+            global: '🌍 글로벌 지원',
+            ai: '🤖 AI 활용',
+            noApp: '📱 앱 불필요',
+            costReduction: '💰 비용 절감'
           }
         }
       },
@@ -960,3 +1137,4 @@ console.log('Benefits - benefits array:', benefits);
     }
   }
 </script>
+

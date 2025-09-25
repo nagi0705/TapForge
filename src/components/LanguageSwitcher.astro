@@ -5,7 +5,16 @@ interface Props {
   currentLang?: Language;
 }
 
-const { currentLang = "ja" } = Astro.props;
+// Get current language from URL parameter
+const url = new URL(Astro.request.url);
+const langParam = url.searchParams.get('lang') as Language;
+const { currentLang = langParam || "ja" } = Astro.props;
+
+console.log("LanguageSwitcher - URL:", url.toString());
+console.log("LanguageSwitcher - langParam:", langParam);
+console.log("LanguageSwitcher - currentLang:", currentLang);
+console.log("LanguageSwitcher - languages:", languages);
+console.log("LanguageSwitcher - current language name:", languages[currentLang]);
 ---
 
 <style>
@@ -47,7 +56,7 @@ const { currentLang = "ja" } = Astro.props;
       </svg>
       
       <!-- 言語テキスト -->
-      <span class="text-gray-700 font-medium">
+      <span class="text-gray-700 font-medium" id="current-language-text">
         {languages[currentLang]}
       </span>
       
@@ -93,6 +102,7 @@ const { currentLang = "ja" } = Astro.props;
               {code === "ja" && "🇯🇵"}
               {code === "en" && "🇺🇸"}
               {code === "zh" && "🇨🇳"}
+              {code === "ko" && "🇰🇷"}
               {code === "es" && "🇪🇸"}
             </span>
             <!-- 言語名 -->
@@ -115,6 +125,9 @@ const { currentLang = "ja" } = Astro.props;
     // Force page reload with new language parameter
     const currentUrl = new URL(window.location);
     currentUrl.searchParams.set('lang', langCode);
+    
+    // Force reload with cache busting
+    currentUrl.searchParams.set('t', Date.now());
     
     // Use window.location.replace to avoid back button issues
     window.location.replace(currentUrl.toString());
@@ -219,4 +232,39 @@ const { currentLang = "ja" } = Astro.props;
   setTimeout(initLanguageSwitcher, 100);
   setTimeout(initLanguageSwitcher, 500);
   setTimeout(initLanguageSwitcher, 1000);
+
+  // Update language text based on URL parameter
+  function updateLanguageText() {
+    const url = new URL(window.location);
+    const langParam = url.searchParams.get('lang');
+    const languageText = document.getElementById('current-language-text');
+    
+    console.log('Updating language text - langParam:', langParam);
+    
+    if (languageText && langParam) {
+      const languageNames = {
+        'ja': '日本語',
+        'en': 'English', 
+        'zh': '中文',
+        'ko': '한국어',
+        'es': 'Español'
+      };
+      
+      if (languageNames[langParam]) {
+        languageText.textContent = languageNames[langParam];
+        console.log('Language text updated to:', languageNames[langParam]);
+      }
+    }
+  }
+
+  // Update language text on page load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", updateLanguageText);
+  } else {
+    updateLanguageText();
+  }
+  
+  // Also update after a short delay
+  setTimeout(updateLanguageText, 100);
+  setTimeout(updateLanguageText, 500);
 </script>

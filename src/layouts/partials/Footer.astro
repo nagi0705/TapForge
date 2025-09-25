@@ -151,6 +151,19 @@ const t = translations[lang].footer;
     const currentLang = urlLang || storedLang || "ja";
 
     updateFooterContent(currentLang);
+    
+    // Force Korean translation if needed
+    if (currentLang === 'ko') {
+      setTimeout(() => {
+        forceKoreanFooterTranslation();
+      }, 100);
+      setTimeout(() => {
+        forceKoreanFooterTranslation();
+      }, 500);
+      setTimeout(() => {
+        forceKoreanFooterTranslation();
+      }, 1000);
+    }
   });
 
   function updateFooterContent(lang) {
@@ -252,6 +265,30 @@ const t = translations[lang].footer;
           terms: "Términos de Servicio",
         },
       },
+      ko: {
+        description:
+          "NFC 디지털 명함으로 세계와 연결되세요. AI 기반 차세대 명함으로 비즈니스를 가속화하세요.",
+        tagline: "미래를 선도하는, 모든 사람을 위한 스마트한 만남",
+        quickLinks: {
+          title: "빠른 링크",
+          features: "특징",
+          pricing: "요금",
+          testimonials: "고객 후기",
+          faq: "자주 묻는 질문",
+        },
+        contact: {
+          title: "문의하기",
+          company: "Cor.주식회사",
+          trial: "무료 트라이얼",
+          privacy: "개인정보처리방침",
+          terms: "이용약관",
+        },
+        copyright: "© 2025 TapForge by Cor.주식회사. All rights reserved.",
+        legal: {
+          privacy: "개인정보처리방침",
+          terms: "이용약관",
+        },
+      },
     };
 
     const t = translations[lang] || translations["ja"];
@@ -302,6 +339,58 @@ const t = translations[lang].footer;
     );
     if (copyrightElement) {
       copyrightElement.textContent = t.copyright;
+    }
+  }
+
+  function forceKoreanFooterTranslation() {
+    console.log('Force updating Footer content to Korean');
+    
+    // Force update description
+    const descriptionElement = document.querySelector('footer .text-gray-300');
+    if (descriptionElement) {
+      descriptionElement.textContent = 'NFC 디지털 명함으로 세계와 연결되세요. AI 기반 차세대 명함으로 비즈니스를 가속화하세요.';
+      console.log('Updated footer description to Korean');
+    }
+    
+    // Force update tagline
+    const taglineElement = document.querySelector('footer .text-sm.text-gray-400');
+    if (taglineElement) {
+      taglineElement.textContent = '미래를 선도하는, 모든 사람을 위한 스마트한 만남';
+      console.log('Updated footer tagline to Korean');
+    }
+    
+    // Force update quick links title
+    const quickLinksTitle = document.querySelector('footer h3');
+    if (quickLinksTitle) {
+      quickLinksTitle.textContent = '빠른 링크';
+      console.log('Updated footer quick links title to Korean');
+    }
+    
+    // Force update quick links
+    const quickLinks = document.querySelectorAll('footer ul:first-of-type a');
+    const koreanQuickLinks = ['특징', '요금', '고객 후기', '자주 묻는 질문'];
+    quickLinks.forEach((link, index) => {
+      if (link && koreanQuickLinks[index]) {
+        link.textContent = koreanQuickLinks[index];
+        console.log(`Updated footer quick link ${index + 1} to Korean: ${koreanQuickLinks[index]}`);
+      }
+    });
+    
+    // Force update contact links
+    const contactLinks = document.querySelectorAll('footer ul:last-of-type a');
+    const koreanContactLinks = ['Cor.주식회사', '무료 트라이얼', '개인정보처리방침', '이용약관'];
+    contactLinks.forEach((link, index) => {
+      if (link && koreanContactLinks[index]) {
+        link.textContent = koreanContactLinks[index];
+        console.log(`Updated footer contact link ${index + 1} to Korean: ${koreanContactLinks[index]}`);
+      }
+    });
+    
+    // Force update copyright
+    const copyrightElement = document.querySelector('footer .text-gray-400.text-sm');
+    if (copyrightElement) {
+      copyrightElement.textContent = '© 2025 TapForge by Cor.주식회사. All rights reserved.';
+      console.log('Updated footer copyright to Korean');
     }
   }
 </script>

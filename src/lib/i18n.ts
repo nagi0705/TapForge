@@ -3,6 +3,7 @@ export const languages = {
   ja: "日本語",
   en: "English",
   zh: "中文",
+  ko: "한국어",
   es: "Español",
 } as const;
 
@@ -1673,15 +1674,333 @@ export const translations = {
       },
     },
   },
+  ko: {
+    // Navigation
+    nav: {
+      home: "홈",
+      features: "특징",
+      pricing: "가격",
+      testimonials: "후기",
+      faq: "FAQ",
+      contact: "문의",
+    },
+    // Hero Section
+    hero: {
+      title: "탭으로 세계와 연결되세요.",
+      subtitle: "AI 기반 차세대 명함",
+      description: "으로 비즈니스를 가속화하세요",
+      subDescription:
+        "앱 불필요, 월 무료. NFC 탭 하나로 다국어 프로필을 공유하세요.\n프리랜서의 해외 프로젝트 획득을 지원합니다.",
+      cta: "무료 체험 신청",
+      limited: "50명 한정!",
+      features: {
+        noApp: "앱 불필요",
+        free: "월 무료",
+        multilingual: "4개국어 지원",
+      },
+    },
+    // Problems & Solutions
+    problems: {
+      title: "명함 정리, 번거롭죠?",
+      subtitle: "TapForge로 5분 만에 해결!",
+      problems: {
+        title: "프리랜서의 고민",
+        cost: {
+          title: "종이 명함의 비용",
+          description: "연간 500장으로 약 5,000엔의 인쇄비",
+        },
+        organization: {
+          title: "정리의 번거로움",
+          description: "명함 50장 정리에 30분 이상",
+        },
+        language: {
+          title: "해외 클라이언트와의 언어 장벽",
+          description: "영어 프로필 작성에 시간이 많이 걸림",
+        },
+        followup: {
+          title: "낮은 후속 연락률",
+          description: "명함 교환 후 연락률이 15% 정도",
+        },
+      },
+      solutions: {
+        title: "TapForge의 해결책",
+        cost: {
+          title: "비용 제로",
+          description: "초기 3,000엔만, 월 무료",
+        },
+        time: {
+          title: "5분 완료",
+          description: "OCR 기능 NFC 명함으로 VCard 변환 (별도 앱 불필요)",
+        },
+        language: {
+          title: "4개국어 지원",
+          description: "일영중서로 국제 비즈니스 지원",
+        },
+        followup: {
+          title: "40% 후속 연락률",
+          description: "AI와 다국어 효과로 향상",
+        },
+      },
+    },
+    // Features Section
+    features: {
+      title: "TapForge 특징",
+      subtitle: "최신 기술로 명함 교환 혁신",
+      items: {
+        aiScan: {
+          title: "AI 명함 촬영·VCard 변환",
+          description: "종이 명함을 AI로 데이터화 (정확도 95%), VCard로 스마트폰에 저장",
+        },
+        multilingual: {
+          title: "다국어 지원",
+          description: "일본어, 영어, 중국어(간체), 스페인어 4개국어로 자동 전환",
+        },
+        noApp: {
+          title: "앱 불필요",
+          description: "NFC 탭으로 즉시 프로필 표시 (온라인 환경)",
+        },
+        paperless: {
+          title: "페이퍼리스",
+          description: "SDGs 목표 12에 기여, 완전 페이퍼리스로 환경 고려",
+        },
+      },
+      pricing: {
+        title: "요금 체계 (세금 포함)",
+        plans: {
+          initial: {
+            title: "초기 비용",
+            price: "¥3,000",
+            description: "1장",
+          },
+          additional: {
+            title: "추가 카드",
+            price: "¥600",
+            description: "2장부터",
+          },
+          monthly: {
+            title: "월 비용",
+            price: "¥0",
+            description: "완전 무료",
+          },
+        },
+        tagline: "OCR 기능 NFC 명함 업계 최저가 - 일반 연간 11,000원 기능을 3,000원으로 제공",
+      },
+      demo: {
+        title: "데모 영상",
+        description: "AI 명함 촬영 데모 영상",
+        note: "(YouTube 링크 예정)",
+      },
+    },
+    // Benefits Section
+    benefits: {
+      title: "도입 효과",
+      subtitle: "프리랜서의 비즈니스를 가속시키는 구체적인 효과",
+      items: {
+        cost: {
+          title: "비용 절감",
+          description: "기존 종이 명함 5,000원 + OCR 앱 6,000원 → TapForge 3,000원으로 실현",
+          amount: "8,000원 절약",
+        },
+        efficiency: {
+          title: "효율화",
+          description: "명함 정리가 5분으로 완료(50장 일괄 디지털화)",
+          time: "25분 단축",
+        },
+        business: {
+          title: "비즈니스 확장",
+          description: "팔로우율이 15%에서 40%로 향상",
+          improvement: "25% 향상",
+        },
+        environment: {
+          title: "환경 고려",
+          description: "연간 300장의 종이 절약으로 SDGs에 기여",
+          reduction: "300장 절약",
+        },
+      },
+      comparison: {
+        title: "상세 비교",
+        headers: {
+          item: "항목",
+          traditional: "기존 종이 명함",
+          tapforge: "TapForge"
+        },
+        rows: {
+          annualCost: {
+            item: "연간 비용",
+            traditional: "¥5,000",
+            tapforge: "¥0",
+            tapforgeNote: "(초기 비용만)"
+          },
+          organizationTime: {
+            item: "정리 시간",
+            traditional: "30분/50장",
+            tapforge: "5분",
+            tapforgeNote: "/50장"
+          },
+          followUpRate: {
+            item: "팔로우율",
+            traditional: "15%",
+            tapforge: "40%"
+          },
+          multilingual: {
+            item: "다국어 지원",
+            traditional: "없음",
+            tapforge: "4개국어",
+            tapforgeNote: "지원"
+          },
+          environmentalImpact: {
+            item: "환경 부담",
+            traditional: "높음 (종이 사용)",
+            tapforge: "제로",
+            tapforgeNote: "(페이퍼리스)"
+          },
+          updateEase: {
+            item: "업데이트 용이성",
+            traditional: "재인쇄 필요",
+            tapforge: "즉시",
+            tapforgeNote: "업데이트 가능"
+          }
+        }
+      },
+      target: {
+        title: "해외 프로젝트를 늘리고 싶은 프리랜서에게 최적",
+        description: "다국어 지원과 AI 기능으로 국제적인 비즈니스 확장을 강력히 지원합니다",
+        tags: {
+          global: "🌍 글로벌 지원",
+          ai: "🤖 AI 활용",
+          noApp: "📱 앱 불필요",
+          costReduction: "💰 비용 절감"
+        }
+      }
+    },
+    // Testimonials Section
+    testimonials: {
+      title: "사용자 후기",
+      subtitle: "실제 사용자들의 생생한 목소리",
+      items: [
+        {
+          name: "김프리",
+          role: "IT 프리랜서",
+          content: "해외 프로젝트가 3배 증가했습니다. 다국어 지원이 정말 도움이 됩니다.",
+          rating: 5,
+        },
+        {
+          name: "이디자인",
+          role: "디자이너",
+          content: "명함 정리가 이렇게 쉬울 줄 몰랐어요. OCR 기능도 정말 편리합니다.",
+          rating: 5,
+        },
+        {
+          name: "박컨설팅",
+          role: "컨설턴트",
+          content: "고객과의 연결이 훨씬 자연스러워졌습니다. 추천합니다!",
+          rating: 5,
+        },
+      ],
+    },
+    // FAQ Section
+    faq: {
+      title: "자주 묻는 질문",
+      subtitle: "궁금한 점을 해결해드립니다",
+      items: [
+        {
+          question: "NFC 명함은 어떻게 작동하나요?",
+          answer: "NFC 칩이 내장된 명함을 스마트폰에 가져다 대면 자동으로 프로필 페이지가 열립니다. 별도 앱 설치가 필요하지 않습니다.",
+        },
+        {
+          question: "OCR 기능의 정확도는 어느 정도인가요?",
+          answer: "AI 기반 OCR로 95%의 높은 정확도를 자랑합니다. 일본어, 영어, 중국어, 스페인어를 지원합니다.",
+        },
+        {
+          question: "월 비용이 정말 무료인가요?",
+          answer: "네, 월 비용은 완전 무료입니다. 초기 제작비 3,000원만 지불하시면 됩니다.",
+        },
+        {
+          question: "해외에서도 사용할 수 있나요?",
+          answer: "네, 전 세계 어디서나 사용 가능합니다. 4개국어 자동 전환으로 글로벌 비즈니스에 최적화되어 있습니다.",
+        },
+        {
+          question: "환경에 미치는 영향은 어떤가요?",
+          answer: "연간 300장의 종이를 절약하여 SDGs 목표 12(지속가능한 소비와 생산)에 기여합니다.",
+        },
+      ],
+    },
+    // CTA Section
+    cta: {
+      title: "지금 바로 시작하세요",
+      subtitle: "50명 한정 무료 체험",
+      description: "AI 기반 차세대 명함으로 비즈니스를 가속화하세요",
+      button: "무료 체험 신청",
+      features: [
+        "앱 불필요",
+        "월 무료",
+        "4개국어 지원",
+        "OCR 기능 포함",
+      ],
+    },
+    // SDGs Section
+    sdgs: {
+      title: "SDGs에 기여",
+      subtitle: "지속가능한 미래를 위한 노력",
+      description: "TapForge는 SDGs 목표 12(지속가능한 소비와 생산)에 기여합니다",
+      items: {
+        paperless: {
+          title: "무지화",
+          description: "연간 300장의 종이 절약",
+        },
+        efficiency: {
+          title: "효율성",
+          description: "명함 정리 시간 25분 단축",
+        },
+        global: {
+          title: "글로벌",
+          description: "4개국어 지원으로 국제 비즈니스 촉진",
+        },
+      },
+    },
+    // Footer Section
+    footer: {
+      description:
+        "NFC 디지털 명함으로 세계와 연결되세요. AI 기반 차세대 명함으로 비즈니스를 가속화하세요.",
+      tagline: "미래의 개척자, 모든 이를 위한 스마트한 만남",
+      quickLinks: {
+        title: "빠른 링크",
+        features: "특징",
+        pricing: "가격",
+        testimonials: "후기",
+        faq: "자주 묻는 질문",
+      },
+      contact: {
+        title: "연락처",
+        company: "Cor. Co., Ltd.",
+        trial: "무료 체험",
+      },
+      copyright:
+        "© 2025 TapForge by Cor. Co., Ltd. 모든 권리 보유.",
+      legal: {
+        privacy: "개인정보처리방침",
+        terms: "서비스 약관",
+      },
+    },
+  },
 } as const;
 
 export function getTranslation(lang: Language, key: string): string {
+  console.log(`getTranslation called with lang: ${lang}, key: ${key}`);
+  
   const keys = key.split(".");
   let value: any = translations[lang];
+  
+  console.log(`Available languages:`, Object.keys(translations));
+  console.log(`Requested language: ${lang}`);
+  console.log(`Translation object for ${lang}:`, translations[lang]);
 
   for (const k of keys) {
     value = value?.[k];
+    console.log(`After key "${k}":`, value);
   }
 
-  return value || key;
+  const result = value || key;
+  console.log(`Final result: ${result}`);
+  return result;
 }

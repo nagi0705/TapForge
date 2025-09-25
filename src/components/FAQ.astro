@@ -241,6 +241,19 @@ const t = translations[lang].faq;
     const currentLang = urlLang || storedLang || "ja";
 
     updateFAQContent(currentLang);
+    
+    // Force Korean translation if needed
+    if (currentLang === 'ko') {
+      setTimeout(() => {
+        forceKoreanFAQTranslation();
+      }, 100);
+      setTimeout(() => {
+        forceKoreanFAQTranslation();
+      }, 500);
+      setTimeout(() => {
+        forceKoreanFAQTranslation();
+      }, 1000);
+    }
   });
 
   function updateFAQContent(lang) {
@@ -391,6 +404,42 @@ const t = translations[lang].faq;
           button: "Contáctanos",
         },
       },
+      ko: {
+        title: "자주 묻는 질문",
+        subtitle: "고객님들께서 자주 문의하시는 질문에 답변드립니다",
+        items: [
+          {
+            question: "모든 스마트폰에서 NFC를 사용할 수 있나요?",
+            answer:
+              "95%의 스마트폰에서 호환됩니다. iPhone 7 이후, Android NFC 지원 기종에서 이용하실 수 있습니다.\n구체적인 지원 기종에 대해서는 각 스마트폰 제조사의 공식 사이트를 확인해 주세요.",
+          },
+          {
+            question: "명함 읽기 정확도는?",
+            answer:
+              "AI 명함 촬영·VCard 변환 정확도는 95%입니다. 지속적인 개선을 통해 더욱 정확도 향상을 목표로 하고 있습니다.\n인식에 실패한 경우, 수동으로 수정도 가능합니다.",
+          },
+          {
+            question: "디자인 변경은 직접 할 수 있나요?",
+            answer:
+              "관리 화면에서 무제한으로 디자인 변경이 가능합니다.\n라이트 컬러(흰색·라이트 블루·베이지) 3종류에서 선택할 수 있으며, 텍스트나 연락처 정보도 쉽게 업데이트할 수 있습니다.",
+          },
+          {
+            question: "다국어 지원 사용법을 알려주세요",
+            answer:
+              "4개국어(일본어·영어·중국어·스페인어)로 직접 전환할 수 있습니다.\n프로필 화면에서 표시 언어를 선택할 수 있으므로, 상대방의 스마트폰 언어 설정과 관계없이 원하는 언어로 이용하실 수 있습니다.",
+          },
+          {
+            question: "오프라인에서도 사용할 수 있나요?",
+            answer:
+              "현재는 온라인 환경에서의 이용을 권장하고 있습니다.\n오프라인 기능은 향후 검토 중입니다. 앱 불필요의 장점을 살려 온라인 환경에서의 안정적인 서비스 제공을 우선하고 있습니다.",
+          },
+        ],
+        additionalHelp: {
+          title: "기타 문의사항은 언제든지 문의해 주세요",
+          description: "전문 스태프가 정성스럽게 답변드리겠습니다",
+          button: "문의하기",
+        },
+      },
     };
 
     const t = translations[lang] || translations["ja"];
@@ -434,6 +483,75 @@ const t = translations[lang].faq;
     const helpButtonElement = document.querySelector("#faq .mt-12 a");
     if (helpButtonElement) {
       helpButtonElement.textContent = t.additionalHelp.button;
+    }
+  }
+
+  function forceKoreanFAQTranslation() {
+    console.log('Force updating FAQ content to Korean');
+    
+    // Force update title and subtitle
+    const titleElement = document.querySelector('#faq h2');
+    if (titleElement) {
+      titleElement.textContent = '자주 묻는 질문';
+      console.log('Updated FAQ title to Korean');
+    }
+    
+    const subtitleElement = document.querySelector('#faq p');
+    if (subtitleElement) {
+      subtitleElement.textContent = '고객님들께서 자주 문의하시는 질문에 답변드립니다';
+      console.log('Updated FAQ subtitle to Korean');
+    }
+    
+    // Force update FAQ items
+    const faqItems = document.querySelectorAll('#faq details');
+    const koreanQuestions = [
+      '모든 스마트폰에서 NFC를 사용할 수 있나요?',
+      '명함 읽기 정확도는?',
+      '디자인 변경은 직접 할 수 있나요?',
+      '다국어 지원 사용법을 알려주세요',
+      '오프라인에서도 사용할 수 있나요?'
+    ];
+    const koreanAnswers = [
+      '95%의 스마트폰에서 호환됩니다. iPhone 7 이후, Android NFC 지원 기종에서 이용하실 수 있습니다.\n구체적인 지원 기종에 대해서는 각 스마트폰 제조사의 공식 사이트를 확인해 주세요.',
+      'AI 명함 촬영·VCard 변환 정확도는 95%입니다. 지속적인 개선을 통해 더욱 정확도 향상을 목표로 하고 있습니다.\n인식에 실패한 경우, 수동으로 수정도 가능합니다.',
+      '관리 화면에서 무제한으로 디자인 변경이 가능합니다.\n라이트 컬러(흰색·라이트 블루·베이지) 3종류에서 선택할 수 있으며, 텍스트나 연락처 정보도 쉽게 업데이트할 수 있습니다.',
+      '4개국어(일본어·영어·중국어·스페인어)로 직접 전환할 수 있습니다.\n프로필 화면에서 표시 언어를 선택할 수 있으므로, 상대방의 스마트폰 언어 설정과 관계없이 원하는 언어로 이용하실 수 있습니다.',
+      '현재는 온라인 환경에서의 이용을 권장하고 있습니다.\n오프라인 기능은 향후 검토 중입니다. 앱 불필요의 장점을 살려 온라인 환경에서의 안정적인 서비스 제공을 우선하고 있습니다.'
+    ];
+    
+    faqItems.forEach((item, index) => {
+      if (koreanQuestions[index] && koreanAnswers[index]) {
+        const questionElement = item.querySelector('h3');
+        if (questionElement) {
+          questionElement.textContent = koreanQuestions[index];
+          console.log(`Updated FAQ question ${index + 1} to Korean: ${koreanQuestions[index]}`);
+        }
+        
+        const answerElement = item.querySelector('p');
+        if (answerElement) {
+          answerElement.innerHTML = koreanAnswers[index].split('\n').join('<br>');
+          console.log(`Updated FAQ answer ${index + 1} to Korean`);
+        }
+      }
+    });
+    
+    // Force update additional help section
+    const helpTitleElement = document.querySelector('#faq .mt-12 h3');
+    if (helpTitleElement) {
+      helpTitleElement.textContent = '기타 문의사항은 언제든지 문의해 주세요';
+      console.log('Updated FAQ help title to Korean');
+    }
+    
+    const helpDescElement = document.querySelector('#faq .mt-12 p');
+    if (helpDescElement) {
+      helpDescElement.textContent = '전문 스태프가 정성스럽게 답변드리겠습니다';
+      console.log('Updated FAQ help description to Korean');
+    }
+    
+    const helpButtonElement = document.querySelector('#faq .mt-12 a');
+    if (helpButtonElement) {
+      helpButtonElement.textContent = '문의하기';
+      console.log('Updated FAQ help button to Korean');
     }
   }
 </script>
