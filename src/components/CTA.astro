@@ -272,6 +272,36 @@
         termsTextEnd: ".",
       },
     },
+    ko: {
+      cta: {
+        title: "지금 바로 시작하시겠습니까?",
+        description: "50명 한정 무료 트라이얼로 TapForge의 힘을 체험해보세요",
+        limited: "50명 한정!",
+        trialButton: "무료 트라이얼 신청",
+        contactButton: "문의하기",
+        features: [
+          "앱 불필요",
+          "월 무료",
+          "4개국어 지원",
+          "OCR 명함 읽기 기능",
+        ],
+      },
+      trial: {
+        title: "무료 트라이얼에 대해",
+        limited: "50명 한정!",
+        description: "당신의 명함을 1장 무료로 만들어드립니다.",
+        subDescription: "디자인 변경 무제한, OCR 명함 읽기 기능·VCard 변환 이용 가능",
+        trialFormTitle: "무료 트라이얼 신청",
+        trialFormDescription: "지금 바로 무료 트라이얼에 신청하여 TapForge의 힘을 체험해보세요.",
+        trialFormButton: "무료 트라이얼 신청",
+        trialFormLimited: "50명 한정!",
+        termsTextStart: "신청에 의해,",
+        termsLink: "이용약관",
+        termsAnd: "및",
+        privacyLink: "개인정보처리방침",
+        termsTextEnd: "에 동의한 것으로 간주됩니다.",
+      },
+    },
   };
 
   // Helper function to update element text content
@@ -340,6 +370,19 @@
   document.addEventListener("DOMContentLoaded", function () {
     const currentLang = getCurrentLanguage();
     updateCTAContent(currentLang);
+    
+    // Force Korean translation if needed
+    if (currentLang === 'ko') {
+      setTimeout(() => {
+        forceKoreanCTATranslation();
+      }, 100);
+      setTimeout(() => {
+        forceKoreanCTATranslation();
+      }, 500);
+      setTimeout(() => {
+        forceKoreanCTATranslation();
+      }, 1000);
+    }
 
     // Smooth scrolling for trial links
     document.querySelectorAll('a[href="#trial"]').forEach((link) => {
