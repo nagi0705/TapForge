@@ -14,7 +14,12 @@ import { type Language } from "../lib/i18n";
 // Get language from URL parameter or default to Japanese
 const url = new URL(Astro.request.url);
 const urlLang = url.searchParams.get("lang");
-const lang = (urlLang as Language) || "ja";
+
+// Also try to get from Astro.url
+const astroUrl = Astro.url;
+const astroUrlLang = astroUrl.searchParams.get("lang");
+
+const lang = (urlLang as Language) || (astroUrlLang as Language) || "ja";
 
 // Language detection for server-side rendering
 ---
