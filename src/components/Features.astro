@@ -505,7 +505,19 @@ import { features, pricingPlans, regularPricingPlans } from "../config/features"
     // Update early access counter
     const earlyAccessCounterElement = document.querySelector('.text-red-600.font-bold.text-lg');
     if (earlyAccessCounterElement) {
-      earlyAccessCounterElement.innerHTML = `${t.pricing.earlyAccess}<span id="remaining-slots">${t.pricing.slots}</span>名`;
+      // Clear existing content
+      earlyAccessCounterElement.textContent = '';
+
+      // Add text and span
+      const earlyText = document.createTextNode(t.pricing.earlyAccess);
+      const slotsSpan = document.createElement('span');
+      slotsSpan.id = 'remaining-slots';
+      slotsSpan.textContent = t.pricing.slots;
+      const suffixText = document.createTextNode('名');
+
+      earlyAccessCounterElement.appendChild(earlyText);
+      earlyAccessCounterElement.appendChild(slotsSpan);
+      earlyAccessCounterElement.appendChild(suffixText);
     }
 
     // Update early access title

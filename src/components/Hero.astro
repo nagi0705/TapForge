@@ -23,17 +23,7 @@ const t = {
   }
 };
 
-// Debug: Log the language and translations
-console.log("=== HERO COMPONENT DEBUG ===");
-console.log("Hero - Language:", lang);
-console.log("Hero - Language type:", typeof lang);
-console.log("Hero - Is Korean?", lang === "ko");
-console.log("Hero - Title:", t.title);
-console.log("Hero - Subtitle:", t.subtitle);
-console.log("Hero - Description:", t.description);
-console.log("Hero - CTA:", t.cta);
-console.log("Hero - Features:", t.features);
-console.log("=== END HERO DEBUG ===");
+// Language detection for hero component
 ---
 
 <section
@@ -230,18 +220,18 @@ console.log("=== END HERO DEBUG ===");
       },
     };
 
-    const t = (translations as any)[lang] || translations["ja"];
+    const t = translations[lang as keyof typeof translations] || translations["ja"];
 
     // Update title
     const titleElement = document.getElementById("hero-title");
     if (titleElement) {
-      titleElement.innerHTML = t.title;
+      titleElement.textContent = t.title;
     }
 
     // Update description
     const descElement = document.getElementById("hero-description");
     if (descElement) {
-      descElement.innerHTML = t.description;
+      descElement.textContent = t.description;
     }
 
     // Update CTA button
@@ -254,7 +244,19 @@ console.log("=== END HERO DEBUG ===");
         ko: "100명 한정!",
         es: "¡Limitado a 100!",
       };
-      ctaElement.innerHTML = `<span class="text-red-500 font-bold mr-2">${(limitedText as any)[lang] || limitedText["ja"]}</span>${t.cta}`;
+      // Clear existing content
+      ctaElement.textContent = '';
+
+      // Create limited text span
+      const limitedSpan = document.createElement('span');
+      limitedSpan.className = 'text-red-500 font-bold mr-2';
+      limitedSpan.textContent = limitedText[lang as keyof typeof limitedText] || limitedText["ja"];
+
+      // Add text node for CTA
+      const ctaText = document.createTextNode(t.cta);
+
+      ctaElement.appendChild(limitedSpan);
+      ctaElement.appendChild(ctaText);
     }
 
     // Update features

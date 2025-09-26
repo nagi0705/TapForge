@@ -502,40 +502,40 @@ const t = translations[lang].partnerProgram;
   }
 
   function forceKoreanPartnerProgramTranslation() {
-    console.log('Force updating Partner Program content to Korean');
+    // Debug output removed
     
     // Force update main title and subtitle
     const titleElement = document.getElementById('partner-program-title');
     if (titleElement) {
       titleElement.textContent = '공동 창조 파트너 우대 제도';
-      console.log('Updated Partner Program title to Korean');
+      // Debug output removed
     }
     
     const subtitleElement = document.getElementById('partner-program-subtitle');
     if (subtitleElement) {
       subtitleElement.textContent = '장기적인 파트너십에 기반한 특별 가격';
-      console.log('Updated Partner Program subtitle to Korean');
+      // Debug output removed
     }
     
     // Force update heading
     const headingElement = document.getElementById('partner-program-heading');
     if (headingElement) {
       headingElement.textContent = 'Cor.주식회사의 다른 서비스를 이용 중인 고객님께';
-      console.log('Updated Partner Program heading to Korean');
+      // Debug output removed
     }
     
     // Force update description
     const descriptionElement = document.getElementById('partner-program-description');
     if (descriptionElement) {
       descriptionElement.textContent = 'Cor.주식회사의 다른 서비스를 이용 중인 고객에게는 장기적인 파트너십에 기반하여 특별 가격으로 제공합니다.';
-      console.log('Updated Partner Program description to Korean');
+      // Debug output removed
     }
     
     // Force update contact note
     const contactNoteElement = document.getElementById('partner-program-contact-note');
     if (contactNoteElement) {
       contactNoteElement.textContent = '자세한 내용은 문의해 주세요.';
-      console.log('Updated Partner Program contact note to Korean');
+      // Debug output removed
     }
     
     // Force update benefits
@@ -551,7 +551,7 @@ const t = translations[lang].partnerProgram;
       const element = document.getElementById(`benefit-${index + 1}-title`);
       if (element) {
         element.textContent = title;
-        console.log(`Updated benefit ${index + 1} title to Korean: ${title}`);
+        // Debug output removed
       }
     });
     
@@ -559,7 +559,7 @@ const t = translations[lang].partnerProgram;
       const element = document.getElementById(`benefit-${index + 1}-description`);
       if (element) {
         element.textContent = description;
-        console.log(`Updated benefit ${index + 1} description to Korean: ${description}`);
+        // Debug output removed
       }
     });
     
@@ -567,14 +567,14 @@ const t = translations[lang].partnerProgram;
     const ctaButton = document.getElementById('partner-program-cta');
     if (ctaButton) {
       ctaButton.textContent = '문의하기';
-      console.log('Updated Partner Program CTA button to Korean');
+      // Debug output removed
     }
     
     // Force update additional info
     const additionalInfoElement = document.getElementById('partner-program-additional-info');
     if (additionalInfoElement) {
       additionalInfoElement.textContent = '이 제도는 공식 사이트(cor-jp.com)의 내용에 기반합니다';
-      console.log('Updated Partner Program additional info to Korean');
+      // Debug output removed
     }
   }
 </script>

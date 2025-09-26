@@ -343,27 +343,27 @@ const t = translations[lang].footer;
   }
 
   function forceKoreanFooterTranslation() {
-    console.log('Force updating Footer content to Korean');
+    // Debug output removed
     
     // Force update description
     const descriptionElement = document.querySelector('footer .text-gray-300');
     if (descriptionElement) {
       descriptionElement.textContent = 'NFC 디지털 명함으로 세계와 연결되세요. AI 기반 차세대 명함으로 비즈니스를 가속화하세요.';
-      console.log('Updated footer description to Korean');
+      // Debug output removed
     }
     
     // Force update tagline
     const taglineElement = document.querySelector('footer .text-sm.text-gray-400');
     if (taglineElement) {
       taglineElement.textContent = '미래를 선도하는, 모든 사람을 위한 스마트한 만남';
-      console.log('Updated footer tagline to Korean');
+      // Debug output removed
     }
     
     // Force update quick links title
     const quickLinksTitle = document.querySelector('footer h3');
     if (quickLinksTitle) {
       quickLinksTitle.textContent = '빠른 링크';
-      console.log('Updated footer quick links title to Korean');
+      // Debug output removed
     }
     
     // Force update quick links
@@ -372,7 +372,7 @@ const t = translations[lang].footer;
     quickLinks.forEach((link, index) => {
       if (link && koreanQuickLinks[index]) {
         link.textContent = koreanQuickLinks[index];
-        console.log(`Updated footer quick link ${index + 1} to Korean: ${koreanQuickLinks[index]}`);
+        // Debug output removed
       }
     });
     
@@ -382,7 +382,7 @@ const t = translations[lang].footer;
     contactLinks.forEach((link, index) => {
       if (link && koreanContactLinks[index]) {
         link.textContent = koreanContactLinks[index];
-        console.log(`Updated footer contact link ${index + 1} to Korean: ${koreanContactLinks[index]}`);
+        // Debug output removed
       }
     });
     
@@ -390,7 +390,7 @@ const t = translations[lang].footer;
     const copyrightElement = document.querySelector('footer .text-gray-400.text-sm');
     if (copyrightElement) {
       copyrightElement.textContent = '© 2025 TapForge by Cor.주식회사. All rights reserved.';
-      console.log('Updated footer copyright to Korean');
+      // Debug output removed
     }
   }
 </script>

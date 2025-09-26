@@ -250,7 +250,7 @@ const main = [
   });
 
   function forceKoreanHeaderTranslation() {
-    console.log('Force updating Header content to Korean');
+    // Debug output removed
     
     // Force update navigation links
     const navLinks = document.querySelectorAll('#nav-menu .nav-link');
@@ -259,7 +259,7 @@ const main = [
     navLinks.forEach((link, index) => {
       if (link && koreanNavLinks[index]) {
         link.textContent = koreanNavLinks[index];
-        console.log(`Updated nav link ${index + 1} to Korean: ${koreanNavLinks[index]}`);
+        // Debug output removed
       }
     });
     
@@ -267,7 +267,7 @@ const main = [
     const languageButton = document.querySelector('#language-menu-button span');
     if (languageButton) {
       languageButton.textContent = '한국어';
-      console.log('Updated language switcher to Korean');
+      // Debug output removed
     }
     
     // Force update search title and aria-label
@@ -275,7 +275,7 @@ const main = [
     if (searchLink) {
       searchLink.setAttribute('title', '검색');
       searchLink.setAttribute('aria-label', '검색');
-      console.log('Updated search link attributes to Korean');
+      // Debug output removed
     }
   }
 </script>

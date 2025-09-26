@@ -10,11 +10,11 @@ const url = new URL(Astro.request.url);
 const langParam = url.searchParams.get('lang') as Language;
 const { currentLang = langParam || "ja" } = Astro.props;
 
-console.log("LanguageSwitcher - URL:", url.toString());
-console.log("LanguageSwitcher - langParam:", langParam);
-console.log("LanguageSwitcher - currentLang:", currentLang);
-console.log("LanguageSwitcher - languages:", languages);
-console.log("LanguageSwitcher - current language name:", languages[currentLang]);
+// Debug output removed
+// Debug output removed
+// Debug output removed
+// Debug output removed
+// Debug output removed
 ---
 
 <style>
@@ -48,7 +48,7 @@ console.log("LanguageSwitcher - current language name:", languages[currentLang])
       id="language-menu-button"
       aria-expanded="false"
       aria-haspopup="true"
-      onclick="console.log('Button clicked via onclick'); toggleLanguageMenu();"
+      onclick="// Debug output removed"
     >
       <!-- 地球儀アイコン -->
       <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
@@ -95,7 +95,7 @@ console.log("LanguageSwitcher - current language name:", languages[currentLang])
             }`}
             role="menuitem"
             tabindex="-1"
-            onclick={`console.log('Language ${code} clicked'); switchLanguage('${code}'); return false;`}
+            onclick={`// Debug output removed return false;`}
           >
             <!-- 国旗アイコン -->
             <span class="mr-3 text-lg">
@@ -117,7 +117,7 @@ console.log("LanguageSwitcher - current language name:", languages[currentLang])
 <script>
   // Global function for language switching
   window.switchLanguage = function(langCode) {
-    console.log("Switching to language:", langCode);
+    // Debug output removed
     
     // Store language preference in localStorage
     localStorage.setItem('preferred-language', langCode);
@@ -135,13 +135,13 @@ console.log("LanguageSwitcher - current language name:", languages[currentLang])
 
   // Global function for onclick handler
   window.toggleLanguageMenu = function() {
-    console.log("toggleLanguageMenu called");
+    // Debug output removed
     const button = document.getElementById("language-menu-button");
     const menu = document.getElementById("language-menu");
     const arrow = document.getElementById("dropdown-arrow");
 
     if (!button || !menu || !arrow) {
-      console.error("Language switcher elements not found");
+      // Language switcher elements not found
       return;
     }
 
@@ -161,7 +161,7 @@ console.log("LanguageSwitcher - current language name:", languages[currentLang])
       button.setAttribute("aria-expanded", "true");
     }
     
-    console.log("Menu toggled, isOpen:", !isOpen);
+    // Debug output removed
   };
 
   // Simple and reliable language switcher
@@ -171,17 +171,17 @@ console.log("LanguageSwitcher - current language name:", languages[currentLang])
     const arrow = document.getElementById("dropdown-arrow");
 
     if (!button || !menu || !arrow) {
-      console.error("Language switcher elements not found");
+      // Language switcher elements not found
       return;
     }
 
-    console.log("Language switcher initialized successfully");
+    // Debug output removed
 
     // Button click handler
     button.addEventListener("click", function(e) {
       e.preventDefault();
       e.stopPropagation();
-      console.log("Button clicked via addEventListener");
+      // Debug output removed
       window.toggleLanguageMenu();
     });
 
@@ -214,7 +214,7 @@ console.log("LanguageSwitcher - current language name:", languages[currentLang])
         const langMatch = href.match(/lang=([^&]+)/);
         if (langMatch) {
           const langCode = langMatch[1];
-          console.log("Language link clicked:", langCode);
+          // Debug output removed
           window.switchLanguage(langCode);
         }
       });
@@ -239,7 +239,7 @@ console.log("LanguageSwitcher - current language name:", languages[currentLang])
     const langParam = url.searchParams.get('lang');
     const languageText = document.getElementById('current-language-text');
     
-    console.log('Updating language text - langParam:', langParam);
+    // Debug output removed
     
     if (languageText && langParam) {
       const languageNames = {
@@ -252,7 +252,7 @@ console.log("LanguageSwitcher - current language name:", languages[currentLang])
       
       if (languageNames[langParam]) {
         languageText.textContent = languageNames[langParam];
-        console.log('Language text updated to:', languageNames[langParam]);
+        // Debug output removed
       }
     }
   }

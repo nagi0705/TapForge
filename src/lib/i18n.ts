@@ -2266,21 +2266,12 @@ export const translations = {
 } as const;
 
 export function getTranslation(lang: Language, key: string): string {
-  console.log(`getTranslation called with lang: ${lang}, key: ${key}`);
-  
   const keys = key.split(".");
   let value: any = translations[lang];
-  
-  console.log(`Available languages:`, Object.keys(translations));
-  console.log(`Requested language: ${lang}`);
-  console.log(`Translation object for ${lang}:`, translations[lang]);
 
   for (const k of keys) {
     value = value?.[k];
-    console.log(`After key "${k}":`, value);
   }
 
-  const result = value || key;
-  console.log(`Final result: ${result}`);
-  return result;
+  return value || key;
 }

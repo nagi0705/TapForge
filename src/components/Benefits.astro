@@ -8,11 +8,10 @@ const lang = (url.searchParams.get('lang') as Language) || 'ja';
 const currentLang = lang;
 const t = translations[lang].benefits;
 
-// Debug: Log the data
-console.log('Benefits - Lang:', lang);
-console.log('Benefits - t:', t);
-console.log('Benefits - t.items:', t.items);
-console.log('Benefits - benefits array:', benefits);
+// Data validation
+if (!t || !t.items || !benefits) {
+  throw new Error('Benefits data is missing or invalid');
+}
 ---
 
 <section id="pricing" class="py-20 bg-gray-50">
@@ -125,7 +124,7 @@ console.log('Benefits - benefits array:', benefits);
           </thead>
           <tbody class="divide-y divide-gray-100">
             <tr class="hover:bg-gray-50/50 transition-colors">
-              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-annual-cost" id="annual-cost-item"
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-annual-cost"
                 >{currentLang === "ko" ? "연간 비용" : "年間コスト"}</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
@@ -152,7 +151,7 @@ console.log('Benefits - benefits array:', benefits);
               </td>
             </tr>
             <tr class="bg-gray-50/30 hover:bg-gray-50/50 transition-colors">
-              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-organization-time" id="organization-time-item"
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-organization-time"
                 >{currentLang === "ko" ? "정리 시간" : "整理時間"}</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
@@ -179,7 +178,7 @@ console.log('Benefits - benefits array:', benefits);
               </td>
             </tr>
             <tr class="hover:bg-gray-50/50 transition-colors">
-              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-follow-up-rate" id="follow-up-rate-item"
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-follow-up-rate"
                 >{currentLang === "ko" ? "팔로우율" : "フォロー率"}</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
@@ -206,7 +205,7 @@ console.log('Benefits - benefits array:', benefits);
               </td>
             </tr>
             <tr class="bg-gray-50/30 hover:bg-gray-50/50 transition-colors">
-              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-multilingual" id="multilingual-item"
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-multilingual"
                 >{currentLang === "ko" ? "다국어 지원" : "多言語対応"}</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
@@ -233,7 +232,7 @@ console.log('Benefits - benefits array:', benefits);
               </td>
             </tr>
             <tr class="hover:bg-gray-50/50 transition-colors">
-              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-environmental-impact" id="environmental-impact-item"
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-environmental-impact"
                 >{currentLang === "ko" ? "환경 부담" : "環境負荷"}</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
@@ -260,7 +259,7 @@ console.log('Benefits - benefits array:', benefits);
               </td>
             </tr>
             <tr class="bg-gray-50/30 hover:bg-gray-50/50 transition-colors">
-              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-update-ease" id="update-ease-item"
+              <td class="px-6 py-6 text-sm font-semibold text-gray-800" id="row-update-ease"
                 >{currentLang === "ko" ? "업데이트 용이성" : "更新の容易さ"}</td
               >
               <td class="px-6 py-6 text-sm text-gray-500 text-center">
@@ -323,9 +322,7 @@ console.log('Benefits - benefits array:', benefits);
     const storedLang = localStorage.getItem('preferred-language');
     const currentLang = urlLang || storedLang || 'ja';
     
-    console.log('Benefits - Current language:', currentLang);
-    console.log('Benefits - URL lang:', urlLang);
-    console.log('Benefits - Stored lang:', storedLang);
+    // Language detection
     
     // Force update benefits content immediately
     forceUpdateBenefitsContent(currentLang);
@@ -424,11 +421,7 @@ console.log('Benefits - benefits array:', benefits);
                          document.querySelector(`[id*="benefit"][id*="${i}"][id*="description"]`) ||
                          document.querySelectorAll('p')[i + 4]; // Skip first few p tags
       
-      console.log(`Looking for benefit ${i} elements:`, {
-        title: titleElement,
-        metric: metricElement,
-        desc: descElement
-      });
+      // Find elements for benefit card
       
       // Force update title
       if (titleElement && currentData[i]) {
@@ -443,9 +436,9 @@ console.log('Benefits - benefits array:', benefits);
           position: relative !important;
           z-index: 999 !important;
         `;
-        console.log(`Force updated benefit ${i} title: ${currentData[i].title}`);
+        // Title updated
       } else {
-        console.log(`Title element ${i} not found or no data`);
+        // Title element not found
       }
       
       // Force update metric
@@ -463,9 +456,9 @@ console.log('Benefits - benefits array:', benefits);
           background: none !important;
           background-image: none !important;
         `;
-        console.log(`Force updated benefit ${i} metric: ${currentData[i].metric}`);
+        // Metric updated
       } else {
-        console.log(`Metric element ${i} not found or no data`);
+        // Metric element not found
       }
       
       // Force update description
@@ -480,9 +473,9 @@ console.log('Benefits - benefits array:', benefits);
           position: relative !important;
           z-index: 999 !important;
         `;
-        console.log(`Force updated benefit ${i} description: ${currentData[i].description}`);
+        // Description updated
       } else {
-        console.log(`Description element ${i} not found or no data`);
+        // Description element not found
       }
     }
     
@@ -502,9 +495,9 @@ console.log('Benefits - benefits array:', benefits);
         if (element) {
           element.textContent = item.text;
           element.innerHTML = item.text;
-          console.log(`Updated ${item.id} to: ${item.text}`);
+          // Item updated
         } else {
-          console.log(`Element ${item.id} not found`);
+          // Element not found
         }
       });
       
@@ -514,14 +507,14 @@ console.log('Benefits - benefits array:', benefits);
         if (comparisonItems[index]) {
           element.textContent = comparisonItems[index].text;
           element.innerHTML = comparisonItems[index].text;
-          console.log(`Force updated element ${element.id} to: ${comparisonItems[index].text}`);
+          // Element updated
         }
       });
     }
   }
 
   function forceUpdateComparisonItems() {
-    console.log('Force updating comparison items to Korean');
+    // Force updating comparison items to Korean
     
     // Force update comparison table items
     const comparisonItems = [
@@ -538,9 +531,9 @@ console.log('Benefits - benefits array:', benefits);
       if (element) {
         element.textContent = item.text;
         element.innerHTML = item.text;
-        console.log(`Force updated ${item.id} to: ${item.text}`);
+        // Item force updated
       } else {
-        console.log(`Element ${item.id} not found`);
+        // Element not found
       }
     });
     
@@ -553,7 +546,7 @@ console.log('Benefits - benefits array:', benefits);
       if (element) {
         element.textContent = koreanTexts[index];
         element.innerHTML = koreanTexts[index];
-        console.log(`Force updated ${rowId} to: ${koreanTexts[index]}`);
+        // Row updated
       }
     });
   }

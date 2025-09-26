@@ -620,38 +620,38 @@
   }
 
   function forceKoreanSDGsTranslation() {
-    console.log('Force updating SDGs content to Korean');
+    // Debug output removed
     
     // Force update main title and subtitle
     const titleElement = document.getElementById('sdgs-title');
     if (titleElement) {
       titleElement.textContent = 'SDGs 기여';
-      console.log('Updated SDGs title to Korean');
+      // Debug output removed
     }
     
     const subtitleElement = document.getElementById('sdgs-subtitle');
     if (subtitleElement) {
       subtitleElement.textContent = '환경과 커리어의 양립';
-      console.log('Updated SDGs subtitle to Korean');
+      // Debug output removed
     }
     
     // Force update SDG goals
     const goal12Title = document.getElementById('sdg-12-title');
     if (goal12Title) {
       goal12Title.textContent = '책임감 있는 소비와 생산';
-      console.log('Updated SDG 12 title to Korean');
+      // Debug output removed
     }
     
     const goal10Title = document.getElementById('sdg-10-title');
     if (goal10Title) {
       goal10Title.textContent = '국가 내·국가 간 불평등 해소';
-      console.log('Updated SDG 10 title to Korean');
+      // Debug output removed
     }
     
     const goal17Title = document.getElementById('sdg-17-title');
     if (goal17Title) {
       goal17Title.textContent = '목표를 위한 파트너십';
-      console.log('Updated SDG 17 title to Korean');
+      // Debug output removed
     }
     
     // Force update SDG items
@@ -663,7 +663,7 @@
       const element = document.getElementById(`sdg-12-item-${index + 1}`);
       if (element) {
         element.textContent = item;
-        console.log(`Updated SDG 12 item ${index + 1} to Korean: ${item}`);
+        // Debug output removed
       }
     });
     
@@ -671,7 +671,7 @@
       const element = document.getElementById(`sdg-10-item-${index + 1}`);
       if (element) {
         element.textContent = item;
-        console.log(`Updated SDG 10 item ${index + 1} to Korean: ${item}`);
+        // Debug output removed
       }
     });
     
@@ -679,7 +679,7 @@
       const element = document.getElementById(`sdg-17-item-${index + 1}`);
       if (element) {
         element.textContent = item;
-        console.log(`Updated SDG 17 item ${index + 1} to Korean: ${item}`);
+        // Debug output removed
       }
     });
     
@@ -687,37 +687,37 @@
     const envTitle = document.getElementById('environmental-title');
     if (envTitle) {
       envTitle.textContent = '환경 고려';
-      console.log('Updated environmental title to Korean');
+      // Debug output removed
     }
     
     const paperReductionValue = document.getElementById('env-paper-reduction-value');
     if (paperReductionValue) {
       paperReductionValue.textContent = '300장';
-      console.log('Updated paper reduction value to Korean');
+      // Debug output removed
     }
     
     const paperReductionDesc = document.getElementById('env-paper-reduction-desc');
     if (paperReductionDesc) {
       paperReductionDesc.textContent = '연간 절약되는 종이 수';
-      console.log('Updated paper reduction description to Korean');
+      // Debug output removed
     }
     
     const paperlessDesc = document.getElementById('env-paperless-desc');
     if (paperlessDesc) {
       paperlessDesc.textContent = '페이퍼리스화 실현';
-      console.log('Updated paperless description to Korean');
+      // Debug output removed
     }
     
     const updatesDesc = document.getElementById('env-updates-desc');
     if (updatesDesc) {
       updatesDesc.textContent = '업데이트 가능한 디지털 명함';
-      console.log('Updated updates description to Korean');
+      // Debug output removed
     }
     
     const envSummary = document.getElementById('environmental-summary');
     if (envSummary) {
       envSummary.textContent = '지속가능한 비즈니스 활동으로 지구 환경과 비즈니스 성장을 양립';
-      console.log('Updated environmental summary to Korean');
+      // Debug output removed
     }
   }
 </script>
