@@ -13,7 +13,17 @@ import { type Language } from "../lib/i18n";
 
 // Get language from URL parameter or default to Japanese
 const url = new URL(Astro.request.url);
-const lang = (url.searchParams.get("lang") as Language) || "ja";
+const urlLang = url.searchParams.get("lang");
+const lang = (urlLang as Language) || "ja";
+
+// Debug: Log the language detection
+console.log("=== INDEX PAGE DEBUG ===");
+console.log("URL:", url.toString());
+console.log("Language parameter:", urlLang);
+console.log("Detected language:", lang);
+console.log("Language type:", typeof lang);
+console.log("Is Korean?", lang === "ko");
+console.log("=== END INDEX DEBUG ===");
 ---
 
 <Layout title="TapForge - NFCデジタル名刺で世界と繋がる" lang={lang}>
@@ -27,3 +37,81 @@ const lang = (url.searchParams.get("lang") as Language) || "ja";
   <FAQ lang={lang} />
   <CTA lang={lang} />
 </Layout>
+
+<script>
+  // Force language parameter application
+  const url = new URL(window.location.href);
+  const langParam = url.searchParams.get('lang');
+  
+  console.log('=== CLIENT SIDE DEBUG ===');
+  console.log('Current URL:', window.location.href);
+  console.log('Language parameter:', langParam);
+  console.log('Is Korean?', langParam === 'ko');
+  
+  // Force Korean display immediately if lang=ko is detected
+  if (langParam === 'ko') {
+    console.log('Korean language detected, forcing Korean display');
+    
+    // Wait for DOM to be ready
+    document.addEventListener('DOMContentLoaded', function() {
+      // Update the hero title directly
+      const heroTitle = document.getElementById('hero-title');
+      if (heroTitle) {
+        heroTitle.innerHTML = '<span class="text-red-500">탭</span>으로 <span class="text-blue-600">세계</span>와 연결되세요.<br />월액 500엔으로 시작하는<br />차세대 디지털 명함';
+        console.log('Hero title updated to Korean');
+      }
+      
+      // Update the hero description
+      const heroDescription = document.getElementById('hero-description');
+      if (heroDescription) {
+        heroDescription.innerHTML = '<span class="text-blue-600 font-semibold">AI 기반 차세대 명함</span>으로 비즈니스를 가속화하세요. 앱 불필요, 월 무료. NFC 탭 하나로 다국어 프로필을 공유하세요. 프리랜서의 해외 프로젝트 획득을 지원합니다.';
+        console.log('Hero description updated to Korean');
+      }
+      
+      // Update the CTA button
+      const heroCta = document.getElementById('hero-cta');
+      if (heroCta) {
+        heroCta.innerHTML = '<span class="text-red-500 font-bold mr-2">50명 한정!</span>무료 체험 신청';
+        console.log('Hero CTA updated to Korean');
+      }
+      
+      // Update the features
+      const heroFeatures = document.getElementById('hero-features');
+      if (heroFeatures) {
+        const features = heroFeatures.querySelectorAll('.flex.items-center');
+        if (features.length >= 3) {
+          const svg0 = features[0].querySelector('svg');
+          const svg1 = features[1].querySelector('svg');
+          const svg2 = features[2].querySelector('svg');
+          if (svg0?.nextSibling) svg0.nextSibling.textContent = '앱 불필요';
+          if (svg1?.nextSibling) svg1.nextSibling.textContent = '월 무료';
+          if (svg2?.nextSibling) svg2.nextSibling.textContent = '4개국어 지원';
+          console.log('Hero features updated to Korean');
+        }
+      }
+    });
+    
+    // Also try immediately in case DOM is already ready
+    setTimeout(function() {
+      const heroTitle = document.getElementById('hero-title');
+      if (heroTitle && heroTitle.textContent?.includes('タップ')) {
+        heroTitle.innerHTML = '<span class="text-red-500">탭</span>으로 <span class="text-blue-600">세계</span>와 연결되세요.<br />월액 500엔으로 시작하는<br />차세대 디지털 명함';
+        console.log('Hero title updated to Korean (immediate)');
+      }
+    }, 100);
+  }
+</script>
+
+<style>
+  /* Force Korean display when lang=ko parameter is present */
+  body:has([href*="lang=ko"]) #hero-title,
+  body.korean-lang #hero-title {
+    display: none;
+  }
+  
+  body:has([href*="lang=ko"]) #hero-title::after,
+  body.korean-lang #hero-title::after {
+    content: "탭으로 세계와 연결되세요. AI 기반 차세대 명함으로 비즈니스를 가속화하세요";
+    display: block;
+  }
+</style>
