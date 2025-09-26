@@ -8,22 +8,31 @@ interface Props {
 
 const { lang } = Astro.props;
 
-// Get translations for the current language with fallback
+// Get translations for the current language
 const t = {
-  title: lang === "ko" ? "탭으로 세계와 연결되세요." : getTranslation(lang, "hero.title"),
-  subtitle: lang === "ko" ? "AI 기반 차세대 명함" : getTranslation(lang, "hero.subtitle"),
-  description: lang === "ko" ? "으로 비즈니스를 가속화하세요" : getTranslation(lang, "hero.description"),
-  subDescription: lang === "ko" ? "앱 불필요, 월 무료. NFC 탭 하나로 다국어 프로필을 공유하세요.\n프리랜서의 해외 프로젝트 획득을 지원합니다." : getTranslation(lang, "hero.subDescription"),
-  cta: lang === "ko" ? "무료 체험 신청" : getTranslation(lang, "hero.cta"),
-  limited: lang === "ko" ? "50명 한정!" : getTranslation(lang, "hero.limited"),
+  title: getTranslation(lang, "hero.title"),
+  subtitle: getTranslation(lang, "hero.subtitle"),
+  description: getTranslation(lang, "hero.description"),
+  subDescription: getTranslation(lang, "hero.subDescription"),
+  cta: getTranslation(lang, "hero.cta"),
+  limited: getTranslation(lang, "hero.limited"),
   features: {
-    noApp: lang === "ko" ? "앱 불필요" : getTranslation(lang, "hero.features.noApp"),
-    free: lang === "ko" ? "월 무료" : getTranslation(lang, "hero.features.free"),
-    multilingual: lang === "ko" ? "4개국어 지원" : getTranslation(lang, "hero.features.multilingual"),
+    noApp: getTranslation(lang, "hero.features.noApp"),
+    free: getTranslation(lang, "hero.features.free"),
+    multilingual: getTranslation(lang, "hero.features.multilingual"),
   }
 };
 
-// Language detection for hero component
+// Language-specific limited text
+const limitedText = {
+  ja: "100名限定!",
+  en: "Limited to 100!",
+  zh: "限100名！",
+  ko: "100명 한정!",
+  es: "¡Limitado a 100!"
+};
+
+const currentLimited = limitedText[lang] || limitedText.ja;
 ---
 
 <section
@@ -50,17 +59,39 @@ const t = {
           class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight"
           id="hero-title"
         >
-          {lang === "ko" ? (
+          {lang === "ja" && (
+            <>
+              <span class="text-red-500">タップ</span>で<span class="text-blue-600">世界</span>と繋がる。<br />
+              月額500円で始める<br />
+              次世代デジタル名刺
+            </>
+          )}
+          {lang === "en" && (
+            <>
+              <span class="text-red-500">Tap</span> to connect with the <span class="text-blue-600">world</span>.<br />
+              Starting at ¥500/month<br />
+              Next-generation digital business card
+            </>
+          )}
+          {lang === "zh" && (
+            <>
+              <span class="text-red-500">轻触</span>连接<span class="text-blue-600">世界</span>。<br />
+              月费¥500起<br />
+              AI驱动的下一代名片
+            </>
+          )}
+          {lang === "ko" && (
             <>
               <span class="text-red-500">탭</span>으로 <span class="text-blue-600">세계</span>와 연결되세요.<br />
               월액 500엔으로 시작하는<br />
               차세대 디지털 명함
             </>
-          ) : (
+          )}
+          {lang === "es" && (
             <>
-              <span class="text-red-500">タップ</span>で<span class="text-blue-600">世界</span>と繋がる。<br />
-              月額500円で始める<br />
-              次世代デジタル名刺
+              <span class="text-red-500">Toca</span> para conectar con el <span class="text-blue-600">mundo</span>.<br />
+              Desde ¥500/mes<br />
+              Tarjeta de presentación de próxima generación
             </>
           )}
         </h1>
@@ -82,13 +113,29 @@ const t = {
           class="text-xl text-gray-700 mb-8 leading-relaxed"
           id="hero-description"
         >
-          {lang === "ko" ? (
+          {lang === "ja" && (
+            <>
+              <span class="text-blue-600 font-semibold">AI駆動の次世代名刺</span>であなたのビジネスを加速。アプリ不要、<span class="font-bold">月額500円から</span>。NFCタップ一つで多言語プロフィールを共有。フリーランサーの海外案件獲得を支援します。
+            </>
+          )}
+          {lang === "en" && (
+            <>
+              <span class="text-blue-600 font-semibold">AI-powered next-generation business card</span> to accelerate your business. No app required, <span class="font-bold">from ¥500/month</span>. Share multilingual profiles with one NFC tap. Supporting freelancers in acquiring overseas projects.
+            </>
+          )}
+          {lang === "zh" && (
+            <>
+              <span class="text-blue-600 font-semibold">AI驱动的下一代名片</span>加速您的业务。无需应用，<span class="font-bold">月费¥500起</span>。一次NFC轻触即可分享多语言个人资料。支持自由职业者获得海外项目。
+            </>
+          )}
+          {lang === "ko" && (
             <>
               <span class="text-blue-600 font-semibold">AI 기반 차세대 명함</span>으로 비즈니스를 가속화하세요. 앱 불필요, <span class="font-bold">월액 500엔부터</span>. NFC 탭 하나로 다국어 프로필을 공유하세요. 프리랜서의 해외 프로젝트 획득을 지원합니다.
             </>
-          ) : (
+          )}
+          {lang === "es" && (
             <>
-              <span class="text-blue-600 font-semibold">AI駆動の次世代名刺</span>であなたのビジネスを加速。アプリ不要、<span class="font-bold">月額500円から</span>。NFCタップ一つで多言語プロフィールを共有。フリーランサーの海外案件獲得を支援します。
+              <span class="text-blue-600 font-semibold">Tarjeta de presentación de próxima generación</span> impulsada por IA para acelerar tu negocio. Sin aplicación requerida, <span class="font-bold">desde ¥500/mes</span>. Comparte perfiles multilingües con un toque NFC. Apoyando a freelancers en la adquisición de proyectos en el extranjero.
             </>
           )}
         </p>
@@ -100,17 +147,8 @@ const t = {
             class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center justify-center min-h-[48px]"
             id="hero-cta"
           >
-            {lang === "ko" ? (
-              <>
-                <span class="text-red-500 font-bold mr-2">100명 한정!</span>
-                조기 액세스 신청
-              </>
-            ) : (
-              <>
-                <span class="text-red-500 font-bold mr-2">100名限定!</span>
-                早期アクセスに申し込む
-              </>
-            )}
+            <span class="text-red-500 font-bold mr-2">{currentLimited}</span>
+            {t.cta}
           </a>
         </div>
         <!-- Trust Indicators -->
@@ -129,7 +167,7 @@ const t = {
                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                 clip-rule="evenodd"></path>
             </svg>
-            {lang === "ko" ? "앱 불필요" : "アプリ不要"}
+            {t.features.noApp}
           </div>
           <div class="flex items-center">
             <svg
@@ -142,7 +180,7 @@ const t = {
                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                 clip-rule="evenodd"></path>
             </svg>
-            {lang === "ko" ? "월액 500엔~" : "月額500円～"}
+            {lang === "ko" ? "월액 500엔~" : lang === "en" ? "From ¥500/month" : lang === "zh" ? "月费¥500起" : lang === "es" ? "Desde ¥500/mes" : "月額500円～"}
           </div>
           <div class="flex items-center">
             <svg
@@ -155,7 +193,7 @@ const t = {
                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                 clip-rule="evenodd"></path>
             </svg>
-            {lang === "ko" ? "4개국어 지원" : "4言語対応"}
+            {t.features.multilingual}
           </div>
         </div>
       </div>
