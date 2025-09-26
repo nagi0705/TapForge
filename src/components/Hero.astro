@@ -164,7 +164,9 @@ const t = {
 </section>
 
 <script>
-  // Hero section language switching
+  // Hero section language switching is disabled to prevent XSS issues
+  // The content is rendered server-side based on the language parameter
+  /*
   document.addEventListener("DOMContentLoaded", function () {
     // Get current language from URL or localStorage
     const urlParams = new URLSearchParams(window.location.search);
@@ -175,7 +177,11 @@ const t = {
     // Update hero content based on language
     updateHeroContent(currentLang);
   });
+  */
 
+  // This function is disabled to prevent XSS issues
+  // Content is now rendered server-side based on the language parameter
+  /*
   function updateHeroContent(lang: string) {
     const translations = {
       ja: {
@@ -274,4 +280,5 @@ const t = {
       });
     }
   }
+  */
 </script>
