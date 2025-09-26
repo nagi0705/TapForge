@@ -381,6 +381,7 @@
                   <div>
                     <div
                       class="text-4xl font-black bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-3"
+                      id="tapforge-annual-cost"
                     >
                       年間¥6,000
                     </div>
@@ -879,6 +880,22 @@
     const targetAudienceElement = document.getElementById("target-audience");
     if (targetAudienceElement) {
       targetAudienceElement.textContent = t.costComparison.targetAudience;
+    }
+
+    // Update annual cost display
+    const tapforgeAnnualCostElement = document.getElementById("tapforge-annual-cost");
+    if (tapforgeAnnualCostElement) {
+      if (lang === "ko") {
+        tapforgeAnnualCostElement.textContent = "연간¥6,000";
+      } else if (lang === "en") {
+        tapforgeAnnualCostElement.textContent = "¥6,000/year";
+      } else if (lang === "zh") {
+        tapforgeAnnualCostElement.textContent = "年费¥6,000";
+      } else if (lang === "es") {
+        tapforgeAnnualCostElement.textContent = "¥6,000/año";
+      } else {
+        tapforgeAnnualCostElement.textContent = "年間¥6,000";
+      }
     }
   }
 </script>
