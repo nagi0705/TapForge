@@ -147,13 +147,13 @@ import { features, pricingPlans, regularPricingPlans } from "../config/features"
 
         <!-- Value Proposition -->
         <div class="mt-8 bg-yellow-50 rounded-xl p-4">
-          <p class="text-lg font-bold text-yellow-800">
+          <p class="text-lg font-bold text-yellow-800" id="early-access-benefits-title">
             🎯 早期アクセス3大特典
           </p>
           <div class="flex flex-wrap justify-center gap-4 mt-3 text-sm">
-            <span class="text-yellow-700">✓ 永続的に月額500円</span>
-            <span class="text-yellow-700">✓ 新機能への優先アクセス</span>
-            <span class="text-yellow-700">✓ サービス改善への参加特典</span>
+            <span class="text-yellow-700" id="benefit-1">✓ 永続的に月額500円</span>
+            <span class="text-yellow-700" id="benefit-2">✓ 新機能への優先アクセス</span>
+            <span class="text-yellow-700" id="benefit-3">✓ サービス改善への参加特典</span>
           </div>
         </div>
       </div>
@@ -273,6 +273,12 @@ import { features, pricingPlans, regularPricingPlans } from "../config/features"
           description: "AI名刺撮影デモ動画",
           note: "（YouTubeリンク予定）",
         },
+        benefits: {
+          title: "🎯 早期アクセス3大特典",
+          benefit1: "✓ 永続的に月額500円",
+          benefit2: "✓ 新機能への優先アクセス",
+          benefit3: "✓ サービス改善への参加特典"
+        },
       },
       en: {
         title: "TapForge Features",
@@ -323,6 +329,12 @@ import { features, pricingPlans, regularPricingPlans } from "../config/features"
           description: "AI Business Card Scanning Demo Video",
           note: "(YouTube link coming soon)",
         },
+        benefits: {
+          title: "🎯 3 Early Access Benefits",
+          benefit1: "✓ Permanent ¥500/month",
+          benefit2: "✓ Priority access to new features",
+          benefit3: "✓ Service improvement participation rewards"
+        },
       },
       zh: {
         title: "TapForge特点",
@@ -368,6 +380,12 @@ import { features, pricingPlans, regularPricingPlans } from "../config/features"
           title: "演示视频",
           description: "AI名片扫描演示视频",
           note: "（YouTube链接即将推出）",
+        },
+        benefits: {
+          title: "🎯 3大早期访问福利",
+          benefit1: "✓ 永久月费¥500",
+          benefit2: "✓ 优先体验新功能",
+          benefit3: "✓ 服务改进参与奖励"
         },
       },
       ko: {
@@ -416,6 +434,12 @@ import { features, pricingPlans, regularPricingPlans } from "../config/features"
           title: "데모 영상",
           description: "AI 명함 촬영 데모 영상",
           note: "(YouTube 링크 예정)",
+        },
+        benefits: {
+          title: "🎯 조기 액세스 3대 혜택",
+          benefit1: "✓ 영구적으로 월액 ¥500",
+          benefit2: "✓ 신기능 우선 액세스",
+          benefit3: "✓ 서비스 개선 참여 특전"
         },
       },
       es: {
@@ -466,6 +490,12 @@ import { features, pricingPlans, regularPricingPlans } from "../config/features"
           title: "Video Demo",
           description: "Video Demo de Escaneo de Tarjeta con IA",
           note: "(Enlace de YouTube próximamente)",
+        },
+        benefits: {
+          title: "🎯 3 Beneficios de Acceso Anticipado",
+          benefit1: "✓ ¥500/mes permanentemente",
+          benefit2: "✓ Acceso prioritario a nuevas funciones",
+          benefit3: "✓ Recompensas por participación en mejoras"
         },
       },
     };
@@ -585,6 +615,27 @@ import { features, pricingPlans, regularPricingPlans } from "../config/features"
     const demoNoteElement = document.getElementById("demo-note");
     if (demoNoteElement) {
       demoNoteElement.textContent = t.demo.note;
+    }
+
+    // Update benefits section
+    const benefitsTitleElement = document.getElementById("early-access-benefits-title");
+    if (benefitsTitleElement) {
+      benefitsTitleElement.textContent = t.benefits.title;
+    }
+
+    const benefit1Element = document.getElementById("benefit-1");
+    if (benefit1Element) {
+      benefit1Element.textContent = t.benefits.benefit1;
+    }
+
+    const benefit2Element = document.getElementById("benefit-2");
+    if (benefit2Element) {
+      benefit2Element.textContent = t.benefits.benefit2;
+    }
+
+    const benefit3Element = document.getElementById("benefit-3");
+    if (benefit3Element) {
+      benefit3Element.textContent = t.benefits.benefit3;
     }
   }
 </script>
