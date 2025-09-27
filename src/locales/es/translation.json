@@ -11,12 +11,12 @@
     "title": "Conecta con el mundo con un toque.",
     "subtitle": "Tarjeta de presentación de próxima generación",
     "description": "impulsada por IA para acelerar tu negocio",
-    "subDescription": "Sin aplicación requerida, mensualidad gratuita. Comparte perfiles multilingües con un toque NFC.\nApoyando a freelancers en la adquisición de proyectos en el extranjero.",
+    "subDescription": "Sin aplicación requerida, sin costo inicial. Comparte perfiles multilingües con un toque NFC.\nApoyando a freelancers en la adquisición de proyectos en el extranjero.",
     "cta": "Solicitar Acceso Anticipado",
     "limited": "¡Limitado a 100!",
     "features": {
       "noApp": "Sin App Requerida",
-      "free": "Mensualidad Gratuita",
+      "free": "Sin Costo Inicial",
       "multilingual": "4 Idiomas"
     }
   },
@@ -46,7 +46,7 @@
       "title": "Soluciones TapForge",
       "cost": {
         "title": "Costo Cero",
-        "description": "Solo 3,000 yenes iniciales, mensualidad gratuita"
+        "description": "Costo inicial 0 yenes, mensualidad 500 yenes~"
       },
       "time": {
         "title": "Completo en 5 minutos",
@@ -71,7 +71,7 @@
     "profileDisplay": "Visualización de Perfil",
     "features": {
       "noApp": "Sin App Requerida",
-      "free": "Mensualidad Gratuita",
+      "free": "Sin Costo Inicial",
       "multilingual": "4 Idiomas",
       "aiScanning": "Escaneo de Tarjetas con IA"
     }
@@ -100,8 +100,8 @@
     },
     "tapforge": {
       "title": "TapForge",
-      "period": "Solo costo inicial",
-      "monthlyCost": "Cuota mensual: ¥0",
+      "period": "Cuota mensual",
+      "monthlyCost": "Cuota mensual: ¥500~",
       "orgTime": "Tiempo de organización: 5 minutos",
       "envImpact": "Impacto ambiental: Cero"
     },
@@ -133,8 +133,8 @@
       "plans": {
         "initial": {
           "title": "Costo Inicial",
-          "price": "¥3,000",
-          "description": "Primera tarjeta"
+          "price": "¥0",
+          "description": "Primera tarjeta gratis"
         },
         "additional": {
           "title": "Tarjetas Adicionales",
@@ -143,11 +143,11 @@
         },
         "monthly": {
           "title": "Cuota Mensual",
-          "price": "¥0",
-          "description": "Completamente gratis"
+          "price": "¥500~",
+          "description": "Plan mensual"
         }
       },
-      "tagline": "El precio más bajo de la industria para tarjetas NFC con función OCR - Ofreciendo funciones que normalmente cuestan 11,000 yenes anuales por 3,000 yenes"
+      "tagline": "El precio más bajo de la industria para tarjetas NFC con función OCR - Ofreciendo funciones que normalmente cuestan 11,000 yenes anuales por 500 yenes~/mes"
     },
     "demo": {
       "title": "Video Demo",
@@ -162,7 +162,7 @@
       "costReduction": {
         "title": "Reducción de Costos",
         "metric": "¥8,000",
-        "description": "Tarjetas de papel tradicionales 5,000 yenes + App OCR 6,000 yenes → TapForge 3,000 yenes"
+        "description": "Tarjetas de papel tradicionales 5,000 yenes + App OCR 6,000 yenes → TapForge 500 yenes~/mes"
       },
       "timeEfficiency": {
         "title": "Eficiencia",
@@ -191,8 +191,8 @@
         "annualCost": {
           "item": "Costo Anual",
           "traditional": "¥11,000",
-          "tapforge": "¥3,000",
-          "tapforgeNote": "(Solo costo inicial)"
+          "tapforge": "¥6,000",
+          "tapforgeNote": "(500 yenes~/mes)"
         },
         "organizationTime": {
           "item": "Tiempo de Organización",

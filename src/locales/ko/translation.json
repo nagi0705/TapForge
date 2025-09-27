@@ -11,12 +11,12 @@
     "title": "탭으로 세계와 연결하세요.",
     "subtitle": "AI 기반 차세대 명함",
     "description": "으로 비즈니스를 가속화",
-    "subDescription": "앱 불필요, 월 사용료 무료. NFC 탭 한 번으로 다국어 프로필 공유.\n해외 프로젝트 획득을 지원하는 프리랜서.",
+    "subDescription": "앱 불필요, 초기 비용 무료. NFC 탭 한 번으로 다국어 프로필 공유.\n해외 프로젝트 획득을 지원하는 프리랜서.",
     "cta": "조기 액세스 신청",
     "limited": "100명 한정!",
     "features": {
       "noApp": "앱 불필요",
-      "free": "월 사용료 무료",
+      "free": "초기 비용 무료",
       "multilingual": "4개 언어 지원"
     }
   },
@@ -46,7 +46,7 @@
       "title": "TapForge 솔루션",
       "cost": {
         "title": "제로 비용",
-        "description": "초기 3,000엔만, 월 사용료 무료"
+        "description": "초기 비용 0엔, 월 500엔~"
       },
       "time": {
         "title": "5분 완료",
@@ -71,7 +71,7 @@
     "profileDisplay": "프로필 표시",
     "features": {
       "noApp": "앱 불필요",
-      "free": "월 사용료 무료",
+      "free": "초기 비용 무료",
       "multilingual": "4개 언어",
       "aiScanning": "AI 명함 스캔"
     }
@@ -100,8 +100,8 @@
     },
     "tapforge": {
       "title": "TapForge",
-      "period": "초기 비용만",
-      "monthlyCost": "월 사용료: ¥0",
+      "period": "월 사용료",
+      "monthlyCost": "월 사용료: ¥500~",
       "orgTime": "정리 시간: 5분",
       "envImpact": "환경 영향: 제로"
     },
@@ -133,8 +133,8 @@
       "plans": {
         "initial": {
           "title": "초기 비용",
-          "price": "¥3,000",
-          "description": "첫 번째"
+          "price": "¥0",
+          "description": "첫 장 무료"
         },
         "additional": {
           "title": "추가 카드",
@@ -143,11 +143,11 @@
         },
         "monthly": {
           "title": "월 사용료",
-          "price": "¥0",
-          "description": "완전 무료"
+          "price": "¥500~",
+          "description": "월정액 플랜"
         }
       },
-      "tagline": "OCR 기능이 있는 NFC 명함의 업계 최저가 - 일반적으로 연간 11,000엔의 기능을 3,000엔에 제공"
+      "tagline": "OCR 기능이 있는 NFC 명함의 업계 최저가 - 일반적으로 연간 11,000엔의 기능을 월 500엔~에 제공"
     },
     "demo": {
       "title": "데모 비디오",
@@ -162,7 +162,7 @@
       "costReduction": {
         "title": "비용 절감",
         "metric": "¥8,000",
-        "description": "기존 종이 명함 5,000엔 + OCR 앱 6,000엔 → TapForge 3,000엔으로 실현"
+        "description": "기존 종이 명함 5,000엔 + OCR 앱 6,000엔 → TapForge 월 500엔~으로 실현"
       },
       "timeEfficiency": {
         "title": "효율화",
@@ -191,8 +191,8 @@
         "annualCost": {
           "item": "연간 비용",
           "traditional": "¥11,000",
-          "tapforge": "¥3,000",
-          "tapforgeNote": "(초기 비용만)"
+          "tapforge": "¥6,000",
+          "tapforgeNote": "(월 500엔~)"
         },
         "organizationTime": {
           "item": "정리 시간",

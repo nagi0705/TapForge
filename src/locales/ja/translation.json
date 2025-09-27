@@ -11,12 +11,12 @@
     "title": "タップで世界と繋がる。",
     "subtitle": "AI駆動の次世代名刺",
     "description": "であなたのビジネスを加速",
-    "subDescription": "アプリ不要、月額無料。NFCタップ一つで多言語プロフィールを共有。\nフリーランサーの海外案件獲得を支援します。",
+    "subDescription": "アプリ不要、初期費用無料。NFCタップ一つで多言語プロフィールを共有。\nフリーランサーの海外案件獲得を支援します。",
     "cta": "早期アクセス申し込み",
     "limited": "100名限定!",
     "features": {
       "noApp": "アプリ不要",
-      "free": "月額無料",
+      "free": "初期費用無料",
       "multilingual": "4言語対応"
     }
   },
@@ -46,7 +46,7 @@
       "title": "TapForgeの解決策",
       "cost": {
         "title": "コストゼロ",
-        "description": "初期3,000円のみ、月額無料"
+        "description": "初期費用0円、月額500円〜"
       },
       "time": {
         "title": "5分で完了",
@@ -71,7 +71,7 @@
     "profileDisplay": "プロフィール表示",
     "features": {
       "noApp": "アプリ不要",
-      "free": "月額無料",
+      "free": "初期費用無料",
       "multilingual": "4言語対応",
       "aiScanning": "AI名刺撮影"
     }
@@ -100,8 +100,8 @@
     },
     "tapforge": {
       "title": "TapForge",
-      "period": "初期費用のみ",
-      "monthlyCost": "月額料金: ¥0",
+      "period": "月額料金",
+      "monthlyCost": "月額料金: ¥500〜",
       "orgTime": "整理時間: 5分",
       "envImpact": "環境負荷: ゼロ"
     },
@@ -133,8 +133,8 @@
       "plans": {
         "initial": {
           "title": "初期費用",
-          "price": "¥3,000",
-          "description": "1枚目"
+          "price": "¥0",
+          "description": "初回無料"
         },
         "additional": {
           "title": "追加カード",
@@ -143,11 +143,11 @@
         },
         "monthly": {
           "title": "月額料金",
-          "price": "¥0",
-          "description": "完全無料"
+          "price": "¥500〜",
+          "description": "月額プラン"
         }
       },
-      "tagline": "OCR機能付きNFC名刺の業界最安値 - 通常年間11,000円の機能を3,000円で提供"
+      "tagline": "OCR機能付きNFC名刺の業界最安値 - 通常年間11,000円の機能を月額500円〜で提供"
     },
     "demo": {
       "title": "デモ動画",
@@ -162,7 +162,7 @@
       "costReduction": {
         "title": "コスト削減",
         "metric": "¥8,000",
-        "description": "従来の紙名刺5,000円+OCRアプリ6,000円→TapForge3,000円で実現"
+        "description": "従来の紙名刺5,000円+OCRアプリ6,000円→TapForge月額500円〜で実現"
       },
       "timeEfficiency": {
         "title": "効率化",
@@ -191,8 +191,8 @@
         "annualCost": {
           "item": "年間コスト",
           "traditional": "¥11,000",
-          "tapforge": "¥3,000",
-          "tapforgeNote": "（初期費用のみ）"
+          "tapforge": "¥6,000",
+          "tapforgeNote": "（月額500円〜）"
         },
         "organizationTime": {
           "item": "整理時間",

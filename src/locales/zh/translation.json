@@ -11,12 +11,12 @@
     "title": "轻触连接世界。",
     "subtitle": "AI驱动的新一代名片",
     "description": "加速您的业务",
-    "subDescription": "无需应用，免月费。一次NFC轻触即可分享多语言配置文件。\n支持自由职业者获取海外项目。",
+    "subDescription": "无需应用，初始费用免费。一次NFC轻触即可分享多语言配置文件。\n支持自由职业者获取海外项目。",
     "cta": "申请早期访问",
     "limited": "限100名！",
     "features": {
       "noApp": "无需应用",
-      "free": "免月费",
+      "free": "初始费用免费",
       "multilingual": "支持4种语言"
     }
   },
@@ -46,7 +46,7 @@
       "title": "TapForge解决方案",
       "cost": {
         "title": "零成本",
-        "description": "仅初始3,000日元，免月费"
+        "description": "初始费用0日元，月费500日元起"
       },
       "time": {
         "title": "5分钟完成",
@@ -71,7 +71,7 @@
     "profileDisplay": "配置文件显示",
     "features": {
       "noApp": "无需应用",
-      "free": "免月费",
+      "free": "初始费用免费",
       "multilingual": "4种语言",
       "aiScanning": "AI名片扫描"
     }
@@ -100,8 +100,8 @@
     },
     "tapforge": {
       "title": "TapForge",
-      "period": "仅初始费用",
-      "monthlyCost": "月费：¥0",
+      "period": "月费",
+      "monthlyCost": "月费：¥500起",
       "orgTime": "整理时间：5分钟",
       "envImpact": "环境影响：零"
     },
@@ -133,8 +133,8 @@
       "plans": {
         "initial": {
           "title": "初始费用",
-          "price": "¥3,000",
-          "description": "第一张"
+          "price": "¥0",
+          "description": "首张免费"
         },
         "additional": {
           "title": "追加卡片",
@@ -143,11 +143,11 @@
         },
         "monthly": {
           "title": "月费",
-          "price": "¥0",
-          "description": "完全免费"
+          "price": "¥500起",
+          "description": "月度计划"
         }
       },
-      "tagline": "带OCR功能的NFC名片业界最低价 - 通常年费11,000日元的功能3,000日元提供"
+      "tagline": "带OCR功能的NFC名片业界最低价 - 通常年费11,000日元的功能以月费500日元起提供"
     },
     "demo": {
       "title": "演示视频",
@@ -162,7 +162,7 @@
       "costReduction": {
         "title": "成本削减",
         "metric": "¥8,000",
-        "description": "传统纸质名片5,000日元+OCR应用6,000日元→TapForge 3,000日元实现"
+        "description": "传统纸质名片5,000日元+OCR应用6,000日元→TapForge月费500日元起实现"
       },
       "timeEfficiency": {
         "title": "效率化",
@@ -191,8 +191,8 @@
         "annualCost": {
           "item": "年度成本",
           "traditional": "¥11,000",
-          "tapforge": "¥3,000",
-          "tapforgeNote": "（仅初始费用）"
+          "tapforge": "¥6,000",
+          "tapforgeNote": "（月费500日元起）"
         },
         "organizationTime": {
           "item": "整理时间",
