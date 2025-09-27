@@ -147,7 +147,7 @@
           "description": "Completely free"
         }
       },
-      "tagline": "Democratizing technology at industry's lowest price"
+      "tagline": "Industry's lowest price for NFC cards with OCR function - Offering features normally costing 11,000 yen annually for 3,000 yen"
     },
     "demo": {
       "title": "Demo Video",
@@ -161,8 +161,8 @@
     "items": {
       "costReduction": {
         "title": "Cost Reduction",
-        "metric": "¥2,000",
-        "description": "Annual cost of 500 paper business cards becomes 0 yen"
+        "metric": "¥8,000",
+        "description": "Traditional paper cards 5,000 yen + OCR app 6,000 yen → TapForge 3,000 yen"
       },
       "timeEfficiency": {
         "title": "Efficiency",
@@ -190,8 +190,8 @@
       "rows": {
         "annualCost": {
           "item": "Annual Cost",
-          "traditional": "$70",
-          "tapforge": "$40",
+          "traditional": "¥11,000",
+          "tapforge": "¥3,000",
           "tapforgeNote": "(Initial cost only)"
         },
         "organizationTime": {
