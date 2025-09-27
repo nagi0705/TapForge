@@ -1,18 +1,14 @@
 ---
 import { benefits } from "../config/features";
-import { loadTranslation, getLocaleFromPathname } from '../utils/i18n';
-import type { Language } from '../lib/i18n';
+import { translations, type Language } from "../lib/i18n";
 
 interface Props {
   lang: Language;
 }
 
 // Get language from props with fallback to Japanese
-const { lang } = Astro.props;
-const locale = lang || getLocaleFromPathname(Astro.url.pathname);
-const currentLang = locale; // Define currentLang for template use
-const translations = await loadTranslation(locale);
-const t = translations.benefits;
+const { lang = "ja" } = Astro.props;
+const t = translations[lang].benefits;
 
 // Data validation
 if (!t || !t.items || !benefits) {

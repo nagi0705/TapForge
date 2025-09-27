@@ -1,15 +1,12 @@
 ---
-import { loadTranslation, getLocaleFromPathname } from '../utils/i18n';
-import type { Language } from '../lib/i18n';
+import { translations, type Language } from "../lib/i18n";
 
 interface Props {
   lang: Language;
 }
 
-const { lang } = Astro.props;
-const locale = lang || getLocaleFromPathname(Astro.url.pathname);
-const translations = await loadTranslation(locale);
-const t = translations.faq;
+const { lang = "ja" } = Astro.props;
+const t = translations[lang].faq;
 ---
 
 <section id="faq" class="py-20 bg-white">

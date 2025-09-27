@@ -1,15 +1,12 @@
 ---
-import { loadTranslation, getLocaleFromPathname, createTranslator } from '../utils/i18n';
-import type { Language } from '../lib/i18n';
+import { translations, type Language } from "../lib/i18n";
 
 interface Props {
   lang: Language;
 }
 
-const { lang } = Astro.props;
-const locale = lang || getLocaleFromPathname(Astro.url.pathname);
-const translations = await loadTranslation(locale);
-const t = translations.problems;
+const { lang = "ja" } = Astro.props;
+const t = translations[lang].problems;
 ---
 
 <section class="py-20 bg-gray-50">
@@ -34,7 +31,7 @@ const t = translations.problems;
             class="text-2xl font-bold text-gray-900 mb-6 text-center lg:text-left"
             id="problems-section-title"
           >
-            {t.problems.title}
+            {t.problemsTitle}
           </h3>
 
           <div class="space-y-6">
@@ -58,10 +55,10 @@ const t = translations.problems;
                   class="font-semibold text-gray-900 mb-2"
                   id="problem-1-title"
                 >
-                  {t.problems.cost.title}
+                  {t.problems[0].title}
                 </h4>
                 <p class="text-gray-600" id="problem-1-desc">
-                  {t.problems.cost.description}
+                  {t.problems[0].desc}
                 </p>
               </div>
             </div>
@@ -86,10 +83,10 @@ const t = translations.problems;
                   class="font-semibold text-gray-900 mb-2"
                   id="problem-2-title"
                 >
-                  {t.problems.organization.title}
+                  {t.problems[1].title}
                 </h4>
                 <p class="text-gray-600" id="problem-2-desc">
-                  {t.problems.organization.description}
+                  {t.problems[1].desc}
                 </p>
               </div>
             </div>
@@ -114,10 +111,10 @@ const t = translations.problems;
                   class="font-semibold text-gray-900 mb-2"
                   id="problem-3-title"
                 >
-                  {t.problems.language.title}
+                  {t.problems[2].title}
                 </h4>
                 <p class="text-gray-600" id="problem-3-desc">
-                  {t.problems.language.description}
+                  {t.problems[2].desc}
                 </p>
               </div>
             </div>
@@ -142,10 +139,10 @@ const t = translations.problems;
                   class="font-semibold text-gray-900 mb-2"
                   id="problem-4-title"
                 >
-                  {t.problems.followup.title}
+                  {t.problems[3].title}
                 </h4>
                 <p class="text-gray-600" id="problem-4-desc">
-                  {t.problems.followup.description}
+                  {t.problems[3].desc}
                 </p>
               </div>
             </div>
@@ -158,7 +155,7 @@ const t = translations.problems;
             class="text-2xl font-bold text-gray-900 mb-6 text-center lg:text-left"
             id="solutions-section-title"
           >
-            {t.solutions.title}
+            {t.solutionsTitle}
           </h3>
 
           <div class="space-y-6">
@@ -182,10 +179,10 @@ const t = translations.problems;
                   class="font-semibold text-gray-900 mb-2"
                   id="solution-1-title"
                 >
-                  {t.solutions.cost.title}
+                  低コストで継続的な価値
                 </h4>
                 <p class="text-gray-600" id="solution-1-desc">
-                  {t.solutions.cost.description}
+                  初期費用無料、月額500円〜で常に最新機能を提供
                 </p>
               </div>
             </div>
@@ -210,10 +207,10 @@ const t = translations.problems;
                   class="font-semibold text-gray-900 mb-2"
                   id="solution-2-title"
                 >
-                  {t.solutions.time.title}
+                  5分で完了
                 </h4>
                 <p class="text-gray-600" id="solution-2-desc">
-                  {t.solutions.time.description}
+                  OCR機能付きNFC名刺でVCard変換（別アプリ不要）
                 </p>
               </div>
             </div>
@@ -238,10 +235,10 @@ const t = translations.problems;
                   class="font-semibold text-gray-900 mb-2"
                   id="solution-3-title"
                 >
-                  {t.solutions.language.title}
+                  4言語対応
                 </h4>
                 <p class="text-gray-600" id="solution-3-desc">
-                  {t.solutions.language.description}
+                  日英中西で国際ビジネス支援
                 </p>
               </div>
             </div>
@@ -266,10 +263,10 @@ const t = translations.problems;
                   class="font-semibold text-gray-900 mb-2"
                   id="solution-4-title"
                 >
-                  {t.solutions.followup.title}
+                  {t.solutions[3].title}
                 </h4>
                 <p class="text-gray-600" id="solution-4-desc">
-                  {t.solutions.followup.description}
+                  {t.solutions[3].desc}
                 </p>
               </div>
             </div>
@@ -294,7 +291,7 @@ const t = translations.problems;
             class="text-4xl font-black bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-4"
             id="cost-comparison-title"
           >
-{translations.costComparison?.title || ''}
+{t.costComparison.title}
           </h3>
           <div
             class="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto"
@@ -310,7 +307,7 @@ const t = translations.problems;
                 class="text-xl font-bold text-gray-700 mb-6"
                 id="traditional-cards-title"
               >
-{translations.costComparison?.traditional?.title || ''}
+{t.costComparison.traditional.title}
               </h4>
               <div
                 class="relative bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-8 border border-red-200/50 shadow-lg group-hover:shadow-xl transition-all duration-300 w-full max-w-[400px] mx-auto h-80 flex flex-col justify-between"
@@ -323,7 +320,7 @@ const t = translations.problems;
                     class="text-sm text-gray-600 mb-6 font-medium"
                     id="traditional-cards-period"
                   >
-                    {translations.costComparison?.traditional?.period || ''}
+                    年間（紙名刺5,000円+OCRアプリ6,000円）
                   </div>
                 </div>
                 <div class="space-y-4 text-sm text-gray-600">
@@ -334,7 +331,7 @@ const t = translations.problems;
                       <span class="text-xs font-black text-red-600">¥11K</span>
                     </div>
                     <span id="traditional-printing-cost"
-                      >{translations.costComparison?.traditional?.printingCost || ''}</span
+                      >紙名刺5,000円+OCRアプリ6,000円</span
                     >
                   </div>
                   <div class="flex items-center">
@@ -343,7 +340,7 @@ const t = translations.problems;
                     >
                       <span class="text-xs font-black text-red-600">30分</span>
                     </div>
-                    <span id="traditional-org-time">{translations.costComparison?.traditional?.orgTime || ''}</span>
+                    <span id="traditional-org-time">整理時間: 30分</span>
                   </div>
                   <div class="flex items-center">
                     <div
@@ -351,7 +348,7 @@ const t = translations.problems;
                     >
                       <span class="text-xs font-black text-red-600">高</span>
                     </div>
-                    <span id="traditional-env-impact">{translations.costComparison?.traditional?.envImpact || ''}</span>
+                    <span id="traditional-env-impact">環境負荷: 高</span>
                   </div>
                 </div>
               </div>
@@ -376,7 +373,7 @@ const t = translations.problems;
                 class="text-xl font-bold text-gray-700 mb-6"
                 id="tapforge-title"
               >
-{translations.costComparison?.tapforge?.title || ''}
+{t.costComparison.tapforge.title}
               </h4>
               <div
                 class="relative bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-8 border-4 border-green-200/50 shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 w-full max-w-[400px] mx-auto h-80 flex flex-col justify-between"
@@ -393,7 +390,7 @@ const t = translations.problems;
                       class="text-4xl font-black bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-3"
                       id="tapforge-annual-cost"
                     >
-                      {translations.costComparison?.tapforge?.period || ''}
+                      年間¥6,000
                     </div>
                     <div
                       class="text-sm text-gray-600 mb-6 font-medium"
@@ -418,7 +415,7 @@ const t = translations.problems;
                       </div>
                       <span
                         class="ml-3 font-bold text-red-600"
-                        id="tapforge-monthly-cost">{translations.costComparison?.tapforge?.monthlyCost || ''}</span
+                        id="tapforge-monthly-cost">月額料金: ¥500</span
                       >
                     </div>
                     <div class="flex items-center">
@@ -437,7 +434,7 @@ const t = translations.problems;
                       </div>
                       <span
                         class="ml-3 font-bold text-orange-600"
-                        id="tapforge-org-time">{translations.costComparison?.tapforge?.orgTime || ''}</span
+                        id="tapforge-org-time">整理時間: 5分</span
                       >
                     </div>
                     <div class="flex items-center">
@@ -456,7 +453,7 @@ const t = translations.problems;
                       </div>
                       <span
                         class="ml-3 font-bold text-green-600"
-                        id="tapforge-env-impact">{translations.costComparison?.tapforge?.envImpact || ''}</span
+                        id="tapforge-env-impact">環境負荷: ゼロ</span
                       >
                     </div>
                   </div>
@@ -471,7 +468,7 @@ const t = translations.problems;
             class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg"
           >
             <span class="text-lg font-bold text-white" id="target-audience">
-  {translations.costComparison?.targetAudience || ''}
+  {t.costComparison.targetAudience}
             </span>
           </div>
         </div>

@@ -1,7 +1,6 @@
 ---
 // Hero Section for TapForge
-import { loadTranslation, getLocaleFromPathname, createTranslator } from '../utils/i18n';
-import type { Language } from '../lib/i18n';
+import { getTranslation, type Language } from "../lib/i18n";
 
 interface Props {
   lang: Language;
@@ -10,23 +9,18 @@ interface Props {
 // Get language from props with fallback to Japanese
 const { lang = "ja" } = Astro.props;
 
-// Load translations
-const locale = lang || getLocaleFromPathname(Astro.url.pathname);
-const translations = await loadTranslation(locale);
-const getT = createTranslator(translations);
-
 // Get translations for the current language
 const t = {
-  title: getT("hero.title"),
-  subtitle: getT("hero.subtitle"),
-  description: getT("hero.description"),
-  subDescription: getT("hero.subDescription"),
-  cta: getT("hero.cta"),
-  limited: getT("hero.limited"),
+  title: getTranslation(lang, "hero.title"),
+  subtitle: getTranslation(lang, "hero.subtitle"),
+  description: getTranslation(lang, "hero.description"),
+  subDescription: getTranslation(lang, "hero.subDescription"),
+  cta: getTranslation(lang, "hero.cta"),
+  limited: getTranslation(lang, "hero.limited"),
   features: {
-    noApp: getT("hero.features.noApp"),
-    free: getT("hero.features.free"),
-    multilingual: getT("hero.features.multilingual"),
+    noApp: getTranslation(lang, "hero.features.noApp"),
+    free: getTranslation(lang, "hero.features.free"),
+    multilingual: getTranslation(lang, "hero.features.multilingual"),
   }
 };
 
