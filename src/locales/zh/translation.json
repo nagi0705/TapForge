@@ -12,8 +12,8 @@
     "subtitle": "AI驱动的新一代名片",
     "description": "加速您的业务",
     "subDescription": "无需应用，免月费。一次NFC轻触即可分享多语言配置文件。\n支持自由职业者获取海外项目。",
-    "cta": "申请免费试用",
-    "limited": "限50名！",
+    "cta": "申请早期访问",
+    "limited": "限100名！",
     "features": {
       "noApp": "无需应用",
       "free": "免月费",
@@ -64,8 +64,8 @@
   },
   "cta": {
     "title": "准备开始了吗？",
-    "description": "通过我们限定50人的免费试用体验TapForge的力量",
-    "trialButton": "申请免费试用",
+    "description": "通过我们限定100人的早期访问（每月500日元）体验TapForge的力量",
+    "trialButton": "申请早期访问",
     "contactButton": "联系我们（共创合作伙伴）",
     "tapNow": "立即轻触！",
     "profileDisplay": "配置文件显示",
@@ -77,11 +77,11 @@
     }
   },
   "trialForm": {
-    "title": "申请免费试用",
+    "title": "申请早期访问",
     "description": "我们将为您免费创建一张名片。",
     "subDescription": "无限设计更改，AI名片扫描和VCard转换可用",
     "contactFormTitle": "联系表单",
-    "contactFormDescription": "要申请免费试用，请通过下面的按钮联系我们。",
+    "contactFormDescription": "要申请早期访问（每月500日元），请通过下面的按钮联系我们。",
     "contactFormButton": "前往联系表单",
     "termsText": "通过申请，您同意我们的",
     "termsLink": "服务条款",
@@ -316,7 +316,7 @@
         "tags": ["简单操作", "好印象", "性价比"]
       }
     ],
-    "note": "这些评价是虚拟的。计划从50名试用参与者中选择5个实际评价进行替换。"
+    "note": "这些评价是虚拟的。计划从100名早期访问参与者中选择5个实际评价进行替换。"
   },
   "faq": {
     "title": "常见问题",
@@ -362,7 +362,7 @@
     "contact": {
       "title": "联系我们",
       "company": "Cor.株式会社",
-      "trial": "免费试用"
+      "trial": "早期访问"
     },
     "copyright": "© 2025 TapForge by Cor.株式会社 保留所有权利。",
     "legal": {

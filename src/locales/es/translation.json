@@ -12,8 +12,8 @@
     "subtitle": "Tarjeta de presentación de próxima generación",
     "description": "impulsada por IA para acelerar tu negocio",
     "subDescription": "Sin aplicación requerida, mensualidad gratuita. Comparte perfiles multilingües con un toque NFC.\nApoyando a freelancers en la adquisición de proyectos en el extranjero.",
-    "cta": "Solicitar Prueba Gratuita",
-    "limited": "¡Limitado a 50!",
+    "cta": "Solicitar Acceso Anticipado",
+    "limited": "¡Limitado a 100!",
     "features": {
       "noApp": "Sin App Requerida",
       "free": "Mensualidad Gratuita",
@@ -64,8 +64,8 @@
   },
   "cta": {
     "title": "¿Listo para comenzar?",
-    "description": "Experimenta el poder de TapForge con nuestra prueba gratuita limitada para 50 personas",
-    "trialButton": "Solicitar Prueba Gratuita",
+    "description": "Experimenta el poder de TapForge con nuestro acceso anticipado limitado para 100 personas (500 yenes/mes)",
+    "trialButton": "Solicitar Acceso Anticipado",
     "contactButton": "Contacto (Para Socios de Co-creación)",
     "tapNow": "¡Toca Ahora!",
     "profileDisplay": "Visualización de Perfil",
@@ -77,11 +77,11 @@
     }
   },
   "trialForm": {
-    "title": "Solicitar Prueba Gratuita",
+    "title": "Solicitar Acceso Anticipado",
     "description": "Crearemos una tarjeta de presentación para ti gratis.",
     "subDescription": "Cambios de diseño ilimitados, escaneo de tarjetas con IA y conversión VCard disponibles",
     "contactFormTitle": "Formulario de Contacto",
-    "contactFormDescription": "Para solicitar la prueba gratuita, contáctanos a través del botón de abajo.",
+    "contactFormDescription": "Para solicitar el acceso anticipado (500 yenes/mes), contáctanos a través del botón de abajo.",
     "contactFormButton": "Ir al Formulario de Contacto",
     "termsText": "Al solicitar, aceptas nuestros ",
     "termsLink": "Términos de Servicio",
@@ -316,7 +316,7 @@
         "tags": ["Operación Fácil", "Buena Impresión", "Rendimiento Costo-Beneficio"]
       }
     ],
-    "note": "Estas voces son hipotéticas. Planeamos seleccionar 5 reseñas reales de 50 participantes del ensayo y reemplazarlas."
+    "note": "Estas voces son hipotéticas. Planeamos seleccionar 5 reseñas reales de 100 participantes del acceso anticipado y reemplazarlas."
   },
   "faq": {
     "title": "Preguntas Frecuentes",
@@ -362,7 +362,7 @@
     "contact": {
       "title": "Contacto",
       "company": "Cor. Co., Ltd.",
-      "trial": "Prueba Gratuita"
+      "trial": "Acceso Anticipado"
     },
     "copyright": "© 2025 TapForge por Cor. Co., Ltd. Todos los derechos reservados.",
     "legal": {

@@ -12,8 +12,8 @@
     "subtitle": "AI駆動の次世代名刺",
     "description": "であなたのビジネスを加速",
     "subDescription": "アプリ不要、月額無料。NFCタップ一つで多言語プロフィールを共有。\nフリーランサーの海外案件獲得を支援します。",
-    "cta": "無料トライアル申し込み",
-    "limited": "50名限定!",
+    "cta": "早期アクセス申し込み",
+    "limited": "100名限定!",
     "features": {
       "noApp": "アプリ不要",
       "free": "月額無料",
@@ -64,8 +64,8 @@
   },
   "cta": {
     "title": "今すぐ始めませんか？",
-    "description": "50名限定の無料トライアルで、TapForgeの力を体験してください",
-    "trialButton": "無料トライアル申し込み",
+    "description": "100名限定の早期アクセス（月額500円）で、TapForgeの力を体験してください",
+    "trialButton": "早期アクセス申し込み",
     "contactButton": "お問い合わせ（共創パートナー向け）",
     "tapNow": "今すぐタップ!",
     "profileDisplay": "プロフィール表示",
@@ -77,11 +77,11 @@
     }
   },
   "trialForm": {
-    "title": "無料トライアル申し込み",
+    "title": "早期アクセス申し込み",
     "description": "あなたの名刺を1枚無料で作成します。",
     "subDescription": "デザイン変更無制限、AI名刺撮影・VCard変換利用可",
     "contactFormTitle": "お問い合わせフォーム",
-    "contactFormDescription": "無料トライアルのお申し込みは、下記のボタンからお問い合わせください。",
+    "contactFormDescription": "早期アクセス（月額500円）のお申し込みは、下記のボタンからお問い合わせください。",
     "contactFormButton": "お問い合わせフォームへ",
     "termsText": "申し込みにより、",
     "termsLink": "利用規約",
@@ -336,7 +336,7 @@
         ]
       }
     ],
-    "note": "これらの声は仮想的なものです。トライアル参加者50名の中から5件の実際のレビューを選抜して差し替える予定です。"
+    "note": "これらの声は仮想的なものです。早期アクセス参加者100名の中から5件の実際のレビューを選抜して差し替える予定です。"
   },
   "faq": {
     "title": "よくある質問",
@@ -382,7 +382,7 @@
     "contact": {
       "title": "お問い合わせ",
       "company": "Cor.株式会社",
-      "trial": "無料トライアル"
+      "trial": "早期アクセス"
     },
     "copyright": "© 2025 TapForge by Cor.株式会社. All rights reserved.",
     "legal": {

@@ -12,8 +12,8 @@
     "subtitle": "AI-powered next-generation business card",
     "description": "to accelerate your business",
     "subDescription": "No app required, free monthly. Share multilingual profiles with one NFC tap.\nSupporting freelancers in acquiring overseas projects.",
-    "cta": "Apply for Free Trial",
-    "limited": "Limited to 50!",
+    "cta": "Apply for Early Access",
+    "limited": "Limited to 100!",
     "features": {
       "noApp": "No App Required",
       "free": "Free Monthly",
@@ -64,8 +64,8 @@
   },
   "cta": {
     "title": "Ready to get started?",
-    "description": "Experience the power of TapForge with our limited free trial for 50 people",
-    "trialButton": "Apply for Free Trial",
+    "description": "Experience the power of TapForge with our limited early access for 100 people (¥500/month)",
+    "trialButton": "Apply for Early Access",
     "contactButton": "Contact (For Co-creation Partners)",
     "tapNow": "Tap Now!",
     "profileDisplay": "Profile Display",
@@ -77,11 +77,11 @@
     }
   },
   "trialForm": {
-    "title": "Apply for Free Trial",
+    "title": "Apply for Early Access",
     "description": "We'll create one business card for you for free.",
     "subDescription": "Unlimited design changes, AI business card scanning & VCard conversion available",
     "contactFormTitle": "Contact Form",
-    "contactFormDescription": "To apply for the free trial, please contact us through the button below.",
+    "contactFormDescription": "To apply for early access (¥500/month), please contact us through the button below.",
     "contactFormButton": "Go to Contact Form",
     "termsText": "By applying, you agree to our ",
     "termsLink": "Terms of Service",
@@ -336,7 +336,7 @@
         ]
       }
     ],
-    "note": "These voices are hypothetical. We plan to select 5 actual reviews from 50 trial participants and replace them."
+    "note": "These voices are hypothetical. We plan to select 5 actual reviews from 100 early access participants and replace them."
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -382,7 +382,7 @@
     "contact": {
       "title": "Contact",
       "company": "Cor. Co., Ltd.",
-      "trial": "Free Trial"
+      "trial": "Early Access"
     },
     "copyright": "© 2025 TapForge by Cor. Co., Ltd. All rights reserved.",
     "legal": {

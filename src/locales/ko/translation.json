@@ -12,8 +12,8 @@
     "subtitle": "AI 기반 차세대 명함",
     "description": "으로 비즈니스를 가속화",
     "subDescription": "앱 불필요, 월 사용료 무료. NFC 탭 한 번으로 다국어 프로필 공유.\n해외 프로젝트 획득을 지원하는 프리랜서.",
-    "cta": "무료 체험 신청",
-    "limited": "50명 한정!",
+    "cta": "조기 액세스 신청",
+    "limited": "100명 한정!",
     "features": {
       "noApp": "앱 불필요",
       "free": "월 사용료 무료",
@@ -64,8 +64,8 @@
   },
   "cta": {
     "title": "지금 시작하시겠습니까?",
-    "description": "50명 한정 무료 체험으로 TapForge의 힘을 경험하세요",
-    "trialButton": "무료 체험 신청",
+    "description": "100명 한정 조기 액세스(월 500엔)로 TapForge의 힘을 경험하세요",
+    "trialButton": "조기 액세스 신청",
     "contactButton": "문의 (공동 창조 파트너용)",
     "tapNow": "지금 탭!",
     "profileDisplay": "프로필 표시",
@@ -77,11 +77,11 @@
     }
   },
   "trialForm": {
-    "title": "무료 체험 신청",
+    "title": "조기 액세스 신청",
     "description": "명함 1장을 무료로 만들어 드립니다.",
     "subDescription": "무제한 디자인 변경, AI 명함 스캔 및 VCard 변환 사용 가능",
     "contactFormTitle": "문의 양식",
-    "contactFormDescription": "무료 체험 신청은 아래 버튼을 통해 문의해 주세요.",
+    "contactFormDescription": "조기 액세스(월 500엔) 신청은 아래 버튼을 통해 문의해 주세요.",
     "contactFormButton": "문의 양식으로 이동",
     "termsText": "신청하면 ",
     "termsLink": "이용약관",
@@ -316,7 +316,7 @@
         "tags": ["간편한 조작", "좋은 인상", "가성비"]
       }
     ],
-    "note": "이 소리들은 가상입니다. 체험 참가자 50명 중 5건의 실제 리뷰를 선발하여 교체할 예정입니다."
+    "note": "이 소리들은 가상입니다. 조기 액세스 참가자 100명 중 5건의 실제 리뷰를 선발하여 교체할 예정입니다."
   },
   "faq": {
     "title": "자주 묻는 질문",
@@ -362,7 +362,7 @@
     "contact": {
       "title": "연락처",
       "company": "Cor. Co., Ltd.",
-      "trial": "무료 체험"
+      "trial": "조기 액세스"
     },
     "copyright": "© 2025 TapForge by Cor. Co., Ltd. 모든 권리 보유.",
     "legal": {
