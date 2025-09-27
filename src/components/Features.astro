@@ -1,5 +1,16 @@
 ---
-import { features, pricingPlans } from "../config/features";
+import { features, pricingPlans, regularPricingPlans } from "../config/features";
+import { loadTranslation, getLocaleFromPathname, createTranslator } from '../utils/i18n';
+import type { Language } from '../lib/i18n';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const locale = lang || getLocaleFromPathname(Astro.url.pathname);
+const translations = await loadTranslation(locale);
+const t = translations.features;
 ---
 
 <section id="features" class="py-20 bg-white">
@@ -15,11 +26,11 @@ import { features, pricingPlans } from "../config/features";
           class="text-3xl md:text-4xl font-bold text-gray-900"
           id="features-title"
         >
-          TapForgeの特徴
+          {t.title}
         </h2>
       </div>
       <p class="text-xl text-gray-600" id="features-subtitle">
-        最新技術で名刺交換を革新
+        {t.subtitle}
       </p>
     </div>
 
@@ -63,54 +74,126 @@ import { features, pricingPlans } from "../config/features";
 
     <!-- Pricing Information -->
     <div
-      class="mt-16 bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-8"
+      class="mt-16 bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl p-8"
     >
       <div class="text-center">
-        <h3 class="text-2xl font-bold text-gray-900 mb-4" id="pricing-title">
-          料金体系（税込）
+        <h3 class="text-2xl font-bold text-gray-900 mb-2" id="pricing-title">
+          {t.pricing.title}
         </h3>
-        <div
-          class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto"
-          id="pricing-grid"
-        >
-          {
-            pricingPlans.map((plan, index) => (
-              <div class="bg-white rounded-lg p-6 shadow-sm">
-                <h4
-                  class="font-semibold text-gray-900 mb-2"
-                  id={`plan-${index}-title`}
-                >
-                  {plan.title}
-                </h4>
-                <div
-                  class={`text-2xl font-bold ${plan.priceColor} mb-2`}
-                  id={`plan-${index}-price`}
-                >
-                  {plan.price}
-                </div>
-                <p
-                  class="text-sm text-gray-600"
-                  id={`plan-${index}-description`}
-                >
-                  {plan.description}
-                </p>
-              </div>
-            ))
-          }
+
+        <!-- Early Access Counter -->
+        <div class="mb-6 inline-block bg-red-100 rounded-full px-6 py-2">
+          <span class="text-red-600 font-bold text-lg">
+            {t.pricing.earlyAccess}<span id="remaining-slots">100</span>名
+          </span>
         </div>
-        <p
-          class="text-lg font-semibold text-gray-700 mt-6"
-          id="pricing-tagline"
-        >
-          業界最安値で技術を民主化
-        </p>
+
+        <!-- Early Access Pricing -->
+        <div class="mb-8">
+          <h4 class="text-xl font-bold text-red-600 mb-4">{t.pricing.earlyAccessTitle}</h4>
+          <div
+            class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+            id="early-pricing-grid"
+          >
+            {
+              pricingPlans.map((plan, index) => (
+                <div class="bg-white rounded-lg p-6 shadow-lg border-2 border-red-200">
+                  <h4
+                    class="font-semibold text-gray-900 mb-2"
+                    id={`early-plan-${index}-title`}
+                  >
+                    {plan.title}
+                  </h4>
+                  <div
+                    class={`text-2xl font-bold ${plan.priceColor} mb-2`}
+                    id={`early-plan-${index}-price`}
+                  >
+                    {plan.price}
+                  </div>
+                  <p
+                    class="text-sm text-gray-600"
+                    id={`early-plan-${index}-description`}
+                  >
+                    {plan.description}
+                  </p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <!-- Regular Pricing -->
+        <div class="pt-8 border-t border-gray-300">
+          <h4 class="text-lg font-bold text-gray-600 mb-4">{t.pricing.regularTitle}</h4>
+          <div
+            class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto opacity-75"
+            id="regular-pricing-grid"
+          >
+            {
+              regularPricingPlans.map((plan, index) => (
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                  <h4
+                    class="font-semibold text-gray-700 mb-2 text-sm"
+                    id={`regular-plan-${index}-title`}
+                  >
+                    {plan.title}
+                  </h4>
+                  <div
+                    class={`text-xl font-bold ${plan.priceColor} mb-2`}
+                    id={`regular-plan-${index}-price`}
+                  >
+                    {plan.price}
+                  </div>
+                  <p
+                    class="text-xs text-gray-500"
+                    id={`regular-plan-${index}-description`}
+                  >
+                    {plan.description}
+                  </p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <!-- Value Proposition -->
+        <div class="mt-8 bg-yellow-50 rounded-xl p-4">
+          <p class="text-lg font-bold text-yellow-800" id="early-access-benefits-title">
+            {translations.benefits?.title || ''}
+          </p>
+          <div class="flex flex-wrap justify-center gap-4 mt-3 text-sm">
+            <span class="text-yellow-700" id="benefit-1">{translations.cta?.features?.noApp || ''}</span>
+            <span class="text-yellow-700" id="benefit-2">{translations.cta?.features?.free || ''}</span>
+            <span class="text-yellow-700" id="benefit-3">{translations.cta?.features?.multilingual || ''}
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- Early Access Counter Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Simulate remaining slots (you can replace this with actual backend data)
+        const totalSlots = 100;
+        const usedSlots = Math.floor(Math.random() * 30); // Simulate 0-30 slots taken
+        const remainingSlots = totalSlots - usedSlots;
+
+        const slotElement = document.getElementById("remaining-slots");
+        if (slotElement) {
+          slotElement.textContent = remainingSlots.toString();
+
+          // Add urgency styling if slots are running low
+          if (remainingSlots < 20) {
+            slotElement.parentElement?.classList.add("animate-pulse");
+          }
+        }
+      });
+    </script>
 
     <!-- Demo Video Section -->
     <div class="mt-16 text-center">
       <h3 class="text-2xl font-bold text-gray-900 mb-8" id="demo-title">
-        デモ動画
+        {t.demo.title}
       </h3>
       <div class="bg-gray-100 rounded-2xl p-8 max-w-2xl mx-auto">
         <div
@@ -127,10 +210,10 @@ import { features, pricingPlans } from "../config/features";
               ></path>
             </svg>
             <p class="text-gray-600" id="demo-description">
-              AI名刺撮影デモ動画
+              {t.demo.description}
             </p>
             <p class="text-sm text-gray-500" id="demo-note">
-              （YouTubeリンク予定）
+              {t.demo.note}
             </p>
           </div>
         </div>
@@ -139,312 +222,3 @@ import { features, pricingPlans } from "../config/features";
   </div>
 </section>
 
-<script>
-  // Features section language switching
-  document.addEventListener("DOMContentLoaded", function () {
-    // Get current language from URL or localStorage
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get("lang");
-    const storedLang = localStorage.getItem("preferred-language");
-    const currentLang = urlLang || storedLang || "ja";
-
-    // Update features content based on language
-    updateFeaturesContent(currentLang);
-  });
-
-  function updateFeaturesContent(lang: string) {
-    const translations = {
-      ja: {
-        title: "TapForgeの特徴",
-        subtitle: "最新技術で名刺交換を革新",
-        features: [
-          {
-            title: "AI名刺撮影・VCard変換",
-            description:
-              "紙の名刺をAIでデータ化（精度95%）、VCardとしてスマートフォンに保存",
-          },
-          {
-            title: "多言語対応",
-            description:
-              "日本語、英語、中国語（簡体字）、スペイン語の4言語に自動で切り替わり",
-          },
-          {
-            title: "アプリ不要",
-            description:
-              "NFCタップで即座にプロフィールを表示（オンライン環境）",
-          },
-          {
-            title: "ペーパーレス",
-            description: "SDGs目標12に貢献、完全ペーパーレスで環境に配慮",
-          },
-        ],
-        pricing: {
-          title: "料金体系（税込）",
-          plans: [
-            { title: "初期費用", price: "¥3,000", description: "1枚目" },
-            { title: "追加カード", price: "¥600", description: "2枚目以降" },
-            { title: "月額料金", price: "¥0", description: "完全無料" },
-          ],
-          tagline: "業界最安値で技術を民主化",
-        },
-        demo: {
-          title: "デモ動画",
-          description: "AI名刺撮影デモ動画",
-          note: "（YouTubeリンク予定）",
-        },
-      },
-      en: {
-        title: "TapForge Features",
-        subtitle:
-          "Revolutionizing business card exchange with cutting-edge technology",
-        features: [
-          {
-            title: "AI Business Card Scanning & VCard Conversion",
-            description:
-              "Digitize paper business cards with AI (95% accuracy) and save as VCard to smartphones",
-          },
-          {
-            title: "Multilingual Support",
-            description:
-              "Automatically switches between 4 languages: Japanese, English, Chinese (Simplified), Spanish",
-          },
-          {
-            title: "No App Required",
-            description:
-              "Instantly display profiles with NFC tap (online environment)",
-          },
-          {
-            title: "Paperless",
-            description:
-              "Contributes to SDGs Goal 12, completely paperless and environmentally conscious",
-          },
-        ],
-        pricing: {
-          title: "Pricing (Tax Included)",
-          plans: [
-            {
-              title: "Initial Cost",
-              price: "¥3,000",
-              description: "First card",
-            },
-            {
-              title: "Additional Cards",
-              price: "¥600",
-              description: "2nd card onwards",
-            },
-            {
-              title: "Monthly Fee",
-              price: "¥0",
-              description: "Completely free",
-            },
-          ],
-          tagline: "Democratizing technology at industry's lowest price",
-        },
-        demo: {
-          title: "Demo Video",
-          description: "AI Business Card Scanning Demo Video",
-          note: "(YouTube link coming soon)",
-        },
-      },
-      zh: {
-        title: "TapForge特点",
-        subtitle: "用最新技术革新名片交换",
-        features: [
-          {
-            title: "AI名片扫描·VCard转换",
-            description:
-              "用AI将纸质名片数字化（精度95%），保存为VCard到智能手机",
-          },
-          {
-            title: "多语言支持",
-            description: "自动切换4种语言：日语、英语、中文（简体）、西班牙语",
-          },
-          {
-            title: "无需应用",
-            description: "NFC轻触即可立即显示个人资料（在线环境）",
-          },
-          {
-            title: "无纸化",
-            description: "为SDGs目标12做贡献，完全无纸化，环保意识",
-          },
-        ],
-        pricing: {
-          title: "价格体系（含税）",
-          plans: [
-            { title: "初始费用", price: "¥3,000", description: "第1张" },
-            { title: "追加卡片", price: "¥600", description: "第2张起" },
-            { title: "月费", price: "¥0", description: "完全免费" },
-          ],
-          tagline: "以行业最低价格普及技术",
-        },
-        demo: {
-          title: "演示视频",
-          description: "AI名片扫描演示视频",
-          note: "（YouTube链接即将推出）",
-        },
-      },
-      ko: {
-        title: "TapForge 특징",
-        subtitle: "최신 기술로 명함 교환 혁신",
-        features: [
-          {
-            title: "AI 명함 촬영·VCard 변환",
-            description:
-              "종이 명함을 AI로 데이터화 (정확도 95%), VCard로 스마트폰에 저장",
-          },
-          {
-            title: "다국어 지원",
-            description:
-              "일본어, 영어, 중국어(간체), 스페인어 4개국어로 자동 전환",
-          },
-          {
-            title: "앱 불필요",
-            description:
-              "NFC 탭으로 즉시 프로필 표시 (온라인 환경)",
-          },
-          {
-            title: "페이퍼리스",
-            description: "SDGs 목표 12에 기여, 완전 페이퍼리스로 환경 고려",
-          },
-        ],
-        pricing: {
-          title: "요금 체계 (세금 포함)",
-          plans: [
-            { title: "초기 비용", price: "¥3,000", description: "1장" },
-            { title: "추가 카드", price: "¥600", description: "2장부터" },
-            { title: "월 비용", price: "¥0", description: "완전 무료" },
-          ],
-          tagline: "업계 최저가로 기술 민주화",
-        },
-        demo: {
-          title: "데모 영상",
-          description: "AI 명함 촬영 데모 영상",
-          note: "(YouTube 링크 예정)",
-        },
-      },
-      es: {
-        title: "Características de TapForge",
-        subtitle:
-          "Revolucionando el intercambio de tarjetas de presentación con tecnología de vanguardia",
-        features: [
-          {
-            title: "Escaneo de Tarjeta con IA y Conversión VCard",
-            description:
-              "Digitaliza tarjetas de presentación de papel con IA (95% precisión) y guarda como VCard en smartphones",
-          },
-          {
-            title: "Soporte Multilingüe",
-            description:
-              "Cambia automáticamente entre 4 idiomas: Japonés, Inglés, Chino (Simplificado), Español",
-          },
-          {
-            title: "Sin App Requerida",
-            description:
-              "Muestra perfiles instantáneamente con toque NFC (entorno en línea)",
-          },
-          {
-            title: "Sin Papel",
-            description:
-              "Contribuye al Objetivo 12 de los ODS, completamente sin papel y consciente del medio ambiente",
-          },
-        ],
-        pricing: {
-          title: "Precios (Impuestos Incluidos)",
-          plans: [
-            {
-              title: "Costo Inicial",
-              price: "¥3,000",
-              description: "Primera tarjeta",
-            },
-            {
-              title: "Tarjetas Adicionales",
-              price: "¥600",
-              description: "2da tarjeta en adelante",
-            },
-            {
-              title: "Tarifa Mensual",
-              price: "¥0",
-              description: "Completamente gratis",
-            },
-          ],
-          tagline:
-            "Democratizando la tecnología al precio más bajo de la industria",
-        },
-        demo: {
-          title: "Video Demo",
-          description: "Video Demo de Escaneo de Tarjeta con IA",
-          note: "(Enlace de YouTube próximamente)",
-        },
-      },
-    };
-
-    const t = (translations as any)[lang] || translations["ja"];
-
-    // Update main title and subtitle
-    const titleElement = document.getElementById("features-title");
-    if (titleElement) {
-      titleElement.textContent = t.title;
-    }
-
-    const subtitleElement = document.getElementById("features-subtitle");
-    if (subtitleElement) {
-      subtitleElement.textContent = t.subtitle;
-    }
-
-    // Update features
-    for (let i = 0; i < t.features.length; i++) {
-      const titleElement = document.getElementById(`feature-${i}-title`);
-      const descElement = document.getElementById(`feature-${i}-description`);
-
-      if (titleElement) {
-        titleElement.textContent = t.features[i].title;
-      }
-      if (descElement) {
-        descElement.textContent = t.features[i].description;
-      }
-    }
-
-    // Update pricing
-    const pricingTitleElement = document.getElementById("pricing-title");
-    if (pricingTitleElement) {
-      pricingTitleElement.textContent = t.pricing.title;
-    }
-
-    for (let i = 0; i < t.pricing.plans.length; i++) {
-      const titleElement = document.getElementById(`plan-${i}-title`);
-      const priceElement = document.getElementById(`plan-${i}-price`);
-      const descElement = document.getElementById(`plan-${i}-description`);
-
-      if (titleElement) {
-        titleElement.textContent = t.pricing.plans[i].title;
-      }
-      if (priceElement) {
-        priceElement.textContent = t.pricing.plans[i].price;
-      }
-      if (descElement) {
-        descElement.textContent = t.pricing.plans[i].description;
-      }
-    }
-
-    const taglineElement = document.getElementById("pricing-tagline");
-    if (taglineElement) {
-      taglineElement.textContent = t.pricing.tagline;
-    }
-
-    // Update demo section
-    const demoTitleElement = document.getElementById("demo-title");
-    if (demoTitleElement) {
-      demoTitleElement.textContent = t.demo.title;
-    }
-
-    const demoDescElement = document.getElementById("demo-description");
-    if (demoDescElement) {
-      demoDescElement.textContent = t.demo.description;
-    }
-
-    const demoNoteElement = document.getElementById("demo-note");
-    if (demoNoteElement) {
-      demoNoteElement.textContent = t.demo.note;
-    }
-  }
-</script>
