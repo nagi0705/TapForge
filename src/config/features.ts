@@ -111,7 +111,7 @@ export const pricingPlans: PricingPlan[] = [
   },
   {
     id: "early-monthly",
-    title: "【早期アクセス】月額料金",
+    title: "【早期アクセス】月額料金*",
     price: "¥500/アカウント",
     description: "初月NFCカード1枚含む・100名限定",
     priceColor: "text-red-600",
@@ -135,7 +135,7 @@ export const regularPricingPlans: PricingPlan[] = [
   },
   {
     id: "regular-monthly",
-    title: "通常料金 月額",
+    title: "通常料金 月額*",
     price: "¥700~/アカウント",
     description: "段階的割引制（¥700→¥600→¥500）",
     priceColor: "text-blue-600",

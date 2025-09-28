@@ -69,9 +69,13 @@
     "contactButton": "联系我们（共创合作伙伴）",
     "tapNow": "立即轻触！",
     "profileDisplay": "配置文件显示",
+    "trialLimited": "限定100人！剩余",
+    "trialSlots": "人",
+    "trialDescription": "永久以每月500日元的价格使用",
+    "trialSubDescription": "初始费用免费，每月500日元（首月包含1张NFC卡片），最低3个月合同",
     "features": {
       "noApp": "无需应用",
-      "free": "初始费用免费",
+      "free": "每月500日元～",
       "multilingual": "4种语言",
       "aiScanning": "AI名片扫描"
     }
@@ -103,7 +107,8 @@
       "period": "月费",
       "monthlyCost": "月费：¥500起",
       "orgTime": "整理时间：5分钟",
-      "envImpact": "环境影响：零"
+      "envImpact": "环境影响：零",
+      "envImpactIcon": "零"
     },
     "targetAudience": "适合希望增加海外项目的自由职业者"
   },
@@ -130,6 +135,7 @@
     },
     "pricing": {
       "title": "价格体系（含税）",
+      "earlyAccessUnit": "人",
       "plans": {
         "initial": {
           "title": "初始费用",
@@ -142,9 +148,10 @@
           "description": "第二张起"
         },
         "monthly": {
-          "title": "月费",
-          "price": "¥500起",
-          "description": "月度计划"
+          "title": "月使用费*",
+          "price": "¥500~¥700/月",
+          "description": "月度计划",
+          "note": "*包含1张NFC名片服务"
         }
       },
       "tagline": "带OCR功能的NFC名片业界最低价 - 通常年费11,000日元的功能以月费500日元起提供"

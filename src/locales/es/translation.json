@@ -69,9 +69,13 @@
     "contactButton": "Contacto (Para Socios de Co-creación)",
     "tapNow": "¡Toca Ahora!",
     "profileDisplay": "Visualización de Perfil",
+    "trialLimited": "¡Limitado a 100 personas! Quedan ",
+    "trialSlots": " personas",
+    "trialDescription": "Disponible permanentemente por 500 yenes al mes",
+    "trialSubDescription": "Sin costo inicial, 500 yenes/mes (incluye 1 tarjeta NFC el primer mes), contrato mínimo de 3 meses",
     "features": {
       "noApp": "Sin App Requerida",
-      "free": "Sin Costo Inicial",
+      "free": "500 yenes/mes~",
       "multilingual": "4 Idiomas",
       "aiScanning": "Escaneo de Tarjetas con IA"
     }
@@ -103,7 +107,8 @@
       "period": "Cuota mensual",
       "monthlyCost": "Cuota mensual: ¥500~",
       "orgTime": "Tiempo de organización: 5 minutos",
-      "envImpact": "Impacto ambiental: Cero"
+      "envImpact": "Impacto ambiental: Cero",
+      "envImpactIcon": "Cero"
     },
     "targetAudience": "Perfecto para freelancers que quieren aumentar proyectos internacionales"
   },
@@ -130,6 +135,7 @@
     },
     "pricing": {
       "title": "Sistema de Precios (Impuestos Incluidos)",
+      "earlyAccessUnit": "personas",
       "plans": {
         "initial": {
           "title": "Costo Inicial",
@@ -142,9 +148,10 @@
           "description": "Desde la segunda"
         },
         "monthly": {
-          "title": "Cuota Mensual",
-          "price": "¥500~",
-          "description": "Plan mensual"
+          "title": "Cuota de Uso Mensual*",
+          "price": "¥500~¥700/mes",
+          "description": "Plan mensual",
+          "note": "*Incluye servicio de 1 tarjeta NFC"
         }
       },
       "tagline": "El precio más bajo de la industria para tarjetas NFC con función OCR - Ofreciendo funciones que normalmente cuestan 11,000 yenes anuales por 500 yenes~/mes"

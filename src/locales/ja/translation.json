@@ -69,9 +69,13 @@
     "contactButton": "お問い合わせ（共創パートナー向け）",
     "tapNow": "今すぐタップ!",
     "profileDisplay": "プロフィール表示",
+    "trialLimited": "100名限定! 残り",
+    "trialSlots": "名",
+    "trialDescription": "永続的に月額500円でご利用いただけます",
+    "trialSubDescription": "初期費用無料、月額500円（初月NFCカード1枚含む）、最低3ヶ月契約",
     "features": {
       "noApp": "アプリ不要",
-      "free": "初期費用無料",
+      "free": "月額500円～",
       "multilingual": "4言語対応",
       "aiScanning": "AI名刺撮影"
     }
@@ -103,7 +107,8 @@
       "period": "月額料金",
       "monthlyCost": "月額料金: ¥500〜",
       "orgTime": "整理時間: 5分",
-      "envImpact": "環境負荷: ゼロ"
+      "envImpact": "環境負荷: ゼロ",
+      "envImpactIcon": "ゼロ"
     },
     "targetAudience": "海外案件を増やしたいフリーランサーに最適"
   },
@@ -130,6 +135,7 @@
     },
     "pricing": {
       "title": "料金体系（税込）",
+      "earlyAccessUnit": "名",
       "plans": {
         "initial": {
           "title": "初期費用",
@@ -142,9 +148,10 @@
           "description": "2枚目以降"
         },
         "monthly": {
-          "title": "月額料金",
-          "price": "¥500〜",
-          "description": "月額プラン"
+          "title": "月額利用料金*",
+          "price": "¥500〜¥700/月",
+          "description": "月額プラン",
+          "note": "*NFC名刺カード1枚サービス含む"
         }
       },
       "tagline": "OCR機能付きNFC名刺の業界最安値 - 通常年間11,000円の機能を月額500円〜で提供"

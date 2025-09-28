@@ -69,9 +69,13 @@
     "contactButton": "문의 (공동 창조 파트너용)",
     "tapNow": "지금 탭!",
     "profileDisplay": "프로필 표시",
+    "trialLimited": "100명 한정! 남은 ",
+    "trialSlots": "명",
+    "trialDescription": "영구적으로 월 500엔으로 이용 가능",
+    "trialSubDescription": "초기 비용 무료, 월 500엔(첫 달 NFC 카드 1장 포함), 최소 3개월 계약",
     "features": {
       "noApp": "앱 불필요",
-      "free": "초기 비용 무료",
+      "free": "월 500엔~",
       "multilingual": "4개 언어",
       "aiScanning": "AI 명함 스캔"
     }
@@ -103,7 +107,8 @@
       "period": "월 사용료",
       "monthlyCost": "월 사용료: ¥500~",
       "orgTime": "정리 시간: 5분",
-      "envImpact": "환경 영향: 제로"
+      "envImpact": "환경 영향: 제로",
+      "envImpactIcon": "제로"
     },
     "targetAudience": "해외 프로젝트를 늘리고 싶은 프리랜서에게 최적"
   },
@@ -130,6 +135,7 @@
     },
     "pricing": {
       "title": "가격 체계(세금 포함)",
+      "earlyAccessUnit": "명",
       "plans": {
         "initial": {
           "title": "초기 비용",
@@ -142,9 +148,10 @@
           "description": "두 번째부터"
         },
         "monthly": {
-          "title": "월 사용료",
+          "title": "월 사용료*",
           "price": "¥500~",
-          "description": "월정액 플랜"
+          "description": "월정액 플랜",
+          "note": "*NFC 명함 1장 서비스 포함"
         }
       },
       "tagline": "OCR 기능이 있는 NFC 명함의 업계 최저가 - 일반적으로 연간 11,000엔의 기능을 월 500엔~에 제공"

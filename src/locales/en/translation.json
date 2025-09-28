@@ -69,9 +69,13 @@
     "contactButton": "Contact (For Co-creation Partners)",
     "tapNow": "Tap Now!",
     "profileDisplay": "Profile Display",
+    "trialLimited": "Limited to 100 people! ",
+    "trialSlots": " remaining",
+    "trialDescription": "Available permanently for ¥500 per month",
+    "trialSubDescription": "No initial fee, ¥500 per month (includes 1 NFC card for the first month), minimum 3-month contract",
     "features": {
       "noApp": "No App Required",
-      "free": "No Initial Cost",
+      "free": "¥500/month~",
       "multilingual": "4 Languages",
       "aiScanning": "AI Business Card Scanning"
     }
@@ -103,7 +107,8 @@
       "period": "Monthly fee",
       "monthlyCost": "Monthly fee: ¥500~",
       "orgTime": "Organization time: 5 minutes",
-      "envImpact": "Environmental impact: Zero"
+      "envImpact": "Environmental impact: Zero",
+      "envImpactIcon": "Zero"
     },
     "targetAudience": "Perfect for freelancers who want to increase overseas projects"
   },
@@ -130,6 +135,7 @@
     },
     "pricing": {
       "title": "Pricing (Tax Included)",
+      "earlyAccessUnit": "people",
       "plans": {
         "initial": {
           "title": "Initial Cost",
@@ -142,9 +148,10 @@
           "description": "2nd card onwards"
         },
         "monthly": {
-          "title": "Monthly Fee",
-          "price": "¥500~",
-          "description": "Monthly plan"
+          "title": "Monthly Usage Fee*",
+          "price": "¥500~¥700/month",
+          "description": "Monthly plan",
+          "note": "*Includes 1 NFC business card service"
         }
       },
       "tagline": "Industry's lowest price for NFC cards with OCR function - Offering features normally costing 11,000 yen annually for 500 yen~/month"

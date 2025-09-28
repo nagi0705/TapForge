@@ -40,14 +40,14 @@ const t = createTranslator(translations);
             </h2>
             <p class="text-lg text-gray-600 mb-2">
               <span class="text-red-500 font-bold" id="trial-limited"
-                >100名限定! 残り<span id="trial-slots">100</span>名</span
+                >{t('cta.trialLimited')} <span id="trial-slots">100</span>{t('cta.trialSlots')}</span
               >
               <span id="trial-description"
-                >永続的に月額500円でご利用いただけます</span
+                >{t('cta.trialDescription')}</span
               >
             </p>
             <p class="text-sm text-gray-500" id="trial-sub-description">
-              初期費用無料、月額500円（初月NFCカード1枚含む）、最低3ヶ月契約
+              {t('cta.trialSubDescription')}
             </p>
           </div>
 
@@ -58,10 +58,10 @@ const t = createTranslator(translations);
                 class="text-xl font-semibold text-gray-800 mb-4"
                 id="trial-form-title"
               >
-                早期アクセスに申し込む
+                {t('trialForm.title')}
               </h3>
               <p class="text-gray-600 mb-6" id="trial-form-description">
-                今すぐ早期アクセスに申し込んで、特別価格を永続適用。
+                {t('trialForm.description')}
               </p>
               <a
                 href="#trial"
@@ -72,24 +72,24 @@ const t = createTranslator(translations);
                   class="text-red-500 font-bold mr-2"
                   id="trial-form-limited">100名限定!</span
                 >
-                <span id="trial-form-button-text">早期アクセスに申し込む</span>
+                <span id="trial-form-button-text">{t('trialForm.title')}</span>
               </a>
             </div>
           </div>
           <!-- Terms and Conditions -->
           <div class="mt-6 text-center">
             <p class="text-xs text-gray-500" id="terms-text">
-              <span id="terms-text-start">申し込みにより、</span><a
+              <span id="terms-text-start">{t('trialForm.termsText')}</span><a
                 href="/terms"
                 class="text-blue-600 hover:underline"
                 id="terms-link"
-                data-link="terms">利用規約</a
-              ><span id="terms-and">および</span><a
+                data-link="terms">{t('trialForm.termsLink')}</a
+              ><span id="terms-and">{t('trialForm.andText')}</span><a
                 href="/privacy"
                 class="text-blue-600 hover:underline"
                 id="privacy-link"
-                data-link="privacy">プライバシーポリシー</a
-              ><span id="terms-text-end">に同意したものとみなされます。</span>
+                data-link="privacy">{t('trialForm.privacyLink')}</a
+              ><span id="terms-text-end">{t('trialForm.agreementText')}</span>
             </p>
           </div>
         </div>
@@ -111,7 +111,7 @@ const t = createTranslator(translations);
               d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
               clip-rule="evenodd"></path>
           </svg>
-          <span id="cta-feature-1">アプリ不要</span>
+          <span id="cta-feature-1">{t('cta.features.noApp')}</span>
         </div>
         <div class="flex items-center">
           <svg
@@ -124,7 +124,7 @@ const t = createTranslator(translations);
               d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
               clip-rule="evenodd"></path>
           </svg>
-          <span id="cta-feature-2">月額500円～</span>
+          <span id="cta-feature-2">{t('cta.features.free')}</span>
         </div>
         <div class="flex items-center">
           <svg
@@ -137,7 +137,7 @@ const t = createTranslator(translations);
               d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
               clip-rule="evenodd"></path>
           </svg>
-          <span id="cta-feature-3">4言語対応</span>
+          <span id="cta-feature-3">{t('cta.features.multilingual')}</span>
         </div>
         <div class="flex items-center">
           <svg
@@ -150,7 +150,7 @@ const t = createTranslator(translations);
               d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
               clip-rule="evenodd"></path>
           </svg>
-          <span id="cta-feature-4">AI名刺撮影</span>
+          <span id="cta-feature-4">{t('cta.features.aiScanning')}</span>
         </div>
       </div>
     </div>
