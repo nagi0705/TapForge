@@ -1,12 +1,15 @@
 ---
-import { translations, type Language } from "../lib/i18n";
+import { loadTranslation, getLocaleFromPathname } from '../utils/i18n';
+import type { Language } from '../lib/i18n';
 
 interface Props {
   lang: Language;
 }
 
-const { lang = "ja" } = Astro.props;
-const t = translations[lang].faq;
+const { lang } = Astro.props;
+const locale = lang || getLocaleFromPathname(Astro.url.pathname);
+const translations = await loadTranslation(locale);
+const t = translations.faq;
 ---
 
 <section id="faq" class="py-20 bg-white">
@@ -196,16 +199,130 @@ const t = translations[lang].faq;
             </p>
           </div>
         </details>
+
+        <!-- FAQ Item 6: 月額制について -->
+        <details class="group bg-gray-50 rounded-lg">
+          <summary
+            class="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-100 transition-colors"
+          >
+            <h3 class="text-lg font-semibold text-gray-900">
+              {lang === "ja" ? "なぜ月額制になったのですか？" :
+               lang === "en" ? "Why did you switch to a subscription model?" :
+               lang === "zh" ? "为什么改为订阅制？" :
+               lang === "es" ? "¿Por qué cambiaron a un modelo de suscripción?" :
+               lang === "ko" ? "왜 월정액제로 변경되었나요?" :
+               "なぜ月額制になったのですか？"}
+            </h3>
+            <svg
+              class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="text-gray-700 leading-relaxed">
+              {lang === "ja" ? "常に最新の機能とセキュリティを提供し、継続的にサービスを改善するためです。月額制により、新機能の開発やサポート体制の充実が可能になります。" :
+               lang === "en" ? "To continuously provide the latest features and security updates, and to improve our service constantly. The subscription model enables us to develop new features and enhance support." :
+               lang === "zh" ? "为了持续提供最新功能和安全更新，并不断改进我们的服务。订阅模式使我们能够开发新功能并增强支持。" :
+               lang === "es" ? "Para proporcionar continuamente las últimas características y actualizaciones de seguridad, y mejorar constantemente nuestro servicio." :
+               lang === "ko" ? "최신 기능과 보안을 지속적으로 제공하고 서비스를 계속 개선하기 위해서입니다." :
+               "常に最新の機能とセキュリティを提供し、継続的にサービスを改善するためです。"}
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ Item 7: 早期アクセスと通常料金の違い -->
+        <details class="group bg-gray-50 rounded-lg">
+          <summary
+            class="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-100 transition-colors"
+          >
+            <h3 class="text-lg font-semibold text-gray-900">
+              {lang === "ja" ? "早期アクセスと通常料金の違いは？" :
+               lang === "en" ? "What's the difference between early access and regular pricing?" :
+               lang === "zh" ? "早期访问和常规定价有什么区别？" :
+               lang === "es" ? "¿Cuál es la diferencia entre acceso anticipado y precio regular?" :
+               lang === "ko" ? "조기 액세스와 일반 요금의 차이는 무엇인가요?" :
+               "早期アクセスと通常料金の違いは？"}
+            </h3>
+            <svg
+              class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="text-gray-700 leading-relaxed">
+              {lang === "ja" ? "早期アクセスは永続的に月額500円でご利用いただけます。通常料金は700円スタートで、段階的に割引され、13ヶ月目以降は500円になります。早期アクセスは限定100名様のみの特別プログラムです。" :
+               lang === "en" ? "Early access members enjoy a permanent rate of ¥500/month. Regular pricing starts at ¥700 and gradually decreases to ¥500 after 13 months. Early access is limited to 100 members only." :
+               lang === "zh" ? "早期访问会员可享受永久的500日元/月费率。常规定价从700日元开始，13个月后逐渐降至500日元。早期访问仅限100名会员。" :
+               lang === "es" ? "Los miembros de acceso anticipado disfrutan de una tarifa permanente de ¥500/mes. El precio regular comienza en ¥700 y disminuye gradualmente a ¥500 después de 13 meses." :
+               lang === "ko" ? "조기 액세스는 영구적으로 월 500엔으로 이용할 수 있습니다. 일반 요금은 700엔부터 시작하여 단계적으로 할인되어 13개월째부터 500엔이 됩니다." :
+               "早期アクセスは永続的に月額500円でご利用いただけます。"}
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ Item 8: 解約について -->
+        <details class="group bg-gray-50 rounded-lg">
+          <summary
+            class="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-100 transition-colors"
+          >
+            <h3 class="text-lg font-semibold text-gray-900">
+              {lang === "ja" ? "解約はいつでもできますか？" :
+               lang === "en" ? "Can I cancel anytime?" :
+               lang === "zh" ? "我可以随时取消吗？" :
+               lang === "es" ? "¿Puedo cancelar en cualquier momento?" :
+               lang === "ko" ? "언제든지 해약할 수 있나요?" :
+               "解約はいつでもできますか？"}
+            </h3>
+            <svg
+              class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="text-gray-700 leading-relaxed">
+              {lang === "ja" ? "早期アクセスは3ヶ月の最低契約期間後、通常プランは3ヶ月ごとの更新時に解約可能です。解約後もNFCカードは継続してご利用いただけますが、オンライン機能は停止します。" :
+               lang === "en" ? "Early access requires a 3-month minimum contract, then you can cancel anytime. Regular plans can be cancelled at 3-month renewal periods. Your NFC card remains functional after cancellation, but online features will be disabled." :
+               lang === "zh" ? "早期访问需要3个月的最低合同，之后您可以随时取消。常规计划可在3个月更新期间取消。取消后您的NFC卡仍可使用，但在线功能将被禁用。" :
+               lang === "es" ? "El acceso anticipado requiere un contrato mínimo de 3 meses. Los planes regulares se pueden cancelar en períodos de renovación de 3 meses." :
+               lang === "ko" ? "조기 액세스는 3개월 최소 계약 기간 후, 일반 플랜은 3개월마다 갱신 시 해약 가능합니다." :
+               "早期アクセスは3ヶ月の最低契約期間後、解約可能です。"}
+            </p>
+          </div>
+        </details>
       </div>
     </div>
 
     <!-- Additional Help -->
     <div class="mt-12 text-center">
       <div class="bg-blue-50 rounded-xl p-8 max-w-2xl mx-auto">
-        <h3 class="text-xl font-semibold text-gray-900 mb-4">
-          {t.additionalHelp.title}
+        <h3 class="text-xl font-semibold text-gray-900 mb-4" id="additional-help-title">
+          さらに詳しく知りたい方は
         </h3>
-        <p class="text-gray-600 mb-6">{t.additionalHelp.description}</p>
+        <p class="text-gray-600 mb-6" id="additional-help-description">お気軽にお問い合わせください</p>
         <a
           href="https://cor-jp.com/contact/"
           target="_blank"
@@ -225,333 +342,10 @@ const t = translations[lang].faq;
               d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
             ></path>
           </svg>
-          {t.additionalHelp.button}
+          <span id="additional-help-button-text">お問い合わせ</span>
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<script>
-  // Client-side language switching for FAQ
-  document.addEventListener("DOMContentLoaded", function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get("lang");
-    const storedLang = localStorage.getItem("preferred-language");
-    const currentLang = urlLang || storedLang || "ja";
-
-    updateFAQContent(currentLang);
-    
-    // Force Korean translation if needed
-    if (currentLang === 'ko') {
-      setTimeout(() => {
-        forceKoreanFAQTranslation();
-      }, 100);
-      setTimeout(() => {
-        forceKoreanFAQTranslation();
-      }, 500);
-      setTimeout(() => {
-        forceKoreanFAQTranslation();
-      }, 1000);
-    }
-  });
-
-  function updateFAQContent(lang: string) {
-    const translations = {
-      ja: {
-        title: "よくある質問",
-        subtitle: "お客様からよくいただくご質問にお答えします",
-        items: [
-          {
-            question: "どのスマホでもNFCは使えますか？",
-            answer:
-              "95%のスマホで互換性があります。iPhone 7以降、Android NFC対応機種でご利用いただけます。\n具体的な対応機種については、各スマホメーカーの公式サイトをご確認ください。",
-          },
-          {
-            question: "名刺読み取りの精度は？",
-            answer:
-              "AI名刺撮影・VCard変換の精度は95%です。継続的な改善により、さらなる精度向上を目指しています。\n認識に失敗した場合は、手動での修正も可能です。",
-          },
-          {
-            question: "デザイン変更は自分でできるのですか？",
-            answer:
-              "管理画面から無制限でデザイン変更が可能です。\nライトカラー（白・ライトブルー・ベージュ）の3種類から選択でき、テキストや連絡先情報も簡単に更新できます。",
-          },
-          {
-            question: "多言語対応の使い方を教えてください",
-            answer:
-              "4言語（日本語・英語・中国語・スペイン語）にご自身で切り替えることができます。\nプロフィール画面で表示言語を選択できるため、相手のスマートフォンの言語設定に関わらず、好きな言語でご利用いただけます。",
-          },
-          {
-            question: "オフラインでも使えますか？",
-            answer:
-              "現在はオンライン環境でのご利用を推奨しています。\nオフライン機能は今後検討中です。アプリ不要のメリットを活かし、オンライン環境での安定したサービス提供を優先しています。",
-          },
-        ],
-        additionalHelp: {
-          title: "その他のご質問はお気軽にお問い合わせください",
-          description: "専門スタッフが丁寧にお答えいたします",
-          button: "お問い合わせ",
-        },
-      },
-      en: {
-        title: "Frequently Asked Questions",
-        subtitle: "We answer frequently asked questions from our customers",
-        items: [
-          {
-            question: "Can NFC be used on any smartphone?",
-            answer:
-              "Compatible with 95% of smartphones. Available on iPhone 7 and later, and Android NFC-compatible models.\nFor specific compatible models, please check the official website of each smartphone manufacturer.",
-          },
-          {
-            question: "What is the accuracy of business card reading?",
-            answer:
-              "AI business card shooting and VCard conversion accuracy is 95%. We aim for further accuracy improvement through continuous improvement.\nIf recognition fails, manual correction is also possible.",
-          },
-          {
-            question: "Can I change the design myself?",
-            answer:
-              "Unlimited design changes are possible from the management screen.\nYou can choose from 3 types of light colors (white, light blue, beige), and text and contact information can be easily updated.",
-          },
-          {
-            question: "Please tell me how to use multilingual support",
-            answer:
-              "You can switch to 4 languages (Japanese, English, Chinese, Spanish) yourself.\nYou can select the display language on the profile screen, so you can use it in your preferred language regardless of the other party's smartphone language settings.",
-          },
-          {
-            question: "Can it be used offline?",
-            answer:
-              "Currently, we recommend using it in an online environment.\nOffline functionality is under consideration for the future. We prioritize stable service provision in an online environment, taking advantage of the no-app benefit.",
-          },
-        ],
-        additionalHelp: {
-          title: "Please feel free to contact us for other questions",
-          description: "Our professional staff will answer you carefully",
-          button: "Contact Us",
-        },
-      },
-      zh: {
-        title: "常见问题",
-        subtitle: "我们回答客户经常提出的问题",
-        items: [
-          {
-            question: "任何智能手机都可以使用NFC吗？",
-            answer:
-              "与95%的智能手机兼容。可在iPhone 7及以后版本、Android NFC兼容机型上使用。\n关于具体兼容机型，请查看各智能手机制造商的官方网站。",
-          },
-          {
-            question: "名片读取的精度如何？",
-            answer:
-              "AI名片拍摄和VCard转换精度为95%。通过持续改进，我们致力于进一步提高精度。\n如果识别失败，也可以手动修正。",
-          },
-          {
-            question: "可以自己更改设计吗？",
-            answer:
-              "可以从管理画面无限制地更改设计。\n可以选择3种浅色（白色、浅蓝色、米色），文本和联系信息也可以轻松更新。",
-          },
-          {
-            question: "请告诉我多语言支持的使用方法",
-            answer:
-              "可以自己切换到4种语言（日语、英语、中文、西班牙语）。\n可以在个人资料画面选择显示语言，因此无论对方的智能手机语言设置如何，都可以用自己喜欢的语言使用。",
-          },
-          {
-            question: "离线时也可以使用吗？",
-            answer:
-              "目前建议在在线环境下使用。\n离线功能正在考虑中。我们优先在在线环境下提供稳定服务，发挥无需应用的优势。",
-          },
-        ],
-        additionalHelp: {
-          title: "如有其他问题请随时联系我们",
-          description: "专业工作人员会仔细回答您的问题",
-          button: "联系我们",
-        },
-      },
-      es: {
-        title: "Preguntas Frecuentes",
-        subtitle: "Respondemos preguntas frecuentes de nuestros clientes",
-        items: [
-          {
-            question: "¿Se puede usar NFC en cualquier smartphone?",
-            answer:
-              "Compatible con el 95% de los smartphones. Disponible en iPhone 7 y posteriores, y modelos Android compatibles con NFC.\nPara modelos específicos compatibles, consulte el sitio web oficial de cada fabricante de smartphones.",
-          },
-          {
-            question:
-              "¿Cuál es la precisión de la lectura de tarjetas de presentación?",
-            answer:
-              "La precisión del disparo de tarjetas de presentación con IA y la conversión VCard es del 95%. Buscamos una mayor precisión a través de mejoras continuas.\nSi el reconocimiento falla, también es posible la corrección manual.",
-          },
-          {
-            question: "¿Puedo cambiar el diseño yo mismo?",
-            answer:
-              "Los cambios de diseño ilimitados son posibles desde la pantalla de administración.\nPuedes elegir entre 3 tipos de colores claros (blanco, azul claro, beige), y el texto y la información de contacto se pueden actualizar fácilmente.",
-          },
-          {
-            question: "Por favor, dime cómo usar el soporte multilingüe",
-            answer:
-              "Puedes cambiar a 4 idiomas (japonés, inglés, chino, español) tú mismo.\nPuedes seleccionar el idioma de visualización en la pantalla de perfil, por lo que puedes usarlo en tu idioma preferido independientemente de la configuración de idioma del smartphone de la otra parte.",
-          },
-          {
-            question: "¿Se puede usar sin conexión?",
-            answer:
-              "Actualmente recomendamos usarlo en un entorno en línea.\nLa funcionalidad sin conexión está bajo consideración para el futuro. Priorizamos la provisión de servicios estables en un entorno en línea, aprovechando el beneficio de no requerir aplicación.",
-          },
-        ],
-        additionalHelp: {
-          title: "Por favor, no dudes en contactarnos para otras preguntas",
-          description:
-            "Nuestro personal profesional te responderá cuidadosamente",
-          button: "Contáctanos",
-        },
-      },
-      ko: {
-        title: "자주 묻는 질문",
-        subtitle: "고객님들께서 자주 문의하시는 질문에 답변드립니다",
-        items: [
-          {
-            question: "모든 스마트폰에서 NFC를 사용할 수 있나요?",
-            answer:
-              "95%의 스마트폰에서 호환됩니다. iPhone 7 이후, Android NFC 지원 기종에서 이용하실 수 있습니다.\n구체적인 지원 기종에 대해서는 각 스마트폰 제조사의 공식 사이트를 확인해 주세요.",
-          },
-          {
-            question: "명함 읽기 정확도는?",
-            answer:
-              "AI 명함 촬영·VCard 변환 정확도는 95%입니다. 지속적인 개선을 통해 더욱 정확도 향상을 목표로 하고 있습니다.\n인식에 실패한 경우, 수동으로 수정도 가능합니다.",
-          },
-          {
-            question: "디자인 변경은 직접 할 수 있나요?",
-            answer:
-              "관리 화면에서 무제한으로 디자인 변경이 가능합니다.\n라이트 컬러(흰색·라이트 블루·베이지) 3종류에서 선택할 수 있으며, 텍스트나 연락처 정보도 쉽게 업데이트할 수 있습니다.",
-          },
-          {
-            question: "다국어 지원 사용법을 알려주세요",
-            answer:
-              "4개국어(일본어·영어·중국어·스페인어)로 직접 전환할 수 있습니다.\n프로필 화면에서 표시 언어를 선택할 수 있으므로, 상대방의 스마트폰 언어 설정과 관계없이 원하는 언어로 이용하실 수 있습니다.",
-          },
-          {
-            question: "오프라인에서도 사용할 수 있나요?",
-            answer:
-              "현재는 온라인 환경에서의 이용을 권장하고 있습니다.\n오프라인 기능은 향후 검토 중입니다. 앱 불필요의 장점을 살려 온라인 환경에서의 안정적인 서비스 제공을 우선하고 있습니다.",
-          },
-        ],
-        additionalHelp: {
-          title: "기타 문의사항은 언제든지 문의해 주세요",
-          description: "전문 스태프가 정성스럽게 답변드리겠습니다",
-          button: "문의하기",
-        },
-      },
-    };
-
-    const t = (translations as any)[lang] || translations["ja"];
-
-    // Update title and subtitle
-    const titleElement = document.querySelector("#faq h2");
-    if (titleElement) {
-      titleElement.textContent = t.title;
-    }
-    const subtitleElement = document.querySelector("#faq p");
-    if (subtitleElement) {
-      subtitleElement.textContent = t.subtitle;
-    }
-
-    // Update FAQ items
-    const faqItems = document.querySelectorAll("#faq details");
-    faqItems.forEach((item, index) => {
-      if (t.items[index]) {
-        const questionElement = item.querySelector("h3");
-        if (questionElement) {
-          questionElement.textContent = t.items[index].question;
-        }
-        const answerElement = item.querySelector("p");
-        if (answerElement) {
-          answerElement.innerHTML = t.items[index].answer
-            .split("\n")
-            .join("<br>");
-        }
-      }
-    });
-
-    // Update additional help section
-    const helpTitleElement = document.querySelector("#faq .mt-12 h3");
-    if (helpTitleElement) {
-      helpTitleElement.textContent = t.additionalHelp.title;
-    }
-    const helpDescElement = document.querySelector("#faq .mt-12 p");
-    if (helpDescElement) {
-      helpDescElement.textContent = t.additionalHelp.description;
-    }
-    const helpButtonElement = document.querySelector("#faq .mt-12 a");
-    if (helpButtonElement) {
-      helpButtonElement.textContent = t.additionalHelp.button;
-    }
-  }
-
-  function forceKoreanFAQTranslation() {
-    console.log('Force updating FAQ content to Korean');
-    
-    // Force update title and subtitle
-    const titleElement = document.querySelector('#faq h2');
-    if (titleElement) {
-      titleElement.textContent = '자주 묻는 질문';
-      console.log('Updated FAQ title to Korean');
-    }
-    
-    const subtitleElement = document.querySelector('#faq p');
-    if (subtitleElement) {
-      subtitleElement.textContent = '고객님들께서 자주 문의하시는 질문에 답변드립니다';
-      console.log('Updated FAQ subtitle to Korean');
-    }
-    
-    // Force update FAQ items
-    const faqItems = document.querySelectorAll('#faq details');
-    const koreanQuestions = [
-      '모든 스마트폰에서 NFC를 사용할 수 있나요?',
-      '명함 읽기 정확도는?',
-      '디자인 변경은 직접 할 수 있나요?',
-      '다국어 지원 사용법을 알려주세요',
-      '오프라인에서도 사용할 수 있나요?'
-    ];
-    const koreanAnswers = [
-      '95%의 스마트폰에서 호환됩니다. iPhone 7 이후, Android NFC 지원 기종에서 이용하실 수 있습니다.\n구체적인 지원 기종에 대해서는 각 스마트폰 제조사의 공식 사이트를 확인해 주세요.',
-      'AI 명함 촬영·VCard 변환 정확도는 95%입니다. 지속적인 개선을 통해 더욱 정확도 향상을 목표로 하고 있습니다.\n인식에 실패한 경우, 수동으로 수정도 가능합니다.',
-      '관리 화면에서 무제한으로 디자인 변경이 가능합니다.\n라이트 컬러(흰색·라이트 블루·베이지) 3종류에서 선택할 수 있으며, 텍스트나 연락처 정보도 쉽게 업데이트할 수 있습니다.',
-      '4개국어(일본어·영어·중국어·스페인어)로 직접 전환할 수 있습니다.\n프로필 화면에서 표시 언어를 선택할 수 있으므로, 상대방의 스마트폰 언어 설정과 관계없이 원하는 언어로 이용하실 수 있습니다.',
-      '현재는 온라인 환경에서의 이용을 권장하고 있습니다.\n오프라인 기능은 향후 검토 중입니다. 앱 불필요의 장점을 살려 온라인 환경에서의 안정적인 서비스 제공을 우선하고 있습니다.'
-    ];
-    
-    faqItems.forEach((item, index) => {
-      if (koreanQuestions[index] && koreanAnswers[index]) {
-        const questionElement = item.querySelector('h3');
-        if (questionElement) {
-          questionElement.textContent = koreanQuestions[index];
-          console.log(`Updated FAQ question ${index + 1} to Korean: ${koreanQuestions[index]}`);
-        }
-        
-        const answerElement = item.querySelector('p');
-        if (answerElement) {
-          answerElement.innerHTML = koreanAnswers[index].split('\n').join('<br>');
-          console.log(`Updated FAQ answer ${index + 1} to Korean`);
-        }
-      }
-    });
-    
-    // Force update additional help section
-    const helpTitleElement = document.querySelector('#faq .mt-12 h3');
-    if (helpTitleElement) {
-      helpTitleElement.textContent = '기타 문의사항은 언제든지 문의해 주세요';
-      console.log('Updated FAQ help title to Korean');
-    }
-    
-    const helpDescElement = document.querySelector('#faq .mt-12 p');
-    if (helpDescElement) {
-      helpDescElement.textContent = '전문 스태프가 정성스럽게 답변드리겠습니다';
-      console.log('Updated FAQ help description to Korean');
-    }
-    
-    const helpButtonElement = document.querySelector('#faq .mt-12 a');
-    if (helpButtonElement) {
-      helpButtonElement.textContent = '문의하기';
-      console.log('Updated FAQ help button to Korean');
-    }
-  }
-</script>
