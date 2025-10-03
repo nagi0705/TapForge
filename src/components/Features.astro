@@ -2,6 +2,7 @@
 import { featureIcons, pricingColors } from "../config/features";
 import { loadTranslation, getLocaleFromPathname } from '../utils/i18n';
 import type { Language } from '../lib/i18n';
+import Youtube from '../layouts/shortcodes/Youtube';
 
 interface Props {
   lang: Language;
@@ -209,28 +210,17 @@ const regularPricing = [
       <h3 class="text-2xl font-bold text-gray-900 mb-8" id="demo-title">
         {t.demo.title}
       </h3>
-      <div class="bg-gray-100 rounded-2xl p-8 max-w-2xl mx-auto">
-        <div
-          class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center"
-        >
-          <div class="text-center">
-            <svg
-              class="w-16 h-16 text-gray-400 mx-auto mb-4"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"
-              ></path>
-            </svg>
-            <p class="text-gray-600" id="demo-description">
-              {t.demo.description}
-            </p>
-            <p class="text-sm text-gray-500" id="demo-note">
-              {t.demo.note}
-            </p>
-          </div>
+      <div class="bg-gray-100 rounded-2xl p-8 max-w-3xl mx-auto">
+        <div class="rounded-lg overflow-hidden shadow-lg">
+          <Youtube 
+            client:load
+            id="v-Qxbm72nhk"
+            title="TapForge AI名刺撮影デモ - NFCデジタル名刺"
+          />
         </div>
+        <p class="text-sm text-gray-600 mt-4" id="demo-note">
+          {t.demo.note}
+        </p>
       </div>
     </div>
   </div>
