@@ -145,23 +145,6 @@
       "beta": {
         "initial": {
           "title": "初期費用",
-          "price": "¥0",
-          "description": "初期費用無料"
-        },
-        "monthly": {
-          "title": "月額",
-          "price": "¥500~/アカウント",
-          "description": "6ヶ月以上継続利用の場合"
-        },
-        "additional": {
-          "title": "追加カード",
-          "price": "¥600",
-          "description": "2枚目以降/送料込み\n(10枚以上の一括注文で¥500/枚)"
-        }
-      },
-      "regular": {
-        "initial": {
-          "title": "初期費用",
           "price": "¥700",
           "description": "送料込み"
         },
@@ -174,6 +157,23 @@
           "title": "追加カード",
           "price": "¥500",
           "description": "2枚目以降/送料込み"
+        }
+      },
+      "regular": {
+        "initial": {
+          "title": "初期費用",
+          "price": "¥0",
+          "description": "初期費用無料"
+        },
+        "monthly": {
+          "title": "月額",
+          "price": "¥500~/アカウント",
+          "description": "6ヶ月以上継続利用の場合"
+        },
+        "additional": {
+          "title": "追加カード",
+          "price": "¥600",
+          "description": "2枚目以降/送料込み\n(10枚以上の一括注文で¥500/枚)"
         }
       },
       "tagline": "OCR機能付きNFC名刺の業界最安値 - 通常年間11,000円の機能を月額500円〜で提供"

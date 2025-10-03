@@ -145,23 +145,6 @@
       "beta": {
         "initial": {
           "title": "Initial Cost",
-          "price": "¥0",
-          "description": "Free initial cost"
-        },
-        "monthly": {
-          "title": "Monthly",
-          "price": "¥500~/account",
-          "description": "For 6+ months continuous use"
-        },
-        "additional": {
-          "title": "Additional Cards",
-          "price": "¥600",
-          "description": "2nd card onwards/shipping incl.\n(¥500/card for bulk orders of 10+)"
-        }
-      },
-      "regular": {
-        "initial": {
-          "title": "Initial Cost",
           "price": "¥700",
           "description": "Shipping included"
         },
@@ -176,7 +159,24 @@
           "description": "2nd card onwards/shipping incl."
         }
       },
-      "tagline": "Industry's lowest price for NFC cards with OCR function - Offering features normally costing ¥11,000 annually for ¥500~/month"
+      "regular": {
+        "initial": {
+          "title": "Initial Cost",
+          "price": "¥0",
+          "description": "Free initial cost"
+        },
+        "monthly": {
+          "title": "Monthly",
+          "price": "¥500~/account",
+          "description": "For 6+ months continuous use"
+        },
+        "additional": {
+          "title": "Additional Cards",
+          "price": "¥600",
+          "description": "2nd card onwards/shipping incl.\n(¥500/card for bulk orders of 10+)"
+        }
+      },
+      "tagline": "Industry's lowest price for NFC cards with OCR function - Beta: ¥700 initial only, Regular: ¥0 initial + ¥500~/month"
     },
     "demo": {
       "title": "Demo Video",

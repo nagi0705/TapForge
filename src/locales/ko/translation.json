@@ -145,23 +145,6 @@
       "beta": {
         "initial": {
           "title": "초기 비용",
-          "price": "¥0",
-          "description": "초기 비용 무료"
-        },
-        "monthly": {
-          "title": "월 사용료",
-          "price": "¥500~/계정",
-          "description": "6개월 이상 계속 이용 시"
-        },
-        "additional": {
-          "title": "추가 카드",
-          "price": "¥600",
-          "description": "두 번째부터/배송비 포함\n(10장 이상 일괄 주문 시 ¥500/장)"
-        }
-      },
-      "regular": {
-        "initial": {
-          "title": "초기 비용",
           "price": "¥700",
           "description": "배송비 포함"
         },
@@ -176,7 +159,24 @@
           "description": "두 번째부터/배송비 포함"
         }
       },
-      "tagline": "OCR 기능이 있는 NFC 명함의 업계 최저가 - 일반적으로 연간 ¥11,000의 기능을 월 ¥500~에 제공"
+      "regular": {
+        "initial": {
+          "title": "초기 비용",
+          "price": "¥0",
+          "description": "초기 비용 무료"
+        },
+        "monthly": {
+          "title": "월 사용료",
+          "price": "¥500~/계정",
+          "description": "6개월 이상 계속 이용 시"
+        },
+        "additional": {
+          "title": "추가 카드",
+          "price": "¥600",
+          "description": "두 번째부터/배송비 포함\n(10장 이상 일괄 주문 시 ¥500/장)"
+        }
+      },
+      "tagline": "OCR 기능이 있는 NFC 명함의 업계 최저가 - β 테스트: 초기 비용 ¥700만, 통상: 초기 비용 ¥0 + 월 ¥500~"
     },
     "demo": {
       "title": "데모 비디오",

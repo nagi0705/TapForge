@@ -145,23 +145,6 @@
       "beta": {
         "initial": {
           "title": "初始费用",
-          "price": "¥0",
-          "description": "初始费用免费"
-        },
-        "monthly": {
-          "title": "月费",
-          "price": "¥500起/账户",
-          "description": "6个月以上持续使用"
-        },
-        "additional": {
-          "title": "追加卡片",
-          "price": "¥600",
-          "description": "第二张起/含运费\n(10张以上批量订购¥500/张)"
-        }
-      },
-      "regular": {
-        "initial": {
-          "title": "初始费用",
           "price": "¥700",
           "description": "含运费"
         },
@@ -176,7 +159,24 @@
           "description": "第二张起/含运费"
         }
       },
-      "tagline": "带OCR功能的NFC名片业界最低价 - 通常年费¥11,000的功能以月费¥500起提供"
+      "regular": {
+        "initial": {
+          "title": "初始费用",
+          "price": "¥0",
+          "description": "初始费用免费"
+        },
+        "monthly": {
+          "title": "月费",
+          "price": "¥500起/账户",
+          "description": "6个月以上持续使用"
+        },
+        "additional": {
+          "title": "追加卡片",
+          "price": "¥600",
+          "description": "第二张起/含运费\n(10张以上批量订购¥500/张)"
+        }
+      },
+      "tagline": "带OCR功能的NFC名片业界最低价 - β测试:仅¥700初始费，通常:¥0初始费+月费¥500起"
     },
     "demo": {
       "title": "演示视频",
